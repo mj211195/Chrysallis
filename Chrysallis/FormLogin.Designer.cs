@@ -96,7 +96,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Chrysallis.Properties.Resources.logo4;
-            this.pictureBox1.Location = new System.Drawing.Point(90, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(74, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(196, 152);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
