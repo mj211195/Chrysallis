@@ -68,7 +68,7 @@ namespace AppDesktop
         protected override void OnMouseDown(MouseEventArgs mevent)
         {
             base.OnMouseDown(mevent);
-            OnHoverButtonColor = Color.LightYellow;
+            OnHoverButtonColor = Color.PapayaWhip;
         }
 
         protected override void OnMouseUp(MouseEventArgs mevent)

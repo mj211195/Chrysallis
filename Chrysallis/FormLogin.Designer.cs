@@ -34,7 +34,7 @@
             this.textBoxContrasenya = new System.Windows.Forms.TextBox();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.labelContrasenya = new System.Windows.Forms.Label();
-            this.button_WOCGestionar = new AppDesktop.Button_WOC();
+            this.buttonEntrar = new AppDesktop.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,26 +83,26 @@
             this.labelContrasenya.TabIndex = 4;
             this.labelContrasenya.Text = "Contraseña";
             // 
-            // button_WOCGestionar
+            // buttonEntrar
             // 
-            this.button_WOCGestionar.BackColor = System.Drawing.Color.Transparent;
-            this.button_WOCGestionar.BorderColor = System.Drawing.Color.Black;
-            this.button_WOCGestionar.ButtonColor = System.Drawing.SystemColors.Info;
-            this.button_WOCGestionar.FlatAppearance.BorderSize = 0;
-            this.button_WOCGestionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOCGestionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOCGestionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOCGestionar.Font = new System.Drawing.Font("Consolas", 12F);
-            this.button_WOCGestionar.Location = new System.Drawing.Point(114, 310);
-            this.button_WOCGestionar.Name = "button_WOCGestionar";
-            this.button_WOCGestionar.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.button_WOCGestionar.OnHoverButtonColor = System.Drawing.Color.Azure;
-            this.button_WOCGestionar.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.button_WOCGestionar.Size = new System.Drawing.Size(117, 40);
-            this.button_WOCGestionar.TabIndex = 5;
-            this.button_WOCGestionar.Text = "Gestionar";
-            this.button_WOCGestionar.TextColor = System.Drawing.Color.Black;
-            this.button_WOCGestionar.UseVisualStyleBackColor = false;
+            this.buttonEntrar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEntrar.BorderColor = System.Drawing.Color.Black;
+            this.buttonEntrar.ButtonColor = System.Drawing.SystemColors.Info;
+            this.buttonEntrar.FlatAppearance.BorderSize = 0;
+            this.buttonEntrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEntrar.Font = new System.Drawing.Font("Consolas", 12F);
+            this.buttonEntrar.Location = new System.Drawing.Point(114, 310);
+            this.buttonEntrar.Name = "buttonEntrar";
+            this.buttonEntrar.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.buttonEntrar.OnHoverButtonColor = System.Drawing.Color.Azure;
+            this.buttonEntrar.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.buttonEntrar.Size = new System.Drawing.Size(117, 40);
+            this.buttonEntrar.TabIndex = 5;
+            this.buttonEntrar.Text = "Entrar";
+            this.buttonEntrar.TextColor = System.Drawing.Color.Black;
+            this.buttonEntrar.UseVisualStyleBackColor = false;
             // 
             // FormLogin
             // 
@@ -110,7 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(358, 383);
-            this.Controls.Add(this.button_WOCGestionar);
+            this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.labelContrasenya);
             this.Controls.Add(this.labelUsuario);
             this.Controls.Add(this.textBoxContrasenya);
@@ -132,7 +132,7 @@
         private System.Windows.Forms.TextBox textBoxContrasenya;
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Label labelContrasenya;
-        private AppDesktop.Button_WOC button_WOCGestionar;
+        private AppDesktop.Button_WOC buttonEntrar;
     }
 }
 
