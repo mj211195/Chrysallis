@@ -81,12 +81,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo_sin_estrellas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo4 %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
