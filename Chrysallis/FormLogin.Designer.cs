@@ -95,9 +95,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(154, 69);
+            this.pictureBox1.Image = global::Chrysallis.Properties.Resources.logo4;
+            this.pictureBox1.Location = new System.Drawing.Point(90, 25);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(196, 152);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
