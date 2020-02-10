@@ -20,6 +20,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_NeutralResourcesLanguage = ca-AD
+		RESX_ExcelExportMode = Text
 		SolutionGuid = {CD502E5C-D846-4F74-A8E1-45ACD6B4BC38}
 	EndGlobalSection
 EndGlobal

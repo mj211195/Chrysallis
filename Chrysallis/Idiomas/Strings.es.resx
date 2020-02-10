@@ -126,4 +126,13 @@
   <data name="user" xml:space="preserve">
     <value>Usuario</value>
   </data>
+  <data name="catalan" xml:space="preserve">
+    <value>Catalán</value>
+  </data>
+  <data name="spanish" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="english" xml:space="preserve">
+    <value>Inglés</value>
+  </data>
 </root>

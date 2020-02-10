@@ -61,6 +61,24 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Català.
+        /// </summary>
+        internal static string catalan {
+            get {
+                return ResourceManager.GetString("catalan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Anglès.
+        /// </summary>
+        internal static string english {
+            get {
+                return ResourceManager.GetString("english", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Accedir.
         /// </summary>
         internal static string login {
@@ -75,6 +93,15 @@ namespace Chrysallis.Idiomas {
         internal static string password {
             get {
                 return ResourceManager.GetString("password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Castellà.
+        /// </summary>
+        internal static string spanish {
+            get {
+                return ResourceManager.GetString("spanish", resourceCulture);
             }
         }
         
