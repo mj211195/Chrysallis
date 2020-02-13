@@ -46,6 +46,7 @@
             // 
             // buttonAdministrarEventos
             // 
+            this.buttonAdministrarEventos.AutoSize = true;
             this.buttonAdministrarEventos.BackColor = System.Drawing.Color.Transparent;
             this.buttonAdministrarEventos.BorderColor = System.Drawing.Color.Black;
             this.buttonAdministrarEventos.ButtonColor = System.Drawing.SystemColors.Info;
@@ -54,7 +55,7 @@
             this.buttonAdministrarEventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonAdministrarEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdministrarEventos.Font = new System.Drawing.Font("Consolas", 12F);
-            this.buttonAdministrarEventos.Location = new System.Drawing.Point(96, 289);
+            this.buttonAdministrarEventos.Location = new System.Drawing.Point(96, 268);
             this.buttonAdministrarEventos.Name = "buttonAdministrarEventos";
             this.buttonAdministrarEventos.OnHoverBorderColor = System.Drawing.Color.Gray;
             this.buttonAdministrarEventos.OnHoverButtonColor = System.Drawing.Color.Azure;
@@ -85,6 +86,7 @@
             this.buttonAdministrarSocios.Text = "Administrar socios";
             this.buttonAdministrarSocios.TextColor = System.Drawing.Color.Black;
             this.buttonAdministrarSocios.UseVisualStyleBackColor = false;
+            this.buttonAdministrarSocios.Click += new System.EventHandler(this.buttonAdministrarSocios_Click);
             // 
             // FormMenu
             // 
@@ -99,6 +101,7 @@
             this.Load += new System.EventHandler(this.FormMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

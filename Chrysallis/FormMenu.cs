@@ -19,7 +19,19 @@ namespace Chrysallis
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            buttonAdministrarSocios.Text = Idiomas.Strings.socios;
+            cambiarIdioma();
+        }
+
+        public void cambiarIdioma()
+        {
+            buttonAdministrarSocios.Text = Idiomas.Strings.managePartners;
+            buttonAdministrarEventos.Text = Idiomas.Strings.manageEvents;
+        }
+
+        private void buttonAdministrarSocios_Click(object sender, EventArgs e)
+        {
+            FormSocios formSocios = new FormSocios();
+            formSocios.ShowDialog();
         }
     }
 }

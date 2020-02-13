@@ -16,5 +16,11 @@ namespace Chrysallis
         {
             InitializeComponent();
         }
+
+        private void FormSocios_Load(object sender, EventArgs e)
+        {
+            buttonAgregarSocio.Text = Idiomas.Strings.addPartner;
+        }
+
     }
 }

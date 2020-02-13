@@ -135,7 +135,13 @@
   <data name="english" xml:space="preserve">
     <value>Inglés</value>
   </data>
-  <data name="socios" xml:space="preserve">
+  <data name="managePartners" xml:space="preserve">
     <value>Gestionar socios</value>
+  </data>
+  <data name="manageEvents" xml:space="preserve">
+    <value>Gestionar eventos</value>
+  </data>
+  <data name="addPartner" xml:space="preserve">
+    <value>Agregar socio</value>
   </data>
 </root>

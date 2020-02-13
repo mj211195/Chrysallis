@@ -28,57 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button_WOC1 = new AppDesktop.Button_WOC();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
+            this.buttonAgregarSocio = new AppDesktop.Button_WOC();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewSocios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(595, 344);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewSocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSocios.Location = new System.Drawing.Point(13, 13);
+            this.dataGridViewSocios.Name = "dataGridViewSocios";
+            this.dataGridViewSocios.Size = new System.Drawing.Size(595, 344);
+            this.dataGridViewSocios.TabIndex = 0;
             // 
-            // button_WOC1
+            // buttonAgregarSocio
             // 
-            this.button_WOC1.BackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.BorderColor = System.Drawing.Color.Black;
-            this.button_WOC1.ButtonColor = System.Drawing.SystemColors.Info;
-            this.button_WOC1.FlatAppearance.BorderSize = 0;
-            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC1.Font = new System.Drawing.Font("Consolas", 12F);
-            this.button_WOC1.Location = new System.Drawing.Point(200, 372);
-            this.button_WOC1.Name = "button_WOC1";
-            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.Azure;
-            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.button_WOC1.Size = new System.Drawing.Size(200, 40);
-            this.button_WOC1.TabIndex = 9;
-            this.button_WOC1.Text = "Agregar socio";
-            this.button_WOC1.TextColor = System.Drawing.Color.Black;
-            this.button_WOC1.UseVisualStyleBackColor = false;
+            this.buttonAgregarSocio.AutoSize = true;
+            this.buttonAgregarSocio.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarSocio.BorderColor = System.Drawing.Color.Black;
+            this.buttonAgregarSocio.ButtonColor = System.Drawing.SystemColors.Info;
+            this.buttonAgregarSocio.FlatAppearance.BorderSize = 0;
+            this.buttonAgregarSocio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarSocio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregarSocio.Font = new System.Drawing.Font("Consolas", 12F);
+            this.buttonAgregarSocio.Location = new System.Drawing.Point(200, 372);
+            this.buttonAgregarSocio.Name = "buttonAgregarSocio";
+            this.buttonAgregarSocio.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.buttonAgregarSocio.OnHoverButtonColor = System.Drawing.Color.Azure;
+            this.buttonAgregarSocio.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.buttonAgregarSocio.Size = new System.Drawing.Size(200, 40);
+            this.buttonAgregarSocio.TabIndex = 9;
+            this.buttonAgregarSocio.Text = "Agregar socio";
+            this.buttonAgregarSocio.TextColor = System.Drawing.Color.Black;
+            this.buttonAgregarSocio.UseVisualStyleBackColor = false;
             // 
             // FormSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 424);
-            this.Controls.Add(this.button_WOC1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.buttonAgregarSocio);
+            this.Controls.Add(this.dataGridViewSocios);
             this.Name = "FormSocios";
             this.Text = "Socios";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormSocios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private AppDesktop.Button_WOC button_WOC1;
+        private System.Windows.Forms.DataGridView dataGridViewSocios;
+        private AppDesktop.Button_WOC buttonAgregarSocio;
     }
 }
