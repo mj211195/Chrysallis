@@ -97,6 +97,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Gestionar socis.
+        /// </summary>
+        internal static string socios {
+            get {
+                return ResourceManager.GetString("socios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Castellà.
         /// </summary>
         internal static string spanish {

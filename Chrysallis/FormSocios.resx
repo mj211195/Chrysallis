@@ -117,25 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="login" xml:space="preserve">
-    <value>Accedir</value>
-  </data>
-  <data name="password" xml:space="preserve">
-    <value>Contrasenya</value>
-  </data>
-  <data name="user" xml:space="preserve">
-    <value>Usuari</value>
-  </data>
-  <data name="catalan" xml:space="preserve">
-    <value>Català</value>
-  </data>
-  <data name="spanish" xml:space="preserve">
-    <value>Castellà</value>
-  </data>
-  <data name="english" xml:space="preserve">
-    <value>Anglès</value>
-  </data>
-  <data name="socios" xml:space="preserve">
-    <value>Gestionar socis</value>
-  </data>
 </root>

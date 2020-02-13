@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Chrysallis
 {
-    public partial class FormMenu : Form
+    public partial class FormSocios : Form
     {
-        public FormMenu()
+        public FormSocios()
         {
             InitializeComponent();
-        }
-
-        private void FormMenu_Load(object sender, EventArgs e)
-        {
-            buttonAdministrarSocios.Text = Idiomas.Strings.socios;
         }
     }
 }

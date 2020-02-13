@@ -55,6 +55,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSocios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSocios.Designer.cs">
+      <DependentUpon>FormSocios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Idiomas\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSocios.resx">
+      <DependentUpon>FormSocios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Idiomas\Strings.en.resx" />
     <EmbeddedResource Include="Idiomas\Strings.es.resx" />

@@ -125,6 +125,7 @@
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.TextColor = System.Drawing.Color.Black;
             this.buttonEntrar.UseVisualStyleBackColor = false;
+            this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
             // 
             // buttonSpanish
             // 
