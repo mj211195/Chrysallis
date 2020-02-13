@@ -65,6 +65,7 @@
             this.buttonAdministrarEventos.Text = "Administrar eventos";
             this.buttonAdministrarEventos.TextColor = System.Drawing.Color.Black;
             this.buttonAdministrarEventos.UseVisualStyleBackColor = false;
+            this.buttonAdministrarEventos.Click += new System.EventHandler(this.buttonAdministrarEventos_Click);
             // 
             // buttonAdministrarSocios
             // 

@@ -117,43 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="login" xml:space="preserve">
-    <value>Entrar</value>
-  </data>
-  <data name="password" xml:space="preserve">
-    <value>Contraseña</value>
-  </data>
-  <data name="user" xml:space="preserve">
-    <value>Usuario</value>
-  </data>
-  <data name="catalan" xml:space="preserve">
-    <value>Catalán</value>
-  </data>
-  <data name="spanish" xml:space="preserve">
-    <value>Español</value>
-  </data>
-  <data name="english" xml:space="preserve">
-    <value>Inglés</value>
-  </data>
-  <data name="managePartners" xml:space="preserve">
-    <value>Gestionar socios</value>
-  </data>
-  <data name="manageEvents" xml:space="preserve">
-    <value>Gestionar eventos</value>
-  </data>
-  <data name="addPartner" xml:space="preserve">
-    <value>Agregar socio</value>
-  </data>
-  <data name="addEvent" xml:space="preserve">
-    <value>Agregar evento</value>
-  </data>
-  <data name="partner" xml:space="preserve">
-    <value>Socios</value>
-  </data>
-  <data name="menu" xml:space="preserve">
-    <value>Menú</value>
-  </data>
-  <data name="event" xml:space="preserve">
-    <value>Eventos</value>
-  </data>
 </root>

@@ -33,6 +33,7 @@ namespace Chrysallis
             buttonEntrar.Text = Idiomas.Strings.login;
             buttonCatalan.Text = Idiomas.Strings.catalan;
             buttonIngles.Text = Idiomas.Strings.english;
+            this.Text = Idiomas.Strings.login;
         }
 
         private void buttonCatalan_Click(object sender, EventArgs e)

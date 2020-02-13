@@ -61,6 +61,24 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Esdeveniments.
+        /// </summary>
+        internal static string _event {
+            get {
+                return ResourceManager.GetString("event", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Afegir esdeveniments.
+        /// </summary>
+        internal static string addEvent {
+            get {
+                return ResourceManager.GetString("addEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Afegir soci.
         /// </summary>
         internal static string addPartner {
@@ -111,6 +129,24 @@ namespace Chrysallis.Idiomas {
         internal static string managePartners {
             get {
                 return ResourceManager.GetString("managePartners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Menú.
+        /// </summary>
+        internal static string menu {
+            get {
+                return ResourceManager.GetString("menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Socis.
+        /// </summary>
+        internal static string partner {
+            get {
+                return ResourceManager.GetString("partner", resourceCulture);
             }
         }
         

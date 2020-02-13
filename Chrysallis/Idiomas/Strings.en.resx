@@ -144,4 +144,16 @@
   <data name="addPartner" xml:space="preserve">
     <value>Add partner</value>
   </data>
+  <data name="addEvent" xml:space="preserve">
+    <value>Add event</value>
+  </data>
+  <data name="partner" xml:space="preserve">
+    <value>Partners</value>
+  </data>
+  <data name="menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="event" xml:space="preserve">
+    <value>Events</value>
+  </data>
 </root>

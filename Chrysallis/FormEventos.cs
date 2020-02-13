@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace Chrysallis
 {
-    public partial class FormSocios : Form
+    public partial class FormEventos : Form
     {
-        public FormSocios()
+        public FormEventos()
         {
             InitializeComponent();
         }
 
-        private void FormSocios_Load(object sender, EventArgs e)
+        private void FormEventos_Load(object sender, EventArgs e)
         {
-            buttonAgregarSocio.Text = Idiomas.Strings.addPartner;
-            this.Text = Idiomas.Strings.partner;
+            buttonAgregarEvento.Text = Idiomas.Strings.addEvent;
+            this.Text = Idiomas.Strings._event;
         }
-
     }
 }
