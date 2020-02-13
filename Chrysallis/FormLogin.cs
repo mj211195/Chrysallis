@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComboxExtended;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,10 @@ namespace Chrysallis
         public FormLogin()
         {
             InitializeComponent();
+            imagedComboBoxIdiomas.Items.Add(new ComboBoxItem(Idiomas.Strings.catalan, new Bitmap(Chrysallis.Properties.Resources.catalan)));
+            imagedComboBoxIdiomas.Items.Add(new ComboBoxItem(Idiomas.Strings.spanish, new Bitmap(Chrysallis.Properties.Resources.español)));
+            imagedComboBoxIdiomas.Items.Add(new ComboBoxItem(Idiomas.Strings.english, new Bitmap(Chrysallis.Properties.Resources.UK)));
+            imagedComboBoxIdiomas.SelectedIndex = 0;
         }
 
         private void buttonIngles_Click(object sender, EventArgs e)
@@ -43,6 +48,11 @@ namespace Chrysallis
         private void buttonSpanish_Click(object sender, EventArgs e)
         {
             cambiarIdioma("es");
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            cambiarIdioma("");
         }
     }
 }

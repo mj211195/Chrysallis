@@ -33,11 +33,12 @@
             this.textBoxContrasenya = new System.Windows.Forms.TextBox();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.labelContrasenya = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonCatalan = new System.Windows.Forms.Button();
             this.buttonIngles = new System.Windows.Forms.Button();
-            this.buttonEntrar = new AppDesktop.Button_WOC();
             this.buttonSpanish = new System.Windows.Forms.Button();
+            this.buttonEntrar = new AppDesktop.Button_WOC();
+            this.imagedComboBoxIdiomas = new ComboxExtended.ImagedComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,16 +76,6 @@
             this.labelContrasenya.TabIndex = 4;
             this.labelContrasenya.Text = "Contraseña";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Chrysallis.Properties.Resources.logo4;
-            this.pictureBox1.Location = new System.Drawing.Point(74, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // buttonCatalan
             // 
             this.buttonCatalan.Location = new System.Drawing.Point(271, 368);
@@ -104,6 +95,16 @@
             this.buttonIngles.Text = "Ingles";
             this.buttonIngles.UseVisualStyleBackColor = true;
             this.buttonIngles.Click += new System.EventHandler(this.buttonIngles_Click);
+            // 
+            // buttonSpanish
+            // 
+            this.buttonSpanish.Location = new System.Drawing.Point(109, 368);
+            this.buttonSpanish.Name = "buttonSpanish";
+            this.buttonSpanish.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpanish.TabIndex = 9;
+            this.buttonSpanish.Text = "Castellano";
+            this.buttonSpanish.UseVisualStyleBackColor = true;
+            this.buttonSpanish.Click += new System.EventHandler(this.buttonSpanish_Click);
             // 
             // buttonEntrar
             // 
@@ -126,15 +127,24 @@
             this.buttonEntrar.TextColor = System.Drawing.Color.Black;
             this.buttonEntrar.UseVisualStyleBackColor = false;
             // 
-            // buttonSpanish
+            // imagedComboBoxIdiomas
             // 
-            this.buttonSpanish.Location = new System.Drawing.Point(109, 368);
-            this.buttonSpanish.Name = "buttonSpanish";
-            this.buttonSpanish.Size = new System.Drawing.Size(75, 23);
-            this.buttonSpanish.TabIndex = 9;
-            this.buttonSpanish.Text = "Castellano";
-            this.buttonSpanish.UseVisualStyleBackColor = true;
-            this.buttonSpanish.Click += new System.EventHandler(this.buttonSpanish_Click);
+            this.imagedComboBoxIdiomas.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.imagedComboBoxIdiomas.FormattingEnabled = true;
+            this.imagedComboBoxIdiomas.Location = new System.Drawing.Point(221, 180);
+            this.imagedComboBoxIdiomas.Name = "imagedComboBoxIdiomas";
+            this.imagedComboBoxIdiomas.Size = new System.Drawing.Size(121, 21);
+            this.imagedComboBoxIdiomas.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Chrysallis.Properties.Resources.logo4;
+            this.pictureBox1.Location = new System.Drawing.Point(74, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(196, 152);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // FormLogin
             // 
@@ -142,6 +152,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(358, 403);
+            this.Controls.Add(this.imagedComboBoxIdiomas);
             this.Controls.Add(this.buttonSpanish);
             this.Controls.Add(this.buttonIngles);
             this.Controls.Add(this.buttonCatalan);
@@ -154,6 +165,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,6 +182,7 @@
         private System.Windows.Forms.Button buttonCatalan;
         private System.Windows.Forms.Button buttonIngles;
         private System.Windows.Forms.Button buttonSpanish;
+        private ComboxExtended.ImagedComboBox imagedComboBoxIdiomas;
     }
 }
 
