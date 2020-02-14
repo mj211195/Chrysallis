@@ -62,6 +62,7 @@
             this.buttonAgregarSocio.Text = "Agregar socio";
             this.buttonAgregarSocio.TextColor = System.Drawing.Color.Black;
             this.buttonAgregarSocio.UseVisualStyleBackColor = false;
+            this.buttonAgregarSocio.Click += new System.EventHandler(this.buttonAgregarSocio_Click);
             // 
             // FormSocios
             // 

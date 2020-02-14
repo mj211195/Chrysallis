@@ -23,5 +23,10 @@ namespace Chrysallis
             this.Text = Idiomas.Strings.partner;
         }
 
+        private void buttonAgregarSocio_Click(object sender, EventArgs e)
+        {
+            FormSocio formSocio = new FormSocio();
+            formSocio.ShowDialog();
+        }
     }
 }
