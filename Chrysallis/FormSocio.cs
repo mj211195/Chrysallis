@@ -21,5 +21,15 @@ namespace Chrysallis
         {
             this.Close();
         }
+
+        private void FormSocio_Load(object sender, EventArgs e)
+        {
+            cambiarIdioma();
+        }
+
+        public void cambiarIdioma()
+        {
+
+        }
     }
 }

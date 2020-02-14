@@ -259,6 +259,7 @@
             this.Controls.Add(this.labelDni);
             this.Name = "FormSocio";
             this.Text = "FormSocio";
+            this.Load += new System.EventHandler(this.FormSocio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
