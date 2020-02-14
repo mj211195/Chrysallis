@@ -49,11 +49,29 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEventos.Designer.cs">
+      <DependentUpon>FormEventos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSocio.Designer.cs">
+      <DependentUpon>FormSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSocios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSocios.Designer.cs">
+      <DependentUpon>FormSocios.cs</DependentUpon>
     </Compile>
     <Compile Include="Idiomas\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -73,11 +91,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormEventos.resx">
+      <DependentUpon>FormEventos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSocio.resx">
+      <DependentUpon>FormSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSocios.resx">
+      <DependentUpon>FormSocios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Idiomas\Strings.en.resx" />
     <EmbeddedResource Include="Idiomas\Strings.es.resx" />

@@ -16,5 +16,29 @@ namespace Chrysallis
         {
             InitializeComponent();
         }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+            cambiarIdioma();
+        }
+
+        public void cambiarIdioma()
+        {
+            buttonAdministrarSocios.Text = Idiomas.Strings.managePartners;
+            buttonAdministrarEventos.Text = Idiomas.Strings.manageEvents;
+            this.Text = Idiomas.Strings.menu;
+        }
+
+        private void buttonAdministrarSocios_Click(object sender, EventArgs e)
+        {
+            FormSocios formSocios = new FormSocios();
+            formSocios.ShowDialog();
+        }
+
+        private void buttonAdministrarEventos_Click(object sender, EventArgs e)
+        {
+            FormEventos formEventos = new FormEventos();
+            formEventos.ShowDialog();
+        }
     }
 }

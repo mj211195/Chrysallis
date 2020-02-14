@@ -135,4 +135,58 @@
   <data name="english" xml:space="preserve">
     <value>Inglés</value>
   </data>
+  <data name="managePartners" xml:space="preserve">
+    <value>Gestionar socios</value>
+  </data>
+  <data name="manageEvents" xml:space="preserve">
+    <value>Gestionar eventos</value>
+  </data>
+  <data name="addPartner" xml:space="preserve">
+    <value>Agregar socio</value>
+  </data>
+  <data name="addEvent" xml:space="preserve">
+    <value>Agregar evento</value>
+  </data>
+  <data name="partners" xml:space="preserve">
+    <value>Socios</value>
+  </data>
+  <data name="menu" xml:space="preserve">
+    <value>Menú</value>
+  </data>
+  <data name="event" xml:space="preserve">
+    <value>Eventos</value>
+  </data>
+  <data name="partner" xml:space="preserve">
+    <value>Socio</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="lastName" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Correo</value>
+  </data>
+  <data name="admin" xml:space="preserve">
+    <value>Administrador</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>Estatal</value>
+  </data>
+  <data name="comunity" xml:space="preserve">
+    <value>Comunidad</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
 </root>

@@ -42,6 +42,7 @@ namespace Chrysallis
             itemCatalan.Value = Idiomas.Strings.catalan;
             itemSpanish.Value = Idiomas.Strings.spanish;
             itemEnglish.Value = Idiomas.Strings.english;
+            this.Text = Idiomas.Strings.login;
         }
 
         private void buttonCatalan_Click(object sender, EventArgs e)
@@ -83,6 +84,12 @@ namespace Chrysallis
                         break;
                 }
             }
+        }
+
+        private void buttonEntrar_Click(object sender, EventArgs e)
+        {
+            FormMenu formMenu = new FormMenu();
+            formMenu.ShowDialog();
         }
     }
 }
