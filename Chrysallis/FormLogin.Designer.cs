@@ -130,6 +130,8 @@
             this.Controls.Add(this.textBoxContrasenya);
             this.Controls.Add(this.textBoxUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.FormLogin_Load);
