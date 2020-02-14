@@ -57,7 +57,7 @@
             // 
             this.labelUsuario.AutoSize = true;
             this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuario.Location = new System.Drawing.Point(136, 194);
+            this.labelUsuario.Location = new System.Drawing.Point(133, 194);
             this.labelUsuario.Name = "labelUsuario";
             this.labelUsuario.Size = new System.Drawing.Size(79, 25);
             this.labelUsuario.TabIndex = 3;
@@ -67,7 +67,7 @@
             // 
             this.labelContrasenya.AutoSize = true;
             this.labelContrasenya.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContrasenya.Location = new System.Drawing.Point(117, 245);
+            this.labelContrasenya.Location = new System.Drawing.Point(113, 245);
             this.labelContrasenya.Name = "labelContrasenya";
             this.labelContrasenya.Size = new System.Drawing.Size(114, 25);
             this.labelContrasenya.TabIndex = 4;
