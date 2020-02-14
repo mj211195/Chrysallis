@@ -73,9 +73,9 @@ namespace Chrysallis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap español {
+        internal static System.Drawing.Bitmap espanol {
             get {
-                object obj = ResourceManager.GetObject("español", resourceCulture);
+                object obj = ResourceManager.GetObject("espanol", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

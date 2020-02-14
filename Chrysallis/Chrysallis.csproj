@@ -115,10 +115,10 @@
     <None Include="Resources\catalan.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\español.png" />
+    <None Include="Resources\UK.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\UK.png" />
+    <None Include="Resources\espanol.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

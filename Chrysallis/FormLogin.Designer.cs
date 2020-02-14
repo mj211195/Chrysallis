@@ -33,12 +33,9 @@
             this.textBoxContrasenya = new System.Windows.Forms.TextBox();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.labelContrasenya = new System.Windows.Forms.Label();
-            this.buttonCatalan = new System.Windows.Forms.Button();
-            this.buttonIngles = new System.Windows.Forms.Button();
-            this.buttonSpanish = new System.Windows.Forms.Button();
-            this.buttonEntrar = new AppDesktop.Button_WOC();
-            this.imagedComboBoxIdiomas = new ComboxExtended.ImagedComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imagedComboBoxIdiomas = new ComboxExtended.ImagedComboBox();
+            this.buttonEntrar = new AppDesktop.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,35 +73,26 @@
             this.labelContrasenya.TabIndex = 4;
             this.labelContrasenya.Text = "Contraseña";
             // 
-            // buttonCatalan
+            // pictureBox1
             // 
-            this.buttonCatalan.Location = new System.Drawing.Point(271, 368);
-            this.buttonCatalan.Name = "buttonCatalan";
-            this.buttonCatalan.Size = new System.Drawing.Size(75, 23);
-            this.buttonCatalan.TabIndex = 7;
-            this.buttonCatalan.Text = "Catalan";
-            this.buttonCatalan.UseVisualStyleBackColor = true;
-            this.buttonCatalan.Click += new System.EventHandler(this.buttonCatalan_Click);
+            this.pictureBox1.Image = global::Chrysallis.Properties.Resources.logo4;
+            this.pictureBox1.Location = new System.Drawing.Point(74, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(196, 152);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
-            // buttonIngles
+            // imagedComboBoxIdiomas
             // 
-            this.buttonIngles.Location = new System.Drawing.Point(190, 368);
-            this.buttonIngles.Name = "buttonIngles";
-            this.buttonIngles.Size = new System.Drawing.Size(75, 23);
-            this.buttonIngles.TabIndex = 8;
-            this.buttonIngles.Text = "Ingles";
-            this.buttonIngles.UseVisualStyleBackColor = true;
-            this.buttonIngles.Click += new System.EventHandler(this.buttonIngles_Click);
-            // 
-            // buttonSpanish
-            // 
-            this.buttonSpanish.Location = new System.Drawing.Point(109, 368);
-            this.buttonSpanish.Name = "buttonSpanish";
-            this.buttonSpanish.Size = new System.Drawing.Size(75, 23);
-            this.buttonSpanish.TabIndex = 9;
-            this.buttonSpanish.Text = "Castellano";
-            this.buttonSpanish.UseVisualStyleBackColor = true;
-            this.buttonSpanish.Click += new System.EventHandler(this.buttonSpanish_Click);
+            this.imagedComboBoxIdiomas.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.imagedComboBoxIdiomas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.imagedComboBoxIdiomas.FormattingEnabled = true;
+            this.imagedComboBoxIdiomas.Location = new System.Drawing.Point(216, 370);
+            this.imagedComboBoxIdiomas.Name = "imagedComboBoxIdiomas";
+            this.imagedComboBoxIdiomas.Size = new System.Drawing.Size(121, 21);
+            this.imagedComboBoxIdiomas.TabIndex = 10;
+            this.imagedComboBoxIdiomas.SelectedIndexChanged += new System.EventHandler(this.imagedComboBoxIdiomas_SelectedIndexChanged);
             // 
             // buttonEntrar
             // 
@@ -127,25 +115,6 @@
             this.buttonEntrar.TextColor = System.Drawing.Color.Black;
             this.buttonEntrar.UseVisualStyleBackColor = false;
             // 
-            // imagedComboBoxIdiomas
-            // 
-            this.imagedComboBoxIdiomas.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.imagedComboBoxIdiomas.FormattingEnabled = true;
-            this.imagedComboBoxIdiomas.Location = new System.Drawing.Point(221, 180);
-            this.imagedComboBoxIdiomas.Name = "imagedComboBoxIdiomas";
-            this.imagedComboBoxIdiomas.Size = new System.Drawing.Size(121, 21);
-            this.imagedComboBoxIdiomas.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Chrysallis.Properties.Resources.logo4;
-            this.pictureBox1.Location = new System.Drawing.Point(74, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,9 +122,6 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(358, 403);
             this.Controls.Add(this.imagedComboBoxIdiomas);
-            this.Controls.Add(this.buttonSpanish);
-            this.Controls.Add(this.buttonIngles);
-            this.Controls.Add(this.buttonCatalan);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.labelContrasenya);
@@ -179,9 +145,6 @@
         private System.Windows.Forms.Label labelContrasenya;
         private AppDesktop.Button_WOC buttonEntrar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonCatalan;
-        private System.Windows.Forms.Button buttonIngles;
-        private System.Windows.Forms.Button buttonSpanish;
         private ComboxExtended.ImagedComboBox imagedComboBoxIdiomas;
     }
 }
