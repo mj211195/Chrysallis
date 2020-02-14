@@ -20,7 +20,7 @@ namespace Chrysallis
         private void FormSocios_Load(object sender, EventArgs e)
         {
             buttonAgregarSocio.Text = Idiomas.Strings.addPartner;
-            this.Text = Idiomas.Strings.partner;
+            this.Text = Idiomas.Strings.partners;
         }
 
         private void buttonAgregarSocio_Click(object sender, EventArgs e)

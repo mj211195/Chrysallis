@@ -147,7 +147,7 @@
   <data name="addEvent" xml:space="preserve">
     <value>Add event</value>
   </data>
-  <data name="partner" xml:space="preserve">
+  <data name="partners" xml:space="preserve">
     <value>Partners</value>
   </data>
   <data name="menu" xml:space="preserve">
@@ -155,5 +155,38 @@
   </data>
   <data name="event" xml:space="preserve">
     <value>Events</value>
+  </data>
+  <data name="partner" xml:space="preserve">
+    <value>Partner</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="admin" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="comunity" xml:space="preserve">
+    <value>Comunity</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
   </data>
 </root>

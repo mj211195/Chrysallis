@@ -29,6 +29,18 @@ namespace Chrysallis
 
         public void cambiarIdioma()
         {
+            this.Text = Idiomas.Strings.partner;
+            labelPhone.Text = Idiomas.Strings.phone;
+            labelName.Text = Idiomas.Strings.name;
+            labelLastName.Text = Idiomas.Strings.lastName;
+            labelAddress.Text = Idiomas.Strings.address;
+            labelEmail.Text = Idiomas.Strings.email;
+            labelPassword.Text = Idiomas.Strings.password;
+            labelComunidad.Text = Idiomas.Strings.comunity;
+            buttonSave.Text = Idiomas.Strings.save;
+            checkBoxActive.Text = Idiomas.Strings.active;
+            checkBoxState.Text = Idiomas.Strings.state;
+            checkBoxAdministrator.Text = Idiomas.Strings.admin;
 
         }
     }

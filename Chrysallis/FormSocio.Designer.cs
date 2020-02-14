@@ -43,8 +43,8 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.checkBoxActive = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxAdministrator = new System.Windows.Forms.CheckBox();
+            this.checkBoxState = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelComunidad = new System.Windows.Forms.Label();
             this.buttonSave = new AppDesktop.Button_WOC();
@@ -172,25 +172,25 @@
             this.checkBoxActive.Text = "Activo";
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBoxAdministrator
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(142, 226);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(89, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Administrador";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxAdministrator.AutoSize = true;
+            this.checkBoxAdministrator.Location = new System.Drawing.Point(142, 226);
+            this.checkBoxAdministrator.Name = "checkBoxAdministrator";
+            this.checkBoxAdministrator.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxAdministrator.TabIndex = 16;
+            this.checkBoxAdministrator.Text = "Administrador";
+            this.checkBoxAdministrator.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxState
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(240, 226);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(58, 17);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "Estatal";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxState.AutoSize = true;
+            this.checkBoxState.Location = new System.Drawing.Point(240, 226);
+            this.checkBoxState.Name = "checkBoxState";
+            this.checkBoxState.Size = new System.Drawing.Size(58, 17);
+            this.checkBoxState.TabIndex = 17;
+            this.checkBoxState.Text = "Estatal";
+            this.checkBoxState.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -240,8 +240,8 @@
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelComunidad);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxState);
+            this.Controls.Add(this.checkBoxAdministrator);
             this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBox7);
@@ -282,8 +282,8 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.CheckBox checkBoxActive;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBoxAdministrator;
+        private System.Windows.Forms.CheckBox checkBoxState;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label labelComunidad;
         private AppDesktop.Button_WOC buttonSave;
