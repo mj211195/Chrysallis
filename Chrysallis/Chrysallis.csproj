@@ -49,6 +49,12 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEvento.Designer.cs">
+      <DependentUpon>FormEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEventos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormEvento.resx">
+      <DependentUpon>FormEvento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEventos.resx">
       <DependentUpon>FormEventos.cs</DependentUpon>
     </EmbeddedResource>
