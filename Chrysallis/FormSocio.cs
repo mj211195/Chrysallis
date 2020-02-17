@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chrysallis
@@ -61,40 +54,30 @@ namespace Chrysallis
                 socio.apellidos = textBoxLastName.Text.Trim();
                 socio.mail = textBoxEmail.Text.Trim();
                 socio.password = textBoxPassword.Text.Trim();
-                /*if (checkBoxAdministrator.Checked)
+                socio.activo = checkBoxActive.Checked;
+                socio.administrador = checkBoxAdministrator.Checked;
+                socio.estatal = checkBoxState.Checked;
+                if (checkBoxAdministrator.Checked)
                 {
-                    socio.id_comunidad = comboBoxComunity.SelectedValue;
-                }
-
-                hotel.id_ciudad = (int)comboBoxCiudad.SelectedValue;
-                hotel.nombre = textBoxNombre.Text;
-                hotel.categoria = int.Parse(textBoxCategoria.Text.Trim());
-                hotel.direccion = textBoxDireccion.Text;
-                hotel.telefono = int.Parse(textBoxTelefono.Text);
-                hotel.tipo = comboBoxTipo.Text;
-                hotel.cif = comboBoxCadena.SelectedValue.ToString();
-
-
-                if (nombre == null)
-                {
-                    if (BD.ORM.InsertHotel(hotel))
+                    if (comboBoxComunity.SelectedItem != null)
                     {
-                        MessageBox.Show("El hotel ha sido creado", "CREADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                        socio.id_comunidad = (int)comboBoxComunity.SelectedValue;
                     }
-
+                    
                 }
                 else
                 {
-                    BD.ORM.UpdateHotel(hotel);
-                    MessageBox.Show("El hotel ha sido modificado", "MODIFICADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }*/
+                    socio.id_comunidad = null;
+                }
+                
+                
             }
         }
 
         private void FormSocio_Load(object sender, EventArgs e)
         {
+            bindingSourceComunidades.DataSource = BD.ComunidadORM.SelectAllComunidades();
+            buttonSave.Location = new System.Drawing.Point(97, 224);
             cambiarIdioma();
         }
 
