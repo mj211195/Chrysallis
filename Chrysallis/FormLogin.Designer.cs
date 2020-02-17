@@ -55,23 +55,23 @@
             // 
             // labelUsuario
             // 
-            this.labelUsuario.AutoSize = true;
             this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuario.Location = new System.Drawing.Point(133, 194);
+            this.labelUsuario.Location = new System.Drawing.Point(52, 185);
             this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(79, 25);
+            this.labelUsuario.Size = new System.Drawing.Size(234, 25);
             this.labelUsuario.TabIndex = 3;
-            this.labelUsuario.Text = "Usuario";
+            this.labelUsuario.Text = "Usuari";
+            this.labelUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelContrasenya
             // 
-            this.labelContrasenya.AutoSize = true;
             this.labelContrasenya.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContrasenya.Location = new System.Drawing.Point(113, 245);
+            this.labelContrasenya.Location = new System.Drawing.Point(52, 245);
             this.labelContrasenya.Name = "labelContrasenya";
-            this.labelContrasenya.Size = new System.Drawing.Size(114, 25);
+            this.labelContrasenya.Size = new System.Drawing.Size(234, 25);
             this.labelContrasenya.TabIndex = 4;
-            this.labelContrasenya.Text = "Contraseña";
+            this.labelContrasenya.Text = "Contrasenya";
+            this.labelContrasenya.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox1
             // 
@@ -87,8 +87,9 @@
             // 
             this.imagedComboBoxIdiomas.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.imagedComboBoxIdiomas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.imagedComboBoxIdiomas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.imagedComboBoxIdiomas.FormattingEnabled = true;
-            this.imagedComboBoxIdiomas.Location = new System.Drawing.Point(216, 370);
+            this.imagedComboBoxIdiomas.Location = new System.Drawing.Point(234, 376);
             this.imagedComboBoxIdiomas.Name = "imagedComboBoxIdiomas";
             this.imagedComboBoxIdiomas.Size = new System.Drawing.Size(121, 21);
             this.imagedComboBoxIdiomas.TabIndex = 10;
@@ -120,6 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(358, 403);
             this.Controls.Add(this.imagedComboBoxIdiomas);
