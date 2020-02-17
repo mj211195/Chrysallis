@@ -98,7 +98,9 @@ namespace Chrysallis
             }
             else
             {
-                socios socio = SocioORM.LoginSocio(dni, password);
+                OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
+                String clave = hash.Sha512(password);
+                socios socio = SocioORM.LoginSocio(dni, clave);
                 if (socio != null)
                 {
                     cerradoPropio = true;
