@@ -96,6 +96,8 @@ namespace Chrysallis
         private void FormSocio_Load(object sender, EventArgs e)
         {
             cambiarIdioma();
+
+            buttonSave.Location = new System.Drawing.Point(97, 224);
         }
 
         public void cambiarIdioma()
