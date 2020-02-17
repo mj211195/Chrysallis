@@ -20,6 +20,8 @@ namespace Chrysallis
         private void FormMenu_Load(object sender, EventArgs e)
         {
             cambiarIdioma();
+            FormLogin formLogin = new FormLogin();
+            formLogin.ShowDialog();
         }
 
         public void cambiarIdioma()

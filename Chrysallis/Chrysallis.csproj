@@ -59,6 +59,7 @@
       <DependentUpon>ModelChrysallis.tt</DependentUpon>
     </Compile>
     <Compile Include="BD\ORM.cs" />
+    <Compile Include="BD\SocioORM.cs" />
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -182,6 +183,11 @@
       <DependentUpon>ModelChrysallis.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\asistir.datasource" />
+    <None Include="Properties\DataSources\comunidades.datasource" />
+    <None Include="Properties\DataSources\eventos.datasource" />
+    <None Include="Properties\DataSources\notificaciones.datasource" />
+    <None Include="Properties\DataSources\socios.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
