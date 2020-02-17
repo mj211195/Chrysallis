@@ -189,4 +189,31 @@
   <data name="save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="chosse" xml:space="preserve">
+    <value>Chosse</value>
+  </data>
+  <data name="community" xml:space="preserve">
+    <value>Community</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="deadline" xml:space="preserve">
+    <value>Deadline</value>
+  </data>
+  <data name="documents" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="numberOfAttendees" xml:space="preserve">
+    <value>Number of attendees</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Time</value>
+  </data>
 </root>

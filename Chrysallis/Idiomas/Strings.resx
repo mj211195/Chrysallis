@@ -189,4 +189,31 @@
   <data name="save" xml:space="preserve">
     <value>Desar</value>
   </data>
+  <data name="chosse" xml:space="preserve">
+    <value>Selecciona</value>
+  </data>
+  <data name="community" xml:space="preserve">
+    <value>Comunitat</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="deadline" xml:space="preserve">
+    <value>Data limit</value>
+  </data>
+  <data name="documents" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>Ubicació</value>
+  </data>
+  <data name="notifications" xml:space="preserve">
+    <value>Notificacions</value>
+  </data>
+  <data name="numberOfAttendees" xml:space="preserve">
+    <value>Nombre assistents</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Hora</value>
+  </data>
 </root>

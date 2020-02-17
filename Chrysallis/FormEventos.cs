@@ -22,5 +22,11 @@ namespace Chrysallis
             buttonAgregarEvento.Text = Idiomas.Strings.addEvent;
             this.Text = Idiomas.Strings._event;
         }
+
+        private void buttonAgregarEvento_Click(object sender, EventArgs e)
+        {
+            FormEvento formEvento = new FormEvento();
+            formEvento.ShowDialog();
+        }
     }
 }
