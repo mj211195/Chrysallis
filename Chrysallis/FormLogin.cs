@@ -1,4 +1,5 @@
-﻿using ComboxExtended;
+﻿using Chrysallis.BD;
+using ComboxExtended;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace Chrysallis
         ComboBoxItem itemCatalan = new ComboBoxItem(Idiomas.Strings.catalan, new Bitmap(Chrysallis.Properties.Resources.catalan));
         ComboBoxItem itemSpanish = new ComboBoxItem(Idiomas.Strings.spanish, new Bitmap(Chrysallis.Properties.Resources.espanol));
         ComboBoxItem itemEnglish = new ComboBoxItem(Idiomas.Strings.english, new Bitmap(Chrysallis.Properties.Resources.UK));
+        Boolean cerradoPropio = false;
         public FormLogin()
         {
             InitializeComponent();
@@ -88,8 +90,33 @@ namespace Chrysallis
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
-            FormMenu formMenu = new FormMenu();
-            formMenu.ShowDialog();
+            String dni = textBoxUsuario.Text.ToString();
+            String password = textBoxContrasenya.Text.ToString();
+            if (dni.Trim().Equals("") || password.Trim().Equals(""))
+            {
+                MessageBox.Show("Usuari i/o contraseña vacios!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                socios socio = SocioORM.loginSocio(dni, password);
+                if (socio != null)
+                {
+                    cerradoPropio = true;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Credenciales incorrectas!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!cerradoPropio)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -11,14 +11,14 @@ namespace Chrysallis.BD
 {
     public static class SocioORM
     {
-        public static socios SelectSocio(String dni,String password)
+        public static socios loginSocio(String dni,String password)
         {
             socios socio = null;
             try
             {
                 socio = (
                 from s in ORM.bd.socios
-                where s.dni.Equals(dni) && s.password.Equals(password)
+                where s.dni.Equals(dni) && s.password.Equals(password) && s.administrador == true && s.activo == true
                 select s).FirstOrDefault();
             }
             catch (EntityException ex)
