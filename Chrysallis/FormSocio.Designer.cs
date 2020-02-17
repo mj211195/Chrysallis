@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.labelDni = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxDni = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelLastName = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.checkBoxActive = new System.Windows.Forms.CheckBox();
             this.checkBoxAdministrator = new System.Windows.Forms.CheckBox();
@@ -59,33 +59,33 @@
             this.labelDni.TabIndex = 0;
             this.labelDni.Text = "DNI";
             // 
-            // textBox1
+            // textBoxDni
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBoxDni.Location = new System.Drawing.Point(80, 16);
+            this.textBoxDni.Name = "textBoxDni";
+            this.textBoxDni.Size = new System.Drawing.Size(298, 20);
+            this.textBoxDni.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxPhone
             // 
-            this.textBox2.Location = new System.Drawing.Point(80, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(298, 20);
-            this.textBox2.TabIndex = 2;
+            this.textBoxPhone.Location = new System.Drawing.Point(80, 42);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(298, 20);
+            this.textBoxPhone.TabIndex = 2;
             // 
-            // textBox3
+            // textBoxName
             // 
-            this.textBox3.Location = new System.Drawing.Point(80, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(298, 20);
-            this.textBox3.TabIndex = 3;
+            this.textBoxName.Location = new System.Drawing.Point(80, 68);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(298, 20);
+            this.textBoxName.TabIndex = 3;
             // 
-            // textBox4
+            // textBoxLastName
             // 
-            this.textBox4.Location = new System.Drawing.Point(80, 94);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(298, 20);
-            this.textBox4.TabIndex = 4;
+            this.textBoxLastName.Location = new System.Drawing.Point(80, 94);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(298, 20);
+            this.textBoxLastName.TabIndex = 4;
             // 
             // labelPhone
             // 
@@ -114,12 +114,12 @@
             this.labelLastName.TabIndex = 7;
             this.labelLastName.Text = "Apellidos";
             // 
-            // textBox5
+            // textBoxAddress
             // 
-            this.textBox5.Location = new System.Drawing.Point(80, 120);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(298, 20);
-            this.textBox5.TabIndex = 8;
+            this.textBoxAddress.Location = new System.Drawing.Point(80, 120);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(298, 20);
+            this.textBoxAddress.TabIndex = 8;
             // 
             // labelAddress
             // 
@@ -130,12 +130,12 @@
             this.labelAddress.TabIndex = 9;
             this.labelAddress.Text = "Dirección";
             // 
-            // textBox6
+            // textBoxEmail
             // 
-            this.textBox6.Location = new System.Drawing.Point(80, 146);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(298, 20);
-            this.textBox6.TabIndex = 10;
+            this.textBoxEmail.Location = new System.Drawing.Point(80, 146);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(298, 20);
+            this.textBoxEmail.TabIndex = 10;
             // 
             // labelEmail
             // 
@@ -146,12 +146,12 @@
             this.labelEmail.TabIndex = 11;
             this.labelEmail.Text = "Correo";
             // 
-            // textBox7
+            // textBoxPassword
             // 
-            this.textBox7.Location = new System.Drawing.Point(80, 172);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(298, 20);
-            this.textBox7.TabIndex = 12;
+            this.textBoxPassword.Location = new System.Drawing.Point(80, 172);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(298, 20);
+            this.textBoxPassword.TabIndex = 12;
             // 
             // labelPassword
             // 
@@ -244,18 +244,18 @@
             this.Controls.Add(this.checkBoxAdministrator);
             this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.labelPassword);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelEmail);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.labelAddress);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.labelLastName);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelPhone);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxLastName);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.textBoxPhone);
+            this.Controls.Add(this.textBoxDni);
             this.Controls.Add(this.labelDni);
             this.Name = "FormSocio";
             this.Text = "FormSocio";
@@ -268,18 +268,18 @@
         #endregion
 
         private System.Windows.Forms.Label labelDni;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxDni;
+        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelLastName;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.Label labelAddress;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.CheckBox checkBoxActive;
         private System.Windows.Forms.CheckBox checkBoxAdministrator;
