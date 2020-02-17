@@ -54,7 +54,11 @@ namespace Chrysallis
                 socio.nombre = textBoxName.Text.Trim();
                 socio.apellidos = textBoxLastName.Text.Trim();
                 socio.mail = textBoxEmail.Text.Trim();
-                socio.password = textBoxPassword.Text.Trim();
+
+                OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
+                String clave = hash.Sha512(textBoxPassword.Text.Trim());
+                socio.password = clave;
+
                 socio.activo = checkBoxActive.Checked;
                 socio.administrador = checkBoxAdministrator.Checked;
                 socio.estatal = checkBoxState.Checked;
