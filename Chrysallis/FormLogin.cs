@@ -20,7 +20,6 @@ namespace Chrysallis
         ComboBoxItem itemSpanish = new ComboBoxItem(Idiomas.Strings.spanish, new Bitmap(Chrysallis.Properties.Resources.espanol));
         ComboBoxItem itemEnglish = new ComboBoxItem(Idiomas.Strings.english, new Bitmap(Chrysallis.Properties.Resources.UK));
         Boolean cerradoPropio = false;
-
         public FormLogin()
         {
             InitializeComponent();
