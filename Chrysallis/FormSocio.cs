@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chrysallis.BD;
+using System;
 using System.Windows.Forms;
 
 namespace Chrysallis
@@ -69,6 +70,12 @@ namespace Chrysallis
                 {
                     socio.id_comunidad = null;
                 }
+
+                if (SocioORM.InsertSocio(socio))
+                {
+                    MessageBox.Show("El socio ha sido creado", "CREADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
                 
                 
             }
@@ -76,7 +83,7 @@ namespace Chrysallis
 
         private void FormSocio_Load(object sender, EventArgs e)
         {
-            bindingSourceComunidades.DataSource = BD.ComunidadORM.SelectAllComunidades();
+            bindingSourceComunidades.DataSource = ComunidadORM.SelectAllComunidades();
             buttonSave.Location = new System.Drawing.Point(97, 224);
             cambiarIdioma();
         }
