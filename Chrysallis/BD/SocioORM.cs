@@ -11,7 +11,7 @@ namespace Chrysallis.BD
 {
     public static class SocioORM
     {
-        public static socios loginSocio(String dni,String password)
+        public static socios LoginSocio(String dni,String password)
         {
             socios socio = null;
             try

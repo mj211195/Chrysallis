@@ -98,7 +98,7 @@ namespace Chrysallis
             }
             else
             {
-                socios socio = SocioORM.loginSocio(dni, password);
+                socios socio = SocioORM.LoginSocio(dni, password);
                 if (socio != null)
                 {
                     cerradoPropio = true;
