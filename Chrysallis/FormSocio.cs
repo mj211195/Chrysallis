@@ -40,17 +40,32 @@ namespace Chrysallis
             {
                 MessageBox.Show("Los apellidos no pueden estar vacíos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (textBoxAddress.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("La dirección no puede estar vacía", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             else if (textBoxEmail.Text.Trim().Equals(""))
             {
                 MessageBox.Show("El correo no puede estar vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (textBoxPassword.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("La contraseña no puede estar vacía", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!textBoxPassword2.Text.Trim().Equals(textBoxPassword.Text.Trim()))
+            {
+                MessageBox.Show("La contraseña no coincide", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
-                hoteles hotel = new hoteles();
+                socios socio = new socios();
+                socio.dni = textBoxDni.Text.Trim();
+                socio.telefono = textBoxPhone.Text.Trim();
+                socio.nombre = textBoxName.Text.Trim();
+                socio.apellidos = textBoxLastName.Text.Trim();
+                socio.mail = textBoxEmail.Text.Trim();
+                socio.password = textBoxPassword.Text.Trim();
+                /*if (checkBoxAdministrator.Checked)
+                {
+                    socio.id_comunidad = comboBoxComunity.SelectedValue;
+                }
+
                 hotel.id_ciudad = (int)comboBoxCiudad.SelectedValue;
                 hotel.nombre = textBoxNombre.Text;
                 hotel.categoria = int.Parse(textBoxCategoria.Text.Trim());
@@ -74,7 +89,7 @@ namespace Chrysallis
                     BD.ORM.UpdateHotel(hotel);
                     MessageBox.Show("El hotel ha sido modificado", "MODIFICADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                }
+                }*/
             }
         }
 
@@ -89,7 +104,6 @@ namespace Chrysallis
             labelPhone.Text = Idiomas.Strings.phone;
             labelName.Text = Idiomas.Strings.name;
             labelLastName.Text = Idiomas.Strings.lastName;
-            labelAddress.Text = Idiomas.Strings.address;
             labelEmail.Text = Idiomas.Strings.email;
             labelPassword.Text = Idiomas.Strings.password;
             labelComunidad.Text = Idiomas.Strings.comunity;
@@ -98,6 +112,25 @@ namespace Chrysallis
             checkBoxState.Text = Idiomas.Strings.state;
             checkBoxAdministrator.Text = Idiomas.Strings.admin;
 
+        }
+
+        private void checkBoxAdministrator_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAdministrator.Checked)
+            {
+                checkBoxState.Visible = true;
+                labelComunidad.Visible = true;
+                comboBoxComunity.Visible = true;
+                buttonSave.Location = new System.Drawing.Point(97,251);
+            }
+            else
+            {
+
+                checkBoxState.Visible = false;
+                labelComunidad.Visible = false;
+                comboBoxComunity.Visible = false;
+                buttonSave.Location = new System.Drawing.Point(97, 224);
+            }
         }
     }
 }
