@@ -45,7 +45,7 @@
             this.checkBoxActive = new System.Windows.Forms.CheckBox();
             this.checkBoxAdministrator = new System.Windows.Forms.CheckBox();
             this.checkBoxState = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxComunity = new System.Windows.Forms.ComboBox();
             this.labelComunidad = new System.Windows.Forms.Label();
             this.buttonSave = new AppDesktop.Button_WOC();
             this.SuspendLayout();
@@ -192,14 +192,14 @@
             this.checkBoxState.Text = "Estatal";
             this.checkBoxState.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboBoxComunity
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(80, 199);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(298, 21);
-            this.comboBox1.TabIndex = 18;
+            this.comboBoxComunity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxComunity.FormattingEnabled = true;
+            this.comboBoxComunity.Location = new System.Drawing.Point(80, 199);
+            this.comboBoxComunity.Name = "comboBoxComunity";
+            this.comboBoxComunity.Size = new System.Drawing.Size(298, 21);
+            this.comboBoxComunity.TabIndex = 18;
             // 
             // labelComunidad
             // 
@@ -239,7 +239,7 @@
             this.ClientSize = new System.Drawing.Size(389, 303);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelComunidad);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxComunity);
             this.Controls.Add(this.checkBoxState);
             this.Controls.Add(this.checkBoxAdministrator);
             this.Controls.Add(this.checkBoxActive);
@@ -284,7 +284,7 @@
         private System.Windows.Forms.CheckBox checkBoxActive;
         private System.Windows.Forms.CheckBox checkBoxAdministrator;
         private System.Windows.Forms.CheckBox checkBoxState;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxComunity;
         private System.Windows.Forms.Label labelComunidad;
         private AppDesktop.Button_WOC buttonSave;
     }
