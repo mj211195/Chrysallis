@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelDni = new System.Windows.Forms.Label();
             this.textBoxDni = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -36,8 +37,6 @@
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelLastName = new System.Windows.Forms.Label();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.labelAddress = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
@@ -46,8 +45,12 @@
             this.checkBoxAdministrator = new System.Windows.Forms.CheckBox();
             this.checkBoxState = new System.Windows.Forms.CheckBox();
             this.comboBoxComunity = new System.Windows.Forms.ComboBox();
+            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
             this.labelComunidad = new System.Windows.Forms.Label();
             this.buttonSave = new AppDesktop.Button_WOC();
+            this.labelPassword2 = new System.Windows.Forms.Label();
+            this.textBoxPassword2 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDni
@@ -114,25 +117,9 @@
             this.labelLastName.TabIndex = 7;
             this.labelLastName.Text = "Apellidos";
             // 
-            // textBoxAddress
-            // 
-            this.textBoxAddress.Location = new System.Drawing.Point(80, 120);
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(298, 20);
-            this.textBoxAddress.TabIndex = 8;
-            // 
-            // labelAddress
-            // 
-            this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(13, 123);
-            this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(52, 13);
-            this.labelAddress.TabIndex = 9;
-            this.labelAddress.Text = "Dirección";
-            // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(80, 146);
+            this.textBoxEmail.Location = new System.Drawing.Point(79, 120);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(298, 20);
             this.textBoxEmail.TabIndex = 10;
@@ -140,7 +127,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(13, 149);
+            this.labelEmail.Location = new System.Drawing.Point(13, 123);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(38, 13);
             this.labelEmail.TabIndex = 11;
@@ -148,7 +135,7 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(80, 172);
+            this.textBoxPassword.Location = new System.Drawing.Point(79, 146);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(298, 20);
             this.textBoxPassword.TabIndex = 12;
@@ -156,7 +143,7 @@
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(13, 175);
+            this.labelPassword.Location = new System.Drawing.Point(13, 149);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(61, 13);
             this.labelPassword.TabIndex = 13;
@@ -165,7 +152,7 @@
             // checkBoxActive
             // 
             this.checkBoxActive.AutoSize = true;
-            this.checkBoxActive.Location = new System.Drawing.Point(80, 226);
+            this.checkBoxActive.Location = new System.Drawing.Point(97, 201);
             this.checkBoxActive.Name = "checkBoxActive";
             this.checkBoxActive.Size = new System.Drawing.Size(56, 17);
             this.checkBoxActive.TabIndex = 15;
@@ -175,40 +162,51 @@
             // checkBoxAdministrator
             // 
             this.checkBoxAdministrator.AutoSize = true;
-            this.checkBoxAdministrator.Location = new System.Drawing.Point(142, 226);
+            this.checkBoxAdministrator.Location = new System.Drawing.Point(159, 201);
             this.checkBoxAdministrator.Name = "checkBoxAdministrator";
             this.checkBoxAdministrator.Size = new System.Drawing.Size(89, 17);
             this.checkBoxAdministrator.TabIndex = 16;
             this.checkBoxAdministrator.Text = "Administrador";
             this.checkBoxAdministrator.UseVisualStyleBackColor = true;
+            this.checkBoxAdministrator.CheckedChanged += new System.EventHandler(this.checkBoxAdministrator_CheckedChanged);
             // 
             // checkBoxState
             // 
             this.checkBoxState.AutoSize = true;
-            this.checkBoxState.Location = new System.Drawing.Point(240, 226);
+            this.checkBoxState.Location = new System.Drawing.Point(254, 201);
             this.checkBoxState.Name = "checkBoxState";
             this.checkBoxState.Size = new System.Drawing.Size(58, 17);
             this.checkBoxState.TabIndex = 17;
             this.checkBoxState.Text = "Estatal";
             this.checkBoxState.UseVisualStyleBackColor = true;
+            this.checkBoxState.Visible = false;
             // 
             // comboBoxComunity
             // 
+            this.comboBoxComunity.DataSource = this.bindingSourceComunidades;
+            this.comboBoxComunity.DisplayMember = "nombre";
             this.comboBoxComunity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunity.FormattingEnabled = true;
-            this.comboBoxComunity.Location = new System.Drawing.Point(80, 199);
+            this.comboBoxComunity.Location = new System.Drawing.Point(80, 224);
             this.comboBoxComunity.Name = "comboBoxComunity";
             this.comboBoxComunity.Size = new System.Drawing.Size(298, 21);
             this.comboBoxComunity.TabIndex = 18;
+            this.comboBoxComunity.ValueMember = "id";
+            this.comboBoxComunity.Visible = false;
+            // 
+            // bindingSourceComunidades
+            // 
+            this.bindingSourceComunidades.DataSource = typeof(Chrysallis.comunidades);
             // 
             // labelComunidad
             // 
             this.labelComunidad.AutoSize = true;
-            this.labelComunidad.Location = new System.Drawing.Point(13, 202);
+            this.labelComunidad.Location = new System.Drawing.Point(14, 227);
             this.labelComunidad.Name = "labelComunidad";
             this.labelComunidad.Size = new System.Drawing.Size(60, 13);
             this.labelComunidad.TabIndex = 19;
             this.labelComunidad.Text = "Comunidad";
+            this.labelComunidad.Visible = false;
             // 
             // buttonSave
             // 
@@ -220,7 +218,7 @@
             this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Consolas", 12F);
-            this.buttonSave.Location = new System.Drawing.Point(98, 249);
+            this.buttonSave.Location = new System.Drawing.Point(97, 251);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.OnHoverBorderColor = System.Drawing.Color.Gray;
             this.buttonSave.OnHoverButtonColor = System.Drawing.Color.Azure;
@@ -232,11 +230,30 @@
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // labelPassword2
+            // 
+            this.labelPassword2.Location = new System.Drawing.Point(13, 169);
+            this.labelPassword2.Name = "labelPassword2";
+            this.labelPassword2.Size = new System.Drawing.Size(61, 26);
+            this.labelPassword2.TabIndex = 22;
+            this.labelPassword2.Text = "Verificar contraseña";
+            // 
+            // textBoxPassword2
+            // 
+            this.textBoxPassword2.Location = new System.Drawing.Point(79, 175);
+            this.textBoxPassword2.Name = "textBoxPassword2";
+            this.textBoxPassword2.Size = new System.Drawing.Size(298, 20);
+            this.textBoxPassword2.TabIndex = 21;
+            // 
             // FormSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 303);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(396, 298);
+            this.Controls.Add(this.labelPassword2);
+            this.Controls.Add(this.textBoxPassword2);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelComunidad);
             this.Controls.Add(this.comboBoxComunity);
@@ -247,8 +264,6 @@
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.textBoxEmail);
-            this.Controls.Add(this.labelAddress);
-            this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.labelLastName);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelPhone);
@@ -257,9 +272,12 @@
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxDni);
             this.Controls.Add(this.labelDni);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormSocio";
             this.Text = "FormSocio";
             this.Load += new System.EventHandler(this.FormSocio_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,8 +293,6 @@
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelLastName;
-        private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox textBoxPassword;
@@ -287,5 +303,8 @@
         private System.Windows.Forms.ComboBox comboBoxComunity;
         private System.Windows.Forms.Label labelComunidad;
         private AppDesktop.Button_WOC buttonSave;
+        private System.Windows.Forms.Label labelPassword2;
+        private System.Windows.Forms.TextBox textBoxPassword2;
+        private System.Windows.Forms.BindingSource bindingSourceComunidades;
     }
 }
