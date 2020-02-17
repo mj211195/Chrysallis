@@ -48,6 +48,8 @@
             this.comboBoxComunity = new System.Windows.Forms.ComboBox();
             this.labelComunidad = new System.Windows.Forms.Label();
             this.buttonSave = new AppDesktop.Button_WOC();
+            this.labelPassword2 = new System.Windows.Forms.Label();
+            this.textBoxPassword2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelDni
@@ -165,7 +167,7 @@
             // checkBoxActive
             // 
             this.checkBoxActive.AutoSize = true;
-            this.checkBoxActive.Location = new System.Drawing.Point(80, 226);
+            this.checkBoxActive.Location = new System.Drawing.Point(80, 286);
             this.checkBoxActive.Name = "checkBoxActive";
             this.checkBoxActive.Size = new System.Drawing.Size(56, 17);
             this.checkBoxActive.TabIndex = 15;
@@ -175,7 +177,7 @@
             // checkBoxAdministrator
             // 
             this.checkBoxAdministrator.AutoSize = true;
-            this.checkBoxAdministrator.Location = new System.Drawing.Point(142, 226);
+            this.checkBoxAdministrator.Location = new System.Drawing.Point(142, 286);
             this.checkBoxAdministrator.Name = "checkBoxAdministrator";
             this.checkBoxAdministrator.Size = new System.Drawing.Size(89, 17);
             this.checkBoxAdministrator.TabIndex = 16;
@@ -185,7 +187,7 @@
             // checkBoxState
             // 
             this.checkBoxState.AutoSize = true;
-            this.checkBoxState.Location = new System.Drawing.Point(240, 226);
+            this.checkBoxState.Location = new System.Drawing.Point(237, 286);
             this.checkBoxState.Name = "checkBoxState";
             this.checkBoxState.Size = new System.Drawing.Size(58, 17);
             this.checkBoxState.TabIndex = 17;
@@ -196,7 +198,7 @@
             // 
             this.comboBoxComunity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunity.FormattingEnabled = true;
-            this.comboBoxComunity.Location = new System.Drawing.Point(80, 199);
+            this.comboBoxComunity.Location = new System.Drawing.Point(80, 259);
             this.comboBoxComunity.Name = "comboBoxComunity";
             this.comboBoxComunity.Size = new System.Drawing.Size(298, 21);
             this.comboBoxComunity.TabIndex = 18;
@@ -204,7 +206,7 @@
             // labelComunidad
             // 
             this.labelComunidad.AutoSize = true;
-            this.labelComunidad.Location = new System.Drawing.Point(13, 202);
+            this.labelComunidad.Location = new System.Drawing.Point(13, 262);
             this.labelComunidad.Name = "labelComunidad";
             this.labelComunidad.Size = new System.Drawing.Size(60, 13);
             this.labelComunidad.TabIndex = 19;
@@ -220,7 +222,7 @@
             this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Consolas", 12F);
-            this.buttonSave.Location = new System.Drawing.Point(98, 249);
+            this.buttonSave.Location = new System.Drawing.Point(95, 304);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.OnHoverBorderColor = System.Drawing.Color.Gray;
             this.buttonSave.OnHoverButtonColor = System.Drawing.Color.Azure;
@@ -232,11 +234,28 @@
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // labelPassword2
+            // 
+            this.labelPassword2.Location = new System.Drawing.Point(13, 201);
+            this.labelPassword2.Name = "labelPassword2";
+            this.labelPassword2.Size = new System.Drawing.Size(61, 26);
+            this.labelPassword2.TabIndex = 22;
+            this.labelPassword2.Text = "Verificar contraseña";
+            // 
+            // textBoxPassword2
+            // 
+            this.textBoxPassword2.Location = new System.Drawing.Point(80, 207);
+            this.textBoxPassword2.Name = "textBoxPassword2";
+            this.textBoxPassword2.Size = new System.Drawing.Size(298, 20);
+            this.textBoxPassword2.TabIndex = 21;
+            // 
             // FormSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 303);
+            this.ClientSize = new System.Drawing.Size(389, 356);
+            this.Controls.Add(this.labelPassword2);
+            this.Controls.Add(this.textBoxPassword2);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelComunidad);
             this.Controls.Add(this.comboBoxComunity);
@@ -287,5 +306,7 @@
         private System.Windows.Forms.ComboBox comboBoxComunity;
         private System.Windows.Forms.Label labelComunidad;
         private AppDesktop.Button_WOC buttonSave;
+        private System.Windows.Forms.Label labelPassword2;
+        private System.Windows.Forms.TextBox textBoxPassword2;
     }
 }
