@@ -1,4 +1,5 @@
 ﻿using Chrysallis.BD;
+using Chrysallis.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -94,24 +95,24 @@ namespace Chrysallis
 
         public void cambiarIdioma(List<comunidades> comunidades)
         {
-            this.Text = Idiomas.Strings.partner;
-            labelPhone.Text = Idiomas.Strings.phone;
-            labelName.Text = Idiomas.Strings.name;
-            labelLastName.Text = Idiomas.Strings.lastName;
-            labelEmail.Text = Idiomas.Strings.email;
-            labelPassword.Text = Idiomas.Strings.password;
-            labelComunidad.Text = Idiomas.Strings.comunity;
-            buttonSave.Text = Idiomas.Strings.save;
-            checkBoxActive.Text = Idiomas.Strings.active;
-            checkBoxState.Text = Idiomas.Strings.state;
-            checkBoxAdministrator.Text = Idiomas.Strings.admin;
-
+            this.Text = Strings.partner;
+            labelPhone.Text = Strings.phone;
+            labelName.Text = Strings.name;
+            labelLastName.Text = Strings.lastName;
+            labelEmail.Text = Strings.email;
+            labelPassword.Text = Strings.password;
+            labelComunidad.Text = Strings.comunity;
+            labelPassword2.Text = Strings.password2;
+            buttonSave.Text = Strings.save;
+            checkBoxActive.Text = Strings.active;
+            checkBoxState.Text = Strings.state;
+            checkBoxAdministrator.Text = Strings.admin;
+            
             foreach (comunidades comunidad in comunidades)
             {
                 String nombre = comunidad.nombre;
-                comunidad.nombre = Idiomas.Strings.getComunidad(nombre);
+                comunidad.nombre = GestorIdiomas.getComunidad(nombre);
             }
-
 
         }
 

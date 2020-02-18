@@ -273,4 +273,7 @@
   <data name="Extremadura" xml:space="preserve">
     <value>Extremadura</value>
   </data>
+  <data name="password2" xml:space="preserve">
+    <value>Verificar contrasenya</value>
+  </data>
 </root>

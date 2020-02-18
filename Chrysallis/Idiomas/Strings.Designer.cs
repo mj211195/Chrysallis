@@ -113,12 +113,7 @@ namespace Chrysallis.Idiomas {
                 return ResourceManager.GetString("admin", resourceCulture);
             }
         }
-
-        internal static string getComunidad(string nombre)
-        {
-            return ResourceManager.GetString(nombre, resourceCulture);
-        }
-
+        
         /// <summary>
         ///   Busca una cadena traducida similar a Andalusia.
         /// </summary>
@@ -458,6 +453,15 @@ namespace Chrysallis.Idiomas {
         internal static string password {
             get {
                 return ResourceManager.GetString("password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Verificar contrasenya.
+        /// </summary>
+        internal static string password2 {
+            get {
+                return ResourceManager.GetString("password2", resourceCulture);
             }
         }
         

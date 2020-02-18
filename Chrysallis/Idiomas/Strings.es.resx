@@ -273,4 +273,7 @@
   <data name="Región de Murcia" xml:space="preserve">
     <value>Región de Murcia</value>
   </data>
+  <data name="password2" xml:space="preserve">
+    <value>Verificar contraseña</value>
+  </data>
 </root>
