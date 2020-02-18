@@ -122,7 +122,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(79, 120);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(298, 20);
-            this.textBoxEmail.TabIndex = 10;
+            this.textBoxEmail.TabIndex = 5;
             // 
             // labelEmail
             // 
@@ -137,8 +137,9 @@
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(79, 146);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(298, 20);
-            this.textBoxPassword.TabIndex = 12;
+            this.textBoxPassword.TabIndex = 6;
             // 
             // labelPassword
             // 
@@ -155,7 +156,7 @@
             this.checkBoxActive.Location = new System.Drawing.Point(97, 201);
             this.checkBoxActive.Name = "checkBoxActive";
             this.checkBoxActive.Size = new System.Drawing.Size(56, 17);
-            this.checkBoxActive.TabIndex = 15;
+            this.checkBoxActive.TabIndex = 8;
             this.checkBoxActive.Text = "Activo";
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
@@ -165,7 +166,7 @@
             this.checkBoxAdministrator.Location = new System.Drawing.Point(159, 201);
             this.checkBoxAdministrator.Name = "checkBoxAdministrator";
             this.checkBoxAdministrator.Size = new System.Drawing.Size(89, 17);
-            this.checkBoxAdministrator.TabIndex = 16;
+            this.checkBoxAdministrator.TabIndex = 9;
             this.checkBoxAdministrator.Text = "Administrador";
             this.checkBoxAdministrator.UseVisualStyleBackColor = true;
             this.checkBoxAdministrator.CheckedChanged += new System.EventHandler(this.checkBoxAdministrator_CheckedChanged);
@@ -176,7 +177,7 @@
             this.checkBoxState.Location = new System.Drawing.Point(254, 201);
             this.checkBoxState.Name = "checkBoxState";
             this.checkBoxState.Size = new System.Drawing.Size(58, 17);
-            this.checkBoxState.TabIndex = 17;
+            this.checkBoxState.TabIndex = 10;
             this.checkBoxState.Text = "Estatal";
             this.checkBoxState.UseVisualStyleBackColor = true;
             this.checkBoxState.Visible = false;
@@ -190,7 +191,7 @@
             this.comboBoxComunity.Location = new System.Drawing.Point(80, 224);
             this.comboBoxComunity.Name = "comboBoxComunity";
             this.comboBoxComunity.Size = new System.Drawing.Size(298, 21);
-            this.comboBoxComunity.TabIndex = 18;
+            this.comboBoxComunity.TabIndex = 11;
             this.comboBoxComunity.ValueMember = "id";
             this.comboBoxComunity.Visible = false;
             // 
@@ -224,7 +225,7 @@
             this.buttonSave.OnHoverButtonColor = System.Drawing.Color.Azure;
             this.buttonSave.OnHoverTextColor = System.Drawing.Color.Gray;
             this.buttonSave.Size = new System.Drawing.Size(200, 40);
-            this.buttonSave.TabIndex = 20;
+            this.buttonSave.TabIndex = 12;
             this.buttonSave.Text = "Guardar";
             this.buttonSave.TextColor = System.Drawing.Color.Black;
             this.buttonSave.UseVisualStyleBackColor = false;
@@ -242,14 +243,14 @@
             // 
             this.textBoxPassword2.Location = new System.Drawing.Point(79, 175);
             this.textBoxPassword2.Name = "textBoxPassword2";
+            this.textBoxPassword2.PasswordChar = '*';
             this.textBoxPassword2.Size = new System.Drawing.Size(298, 20);
-            this.textBoxPassword2.TabIndex = 21;
+            this.textBoxPassword2.TabIndex = 7;
             // 
             // FormSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(396, 298);
             this.Controls.Add(this.labelPassword2);
@@ -275,6 +276,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSocio";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "FormSocio";
             this.Load += new System.EventHandler(this.FormSocio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
