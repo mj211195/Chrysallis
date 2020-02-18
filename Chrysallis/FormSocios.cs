@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chrysallis.BD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace Chrysallis
 
         private void FormSocios_Load(object sender, EventArgs e)
         {
+            RefrescarDatos();
             buttonAgregarSocio.Text = Idiomas.Strings.addPartner;
             this.Text = Idiomas.Strings.partners;
         }
@@ -27,6 +29,23 @@ namespace Chrysallis
         {
             FormSocio formSocio = new FormSocio();
             formSocio.ShowDialog();
+        }
+
+        private void RefrescarDatos()
+        {
+            List<socios> socios = SocioORM.SelectAllSocios();
+            if (socios == null)
+            {
+                DialogResult result = MessageBox.Show("Error al acceder a la BD.\nSe procede a cerrar el programa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (result == DialogResult.OK || result == DialogResult.Abort)
+                {
+                    Application.Exit();
+                }
+            }
+            else
+            {
+                bindingSourceSocios.DataSource = socios;
+            }
         }
     }
 }
