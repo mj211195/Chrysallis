@@ -79,9 +79,7 @@ namespace Chrysallis
                 {
                     MessageBox.Show("El socio ha sido creado", "CREADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                }
-                
-                
+                }                         
             }
         }
 
