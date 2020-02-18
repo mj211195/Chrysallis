@@ -276,4 +276,34 @@
   <data name="password2" xml:space="preserve">
     <value>Verificar contraseña</value>
   </data>
+  <data name="errorDni" xml:space="preserve">
+    <value>El DNI no puede estar vacío</value>
+  </data>
+  <data name="errorPhone" xml:space="preserve">
+    <value>El teléfono no puede estar vacío</value>
+  </data>
+  <data name="errorPhoneNum" xml:space="preserve">
+    <value>El teléfono debe ser numérico</value>
+  </data>
+  <data name="errorName" xml:space="preserve">
+    <value>El nombre no puede estar vacío</value>
+  </data>
+  <data name="errorLastName" xml:space="preserve">
+    <value>Los apellidos no pueden estar vacíos</value>
+  </data>
+  <data name="errorEmail" xml:space="preserve">
+    <value>El correo no puede estar vacío</value>
+  </data>
+  <data name="errorPassword" xml:space="preserve">
+    <value>La contraseña no puede estar vacía</value>
+  </data>
+  <data name="errorPassword2" xml:space="preserve">
+    <value>La contraseña no coincide</value>
+  </data>
+  <data name="partnerCreated" xml:space="preserve">
+    <value>El socio ha sido creado</value>
+  </data>
+  <data name="created" xml:space="preserve">
+    <value>CREADO</value>
+  </data>
 </root>

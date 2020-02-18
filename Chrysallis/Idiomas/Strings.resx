@@ -276,4 +276,34 @@
   <data name="password2" xml:space="preserve">
     <value>Verificar contrasenya</value>
   </data>
+  <data name="errorDni" xml:space="preserve">
+    <value>El DNI no pot estar buit</value>
+  </data>
+  <data name="errorPhone" xml:space="preserve">
+    <value>El telèfon no pot estar buit</value>
+  </data>
+  <data name="errorPhoneNum" xml:space="preserve">
+    <value>El telèfon ha de ser numèric</value>
+  </data>
+  <data name="errorName" xml:space="preserve">
+    <value>El nom no pot estar buit</value>
+  </data>
+  <data name="errorLastName" xml:space="preserve">
+    <value>Els cognoms no poden estar buits</value>
+  </data>
+  <data name="errorEmail" xml:space="preserve">
+    <value>El correu no pot estar buit</value>
+  </data>
+  <data name="errorPassword" xml:space="preserve">
+    <value>La contrasenya no pot estar buida</value>
+  </data>
+  <data name="errorPassword2" xml:space="preserve">
+    <value>La contrasenya no coincideix</value>
+  </data>
+  <data name="partnerCreated" xml:space="preserve">
+    <value>El soci ha estat creat</value>
+  </data>
+  <data name="created" xml:space="preserve">
+    <value>CREAT</value>
+  </data>
 </root>

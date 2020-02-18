@@ -276,4 +276,34 @@
   <data name="password2" xml:space="preserve">
     <value>Check password</value>
   </data>
+  <data name="errorDni" xml:space="preserve">
+    <value>The DNI cannot be empty</value>
+  </data>
+  <data name="errorPhone" xml:space="preserve">
+    <value>The phone cannot be empty</value>
+  </data>
+  <data name="errorPhoneNum" xml:space="preserve">
+    <value>The phone must be numeric</value>
+  </data>
+  <data name="errorName" xml:space="preserve">
+    <value>Name cannot be empty</value>
+  </data>
+  <data name="errorLastName" xml:space="preserve">
+    <value>Last names cannot be empty</value>
+  </data>
+  <data name="errorEmail" xml:space="preserve">
+    <value>The e-mail cannot be empty</value>
+  </data>
+  <data name="errorPassword" xml:space="preserve">
+    <value>Password cannot be empty</value>
+  </data>
+  <data name="errorPassword2" xml:space="preserve">
+    <value>The password does not match</value>
+  </data>
+  <data name="partnerCreated" xml:space="preserve">
+    <value>The partner has been created</value>
+  </data>
+  <data name="created" xml:space="preserve">
+    <value>CREATED</value>
+  </data>
 </root>

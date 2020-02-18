@@ -20,35 +20,35 @@ namespace Chrysallis
             long result;
             if (textBoxDni.Text.Trim().Equals(""))
             {
-                MessageBox.Show("El DNI no puede estar vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorDni, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (textBoxPhone.Text.Trim().Equals(""))
             {
-                MessageBox.Show("El teléfono no puede estar vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorPhone, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!long.TryParse(textBoxPhone.Text.Trim(), out result))
             {
-                MessageBox.Show("El teléfono debe ser numérico", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorPhoneNum, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (textBoxName.Text.Trim().Equals(""))
             {
-                MessageBox.Show("El nombre no puede estar vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorName, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (textBoxLastName.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Los apellidos no pueden estar vacíos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorLastName, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (textBoxEmail.Text.Trim().Equals(""))
             {
-                MessageBox.Show("El correo no puede estar vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorEmail, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (textBoxPassword.Text.Trim().Equals(""))
             {
-                MessageBox.Show("La contraseña no puede estar vacía", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorPassword, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!textBoxPassword2.Text.Trim().Equals(textBoxPassword.Text.Trim()))
             {
-                MessageBox.Show("La contraseña no coincide", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorPassword2, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -89,7 +89,7 @@ namespace Chrysallis
 
                 if (SocioORM.InsertSocio(socio))
                 {
-                    MessageBox.Show("El socio ha sido creado", "CREADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Strings.partnerCreated, Strings.created, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }                         
             }
@@ -98,12 +98,13 @@ namespace Chrysallis
         private void FormSocio_Load(object sender, EventArgs e)
         {
             comunidades = ComunidadORM.SelectAllComunidades();
-            bindingSourceComunidades.DataSource = comunidades;
-            cambiarIdioma(comunidades);
+            //no uso el bindingsource pq me daba problemas al cambiar de idioma
+            //bindingSourceComunidades.DataSource = comunidades;
+            cambiarIdioma();
             buttonSave.Location = new System.Drawing.Point(97, 224);
         }
 
-        public void cambiarIdioma(List<comunidades> comunidades)
+        public void cambiarIdioma()
         {
             this.Text = Strings.partner;
             labelPhone.Text = Strings.phone;
@@ -126,7 +127,6 @@ namespace Chrysallis
                 comunidadesString.Add(GestorIdiomas.getComunidad(c.nombre));
             }
             comboBoxComunity.DataSource = comunidadesString;
-
         }
 
         private void checkBoxAdministrator_CheckedChanged(object sender, EventArgs e)

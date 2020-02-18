@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.labelDni = new System.Windows.Forms.Label();
             this.textBoxDni = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -45,12 +44,10 @@
             this.checkBoxAdministrator = new System.Windows.Forms.CheckBox();
             this.checkBoxState = new System.Windows.Forms.CheckBox();
             this.comboBoxComunity = new System.Windows.Forms.ComboBox();
-            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
             this.labelComunidad = new System.Windows.Forms.Label();
             this.labelPassword2 = new System.Windows.Forms.Label();
             this.textBoxPassword2 = new System.Windows.Forms.TextBox();
             this.buttonSave = new AppDesktop.Button_WOC();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDni
@@ -198,10 +195,6 @@
             this.comboBoxComunity.TabIndex = 11;
             this.comboBoxComunity.Visible = false;
             // 
-            // bindingSourceComunidades
-            // 
-            this.bindingSourceComunidades.DataSource = typeof(Chrysallis.comunidades);
-            // 
             // labelComunidad
             // 
             this.labelComunidad.AutoSize = true;
@@ -283,7 +276,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "FormSocio";
             this.Load += new System.EventHandler(this.FormSocio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,6 +303,5 @@
         private AppDesktop.Button_WOC buttonSave;
         private System.Windows.Forms.Label labelPassword2;
         private System.Windows.Forms.TextBox textBoxPassword2;
-        private System.Windows.Forms.BindingSource bindingSourceComunidades;
     }
 }

@@ -250,6 +250,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a CREAT.
+        /// </summary>
+        internal static string created {
+            get {
+                return ResourceManager.GetString("created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Data.
         /// </summary>
         internal static string date {
@@ -291,6 +300,78 @@ namespace Chrysallis.Idiomas {
         internal static string english {
             get {
                 return ResourceManager.GetString("english", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El DNI no pot estar buit.
+        /// </summary>
+        internal static string errorDni {
+            get {
+                return ResourceManager.GetString("errorDni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correu no pot estar buit.
+        /// </summary>
+        internal static string errorEmail {
+            get {
+                return ResourceManager.GetString("errorEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Els cognoms no poden estar buits.
+        /// </summary>
+        internal static string errorLastName {
+            get {
+                return ResourceManager.GetString("errorLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El nom no pot estar buit.
+        /// </summary>
+        internal static string errorName {
+            get {
+                return ResourceManager.GetString("errorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contrasenya no pot estar buida.
+        /// </summary>
+        internal static string errorPassword {
+            get {
+                return ResourceManager.GetString("errorPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contrasenya no coincideix.
+        /// </summary>
+        internal static string errorPassword2 {
+            get {
+                return ResourceManager.GetString("errorPassword2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El telèfon no pot estar buit.
+        /// </summary>
+        internal static string errorPhone {
+            get {
+                return ResourceManager.GetString("errorPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El telèfon ha de ser numèric.
+        /// </summary>
+        internal static string errorPhoneNum {
+            get {
+                return ResourceManager.GetString("errorPhoneNum", resourceCulture);
             }
         }
         
@@ -435,6 +516,15 @@ namespace Chrysallis.Idiomas {
         internal static string partner {
             get {
                 return ResourceManager.GetString("partner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El soci ha estat creat.
+        /// </summary>
+        internal static string partnerCreated {
+            get {
+                return ResourceManager.GetString("partnerCreated", resourceCulture);
             }
         }
         

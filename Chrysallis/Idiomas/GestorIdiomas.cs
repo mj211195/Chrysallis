@@ -23,5 +23,7 @@ namespace Chrysallis.Idiomas
         {
              return ResourceManager.GetString(comunidad, resourceCulture);
         }
+        
+
     }
 }
