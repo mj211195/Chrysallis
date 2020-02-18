@@ -7,7 +7,9 @@ using System.Windows.Forms;
 namespace Chrysallis
 {
     public partial class FormSocio : Form
+
     {
+        List<comunidades> comunidades;
         public FormSocio()
         {
             InitializeComponent();
@@ -68,7 +70,15 @@ namespace Chrysallis
                 {
                     if (comboBoxComunity.SelectedItem != null)
                     {
-                        socio.id_comunidad = (int)comboBoxComunity.SelectedValue;
+                        //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
+                        foreach (comunidades c in comunidades)
+                        {
+                            String aux = GestorIdiomas.getComunidad(c.nombre);
+                            if (aux.Equals(comboBoxComunity.Text))
+                            {
+                                socio.id_comunidad = c.id;
+                            }
+                        }
                     }
                     
                 }
@@ -87,9 +97,9 @@ namespace Chrysallis
 
         private void FormSocio_Load(object sender, EventArgs e)
         {
-            List<comunidades> comunidades = ComunidadORM.SelectAllComunidades();
-            cambiarIdioma(comunidades);
+            comunidades = ComunidadORM.SelectAllComunidades();
             bindingSourceComunidades.DataSource = comunidades;
+            cambiarIdioma(comunidades);
             buttonSave.Location = new System.Drawing.Point(97, 224);
         }
 
@@ -107,12 +117,15 @@ namespace Chrysallis
             checkBoxActive.Text = Strings.active;
             checkBoxState.Text = Strings.state;
             checkBoxAdministrator.Text = Strings.admin;
-            
-            foreach (comunidades comunidad in comunidades)
+
+
+            //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
+            List<String> comunidadesString = new List<String>();
+            foreach (comunidades c in comunidades)
             {
-                String nombre = comunidad.nombre;
-                comunidad.nombre = GestorIdiomas.getComunidad(nombre);
+                comunidadesString.Add(GestorIdiomas.getComunidad(c.nombre));
             }
+            comboBoxComunity.DataSource = comunidadesString;
 
         }
 

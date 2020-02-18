@@ -47,9 +47,9 @@
             this.comboBoxComunity = new System.Windows.Forms.ComboBox();
             this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
             this.labelComunidad = new System.Windows.Forms.Label();
-            this.buttonSave = new AppDesktop.Button_WOC();
             this.labelPassword2 = new System.Windows.Forms.Label();
             this.textBoxPassword2 = new System.Windows.Forms.TextBox();
+            this.buttonSave = new AppDesktop.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,15 +190,12 @@
             // 
             // comboBoxComunity
             // 
-            this.comboBoxComunity.DataSource = this.bindingSourceComunidades;
-            this.comboBoxComunity.DisplayMember = "nombre";
             this.comboBoxComunity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunity.FormattingEnabled = true;
             this.comboBoxComunity.Location = new System.Drawing.Point(80, 224);
             this.comboBoxComunity.Name = "comboBoxComunity";
             this.comboBoxComunity.Size = new System.Drawing.Size(298, 21);
             this.comboBoxComunity.TabIndex = 11;
-            this.comboBoxComunity.ValueMember = "id";
             this.comboBoxComunity.Visible = false;
             // 
             // bindingSourceComunidades
@@ -214,6 +211,23 @@
             this.labelComunidad.TabIndex = 19;
             this.labelComunidad.Text = "Comunidad";
             this.labelComunidad.Visible = false;
+            // 
+            // labelPassword2
+            // 
+            this.labelPassword2.Location = new System.Drawing.Point(13, 169);
+            this.labelPassword2.Name = "labelPassword2";
+            this.labelPassword2.Size = new System.Drawing.Size(61, 26);
+            this.labelPassword2.TabIndex = 22;
+            this.labelPassword2.Text = "Verificar contraseña";
+            // 
+            // textBoxPassword2
+            // 
+            this.textBoxPassword2.Location = new System.Drawing.Point(79, 175);
+            this.textBoxPassword2.MaxLength = 256;
+            this.textBoxPassword2.Name = "textBoxPassword2";
+            this.textBoxPassword2.PasswordChar = '*';
+            this.textBoxPassword2.Size = new System.Drawing.Size(298, 20);
+            this.textBoxPassword2.TabIndex = 7;
             // 
             // buttonSave
             // 
@@ -236,23 +250,6 @@
             this.buttonSave.TextColor = System.Drawing.Color.Black;
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // labelPassword2
-            // 
-            this.labelPassword2.Location = new System.Drawing.Point(13, 169);
-            this.labelPassword2.Name = "labelPassword2";
-            this.labelPassword2.Size = new System.Drawing.Size(61, 26);
-            this.labelPassword2.TabIndex = 22;
-            this.labelPassword2.Text = "Verificar contraseña";
-            // 
-            // textBoxPassword2
-            // 
-            this.textBoxPassword2.Location = new System.Drawing.Point(79, 175);
-            this.textBoxPassword2.MaxLength = 256;
-            this.textBoxPassword2.Name = "textBoxPassword2";
-            this.textBoxPassword2.PasswordChar = '*';
-            this.textBoxPassword2.Size = new System.Drawing.Size(298, 20);
-            this.textBoxPassword2.TabIndex = 7;
             // 
             // FormSocio
             // 
