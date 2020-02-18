@@ -65,6 +65,7 @@
             // textBoxDni
             // 
             this.textBoxDni.Location = new System.Drawing.Point(80, 16);
+            this.textBoxDni.MaxLength = 9;
             this.textBoxDni.Name = "textBoxDni";
             this.textBoxDni.Size = new System.Drawing.Size(298, 20);
             this.textBoxDni.TabIndex = 1;
@@ -72,6 +73,7 @@
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(80, 42);
+            this.textBoxPhone.MaxLength = 11;
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(298, 20);
             this.textBoxPhone.TabIndex = 2;
@@ -79,6 +81,7 @@
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(80, 68);
+            this.textBoxName.MaxLength = 20;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(298, 20);
             this.textBoxName.TabIndex = 3;
@@ -86,6 +89,7 @@
             // textBoxLastName
             // 
             this.textBoxLastName.Location = new System.Drawing.Point(80, 94);
+            this.textBoxLastName.MaxLength = 30;
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(298, 20);
             this.textBoxLastName.TabIndex = 4;
@@ -120,6 +124,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(79, 120);
+            this.textBoxEmail.MaxLength = 30;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(298, 20);
             this.textBoxEmail.TabIndex = 5;
@@ -136,6 +141,7 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(79, 146);
+            this.textBoxPassword.MaxLength = 256;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(298, 20);
@@ -242,6 +248,7 @@
             // textBoxPassword2
             // 
             this.textBoxPassword2.Location = new System.Drawing.Point(79, 175);
+            this.textBoxPassword2.MaxLength = 256;
             this.textBoxPassword2.Name = "textBoxPassword2";
             this.textBoxPassword2.PasswordChar = '*';
             this.textBoxPassword2.Size = new System.Drawing.Size(298, 20);

@@ -42,5 +42,10 @@ namespace Chrysallis
             FormEventos formEventos = new FormEventos();
             formEventos.ShowDialog();
         }
+
+        private void FormMenu_Activated(object sender, EventArgs e)
+        {
+            cambiarIdioma();
+        }
     }
 }

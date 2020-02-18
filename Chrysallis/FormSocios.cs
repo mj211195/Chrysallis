@@ -23,6 +23,8 @@ namespace Chrysallis
             RefrescarDatos();
             buttonAgregarSocio.Text = Idiomas.Strings.addPartner;
             this.Text = Idiomas.Strings.partners;
+
+            
         }
 
         private void buttonAgregarSocio_Click(object sender, EventArgs e)

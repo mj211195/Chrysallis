@@ -103,6 +103,7 @@
             this.Name = "FormMenu";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Menú";
+            this.Activated += new System.EventHandler(this.FormMenu_Activated);
             this.Load += new System.EventHandler(this.FormMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

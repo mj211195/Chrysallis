@@ -113,6 +113,65 @@ namespace Chrysallis.Idiomas {
                 return ResourceManager.GetString("admin", resourceCulture);
             }
         }
+
+        internal static string getComunidad(string nombre)
+        {
+            return ResourceManager.GetString(nombre, resourceCulture);
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a Andalusia.
+        /// </summary>
+        internal static string Andalucía {
+            get {
+                return ResourceManager.GetString("Andalucía", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Aragó.
+        /// </summary>
+        internal static string Aragón {
+            get {
+                return ResourceManager.GetString("Aragón", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Canàries.
+        /// </summary>
+        internal static string Canarias {
+            get {
+                return ResourceManager.GetString("Canarias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantàbria.
+        /// </summary>
+        internal static string Cantabria {
+            get {
+                return ResourceManager.GetString("Cantabria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Castella - la Manxa.
+        /// </summary>
+        internal static string Castilla_La_Mancha {
+            get {
+                return ResourceManager.GetString("Castilla-La Mancha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Castella i Lleó.
+        /// </summary>
+        internal static string Castilla_y_León {
+            get {
+                return ResourceManager.GetString("Castilla y León", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Català.
@@ -120,6 +179,24 @@ namespace Chrysallis.Idiomas {
         internal static string catalan {
             get {
                 return ResourceManager.GetString("catalan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Catalunya.
+        /// </summary>
+        internal static string Cataluña {
+            get {
+                return ResourceManager.GetString("Cataluña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ceuta.
+        /// </summary>
+        internal static string Ceuta {
+            get {
+                return ResourceManager.GetString("Ceuta", resourceCulture);
             }
         }
         
@@ -138,6 +215,33 @@ namespace Chrysallis.Idiomas {
         internal static string community {
             get {
                 return ResourceManager.GetString("community", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Comunitat de Madrid.
+        /// </summary>
+        internal static string Comunidad_de_Madrid {
+            get {
+                return ResourceManager.GetString("Comunidad de Madrid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Comunitat Foral de Navarra.
+        /// </summary>
+        internal static string Comunidad_Foral_de_Navarra {
+            get {
+                return ResourceManager.GetString("Comunidad Foral de Navarra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Comunitat Valenciana.
+        /// </summary>
+        internal static string Comunidad_Valenciana {
+            get {
+                return ResourceManager.GetString("Comunidad Valenciana", resourceCulture);
             }
         }
         
@@ -196,6 +300,42 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Extremadura.
+        /// </summary>
+        internal static string Extremadura {
+            get {
+                return ResourceManager.GetString("Extremadura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Galícia.
+        /// </summary>
+        internal static string Galicia {
+            get {
+                return ResourceManager.GetString("Galicia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Illes Balears.
+        /// </summary>
+        internal static string Islas_Baleares {
+            get {
+                return ResourceManager.GetString("Islas Baleares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La Rioja.
+        /// </summary>
+        internal static string La_Rioja {
+            get {
+                return ResourceManager.GetString("La Rioja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cognoms.
         /// </summary>
         internal static string lastName {
@@ -241,6 +381,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Melilla.
+        /// </summary>
+        internal static string Melilla {
+            get {
+                return ResourceManager.GetString("Melilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Menú.
         /// </summary>
         internal static string menu {
@@ -277,6 +426,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a País Basc.
+        /// </summary>
+        internal static string País_Vasco {
+            get {
+                return ResourceManager.GetString("País Vasco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Soci.
         /// </summary>
         internal static string partner {
@@ -309,6 +467,24 @@ namespace Chrysallis.Idiomas {
         internal static string phone {
             get {
                 return ResourceManager.GetString("phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Principat d&apos;Astúries.
+        /// </summary>
+        internal static string Principado_de_Asturias {
+            get {
+                return ResourceManager.GetString("Principado de Asturias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Regió de Múrcia.
+        /// </summary>
+        internal static string Región_de_Murcia {
+            get {
+                return ResourceManager.GetString("Región de Murcia", resourceCulture);
             }
         }
         

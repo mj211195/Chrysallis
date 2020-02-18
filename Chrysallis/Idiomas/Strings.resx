@@ -216,4 +216,61 @@
   <data name="time" xml:space="preserve">
     <value>Hora</value>
   </data>
+  <data name="Andalucía" xml:space="preserve">
+    <value>Andalusia</value>
+  </data>
+  <data name="Galicia" xml:space="preserve">
+    <value>Galícia</value>
+  </data>
+  <data name="La Rioja" xml:space="preserve">
+    <value>La Rioja</value>
+  </data>
+  <data name="Comunidad de Madrid" xml:space="preserve">
+    <value>Comunitat de Madrid</value>
+  </data>
+  <data name="Región de Murcia" xml:space="preserve">
+    <value>Regió de Múrcia</value>
+  </data>
+  <data name="Comunidad Foral de Navarra" xml:space="preserve">
+    <value>Comunitat Foral de Navarra</value>
+  </data>
+  <data name="País Vasco" xml:space="preserve">
+    <value>País Basc</value>
+  </data>
+  <data name="Ceuta" xml:space="preserve">
+    <value>Ceuta</value>
+  </data>
+  <data name="Melilla" xml:space="preserve">
+    <value>Melilla</value>
+  </data>
+  <data name="Aragón" xml:space="preserve">
+    <value>Aragó</value>
+  </data>
+  <data name="Principado de Asturias" xml:space="preserve">
+    <value>Principat d'Astúries</value>
+  </data>
+  <data name="Islas Baleares" xml:space="preserve">
+    <value>Illes Balears</value>
+  </data>
+  <data name="Canarias" xml:space="preserve">
+    <value>Canàries</value>
+  </data>
+  <data name="Cantabria" xml:space="preserve">
+    <value>Cantàbria</value>
+  </data>
+  <data name="Castilla-La Mancha" xml:space="preserve">
+    <value>Castella - la Manxa</value>
+  </data>
+  <data name="Castilla y León" xml:space="preserve">
+    <value>Castella i Lleó</value>
+  </data>
+  <data name="Cataluña" xml:space="preserve">
+    <value>Catalunya</value>
+  </data>
+  <data name="Comunidad Valenciana" xml:space="preserve">
+    <value>Comunitat Valenciana</value>
+  </data>
+  <data name="Extremadura" xml:space="preserve">
+    <value>Extremadura</value>
+  </data>
 </root>

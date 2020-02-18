@@ -1,5 +1,6 @@
 ﻿using Chrysallis.BD;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Chrysallis
@@ -13,7 +14,7 @@ namespace Chrysallis
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            int result;
+            long result;
             if (textBoxDni.Text.Trim().Equals(""))
             {
                 MessageBox.Show("El DNI no puede estar vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -22,7 +23,7 @@ namespace Chrysallis
             {
                 MessageBox.Show("El teléfono no puede estar vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (!int.TryParse(textBoxPhone.Text.Trim(), out result))
+            else if (!long.TryParse(textBoxPhone.Text.Trim(), out result))
             {
                 MessageBox.Show("El teléfono debe ser numérico", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -85,12 +86,13 @@ namespace Chrysallis
 
         private void FormSocio_Load(object sender, EventArgs e)
         {
-            bindingSourceComunidades.DataSource = ComunidadORM.SelectAllComunidades();
+            List<comunidades> comunidades = ComunidadORM.SelectAllComunidades();
+            cambiarIdioma(comunidades);
+            bindingSourceComunidades.DataSource = comunidades;
             buttonSave.Location = new System.Drawing.Point(97, 224);
-            cambiarIdioma();
         }
 
-        public void cambiarIdioma()
+        public void cambiarIdioma(List<comunidades> comunidades)
         {
             this.Text = Idiomas.Strings.partner;
             labelPhone.Text = Idiomas.Strings.phone;
@@ -103,6 +105,13 @@ namespace Chrysallis
             checkBoxActive.Text = Idiomas.Strings.active;
             checkBoxState.Text = Idiomas.Strings.state;
             checkBoxAdministrator.Text = Idiomas.Strings.admin;
+
+            foreach (comunidades comunidad in comunidades)
+            {
+                String nombre = comunidad.nombre;
+                comunidad.nombre = Idiomas.Strings.getComunidad(nombre);
+            }
+
 
         }
 
