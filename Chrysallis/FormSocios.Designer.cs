@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
             this.buttonAgregarSocio = new AppDesktop.Button_WOC();
+            this.bindingSourceSocios = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +44,7 @@
             this.idiomaDefectoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcomunidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSourceSocios = new System.Windows.Forms.BindingSource(this.components);
+            this.comunidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSocios)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +66,8 @@
             this.administradorDataGridViewCheckBoxColumn,
             this.idiomaDefectoDataGridViewTextBoxColumn,
             this.estatalDataGridViewTextBoxColumn,
-            this.idcomunidadDataGridViewTextBoxColumn});
+            this.idcomunidadDataGridViewTextBoxColumn,
+            this.comunidad});
             this.dataGridViewSocios.DataSource = this.bindingSourceSocios;
             this.dataGridViewSocios.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewSocios.Location = new System.Drawing.Point(0, 0);
@@ -96,6 +98,10 @@
             this.buttonAgregarSocio.TextColor = System.Drawing.Color.Black;
             this.buttonAgregarSocio.UseVisualStyleBackColor = false;
             this.buttonAgregarSocio.Click += new System.EventHandler(this.buttonAgregarSocio_Click);
+            // 
+            // bindingSourceSocios
+            // 
+            this.bindingSourceSocios.DataSource = typeof(Chrysallis.socios);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -168,10 +174,13 @@
             this.idcomunidadDataGridViewTextBoxColumn.DataPropertyName = "id_comunidad";
             this.idcomunidadDataGridViewTextBoxColumn.HeaderText = "id_comunidad";
             this.idcomunidadDataGridViewTextBoxColumn.Name = "idcomunidadDataGridViewTextBoxColumn";
+            this.idcomunidadDataGridViewTextBoxColumn.Visible = false;
             // 
-            // bindingSourceSocios
+            // comunidad
             // 
-            this.bindingSourceSocios.DataSource = typeof(Chrysallis.socios);
+            this.comunidad.HeaderText = "Comunidad";
+            this.comunidad.Name = "comunidad";
+            this.comunidad.ReadOnly = true;
             // 
             // FormSocios
             // 
@@ -193,18 +202,19 @@
         #endregion
         private AppDesktop.Button_WOC buttonAgregarSocio;
         private System.Windows.Forms.BindingSource bindingSourceSocios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcomunidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estatalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idiomaDefectoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn administradorDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridViewSocios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn administradorDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idiomaDefectoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcomunidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comunidad;
     }
 }
