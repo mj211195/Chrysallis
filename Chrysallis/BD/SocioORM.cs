@@ -65,5 +65,22 @@ namespace Chrysallis.BD
             }
             return correcto;
         }
+
+        public static Boolean UpdateSocio(socios socio)
+        {
+            socios _socio = ORM.bd.socios.Find(socio.id);
+            Boolean correcto = false;
+            try
+            {
+                ORM.bd.SaveChanges();
+                correcto = true;
+            }
+            catch (Exception e)
+            {
+                SqlException sqlEx = (SqlException)e.InnerException.InnerException;
+                MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return correcto;
+        }
     }
 }
