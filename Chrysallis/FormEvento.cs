@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chrysallis.BD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,14 +21,95 @@ namespace Chrysallis
 
         private void FormEvento_Load(object sender, EventArgs e)
         {
+            bindingSourceComunidades.DataSource = ComunidadORM.SelectAllComunidades();
             cargarHora();
-            cambiarIdioma();
-
+            cambiarIdioma(); 
+     
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (dateTimePickerFecha.Value < DateTime.Today)
+            {
+                MessageBox.Show("No se pueden poner fechas anteriores a la actual", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (textBoxUbicacion.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("La ubicacion no puede estar vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (dateTimePickerFechaLimite.Value < DateTime.Today)
+            {
+                MessageBox.Show("No se pueden poner fechas anteriores a la actual", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (textBoxNumeroAsistentes.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Se tiene que introducir el numero de asistentes", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (listBoxNotificaciones.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Se tiene que seleccionar minimo una notificacion", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                
+            }
+            
+
             this.Close();
+        }
+
+        private void buttonDocumento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Documento1.ShowDialog() == DialogResult.OK)
+                {
+                    string documento = Documento1.FileName;
+                    
+                }
+            }
+            catch (Exception)
+            {
+                errorDocumento();
+            }
+        }
+
+        private void buttonDocumentos2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Documento1.ShowDialog() == DialogResult.OK)
+                {
+                    string documento = Documento1.FileName;
+
+                }
+            }
+            catch (Exception)
+            {
+                errorDocumento();
+            }
+        }
+
+        private void buttonDocumentos3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Documento1.ShowDialog() == DialogResult.OK)
+                {
+                    string documento = Documento1.FileName;
+
+                }
+            }
+            catch (Exception)
+            {
+                errorDocumento();
+            }
+        }
+
+        //Muestra error en caso de que no sea correcto el archivo seleccionado
+        private void errorDocumento()
+        {
+            MessageBox.Show("El arxiu seleccionat no es un document");
         }
 
         //Metodo para cargar las horas en el comoBoxHora
