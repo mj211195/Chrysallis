@@ -48,6 +48,24 @@ namespace Chrysallis.BD
             return socios;
         }
 
+        public static List<socios> SelectAllSociosByComunidad(int id_comunidad)
+        {
+            List<socios> socios = null;
+            try
+            {
+                socios = (
+                from s in ORM.bd.socios
+                where s.id_comunidad == id_comunidad
+                select s).ToList();
+            }
+            catch (EntityException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return socios;
+        }
+
         public static Boolean InsertSocio(socios socio)
         {
             Boolean correcto = false;

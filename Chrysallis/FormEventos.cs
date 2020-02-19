@@ -42,9 +42,13 @@ namespace Chrysallis
                     Application.Exit();
                 }
             }
-            else
+            else if (FormLogin.socioLogin.estatal == true)
             {
                 bindingSourceEventos.DataSource = eventos;
+            }
+            else
+            {
+
             }
 
         }

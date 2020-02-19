@@ -37,9 +37,13 @@ namespace Chrysallis
                     Application.Exit();
                 }
             }
-            else
+            else if (FormLogin.socioLogin.estatal == true)
             {
                 bindingSourceSocios.DataSource = socios;
+            }
+            else
+            {
+                bindingSourceSocios.DataSource = SocioORM.SelectAllSociosByComunidad((int)FormLogin.socioLogin.id_comunidad);
             }
 
 
