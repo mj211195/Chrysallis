@@ -30,6 +30,60 @@ namespace Chrysallis.BD
             return eventos;
         }
 
+        public static List<eventos> SelectAllEventosByComunidad(int comunidad)
+        {
+            List<eventos> eventos = null;
+            try
+            {
+                eventos = (
+                from e in ORM.bd.eventos
+                where e.id_comunidad == comunidad
+                select e).ToList();
+            }
+            catch (EntityException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return eventos;
+        }
+
+        public static List<eventos> SelectAllEventosByComunidadFecha(int comunidad, DateTime desde, DateTime hasta)
+        {
+            List<eventos> eventos = null;
+            try
+            {
+                eventos = (
+                from e in ORM.bd.eventos
+                where e.id_comunidad == comunidad && (e.fecha > desde && e.fecha < hasta)
+                select e).ToList();
+            }
+            catch (EntityException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return eventos;
+        }
+
+        public static List<eventos> SelectAllEventosByFecha(DateTime desde, DateTime hasta)
+        {
+            List<eventos> eventos = null;
+            try
+            {
+                eventos = (
+                from e in ORM.bd.eventos
+                where (e.fecha > desde && e.fecha < hasta)
+                select e).ToList();
+            }
+            catch (EntityException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return eventos;
+        }
+
         public static Boolean InsertEvento(eventos evento)
         {
             Boolean correcto = false;
