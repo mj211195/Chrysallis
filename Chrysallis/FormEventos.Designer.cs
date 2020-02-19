@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
-            this.buttonAgregarEvento = new AppDesktop.Button_WOC();
-            this.bindingSourceEventos = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,13 +41,19 @@
             this.comunidadesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notificacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceEventos = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonAgregarEvento = new AppDesktop.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEventos)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewEventos
             // 
+            this.dataGridViewEventos.AllowUserToAddRows = false;
+            this.dataGridViewEventos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewEventos.AutoGenerateColumns = false;
+            this.dataGridViewEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEventos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -64,38 +68,11 @@
             this.documentosDataGridViewTextBoxColumn,
             this.notificacionesDataGridViewTextBoxColumn});
             this.dataGridViewEventos.DataSource = this.bindingSourceEventos;
-            this.dataGridViewEventos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridViewEventos.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewEventos.Location = new System.Drawing.Point(1, 0);
             this.dataGridViewEventos.Name = "dataGridViewEventos";
-            this.dataGridViewEventos.Size = new System.Drawing.Size(554, 362);
+            this.dataGridViewEventos.ReadOnly = true;
+            this.dataGridViewEventos.Size = new System.Drawing.Size(711, 268);
             this.dataGridViewEventos.TabIndex = 0;
-            // 
-            // buttonAgregarEvento
-            // 
-            this.buttonAgregarEvento.AutoSize = true;
-            this.buttonAgregarEvento.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarEvento.BorderColor = System.Drawing.Color.Black;
-            this.buttonAgregarEvento.ButtonColor = System.Drawing.SystemColors.Info;
-            this.buttonAgregarEvento.FlatAppearance.BorderSize = 0;
-            this.buttonAgregarEvento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarEvento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregarEvento.Font = new System.Drawing.Font("Consolas", 12F);
-            this.buttonAgregarEvento.Location = new System.Drawing.Point(171, 381);
-            this.buttonAgregarEvento.Name = "buttonAgregarEvento";
-            this.buttonAgregarEvento.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.buttonAgregarEvento.OnHoverButtonColor = System.Drawing.Color.Azure;
-            this.buttonAgregarEvento.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.buttonAgregarEvento.Size = new System.Drawing.Size(200, 40);
-            this.buttonAgregarEvento.TabIndex = 10;
-            this.buttonAgregarEvento.Text = "Agregar evento";
-            this.buttonAgregarEvento.TextColor = System.Drawing.Color.Black;
-            this.buttonAgregarEvento.UseVisualStyleBackColor = false;
-            this.buttonAgregarEvento.Click += new System.EventHandler(this.buttonAgregarEvento_Click);
-            // 
-            // bindingSourceEventos
-            // 
-            this.bindingSourceEventos.DataSource = typeof(Chrysallis.eventos);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -167,11 +144,39 @@
             this.notificacionesDataGridViewTextBoxColumn.Name = "notificacionesDataGridViewTextBoxColumn";
             this.notificacionesDataGridViewTextBoxColumn.Visible = false;
             // 
+            // bindingSourceEventos
+            // 
+            this.bindingSourceEventos.DataSource = typeof(Chrysallis.eventos);
+            // 
+            // buttonAgregarEvento
+            // 
+            this.buttonAgregarEvento.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonAgregarEvento.AutoSize = true;
+            this.buttonAgregarEvento.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarEvento.BorderColor = System.Drawing.Color.Black;
+            this.buttonAgregarEvento.ButtonColor = System.Drawing.SystemColors.Info;
+            this.buttonAgregarEvento.FlatAppearance.BorderSize = 0;
+            this.buttonAgregarEvento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarEvento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregarEvento.Font = new System.Drawing.Font("Consolas", 12F);
+            this.buttonAgregarEvento.Location = new System.Drawing.Point(250, 307);
+            this.buttonAgregarEvento.Name = "buttonAgregarEvento";
+            this.buttonAgregarEvento.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.buttonAgregarEvento.OnHoverButtonColor = System.Drawing.Color.Azure;
+            this.buttonAgregarEvento.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.buttonAgregarEvento.Size = new System.Drawing.Size(200, 40);
+            this.buttonAgregarEvento.TabIndex = 10;
+            this.buttonAgregarEvento.Text = "Agregar evento";
+            this.buttonAgregarEvento.TextColor = System.Drawing.Color.Black;
+            this.buttonAgregarEvento.UseVisualStyleBackColor = false;
+            this.buttonAgregarEvento.Click += new System.EventHandler(this.buttonAgregarEvento_Click);
+            // 
             // FormEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 432);
+            this.ClientSize = new System.Drawing.Size(713, 358);
             this.Controls.Add(this.buttonAgregarEvento);
             this.Controls.Add(this.dataGridViewEventos);
             this.Name = "FormEventos";
