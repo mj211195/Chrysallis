@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelFecha = new System.Windows.Forms.Label();
             this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.labelUbicacion = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.labelNumeroAsistentes = new System.Windows.Forms.Label();
             this.textBoxNumeroAsistentes = new System.Windows.Forms.TextBox();
             this.labelComunidad = new System.Windows.Forms.Label();
-            this.comboBoxComunidad = new System.Windows.Forms.ComboBox();
             this.labelDocumentos = new System.Windows.Forms.Label();
             this.buttonDocumento = new System.Windows.Forms.Button();
             this.textBoxDocumentos = new System.Windows.Forms.TextBox();
@@ -48,8 +48,14 @@
             this.textBoxDocumentos3 = new System.Windows.Forms.TextBox();
             this.buttonDocumentos3 = new System.Windows.Forms.Button();
             this.labelNotificaciones = new System.Windows.Forms.Label();
-            this.comboBoxNotificaciones = new System.Windows.Forms.ComboBox();
             this.buttonSave = new AppDesktop.Button_WOC();
+            this.Documento1 = new System.Windows.Forms.OpenFileDialog();
+            this.Documento2 = new System.Windows.Forms.OpenFileDialog();
+            this.Documento3 = new System.Windows.Forms.OpenFileDialog();
+            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxComunity = new System.Windows.Forms.ComboBox();
+            this.listBoxNotificaciones = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             this.SuspendLayout();
             // 
             // labelFecha
@@ -67,7 +73,7 @@
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(349, 22);
             this.dateTimePickerFecha.TabIndex = 1;
-            this.dateTimePickerFecha.Value = new System.DateTime(2020, 2, 14, 13, 59, 45, 0);
+            this.dateTimePickerFecha.Value = new System.DateTime(2020, 2, 18, 0, 0, 0, 0);
             // 
             // labelUbicacion
             // 
@@ -145,15 +151,6 @@
             this.labelComunidad.TabIndex = 10;
             this.labelComunidad.Text = "Comunidad";
             // 
-            // comboBoxComunidad
-            // 
-            this.comboBoxComunidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxComunidad.FormattingEnabled = true;
-            this.comboBoxComunidad.Location = new System.Drawing.Point(146, 233);
-            this.comboBoxComunidad.Name = "comboBoxComunidad";
-            this.comboBoxComunidad.Size = new System.Drawing.Size(350, 24);
-            this.comboBoxComunidad.TabIndex = 11;
-            // 
             // labelDocumentos
             // 
             this.labelDocumentos.AutoSize = true;
@@ -171,6 +168,7 @@
             this.buttonDocumento.TabIndex = 13;
             this.buttonDocumento.Text = "Selecciona";
             this.buttonDocumento.UseVisualStyleBackColor = true;
+            this.buttonDocumento.Click += new System.EventHandler(this.buttonDocumento_Click);
             // 
             // textBoxDocumentos
             // 
@@ -196,6 +194,7 @@
             this.buttonDocumentos2.TabIndex = 15;
             this.buttonDocumentos2.Text = "Selecciona";
             this.buttonDocumentos2.UseVisualStyleBackColor = true;
+            this.buttonDocumentos2.Click += new System.EventHandler(this.buttonDocumentos2_Click);
             // 
             // textBoxDocumentos3
             // 
@@ -213,6 +212,7 @@
             this.buttonDocumentos3.TabIndex = 17;
             this.buttonDocumentos3.Text = "Selecciona";
             this.buttonDocumentos3.UseVisualStyleBackColor = true;
+            this.buttonDocumentos3.Click += new System.EventHandler(this.buttonDocumentos3_Click);
             // 
             // labelNotificaciones
             // 
@@ -222,15 +222,6 @@
             this.labelNotificaciones.Size = new System.Drawing.Size(96, 17);
             this.labelNotificaciones.TabIndex = 19;
             this.labelNotificaciones.Text = "Notificaciones";
-            // 
-            // comboBoxNotificaciones
-            // 
-            this.comboBoxNotificaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxNotificaciones.FormattingEnabled = true;
-            this.comboBoxNotificaciones.Location = new System.Drawing.Point(146, 349);
-            this.comboBoxNotificaciones.Name = "comboBoxNotificaciones";
-            this.comboBoxNotificaciones.Size = new System.Drawing.Size(350, 24);
-            this.comboBoxNotificaciones.TabIndex = 20;
             // 
             // buttonSave
             // 
@@ -242,7 +233,7 @@
             this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Consolas", 12F);
-            this.buttonSave.Location = new System.Drawing.Point(125, 394);
+            this.buttonSave.Location = new System.Drawing.Point(126, 443);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.OnHoverBorderColor = System.Drawing.Color.Gray;
@@ -255,13 +246,52 @@
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // Documento1
+            // 
+            this.Documento1.FileName = "openFileDialogDocumento1";
+            // 
+            // Documento2
+            // 
+            this.Documento2.FileName = "openFileDialogDocumento2";
+            // 
+            // Documento3
+            // 
+            this.Documento3.FileName = "openFileDialogDocumento3";
+            // 
+            // bindingSourceComunidades
+            // 
+            this.bindingSourceComunidades.DataSource = typeof(Chrysallis.comunidades);
+            // 
+            // comboBoxComunity
+            // 
+            this.comboBoxComunity.DataSource = this.bindingSourceComunidades;
+            this.comboBoxComunity.DisplayMember = "nombre";
+            this.comboBoxComunity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxComunity.FormattingEnabled = true;
+            this.comboBoxComunity.Location = new System.Drawing.Point(147, 234);
+            this.comboBoxComunity.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxComunity.Name = "comboBoxComunity";
+            this.comboBoxComunity.Size = new System.Drawing.Size(349, 24);
+            this.comboBoxComunity.TabIndex = 22;
+            this.comboBoxComunity.ValueMember = "id";
+            // 
+            // listBoxNotificaciones
+            // 
+            this.listBoxNotificaciones.FormattingEnabled = true;
+            this.listBoxNotificaciones.ItemHeight = 16;
+            this.listBoxNotificaciones.Location = new System.Drawing.Point(147, 349);
+            this.listBoxNotificaciones.Name = "listBoxNotificaciones";
+            this.listBoxNotificaciones.Size = new System.Drawing.Size(349, 84);
+            this.listBoxNotificaciones.TabIndex = 23;
+            // 
             // FormEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 459);
+            this.ClientSize = new System.Drawing.Size(520, 505);
+            this.Controls.Add(this.listBoxNotificaciones);
+            this.Controls.Add(this.comboBoxComunity);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.comboBoxNotificaciones);
             this.Controls.Add(this.labelNotificaciones);
             this.Controls.Add(this.textBoxDocumentos3);
             this.Controls.Add(this.buttonDocumentos3);
@@ -270,7 +300,6 @@
             this.Controls.Add(this.textBoxDocumentos);
             this.Controls.Add(this.buttonDocumento);
             this.Controls.Add(this.labelDocumentos);
-            this.Controls.Add(this.comboBoxComunidad);
             this.Controls.Add(this.labelComunidad);
             this.Controls.Add(this.textBoxNumeroAsistentes);
             this.Controls.Add(this.labelNumeroAsistentes);
@@ -285,6 +314,7 @@
             this.Name = "FormEvento";
             this.Text = "Evento";
             this.Load += new System.EventHandler(this.FormEvento_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,7 +333,6 @@
         private System.Windows.Forms.Label labelNumeroAsistentes;
         private System.Windows.Forms.TextBox textBoxNumeroAsistentes;
         private System.Windows.Forms.Label labelComunidad;
-        private System.Windows.Forms.ComboBox comboBoxComunidad;
         private System.Windows.Forms.Label labelDocumentos;
         private System.Windows.Forms.Button buttonDocumento;
         private System.Windows.Forms.TextBox textBoxDocumentos;
@@ -312,7 +341,12 @@
         private System.Windows.Forms.TextBox textBoxDocumentos3;
         private System.Windows.Forms.Button buttonDocumentos3;
         private System.Windows.Forms.Label labelNotificaciones;
-        private System.Windows.Forms.ComboBox comboBoxNotificaciones;
         private AppDesktop.Button_WOC buttonSave;
+        private System.Windows.Forms.OpenFileDialog Documento1;
+        private System.Windows.Forms.OpenFileDialog Documento2;
+        private System.Windows.Forms.OpenFileDialog Documento3;
+        private System.Windows.Forms.BindingSource bindingSourceComunidades;
+        private System.Windows.Forms.ComboBox comboBoxComunity;
+        private System.Windows.Forms.ListBox listBoxNotificaciones;
     }
 }
