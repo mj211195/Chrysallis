@@ -2,12 +2,6 @@
 using Chrysallis.Idiomas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chrysallis
@@ -22,8 +16,8 @@ namespace Chrysallis
         private void FormSocios_Load(object sender, EventArgs e)
         {
             RefrescarDatos();
-            buttonAgregarSocio.Text = Idiomas.Strings.addPartner;
-            this.Text = Idiomas.Strings.partners;
+            buttonAgregarSocio.Text = Strings.addPartner;
+            this.Text = Strings.partners;
         }
 
         private void buttonAgregarSocio_Click(object sender, EventArgs e)
