@@ -12,7 +12,7 @@ namespace Chrysallis.BD
 {
     public static class SocioORM
     {
-        public static socios LoginSocio(String dni,String password)
+        public static socios LoginSocio(String dni,String password, ref Boolean correcto)
         {
             socios socio = null;
             try
@@ -24,8 +24,9 @@ namespace Chrysallis.BD
             }
             catch (EntityException ex)
             {
+                correcto = false;
                 SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
             }
             return socio;
         }

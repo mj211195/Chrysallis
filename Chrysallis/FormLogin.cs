@@ -97,13 +97,14 @@ namespace Chrysallis
             {
                 OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
                 String clave = hash.Sha512(password);
-                socios socio = SocioORM.LoginSocio(dni, clave);
+                Boolean correcto = true;
+                socios socio = SocioORM.LoginSocio(dni, clave, ref correcto);
                 if (socio != null)
                 {
                     cerradoPropio = true;
                     this.Close();
                 }
-                else
+                else if(correcto)
                 {
                     MessageBox.Show("Credenciales incorrectas!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
