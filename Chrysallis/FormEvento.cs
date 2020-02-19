@@ -22,6 +22,7 @@ namespace Chrysallis
         private void FormEvento_Load(object sender, EventArgs e)
         {
             bindingSourceComunidades.DataSource = ComunidadORM.SelectAllComunidades();
+            dateTimePickerHora.CustomFormat = "HH:mm";
             cargarHora();
             cambiarIdioma(); 
      
@@ -115,14 +116,14 @@ namespace Chrysallis
         //Metodo para cargar las horas en el comoBoxHora
         private void cargarHora()
         {
-            comboBoxHora.Items.Clear();
+            //comboBoxHora.Items.Clear();
 
-            for (int minutos = 0; minutos < 1440; minutos += 15)
-            {
-                string hour = new DateTime().AddMinutes(minutos).ToString("HH:mm");
-                comboBoxHora.Items.Add(hour);
-            }
-            comboBoxHora.Text = "07:00";
+            //for (int minutos = 0; minutos < 1440; minutos += 15)
+            //{
+            //    string hour = new DateTime().AddMinutes(minutos).ToString("HH:mm");
+            //    comboBoxHora.Items.Add(hour);
+            //}
+            //comboBoxHora.Text = "07:00";
         }
 
         //Metodo para cambiar el idioma
