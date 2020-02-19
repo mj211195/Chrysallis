@@ -17,6 +17,7 @@ namespace Chrysallis
         ComboBoxItem itemSpanish = new ComboBoxItem(Idiomas.Strings.spanish, new Bitmap(Chrysallis.Properties.Resources.espanol));
         ComboBoxItem itemEnglish = new ComboBoxItem(Idiomas.Strings.english, new Bitmap(Chrysallis.Properties.Resources.UK));
         Boolean cerradoPropio = false;
+        public static socios socioLogin = null;
         public FormLogin()
         {
             InitializeComponent();
@@ -98,8 +99,8 @@ namespace Chrysallis
                 OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
                 String clave = hash.Sha512(password);
                 Boolean correcto = true;
-                socios socio = SocioORM.LoginSocio(dni, clave, ref correcto);
-                if (socio != null)
+                socioLogin = SocioORM.LoginSocio(dni, clave, ref correcto);
+                if (socioLogin != null)
                 {
                     cerradoPropio = true;
                     this.Close();
