@@ -35,8 +35,8 @@ namespace Chrysallis
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(idioma);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
-            labelUsuario.Text = Idiomas.Strings.user;
-            labelContrasenya.Text = Idiomas.Strings.password;
+            labelUser.Text = Idiomas.Strings.user;
+            labelPassword.Text = Idiomas.Strings.password;
             buttonEntrar.Text = Idiomas.Strings.login;
             itemCatalan.Value = Idiomas.Strings.catalan;
             itemSpanish.Value = Idiomas.Strings.spanish;
@@ -87,8 +87,8 @@ namespace Chrysallis
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
-            String dni = textBoxUsuario.Text.ToString();
-            String password = textBoxContrasenya.Text.ToString();
+            String dni = textBoxUser.Text.ToString();
+            String password = textBoxPassword.Text.ToString();
             if (dni.Trim().Equals("") || password.Trim().Equals(""))
             {
                 MessageBox.Show("Usuari i/o contraseña vacios!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -116,6 +116,17 @@ namespace Chrysallis
             if (!cerradoPropio)
             {
                 Application.Exit();
+            }
+        }
+
+        private void pictureBoxShow_Click(object sender, EventArgs e)
+        {
+            if(textBoxPassword.PasswordChar == '*')
+            {
+                textBoxPassword.PasswordChar = '\0';
+            }else if (textBoxPassword.PasswordChar == '\0')
+            {
+                textBoxPassword.PasswordChar = '*';
             }
         }
     }

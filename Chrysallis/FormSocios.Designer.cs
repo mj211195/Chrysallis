@@ -51,6 +51,7 @@
             // 
             // dataGridViewSocios
             // 
+            this.dataGridViewSocios.AllowUserToAddRows = false;
             this.dataGridViewSocios.AutoGenerateColumns = false;
             this.dataGridViewSocios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -72,6 +73,7 @@
             this.dataGridViewSocios.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewSocios.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewSocios.Name = "dataGridViewSocios";
+            this.dataGridViewSocios.ReadOnly = true;
             this.dataGridViewSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSocios.Size = new System.Drawing.Size(820, 438);
             this.dataGridViewSocios.TabIndex = 0;
@@ -110,66 +112,78 @@
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dniDataGridViewTextBoxColumn
             // 
             this.dniDataGridViewTextBoxColumn.DataPropertyName = "dni";
             this.dniDataGridViewTextBoxColumn.HeaderText = "dni";
             this.dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
+            this.dniDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonoDataGridViewTextBoxColumn
             // 
             this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
             this.telefonoDataGridViewTextBoxColumn.HeaderText = "telefono";
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // apellidosDataGridViewTextBoxColumn
             // 
             this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
             this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
             this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // activoDataGridViewCheckBoxColumn
             // 
             this.activoDataGridViewCheckBoxColumn.DataPropertyName = "activo";
             this.activoDataGridViewCheckBoxColumn.HeaderText = "activo";
             this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
+            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // mailDataGridViewTextBoxColumn
             // 
             this.mailDataGridViewTextBoxColumn.DataPropertyName = "mail";
             this.mailDataGridViewTextBoxColumn.HeaderText = "mail";
             this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            this.mailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
             this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // administradorDataGridViewCheckBoxColumn
             // 
             this.administradorDataGridViewCheckBoxColumn.DataPropertyName = "administrador";
             this.administradorDataGridViewCheckBoxColumn.HeaderText = "administrador";
             this.administradorDataGridViewCheckBoxColumn.Name = "administradorDataGridViewCheckBoxColumn";
+            this.administradorDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // idiomaDefectoDataGridViewTextBoxColumn
             // 
             this.idiomaDefectoDataGridViewTextBoxColumn.DataPropertyName = "idiomaDefecto";
             this.idiomaDefectoDataGridViewTextBoxColumn.HeaderText = "idiomaDefecto";
             this.idiomaDefectoDataGridViewTextBoxColumn.Name = "idiomaDefectoDataGridViewTextBoxColumn";
+            this.idiomaDefectoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idiomaDefectoDataGridViewTextBoxColumn.Visible = false;
             // 
             // estatalDataGridViewTextBoxColumn
             // 
             this.estatalDataGridViewTextBoxColumn.DataPropertyName = "estatal";
             this.estatalDataGridViewTextBoxColumn.HeaderText = "estatal";
             this.estatalDataGridViewTextBoxColumn.Name = "estatalDataGridViewTextBoxColumn";
+            this.estatalDataGridViewTextBoxColumn.ReadOnly = true;
             this.estatalDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.estatalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -178,6 +192,7 @@
             this.idcomunidadDataGridViewTextBoxColumn.DataPropertyName = "id_comunidad";
             this.idcomunidadDataGridViewTextBoxColumn.HeaderText = "id_comunidad";
             this.idcomunidadDataGridViewTextBoxColumn.Name = "idcomunidadDataGridViewTextBoxColumn";
+            this.idcomunidadDataGridViewTextBoxColumn.ReadOnly = true;
             this.idcomunidadDataGridViewTextBoxColumn.Visible = false;
             // 
             // comunidad
