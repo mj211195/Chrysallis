@@ -10,10 +10,20 @@ namespace Chrysallis
 
     {
         List<comunidades> comunidades;
+        private int id;
+
         public FormSocio()
         {
             InitializeComponent();
+            this.id = 0;
         }
+
+        public FormSocio(int id)
+        {
+            InitializeComponent();
+            this.id = id;
+        }
+
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -87,11 +97,17 @@ namespace Chrysallis
                     socio.id_comunidad = null;
                 }
 
-                if (SocioORM.InsertSocio(socio))
+                if (SocioORM.InsertSocio(socio) && id != 0)
                 {
                     MessageBox.Show(Strings.partnerCreated, Strings.created, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                }                         
+                }
+                else
+                {
+
+                    MessageBox.Show("El socio ha sido modificado", "MODIFICADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
         }
 

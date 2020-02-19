@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
-            this.buttonAgregarSocio = new AppDesktop.Button_WOC();
-            this.bindingSourceSocios = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +43,8 @@
             this.estatalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcomunidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comunidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceSocios = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonAgregarSocio = new AppDesktop.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSocios)).BeginInit();
             this.SuspendLayout();
@@ -74,34 +74,7 @@
             this.dataGridViewSocios.Name = "dataGridViewSocios";
             this.dataGridViewSocios.Size = new System.Drawing.Size(820, 438);
             this.dataGridViewSocios.TabIndex = 0;
-            // 
-            // buttonAgregarSocio
-            // 
-            this.buttonAgregarSocio.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonAgregarSocio.AutoSize = true;
-            this.buttonAgregarSocio.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarSocio.BorderColor = System.Drawing.Color.Black;
-            this.buttonAgregarSocio.ButtonColor = System.Drawing.SystemColors.Info;
-            this.buttonAgregarSocio.FlatAppearance.BorderSize = 0;
-            this.buttonAgregarSocio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarSocio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregarSocio.Font = new System.Drawing.Font("Consolas", 12F);
-            this.buttonAgregarSocio.Location = new System.Drawing.Point(299, 444);
-            this.buttonAgregarSocio.Name = "buttonAgregarSocio";
-            this.buttonAgregarSocio.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.buttonAgregarSocio.OnHoverButtonColor = System.Drawing.Color.Azure;
-            this.buttonAgregarSocio.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.buttonAgregarSocio.Size = new System.Drawing.Size(200, 40);
-            this.buttonAgregarSocio.TabIndex = 9;
-            this.buttonAgregarSocio.Text = "Agregar socio";
-            this.buttonAgregarSocio.TextColor = System.Drawing.Color.Black;
-            this.buttonAgregarSocio.UseVisualStyleBackColor = false;
-            this.buttonAgregarSocio.Click += new System.EventHandler(this.buttonAgregarSocio_Click);
-            // 
-            // bindingSourceSocios
-            // 
-            this.bindingSourceSocios.DataSource = typeof(Chrysallis.socios);
+            this.dataGridViewSocios.DoubleClick += new System.EventHandler(this.dataGridViewSocios_DoubleClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -181,6 +154,34 @@
             this.comunidad.HeaderText = "Comunidad";
             this.comunidad.Name = "comunidad";
             this.comunidad.ReadOnly = true;
+            // 
+            // bindingSourceSocios
+            // 
+            this.bindingSourceSocios.DataSource = typeof(Chrysallis.socios);
+            // 
+            // buttonAgregarSocio
+            // 
+            this.buttonAgregarSocio.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonAgregarSocio.AutoSize = true;
+            this.buttonAgregarSocio.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarSocio.BorderColor = System.Drawing.Color.Black;
+            this.buttonAgregarSocio.ButtonColor = System.Drawing.SystemColors.Info;
+            this.buttonAgregarSocio.FlatAppearance.BorderSize = 0;
+            this.buttonAgregarSocio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarSocio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregarSocio.Font = new System.Drawing.Font("Consolas", 12F);
+            this.buttonAgregarSocio.Location = new System.Drawing.Point(299, 444);
+            this.buttonAgregarSocio.Name = "buttonAgregarSocio";
+            this.buttonAgregarSocio.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.buttonAgregarSocio.OnHoverButtonColor = System.Drawing.Color.Azure;
+            this.buttonAgregarSocio.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.buttonAgregarSocio.Size = new System.Drawing.Size(200, 40);
+            this.buttonAgregarSocio.TabIndex = 9;
+            this.buttonAgregarSocio.Text = "Agregar socio";
+            this.buttonAgregarSocio.TextColor = System.Drawing.Color.Black;
+            this.buttonAgregarSocio.UseVisualStyleBackColor = false;
+            this.buttonAgregarSocio.Click += new System.EventHandler(this.buttonAgregarSocio_Click);
             // 
             // FormSocios
             // 
