@@ -475,6 +475,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Modificar soci.
+        /// </summary>
+        internal static string modifyPartner {
+            get {
+                return ResourceManager.GetString("modifyPartner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nom.
         /// </summary>
         internal static string name {

@@ -10,18 +10,18 @@ namespace Chrysallis
 
     {
         List<comunidades> comunidades;
-        private int id;
+        private socios socio;
 
         public FormSocio()
         {
             InitializeComponent();
-            this.id = 0;
+            this.socio = null;
         }
 
-        public FormSocio(int id)
+        public FormSocio(socios socio)
         {
             InitializeComponent();
-            this.id = id;
+            this.socio = socio;
         }
 
 
@@ -62,20 +62,24 @@ namespace Chrysallis
             }
             else
             {
-                socios socio = new socios();
-                socio.dni = textBoxDni.Text.Trim();
-                socio.telefono = textBoxPhone.Text.Trim();
-                socio.nombre = textBoxName.Text.Trim();
-                socio.apellidos = textBoxLastName.Text.Trim();
-                socio.mail = textBoxEmail.Text.Trim();
+                socios socioNuevo = new socios();
+                socioNuevo.dni = textBoxDni.Text.Trim();
+                socioNuevo.telefono = textBoxPhone.Text.Trim();
+                socioNuevo.nombre = textBoxName.Text.Trim();
+                socioNuevo.apellidos = textBoxLastName.Text.Trim();
+                socioNuevo.mail = textBoxEmail.Text.Trim();
 
-                OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
-                String clave = hash.Sha512(textBoxPassword.Text.Trim());
-                socio.password = clave;
-
-                socio.activo = checkBoxActive.Checked;
-                socio.administrador = checkBoxAdministrator.Checked;
-                socio.estatal = checkBoxState.Checked;
+                String clave = textBoxPassword.Text.Trim();
+                if (!clave.Equals(socio.password))
+                {
+                    OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
+                    clave = hash.Sha512(textBoxPassword.Text.Trim());
+                    
+                }
+                socioNuevo.password = clave;
+                socioNuevo.activo = checkBoxActive.Checked;
+                socioNuevo.administrador = checkBoxAdministrator.Checked;
+                socioNuevo.estatal = checkBoxState.Checked;
                 if (checkBoxAdministrator.Checked)
                 {
                     if (comboBoxComunity.SelectedItem != null)
@@ -86,7 +90,7 @@ namespace Chrysallis
                             String aux = GestorIdiomas.getComunidad(c.nombre);
                             if (aux.Equals(comboBoxComunity.Text))
                             {
-                                socio.id_comunidad = c.id;
+                                socioNuevo.id_comunidad = c.id;
                             }
                         }
                     }
@@ -94,19 +98,24 @@ namespace Chrysallis
                 }
                 else
                 {
-                    socio.id_comunidad = null;
+                    socioNuevo.id_comunidad = null;
                 }
-
-                if (SocioORM.InsertSocio(socio) && id != 0)
+                if (socio == null)
                 {
-                    MessageBox.Show(Strings.partnerCreated, Strings.created, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    if (SocioORM.InsertSocio(socioNuevo))
+                    {
+                        MessageBox.Show(Strings.partnerCreated, Strings.created, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
                 }
                 else
                 {
-
-                    MessageBox.Show("El socio ha sido modificado", "MODIFICADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    socioNuevo.id = socio.id;
+                    if (SocioORM.UpdateSocio(socioNuevo))
+                    {
+                        MessageBox.Show("El socio ha sido modificado", "MODIFICADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
                 }
             }
         }
@@ -118,11 +127,34 @@ namespace Chrysallis
             //bindingSourceComunidades.DataSource = comunidades;
             cambiarIdioma();
             buttonSave.Location = new System.Drawing.Point(97, 224);
+
+            if (socio != null)
+            {
+                textBoxDni.Text = socio.dni;
+                textBoxPhone.Text = socio.telefono;
+                textBoxName.Text = socio.nombre;
+                textBoxLastName.Text = socio.apellidos;
+                textBoxEmail.Text = socio.mail;
+                textBoxPassword.Text = socio.password;
+                textBoxPassword2.Text = socio.password;
+                checkBoxActive.Checked = socio.activo;
+                checkBoxAdministrator.Checked = socio.administrador;
+                checkBoxState.Checked = (bool)socio.estatal;
+
+                foreach (comunidades c in comunidades)
+                {
+                    if (c.id == socio.id_comunidad)
+                    {
+                        comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
+                    }
+                }
+
+            }
         }
 
         public void cambiarIdioma()
         {
-            this.Text = Strings.partner;
+            
             labelPhone.Text = Strings.phone;
             labelName.Text = Strings.name;
             labelLastName.Text = Strings.lastName;
@@ -135,6 +167,14 @@ namespace Chrysallis
             checkBoxState.Text = Strings.state;
             checkBoxAdministrator.Text = Strings.admin;
 
+            if (socio == null)
+            {
+                this.Text = Strings.partner;
+            }
+            else
+            {
+                this.Text = Strings.modifyPartner;
+            }
 
             //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
             List<String> comunidadesString = new List<String>();

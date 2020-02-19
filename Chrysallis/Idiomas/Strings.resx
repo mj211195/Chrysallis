@@ -306,4 +306,7 @@
   <data name="created" xml:space="preserve">
     <value>CREAT</value>
   </data>
+  <data name="modifyPartner" xml:space="preserve">
+    <value>Modificar soci</value>
+  </data>
 </root>

@@ -69,6 +69,16 @@ namespace Chrysallis.BD
         public static Boolean UpdateSocio(socios socio)
         {
             socios _socio = ORM.bd.socios.Find(socio.id);
+            _socio.dni = socio.dni;
+            _socio.nombre = socio.nombre;
+            _socio.apellidos = socio.apellidos;
+            _socio.mail = socio.mail;
+            _socio.telefono = socio.telefono;
+            _socio.password = socio.password;
+            _socio.activo = socio.activo;
+            _socio.estatal = socio.estatal;
+            _socio.administrador = socio.administrador;
+            _socio.id_comunidad = socio.id_comunidad;
             Boolean correcto = false;
             try
             {
