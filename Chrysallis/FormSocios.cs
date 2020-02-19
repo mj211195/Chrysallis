@@ -60,5 +60,16 @@ namespace Chrysallis
                 }
             }
         }
+
+        private void dataGridViewSocios_DoubleClick(object sender, EventArgs e)
+        {
+ 
+            DataGridViewRow row = dataGridViewSocios.CurrentRow;
+            int id = int.Parse(row.Cells["id"].Value.ToString());
+            FormSocio formSocio = new FormSocio(id);
+            formSocio.Text = "Modificación de socio";
+            formSocio.ShowDialog();
+            RefrescarDatos();
+        }
     }
 }
