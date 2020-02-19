@@ -24,6 +24,7 @@ namespace Chrysallis
         {
             FormSocio formSocio = new FormSocio();
             formSocio.ShowDialog();
+            RefrescarDatos();
         }
 
         private void RefrescarDatos()
@@ -37,13 +38,26 @@ namespace Chrysallis
                     Application.Exit();
                 }
             }
-            else if (FormLogin.socioLogin.estatal == true)
+            else if ((bool)FormLogin.socioLogin.estatal)
             {
                 bindingSourceSocios.DataSource = socios;
             }
             else
             {
-                bindingSourceSocios.DataSource = SocioORM.SelectAllSociosByComunidad((int)FormLogin.socioLogin.id_comunidad);
+                //Apaño muy feo
+                List<socios> sociosComunidad = SocioORM.SelectAllSociosByComunidad((int)FormLogin.socioLogin.id_comunidad);
+                List<socios> aux = SocioORM.SelectAllSocios();
+                foreach (socios s in aux)
+                {
+                    foreach (comunidades c in s.comunidades1)
+                    {
+                        if(c.id == FormLogin.socioLogin.id_comunidad)
+                        {
+                            sociosComunidad.Add(s);
+                        }
+                    }
+                }
+                bindingSourceSocios.DataSource = sociosComunidad;
             }
 
 

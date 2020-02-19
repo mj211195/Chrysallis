@@ -63,6 +63,7 @@ namespace Chrysallis
             else
             {
                 socios socioNuevo = new socios();
+                comunidades com = new comunidades();
                 socioNuevo.dni = textBoxDni.Text.Trim();
                 socioNuevo.telefono = textBoxPhone.Text.Trim();
                 socioNuevo.nombre = textBoxName.Text.Trim();
@@ -70,7 +71,7 @@ namespace Chrysallis
                 socioNuevo.mail = textBoxEmail.Text.Trim();
 
                 String clave = textBoxPassword.Text.Trim();
-                if (!clave.Equals(socio.password))
+                if (!clave.Equals(socioNuevo.password))
                 {
                     OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
                     clave = hash.Sha512(textBoxPassword.Text.Trim());
@@ -80,19 +81,21 @@ namespace Chrysallis
                 socioNuevo.activo = checkBoxActive.Checked;
                 socioNuevo.administrador = checkBoxAdministrator.Checked;
                 socioNuevo.estatal = checkBoxState.Checked;
+                foreach (comunidades c in comunidades)
+                {
+                    String aux = GestorIdiomas.getComunidad(c.nombre);
+                    if (aux.Equals(comboBoxComunity.Text))
+                    {
+                        com = c;
+                        socioNuevo.comunidades1.Add(c);
+                    }
+                }
                 if (checkBoxAdministrator.Checked)
                 {
                     if (comboBoxComunity.SelectedItem != null)
                     {
                         //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
-                        foreach (comunidades c in comunidades)
-                        {
-                            String aux = GestorIdiomas.getComunidad(c.nombre);
-                            if (aux.Equals(comboBoxComunity.Text))
-                            {
-                                socioNuevo.id_comunidad = c.id;
-                            }
-                        }
+                        socioNuevo.id_comunidad = com.id;
                     }
                     
                 }
@@ -126,7 +129,7 @@ namespace Chrysallis
             //no uso el bindingsource pq me daba problemas al cambiar de idioma
             //bindingSourceComunidades.DataSource = comunidades;
             cambiarIdioma();
-            buttonSave.Location = new System.Drawing.Point(97, 224);
+            //buttonSave.Location = new System.Drawing.Point(97, 224);
 
             if (socio != null)
             {
@@ -148,7 +151,18 @@ namespace Chrysallis
                         comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
                     }
                 }
-
+                if (!(bool)FormLogin.socioLogin.estatal)
+                {
+                    checkBoxState.Enabled = false;
+                    foreach (comunidades c in comunidades)
+                    {
+                        if (c.id == FormLogin.socioLogin.id_comunidad)
+                        {
+                            comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
+                        }
+                    }
+                    comboBoxComunity.Enabled = false;
+                }
             }
         }
 
@@ -187,20 +201,21 @@ namespace Chrysallis
 
         private void checkBoxAdministrator_CheckedChanged(object sender, EventArgs e)
         {
+
             if (checkBoxAdministrator.Checked)
             {
                 checkBoxState.Visible = true;
-                labelComunidad.Visible = true;
-                comboBoxComunity.Visible = true;
-                buttonSave.Location = new System.Drawing.Point(97,251);
+                //labelComunidad.Visible = true;
+                //comboBoxComunity.Visible = true;
+                //buttonSave.Location = new System.Drawing.Point(97, 251);
             }
             else
             {
 
                 checkBoxState.Visible = false;
-                labelComunidad.Visible = false;
-                comboBoxComunity.Visible = false;
-                buttonSave.Location = new System.Drawing.Point(97, 224);
+                //labelComunidad.Visible = false;
+                //comboBoxComunity.Visible = false;
+                //buttonSave.Location = new System.Drawing.Point(97, 224);
             }
         }
     }
