@@ -27,6 +27,7 @@ namespace Chrysallis
         {
             FormEvento formEvento = new FormEvento();
             formEvento.ShowDialog();
+            RefrescarDatos();
         }
 
         private void RefrescarDatos()
