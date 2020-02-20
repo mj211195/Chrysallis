@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="BD\ComunidadORM.cs" />
     <Compile Include="BD\EventoORM.cs" />
+    <Compile Include="BD\NotificacionORM.cs" />
     <Compile Include="BD\ORM.cs" />
     <Compile Include="BD\SocioORM.cs" />
     <Compile Include="Button_WOC.cs">

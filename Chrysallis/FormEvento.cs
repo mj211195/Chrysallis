@@ -23,6 +23,9 @@ namespace Chrysallis
 
         private void FormEvento_Load(object sender, EventArgs e)
         {
+            List<notificaciones> notificaciones = NotificacionORM.SelectAllNotificaciones();
+            bindingSourceNotificaciones.DataSource = notificaciones;
+
             comunidades = ComunidadORM.SelectAllComunidades();
             dateTimePickerHora.CustomFormat = "HH:mm";
             dateTimePickerFecha.Value = DateTime.Today;
@@ -183,5 +186,6 @@ namespace Chrysallis
             }
             comboBoxComunity.DataSource = comunidadesString;
         }
+
     }
 }
