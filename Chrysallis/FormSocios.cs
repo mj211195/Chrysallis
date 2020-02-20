@@ -48,7 +48,7 @@ namespace Chrysallis
 
 
             //Apaño feo feo pero feo
-            List<comunidades> comunidades = ComunidadORM.SelectAllComunidades();
+            /*List<comunidades> comunidades = ComunidadORM.SelectAllComunidades();
             foreach (DataGridViewRow item in dataGridViewSocios.Rows)
             {
                 foreach (comunidades c in comunidades)
@@ -62,7 +62,7 @@ namespace Chrysallis
                         }
                     }
                 }
-            }
+            }*/
         }
 
         private void dataGridViewSocios_DoubleClick(object sender, EventArgs e)
@@ -72,6 +72,21 @@ namespace Chrysallis
             FormSocio formSocio = new FormSocio(socio);
             formSocio.ShowDialog();
             RefrescarDatos();
+        }
+
+        private void dataGridViewSocios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            socios _socio;
+
+            if (e.ColumnIndex == 12)
+            {
+                _socio = (socios)dataGridViewSocios.Rows[e.RowIndex].DataBoundItem;
+                if (_socio.comunidades != null)
+                {
+                    e.Value = _socio.comunidades.nombre;
+                }
+                
+            }
         }
     }
 }

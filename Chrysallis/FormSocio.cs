@@ -70,11 +70,15 @@ namespace Chrysallis
                 socioNuevo.mail = textBoxEmail.Text.Trim();
 
                 String clave = textBoxPassword.Text.Trim();
-                if (!clave.Equals(socio.password))
+                if (socio != null)
                 {
-                    OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
-                    clave = hash.Sha512(textBoxPassword.Text.Trim());
-                    
+                    if (!clave.Equals(socio.password))
+                    {
+                        OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
+                        clave = hash.Sha512(textBoxPassword.Text.Trim());
+
+                    }
+
                 }
                 socioNuevo.password = clave;
                 socioNuevo.activo = checkBoxActive.Checked;
