@@ -16,7 +16,7 @@ namespace Chrysallis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenu());
+            Application.Run(new FormEvento());
         }
     }
 }
