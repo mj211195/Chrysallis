@@ -10,18 +10,20 @@ namespace Chrysallis
 
     {
         List<comunidades> comunidades;
-        private socios socio;
+        private socios socio = null;
+        private Boolean modificar;
 
         public FormSocio()
         {
             InitializeComponent();
-            this.socio = null;
+            modificar = false;
         }
 
-        public FormSocio(socios socio)
+        public FormSocio(socios socio, Boolean modificar)
         {
             InitializeComponent();
             this.socio = socio;
+            this.modificar = modificar;
         }
 
 
@@ -69,22 +71,25 @@ namespace Chrysallis
                 socioNuevo.nombre = textBoxName.Text.Trim();
                 socioNuevo.apellidos = textBoxLastName.Text.Trim();
                 socioNuevo.mail = textBoxEmail.Text.Trim();
-
-                String clave = textBoxPassword.Text.Trim();
-                if (socio != null)
+                socioNuevo.activo = checkBoxActive.Checked;
+                socioNuevo.administrador = checkBoxAdministrator.Checked;
+                socioNuevo.estatal = checkBoxState.Checked;
+                if (modificar)
                 {
+                    String clave = textBoxPassword.Text.Trim();
                     if (!clave.Equals(socio.password))
                     {
                         OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
                         clave = hash.Sha512(textBoxPassword.Text.Trim());
 
                     }
-
+                    socioNuevo.password = clave;
                 }
-                socioNuevo.password = clave;
-                socioNuevo.activo = checkBoxActive.Checked;
-                socioNuevo.administrador = checkBoxAdministrator.Checked;
-                socioNuevo.estatal = checkBoxState.Checked;
+                else{
+                    OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
+                    String clave = hash.Sha512(textBoxPassword.Text.Trim());
+                    socioNuevo.password = clave;
+                }
                 //Apaño feo
                 foreach (comunidades c in comunidades)
                 {
@@ -109,7 +114,7 @@ namespace Chrysallis
                     socioNuevo.id_comunidad = null;
                 }
 
-                if (socio == null)
+                if (!modificar)
                 {
                     if (SocioORM.InsertSocio(socioNuevo))
                     {

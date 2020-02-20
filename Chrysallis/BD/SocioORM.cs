@@ -118,6 +118,7 @@ namespace Chrysallis.BD
             Boolean correcto = false;
             try
             {
+                //ORM.bd.comunidades.RemoveRange(socio.comunidades1);
                 ORM.bd.socios.Remove(socio);
                 ORM.bd.SaveChanges();
                 correcto = true;
@@ -129,6 +130,25 @@ namespace Chrysallis.BD
                 MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return correcto;
+        }
+
+        public static List<socios> SelectSocioBySearch(String busqueda)
+        {
+            List<socios> _socios = null;
+            try
+            {
+                _socios = (
+                from s in ORM.bd.socios
+                from c in s.comunidades1
+                where s.dni.Contains(busqueda) || s.apellidos.Contains(busqueda) || s.nombre.Contains(busqueda) ||c.nombre.Contains(busqueda)
+                select s).ToList();
+            }
+            catch (EntityException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return _socios;
         }
     }
 }

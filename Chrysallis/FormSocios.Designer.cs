@@ -44,6 +44,8 @@
             this.idcomunidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comunidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceSocios = new System.Windows.Forms.BindingSource(this.components);
+            this.labelSearch = new System.Windows.Forms.Label();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonAgregarSocio = new AppDesktop.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSocios)).BeginInit();
@@ -70,15 +72,14 @@
             this.idcomunidadDataGridViewTextBoxColumn,
             this.comunidad});
             this.dataGridViewSocios.DataSource = this.bindingSourceSocios;
-            this.dataGridViewSocios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridViewSocios.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewSocios.Location = new System.Drawing.Point(0, 76);
             this.dataGridViewSocios.Name = "dataGridViewSocios";
             this.dataGridViewSocios.ReadOnly = true;
             this.dataGridViewSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSocios.Size = new System.Drawing.Size(820, 438);
+            this.dataGridViewSocios.Size = new System.Drawing.Size(820, 302);
             this.dataGridViewSocios.TabIndex = 0;
-            this.dataGridViewSocios.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridViewSocios_UserDeletingRow);
             this.dataGridViewSocios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewSocios_CellFormatting);
+            this.dataGridViewSocios.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridViewSocios_UserDeletingRow);
             this.dataGridViewSocios.DoubleClick += new System.EventHandler(this.dataGridViewSocios_DoubleClick);
             // 
             // idDataGridViewTextBoxColumn
@@ -179,6 +180,23 @@
             // 
             this.bindingSourceSocios.DataSource = typeof(Chrysallis.socios);
             // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Location = new System.Drawing.Point(12, 23);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(40, 13);
+            this.labelSearch.TabIndex = 10;
+            this.labelSearch.Text = "Buscar";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(59, 18);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(352, 20);
+            this.textBoxSearch.TabIndex = 11;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            // 
             // buttonAgregarSocio
             // 
             this.buttonAgregarSocio.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -208,6 +226,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 496);
+            this.Controls.Add(this.textBoxSearch);
+            this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.buttonAgregarSocio);
             this.Controls.Add(this.dataGridViewSocios);
             this.Name = "FormSocios";
@@ -224,6 +244,8 @@
         private AppDesktop.Button_WOC buttonAgregarSocio;
         private System.Windows.Forms.BindingSource bindingSourceSocios;
         private System.Windows.Forms.DataGridView dataGridViewSocios;
+        private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;

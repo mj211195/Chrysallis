@@ -54,7 +54,7 @@ namespace Chrysallis
         {
 
             socios socio = (socios)dataGridViewSocios.SelectedRows[0].DataBoundItem;
-            FormSocio formSocio = new FormSocio(socio);
+            FormSocio formSocio = new FormSocio(socio, true);
             formSocio.ShowDialog();
             RefrescarDatos();
         }
@@ -99,6 +99,20 @@ namespace Chrysallis
                 }
                 
             }
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text.Equals(""))
+            {
+                bindingSourceSocios.DataSource = SocioORM.SelectAllSocios();
+            }
+            else
+            {
+                String busqueda = textBoxSearch.Text;
+                bindingSourceSocios.DataSource = SocioORM.SelectSocioBySearch(busqueda);
+            }
+
         }
     }
 }
