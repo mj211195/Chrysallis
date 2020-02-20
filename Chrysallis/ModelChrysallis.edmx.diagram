@@ -10,14 +10,14 @@
         <EntityTypeShape EntityType="chrysallisModel.documentos" Width="1.5" PointX="0.625" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="chrysallisModel.eventos" Width="1.5" PointX="3.125" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="chrysallisModel.notificaciones" Width="1.5" PointX="1" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="chrysallisModel.socios" Width="1.5" PointX="6.25" PointY="3.375" IsExpanded="true" />
         <AssociationConnector Association="chrysallisModel.FK_asistir_eventos" ManuallyRouted="false" />
-        <AssociationConnector Association="chrysallisModel.FK_asistir_socios" ManuallyRouted="false" />
         <AssociationConnector Association="chrysallisModel.FK_eventos_comunidades" ManuallyRouted="false" />
-        <AssociationConnector Association="chrysallisModel.FK_socios_comunidades" ManuallyRouted="false" />
         <AssociationConnector Association="chrysallisModel.FK_documentos_eventos" ManuallyRouted="false" />
-        <AssociationConnector Association="chrysallisModel.comunidades_socios" ManuallyRouted="false" />
         <AssociationConnector Association="chrysallisModel.notificaciones_eventos" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="chrysallisModel.socios" Width="1.5" PointX="6.125" PointY="4" />
+        <AssociationConnector Association="chrysallisModel.FK_asistir_socios" />
+        <AssociationConnector Association="chrysallisModel.FK_socios_comunidades" />
+        <AssociationConnector Association="chrysallisModel.comunidades_socios" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
