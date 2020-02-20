@@ -1,4 +1,5 @@
 ﻿using Chrysallis.BD;
+using Chrysallis.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace Chrysallis
 {
     public partial class FormEvento : Form
     {
-
+        List<comunidades> comunidades;
+        eventos eventos = new eventos();
         public FormEvento()
         {
             InitializeComponent();
@@ -21,11 +23,19 @@ namespace Chrysallis
 
         private void FormEvento_Load(object sender, EventArgs e)
         {
-            bindingSourceComunidades.DataSource = ComunidadORM.SelectAllComunidades();
+            comunidades = ComunidadORM.SelectAllComunidades();
             dateTimePickerHora.CustomFormat = "HH:mm";
+            dateTimePickerFecha.Value = DateTime.Today;
+            dateTimePickerFechaLimite.Value = DateTime.Today;
             cargarHora();
-            cambiarIdioma(); 
-     
+            cambiarIdioma();
+            foreach (comunidades c in comunidades)
+            {
+                if (c.id == eventos.id_comunidad)
+                {
+                    comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
+                }
+            }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -46,13 +56,35 @@ namespace Chrysallis
             {
                 MessageBox.Show("Se tiene que introducir el numero de asistentes", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (listBoxNotificaciones.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Se tiene que seleccionar minimo una notificacion", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //Comentado de momento para que no de error al crear evento
+            //else if (listBoxNotificaciones.SelectedItems.Count == 0)
+            //{
+            //    MessageBox.Show("Se tiene que seleccionar minimo una notificacion", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
             else
             {
-                
+                eventos evento = new eventos();
+                evento.fecha = dateTimePickerFecha.Value;
+                evento.ubicacion = textBoxUbicacion.Text.Trim();
+                evento.hora = dateTimePickerHora.Value.TimeOfDay;
+                evento.fechaLimite = dateTimePickerFechaLimite.Value;
+                evento.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
+                if (comboBoxComunity.SelectedItem != null)
+                {
+                    //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
+                    foreach (comunidades c in comunidades)
+                    {
+                        String aux = GestorIdiomas.getComunidad(c.nombre);
+                        if (aux.Equals(comboBoxComunity.Text))
+                        {
+                            evento.comunidades = c;
+                        }
+                    }
+                }
+                //List<string> documento = new List<string>();
+                //evento.documentos = documento;
+                //evento.notificaciones = listBoxNotificaciones.SelectedItems();
+                EventoORM.InsertEvento(evento);
             }
             
 
@@ -66,7 +98,7 @@ namespace Chrysallis
                 if (Documento1.ShowDialog() == DialogResult.OK)
                 {
                     string documento = Documento1.FileName;
-                    
+                    textBoxDocumentos.Text = documento;
                 }
             }
             catch (Exception)
@@ -82,7 +114,7 @@ namespace Chrysallis
                 if (Documento1.ShowDialog() == DialogResult.OK)
                 {
                     string documento = Documento1.FileName;
-
+                    textBoxDocumentos2.Text = documento;
                 }
             }
             catch (Exception)
@@ -98,7 +130,7 @@ namespace Chrysallis
                 if (Documento1.ShowDialog() == DialogResult.OK)
                 {
                     string documento = Documento1.FileName;
-
+                    textBoxDocumentos3.Text = documento;
                 }
             }
             catch (Exception)
@@ -143,6 +175,13 @@ namespace Chrysallis
             buttonDocumentos2.Text = Idiomas.Strings.chosse;
             buttonDocumentos3.Text = Idiomas.Strings.chosse;
 
+            //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
+            List<String> comunidadesString = new List<String>();
+            foreach (comunidades c in comunidades)
+            {
+                comunidadesString.Add(GestorIdiomas.getComunidad(c.nombre));
+            }
+            comboBoxComunity.DataSource = comunidadesString;
         }
     }
 }
