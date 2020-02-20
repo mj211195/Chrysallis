@@ -44,19 +44,7 @@ namespace Chrysallis
             }
             else
             {
-                //Apaño muy feo
                 List<socios> sociosComunidad = SocioORM.SelectAllSociosByComunidad((int)FormLogin.socioLogin.id_comunidad);
-                List<socios> aux = SocioORM.SelectAllSocios();
-                foreach (socios s in aux)
-                {
-                    foreach (comunidades c in s.comunidades1)
-                    {
-                        if(c.id == FormLogin.socioLogin.id_comunidad && !sociosComunidad.Contains(s))
-                        {
-                            sociosComunidad.Add(s);
-                        }
-                    }
-                }
                 bindingSourceSocios.DataSource = sociosComunidad;
             }
 

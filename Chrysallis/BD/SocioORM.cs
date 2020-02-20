@@ -51,11 +51,13 @@ namespace Chrysallis.BD
         public static List<socios> SelectAllSociosByComunidad(int id_comunidad)
         {
             List<socios> socios = null;
+            comunidades com = ORM.bd.comunidades.Find(id_comunidad);
             try
             {
                 socios = (
                 from s in ORM.bd.socios
-                where s.id_comunidad == id_comunidad
+                from c in s.comunidades1
+                where s.id_comunidad == id_comunidad || c.id == id_comunidad
                 select s).ToList();
             }
             catch (EntityException ex)
