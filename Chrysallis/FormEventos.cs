@@ -1,4 +1,5 @@
 ﻿using Chrysallis.BD;
+using Chrysallis.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -14,9 +15,11 @@ namespace Chrysallis
 
         private void FormEventos_Load(object sender, EventArgs e)
         {
+
             buttonAgregarEvento.Text = Idiomas.Strings.addEvent;
-            this.Text = Idiomas.Strings._event;
+            cambiarIdioma();
             RefrescarDatos();
+            
         }
 
         private void buttonAgregarEvento_Click(object sender, EventArgs e)
@@ -44,13 +47,9 @@ namespace Chrysallis
                     Application.Exit();
                 }
             }
-            else if (FormLogin.socioLogin.estatal == true)
-            {
-                bindingSourceEventos.DataSource = eventos;
-            }
             else
             {
-
+                bindingSourceEventos.DataSource = eventos;
             }
 
         }
@@ -90,6 +89,44 @@ namespace Chrysallis
             else
             {
                 bindingSourceEventos.DataSource = eventos;
+            }
+        }
+
+        private void dataGridViewEventos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            eventos _evento;
+
+            if (e.ColumnIndex == 11)
+            {
+                _evento = (eventos)dataGridViewEventos.Rows[e.RowIndex].DataBoundItem;
+                e.Value = GestorIdiomas.getComunidad(_evento.comunidades.nombre);
+            }
+        }
+
+        public void cambiarIdioma()
+        {
+            this.Text = Strings._event;
+            labelDesde.Text = Strings.from;
+            labelHasta.Text = Strings.to;
+            dataGridViewEventos.Columns[1].HeaderText = Strings.date;
+            dataGridViewEventos.Columns[2].HeaderText = Strings.location;
+            dataGridViewEventos.Columns[3].HeaderText = Strings.time;
+            dataGridViewEventos.Columns[4].HeaderText = Strings.deadline;
+            dataGridViewEventos.Columns[5].HeaderText = Strings.numberOfAttendees;
+            dataGridViewEventos.Columns[11].HeaderText = Strings.community;
+        }
+
+        private void dataGridViewEventos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de eliminar el evento?", "PREGUNTA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                EventoORM.DeleteEvento((eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem);
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
     }

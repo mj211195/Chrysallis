@@ -27,11 +27,6 @@ namespace Chrysallis
             imagedComboBoxIdiomas.SelectedIndex = 0;
         }
 
-        private void buttonIngles_Click(object sender, EventArgs e)
-        {
-            cambiarIdioma("en-US");
-        }
-
         private void cambiarIdioma(String idioma)
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(idioma);
@@ -45,19 +40,11 @@ namespace Chrysallis
             this.Text = Idiomas.Strings.login;
         }
 
-        private void buttonCatalan_Click(object sender, EventArgs e)
-        {
-            cambiarIdioma("");
-        }
-
-        private void buttonSpanish_Click(object sender, EventArgs e)
-        {
-            cambiarIdioma("es");
-        }
-
         private void FormLogin_Load(object sender, EventArgs e)
         {
             cambiarIdioma("");
+
+
         }
         
         private void cargarImagedComboBox()

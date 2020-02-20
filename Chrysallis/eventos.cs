@@ -27,7 +27,7 @@ namespace Chrysallis
         public string ubicacion { get; set; }
         public System.TimeSpan hora { get; set; }
         public Nullable<System.DateTime> fechaLimite { get; set; }
-        public int numAsistentes { get; set; }
+        public Nullable<int> numAsistentes { get; set; }
         public int id_comunidad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

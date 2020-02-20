@@ -183,9 +183,6 @@
   <data name="state" xml:space="preserve">
     <value>Estatal</value>
   </data>
-  <data name="comunity" xml:space="preserve">
-    <value>Comunidad</value>
-  </data>
   <data name="save" xml:space="preserve">
     <value>Guardar</value>
   </data>
@@ -308,5 +305,11 @@
   </data>
   <data name="modifyPartner" xml:space="preserve">
     <value>Modificar socio</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>Desde</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>Hasta</value>
   </data>
 </root>

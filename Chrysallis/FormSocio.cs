@@ -178,7 +178,7 @@ namespace Chrysallis
             labelLastName.Text = Strings.lastName;
             labelEmail.Text = Strings.email;
             labelPassword.Text = Strings.password;
-            labelComunidad.Text = Strings.comunity;
+            labelComunidad.Text = Strings.community;
             labelPassword2.Text = Strings.password2;
             buttonSave.Text = Strings.save;
             checkBoxActive.Text = Strings.active;

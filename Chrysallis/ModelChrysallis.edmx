@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="chrysallisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="chrysallisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="asistir">
           <Key>
             <PropertyRef Name="id_socio" />
@@ -21,7 +21,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="comunidades_socios">
           <Key>
@@ -48,7 +48,7 @@
           <Property Name="ubicacion" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="hora" Type="time" Precision="7" Nullable="false" />
           <Property Name="fechaLimite" Type="date" />
-          <Property Name="numAsistentes" Type="int" Nullable="false" />
+          <Property Name="numAsistentes" Type="int" />
           <Property Name="id_comunidad" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="notificaciones">
@@ -76,11 +76,11 @@
           <Property Name="nombre" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="apellidos" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="activo" Type="bit" Nullable="false" />
-          <Property Name="mail" Type="varchar" MaxLength="30" />
+          <Property Name="mail" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="256" Nullable="false" />
           <Property Name="administrador" Type="bit" Nullable="false" />
           <Property Name="idiomaDefecto" Type="varchar" MaxLength="20" />
-          <Property Name="estatal" Type="bit" />
+          <Property Name="estatal" Type="bit" Nullable="false" />
           <Property Name="id_comunidad" Type="int" />
         </EntityType>
         <Association Name="FK_asistir_eventos">
@@ -237,8 +237,7 @@
             <End Role="socios" EntitySet="socios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="chrysallisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -260,7 +259,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="eventos" Relationship="Self.FK_eventos_comunidades" FromRole="comunidades" ToRole="eventos" />
           <NavigationProperty Name="socios" Relationship="Self.FK_socios_comunidades" FromRole="comunidades" ToRole="socios" />
           <NavigationProperty Name="socios1" Relationship="Self.comunidades_socios" FromRole="comunidades" ToRole="socios" />
@@ -283,7 +282,7 @@
           <Property Name="ubicacion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
           <Property Name="fechaLimite" Type="DateTime" Precision="0" />
-          <Property Name="numAsistentes" Type="Int32" Nullable="false" />
+          <Property Name="numAsistentes" Type="Int32" />
           <Property Name="id_comunidad" Type="Int32" Nullable="false" />
           <NavigationProperty Name="asistir" Relationship="Self.FK_asistir_eventos" FromRole="eventos" ToRole="asistir" />
           <NavigationProperty Name="comunidades" Relationship="Self.FK_eventos_comunidades" FromRole="eventos" ToRole="comunidades" />
@@ -308,11 +307,11 @@
           <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidos" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="activo" Type="Boolean" Nullable="false" />
-          <Property Name="mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="administrador" Type="Boolean" Nullable="false" />
           <Property Name="idiomaDefecto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="estatal" Type="Boolean" />
+          <Property Name="estatal" Type="Boolean" Nullable="false" />
           <Property Name="id_comunidad" Type="Int32" />
           <NavigationProperty Name="asistir" Relationship="Self.FK_asistir_socios" FromRole="socios" ToRole="asistir" />
           <NavigationProperty Name="comunidades" Relationship="Self.FK_socios_comunidades" FromRole="socios" ToRole="comunidades" />
