@@ -90,7 +90,7 @@ namespace Chrysallis
                 _socio = (socios)dataGridViewSocios.Rows[e.RowIndex].DataBoundItem;
                 if (_socio.comunidades != null)
                 {
-                    e.Value = _socio.comunidades.nombre;
+                    e.Value = GestorIdiomas.getComunidad(_socio.comunidades.nombre);
                 }
                 
             }
