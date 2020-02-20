@@ -31,7 +31,7 @@ namespace Chrysallis
         public string password { get; set; }
         public bool administrador { get; set; }
         public string idiomaDefecto { get; set; }
-        public Nullable<bool> estatal { get; set; }
+        public bool estatal { get; set; }
         public Nullable<int> id_comunidad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

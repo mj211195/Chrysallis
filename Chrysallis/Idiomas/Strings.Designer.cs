@@ -241,11 +241,20 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Comunitat.
+        ///   Busca una cadena traducida similar a Confirmació.
         /// </summary>
-        internal static string comunity {
+        internal static string confirmation {
             get {
-                return ResourceManager.GetString("comunity", resourceCulture);
+                return ResourceManager.GetString("confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estàs segur d&apos;eliminar l&apos;esdeveniment?.
+        /// </summary>
+        internal static string confirmDeleteEvent {
+            get {
+                return ResourceManager.GetString("confirmDeleteEvent", resourceCulture);
             }
         }
         
@@ -381,6 +390,15 @@ namespace Chrysallis.Idiomas {
         internal static string Extremadura {
             get {
                 return ResourceManager.GetString("Extremadura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Des de.
+        /// </summary>
+        internal static string from {
+            get {
+                return ResourceManager.GetString("from", resourceCulture);
             }
         }
         
@@ -624,6 +642,15 @@ namespace Chrysallis.Idiomas {
         internal static string time {
             get {
                 return ResourceManager.GetString("time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fins.
+        /// </summary>
+        internal static string to {
+            get {
+                return ResourceManager.GetString("to", resourceCulture);
             }
         }
         

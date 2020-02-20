@@ -102,31 +102,12 @@ namespace Chrysallis.BD
             return correcto;
         }
 
-        /*public static Boolean UpdateSocio(socios socio)
+        public static void DeleteEvento(eventos evento)
         {
-            socios _socio = ORM.bd.socios.Find(socio.id);
-            _socio.dni = socio.dni;
-            _socio.nombre = socio.nombre;
-            _socio.apellidos = socio.apellidos;
-            _socio.mail = socio.mail;
-            _socio.telefono = socio.telefono;
-            _socio.password = socio.password;
-            _socio.activo = socio.activo;
-            _socio.estatal = socio.estatal;
-            _socio.administrador = socio.administrador;
-            _socio.id_comunidad = socio.id_comunidad;
-            Boolean correcto = false;
-            try
-            {
-                ORM.bd.SaveChanges();
-                correcto = true;
-            }
-            catch (Exception e)
-            {
-                SqlException sqlEx = (SqlException)e.InnerException.InnerException;
-                MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            return correcto;
-        }*/
+            ORM.bd.eventos.Remove(evento);
+            ORM.bd.SaveChanges();
+        }
+
+
     }
 }

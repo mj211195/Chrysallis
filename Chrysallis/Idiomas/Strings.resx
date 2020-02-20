@@ -183,9 +183,6 @@
   <data name="state" xml:space="preserve">
     <value>Estatal</value>
   </data>
-  <data name="comunity" xml:space="preserve">
-    <value>Comunitat</value>
-  </data>
   <data name="save" xml:space="preserve">
     <value>Desar</value>
   </data>
@@ -308,5 +305,17 @@
   </data>
   <data name="modifyPartner" xml:space="preserve">
     <value>Modificar soci</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>Des de</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>Fins</value>
+  </data>
+  <data name="confirmDeleteEvent" xml:space="preserve">
+    <value>Estàs segur d'eliminar l'esdeveniment?</value>
+  </data>
+  <data name="confirmation" xml:space="preserve">
+    <value>Confirmació</value>
   </data>
 </root>
