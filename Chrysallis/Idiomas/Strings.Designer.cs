@@ -115,11 +115,83 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Andalusia.
+        /// </summary>
+        internal static string Andalucía {
+            get {
+                return ResourceManager.GetString("Andalucía", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Aragó.
+        /// </summary>
+        internal static string Aragón {
+            get {
+                return ResourceManager.GetString("Aragón", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Canàries.
+        /// </summary>
+        internal static string Canarias {
+            get {
+                return ResourceManager.GetString("Canarias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantàbria.
+        /// </summary>
+        internal static string Cantabria {
+            get {
+                return ResourceManager.GetString("Cantabria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Castella - la Manxa.
+        /// </summary>
+        internal static string Castilla_La_Mancha {
+            get {
+                return ResourceManager.GetString("Castilla-La Mancha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Castella i Lleó.
+        /// </summary>
+        internal static string Castilla_y_León {
+            get {
+                return ResourceManager.GetString("Castilla y León", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Català.
         /// </summary>
         internal static string catalan {
             get {
                 return ResourceManager.GetString("catalan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Catalunya.
+        /// </summary>
+        internal static string Cataluña {
+            get {
+                return ResourceManager.GetString("Cataluña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ceuta.
+        /// </summary>
+        internal static string Ceuta {
+            get {
+                return ResourceManager.GetString("Ceuta", resourceCulture);
             }
         }
         
@@ -142,11 +214,47 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Comunitat de Madrid.
+        /// </summary>
+        internal static string Comunidad_de_Madrid {
+            get {
+                return ResourceManager.GetString("Comunidad de Madrid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Comunitat Foral de Navarra.
+        /// </summary>
+        internal static string Comunidad_Foral_de_Navarra {
+            get {
+                return ResourceManager.GetString("Comunidad Foral de Navarra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Comunitat Valenciana.
+        /// </summary>
+        internal static string Comunidad_Valenciana {
+            get {
+                return ResourceManager.GetString("Comunidad Valenciana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Comunitat.
         /// </summary>
         internal static string comunity {
             get {
                 return ResourceManager.GetString("comunity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a CREAT.
+        /// </summary>
+        internal static string created {
+            get {
+                return ResourceManager.GetString("created", resourceCulture);
             }
         }
         
@@ -196,6 +304,114 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El DNI no pot estar buit.
+        /// </summary>
+        internal static string errorDni {
+            get {
+                return ResourceManager.GetString("errorDni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correu no pot estar buit.
+        /// </summary>
+        internal static string errorEmail {
+            get {
+                return ResourceManager.GetString("errorEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Els cognoms no poden estar buits.
+        /// </summary>
+        internal static string errorLastName {
+            get {
+                return ResourceManager.GetString("errorLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El nom no pot estar buit.
+        /// </summary>
+        internal static string errorName {
+            get {
+                return ResourceManager.GetString("errorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contrasenya no pot estar buida.
+        /// </summary>
+        internal static string errorPassword {
+            get {
+                return ResourceManager.GetString("errorPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contrasenya no coincideix.
+        /// </summary>
+        internal static string errorPassword2 {
+            get {
+                return ResourceManager.GetString("errorPassword2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El telèfon no pot estar buit.
+        /// </summary>
+        internal static string errorPhone {
+            get {
+                return ResourceManager.GetString("errorPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El telèfon ha de ser numèric.
+        /// </summary>
+        internal static string errorPhoneNum {
+            get {
+                return ResourceManager.GetString("errorPhoneNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Extremadura.
+        /// </summary>
+        internal static string Extremadura {
+            get {
+                return ResourceManager.GetString("Extremadura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Galícia.
+        /// </summary>
+        internal static string Galicia {
+            get {
+                return ResourceManager.GetString("Galicia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Illes Balears.
+        /// </summary>
+        internal static string Islas_Baleares {
+            get {
+                return ResourceManager.GetString("Islas Baleares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La Rioja.
+        /// </summary>
+        internal static string La_Rioja {
+            get {
+                return ResourceManager.GetString("La Rioja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cognoms.
         /// </summary>
         internal static string lastName {
@@ -241,11 +457,29 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Melilla.
+        /// </summary>
+        internal static string Melilla {
+            get {
+                return ResourceManager.GetString("Melilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Menú.
         /// </summary>
         internal static string menu {
             get {
                 return ResourceManager.GetString("menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modificar soci.
+        /// </summary>
+        internal static string modifyPartner {
+            get {
+                return ResourceManager.GetString("modifyPartner", resourceCulture);
             }
         }
         
@@ -277,11 +511,29 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a País Basc.
+        /// </summary>
+        internal static string País_Vasco {
+            get {
+                return ResourceManager.GetString("País Vasco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Soci.
         /// </summary>
         internal static string partner {
             get {
                 return ResourceManager.GetString("partner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El soci ha estat creat.
+        /// </summary>
+        internal static string partnerCreated {
+            get {
+                return ResourceManager.GetString("partnerCreated", resourceCulture);
             }
         }
         
@@ -304,11 +556,38 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Verificar contrasenya.
+        /// </summary>
+        internal static string password2 {
+            get {
+                return ResourceManager.GetString("password2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Telèfon.
         /// </summary>
         internal static string phone {
             get {
                 return ResourceManager.GetString("phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Principat d&apos;Astúries.
+        /// </summary>
+        internal static string Principado_de_Asturias {
+            get {
+                return ResourceManager.GetString("Principado de Asturias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Regió de Múrcia.
+        /// </summary>
+        internal static string Región_de_Murcia {
+            get {
+                return ResourceManager.GetString("Región de Murcia", resourceCulture);
             }
         }
         

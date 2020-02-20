@@ -33,11 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="OC.Core, Version=2.0.0.17347, Culture=neutral, PublicKeyToken=21d5b409dafb75d2, processorArchitecture=MSIL">
+      <HintPath>..\packages\OC.Core.2.0.0\lib\net40\OC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OC.Core.Crypto, Version=1.4.13.38223, Culture=neutral, PublicKeyToken=21d5b409dafb75d2, processorArchitecture=MSIL">
+      <HintPath>..\packages\OC.Core.Crypto.1.4.13\lib\net40\OC.Core.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -59,6 +68,7 @@
       <DependentUpon>ModelChrysallis.tt</DependentUpon>
     </Compile>
     <Compile Include="BD\ComunidadORM.cs" />
+    <Compile Include="BD\EventoORM.cs" />
     <Compile Include="BD\ORM.cs" />
     <Compile Include="BD\SocioORM.cs" />
     <Compile Include="Button_WOC.cs">
@@ -103,6 +113,7 @@
     <Compile Include="FormSocios.Designer.cs">
       <DependentUpon>FormSocios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Idiomas\GestorIdiomas.cs" />
     <Compile Include="Idiomas\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,6 +236,7 @@
       <DependentUpon>ModelChrysallis.edmx</DependentUpon>
       <LastGenOutput>ModelChrysallis.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ojo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

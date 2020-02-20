@@ -216,4 +216,97 @@
   <data name="time" xml:space="preserve">
     <value>Hora</value>
   </data>
+  <data name="Andalucía" xml:space="preserve">
+    <value>Andalucía</value>
+  </data>
+  <data name="Aragón" xml:space="preserve">
+    <value>Aragón</value>
+  </data>
+  <data name="Canarias" xml:space="preserve">
+    <value>Canarias</value>
+  </data>
+  <data name="Cantabria" xml:space="preserve">
+    <value>Cantabria</value>
+  </data>
+  <data name="Castilla y León" xml:space="preserve">
+    <value>Castilla y León</value>
+  </data>
+  <data name="Castilla-La Mancha" xml:space="preserve">
+    <value>Castilla-La Mancha</value>
+  </data>
+  <data name="Cataluña" xml:space="preserve">
+    <value>Cataluña</value>
+  </data>
+  <data name="Ceuta" xml:space="preserve">
+    <value>Ceuta</value>
+  </data>
+  <data name="Comunidad de Madrid" xml:space="preserve">
+    <value>Comunidad de Madrid</value>
+  </data>
+  <data name="Comunidad Foral de Navarra" xml:space="preserve">
+    <value>Comunidad Foral de Navarra</value>
+  </data>
+  <data name="Comunidad Valenciana" xml:space="preserve">
+    <value>Comunidad Valenciana</value>
+  </data>
+  <data name="Extremadura" xml:space="preserve">
+    <value>Extremadura</value>
+  </data>
+  <data name="Galicia" xml:space="preserve">
+    <value>Galicia</value>
+  </data>
+  <data name="Islas Baleares" xml:space="preserve">
+    <value>Islas Baleares</value>
+  </data>
+  <data name="La Rioja" xml:space="preserve">
+    <value>La Rioja</value>
+  </data>
+  <data name="Melilla" xml:space="preserve">
+    <value>Melilla</value>
+  </data>
+  <data name="País Vasco" xml:space="preserve">
+    <value>País Vasco</value>
+  </data>
+  <data name="Principado de Asturias" xml:space="preserve">
+    <value>Principado de Asturias</value>
+  </data>
+  <data name="Región de Murcia" xml:space="preserve">
+    <value>Región de Murcia</value>
+  </data>
+  <data name="password2" xml:space="preserve">
+    <value>Verificar contraseña</value>
+  </data>
+  <data name="errorDni" xml:space="preserve">
+    <value>El DNI no puede estar vacío</value>
+  </data>
+  <data name="errorPhone" xml:space="preserve">
+    <value>El teléfono no puede estar vacío</value>
+  </data>
+  <data name="errorPhoneNum" xml:space="preserve">
+    <value>El teléfono debe ser numérico</value>
+  </data>
+  <data name="errorName" xml:space="preserve">
+    <value>El nombre no puede estar vacío</value>
+  </data>
+  <data name="errorLastName" xml:space="preserve">
+    <value>Los apellidos no pueden estar vacíos</value>
+  </data>
+  <data name="errorEmail" xml:space="preserve">
+    <value>El correo no puede estar vacío</value>
+  </data>
+  <data name="errorPassword" xml:space="preserve">
+    <value>La contraseña no puede estar vacía</value>
+  </data>
+  <data name="errorPassword2" xml:space="preserve">
+    <value>La contraseña no coincide</value>
+  </data>
+  <data name="partnerCreated" xml:space="preserve">
+    <value>El socio ha sido creado</value>
+  </data>
+  <data name="created" xml:space="preserve">
+    <value>CREADO</value>
+  </data>
+  <data name="modifyPartner" xml:space="preserve">
+    <value>Modificar socio</value>
+  </data>
 </root>

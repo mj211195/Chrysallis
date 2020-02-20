@@ -29,49 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.textBoxContrasenya = new System.Windows.Forms.TextBox();
-            this.labelUsuario = new System.Windows.Forms.Label();
-            this.labelContrasenya = new System.Windows.Forms.Label();
+            this.textBoxUser = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imagedComboBoxIdiomas = new ComboxExtended.ImagedComboBox();
             this.buttonEntrar = new AppDesktop.Button_WOC();
+            this.pictureBoxShow = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxUsuario
+            // textBoxUser
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(57, 222);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(229, 20);
-            this.textBoxUsuario.TabIndex = 1;
+            this.textBoxUser.Location = new System.Drawing.Point(57, 222);
+            this.textBoxUser.Name = "textBoxUser";
+            this.textBoxUser.Size = new System.Drawing.Size(229, 20);
+            this.textBoxUser.TabIndex = 1;
             // 
-            // textBoxContrasenya
+            // textBoxPassword
             // 
-            this.textBoxContrasenya.Location = new System.Drawing.Point(57, 273);
-            this.textBoxContrasenya.Name = "textBoxContrasenya";
-            this.textBoxContrasenya.Size = new System.Drawing.Size(229, 20);
-            this.textBoxContrasenya.TabIndex = 2;
+            this.textBoxPassword.Location = new System.Drawing.Point(57, 273);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(229, 20);
+            this.textBoxPassword.TabIndex = 2;
             // 
-            // labelUsuario
+            // labelUser
             // 
-            this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuario.Location = new System.Drawing.Point(52, 185);
-            this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(234, 25);
-            this.labelUsuario.TabIndex = 3;
-            this.labelUsuario.Text = "Usuari";
-            this.labelUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Location = new System.Drawing.Point(52, 185);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(234, 25);
+            this.labelUser.TabIndex = 3;
+            this.labelUser.Text = "Usuari";
+            this.labelUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // labelContrasenya
+            // labelPassword
             // 
-            this.labelContrasenya.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContrasenya.Location = new System.Drawing.Point(52, 245);
-            this.labelContrasenya.Name = "labelContrasenya";
-            this.labelContrasenya.Size = new System.Drawing.Size(234, 25);
-            this.labelContrasenya.TabIndex = 4;
-            this.labelContrasenya.Text = "Contrasenya";
-            this.labelContrasenya.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPassword.Location = new System.Drawing.Point(52, 245);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(234, 25);
+            this.labelPassword.TabIndex = 4;
+            this.labelPassword.Text = "Contrasenya";
+            this.labelPassword.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox1
             // 
@@ -117,41 +120,57 @@
             this.buttonEntrar.UseVisualStyleBackColor = false;
             this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
             // 
+            // pictureBoxShow
+            // 
+            this.pictureBoxShow.Image = global::Chrysallis.Properties.Resources.ojo;
+            this.pictureBoxShow.Location = new System.Drawing.Point(291, 273);
+            this.pictureBoxShow.Name = "pictureBoxShow";
+            this.pictureBoxShow.Size = new System.Drawing.Size(23, 19);
+            this.pictureBoxShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxShow.TabIndex = 11;
+            this.pictureBoxShow.TabStop = false;
+            this.pictureBoxShow.Click += new System.EventHandler(this.pictureBoxShow_Click);
+            // 
             // FormLogin
             // 
+            this.AcceptButton = this.buttonEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(358, 403);
+            this.Controls.Add(this.pictureBoxShow);
             this.Controls.Add(this.imagedComboBoxIdiomas);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonEntrar);
-            this.Controls.Add(this.labelContrasenya);
-            this.Controls.Add(this.labelUsuario);
-            this.Controls.Add(this.textBoxContrasenya);
-            this.Controls.Add(this.textBoxUsuario);
+            this.Controls.Add(this.labelPassword);
+            this.Controls.Add(this.labelUser);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxUser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBoxUsuario;
-        private System.Windows.Forms.TextBox textBoxContrasenya;
-        private System.Windows.Forms.Label labelUsuario;
-        private System.Windows.Forms.Label labelContrasenya;
+        private System.Windows.Forms.TextBox textBoxUser;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.Label labelPassword;
         private AppDesktop.Button_WOC buttonEntrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ComboxExtended.ImagedComboBox imagedComboBoxIdiomas;
+        private System.Windows.Forms.PictureBox pictureBoxShow;
     }
 }
 

@@ -216,4 +216,97 @@
   <data name="time" xml:space="preserve">
     <value>Hora</value>
   </data>
+  <data name="Andalucía" xml:space="preserve">
+    <value>Andalusia</value>
+  </data>
+  <data name="Galicia" xml:space="preserve">
+    <value>Galícia</value>
+  </data>
+  <data name="La Rioja" xml:space="preserve">
+    <value>La Rioja</value>
+  </data>
+  <data name="Comunidad de Madrid" xml:space="preserve">
+    <value>Comunitat de Madrid</value>
+  </data>
+  <data name="Región de Murcia" xml:space="preserve">
+    <value>Regió de Múrcia</value>
+  </data>
+  <data name="Comunidad Foral de Navarra" xml:space="preserve">
+    <value>Comunitat Foral de Navarra</value>
+  </data>
+  <data name="País Vasco" xml:space="preserve">
+    <value>País Basc</value>
+  </data>
+  <data name="Ceuta" xml:space="preserve">
+    <value>Ceuta</value>
+  </data>
+  <data name="Melilla" xml:space="preserve">
+    <value>Melilla</value>
+  </data>
+  <data name="Aragón" xml:space="preserve">
+    <value>Aragó</value>
+  </data>
+  <data name="Principado de Asturias" xml:space="preserve">
+    <value>Principat d'Astúries</value>
+  </data>
+  <data name="Islas Baleares" xml:space="preserve">
+    <value>Illes Balears</value>
+  </data>
+  <data name="Canarias" xml:space="preserve">
+    <value>Canàries</value>
+  </data>
+  <data name="Cantabria" xml:space="preserve">
+    <value>Cantàbria</value>
+  </data>
+  <data name="Castilla-La Mancha" xml:space="preserve">
+    <value>Castella - la Manxa</value>
+  </data>
+  <data name="Castilla y León" xml:space="preserve">
+    <value>Castella i Lleó</value>
+  </data>
+  <data name="Cataluña" xml:space="preserve">
+    <value>Catalunya</value>
+  </data>
+  <data name="Comunidad Valenciana" xml:space="preserve">
+    <value>Comunitat Valenciana</value>
+  </data>
+  <data name="Extremadura" xml:space="preserve">
+    <value>Extremadura</value>
+  </data>
+  <data name="password2" xml:space="preserve">
+    <value>Verificar contrasenya</value>
+  </data>
+  <data name="errorDni" xml:space="preserve">
+    <value>El DNI no pot estar buit</value>
+  </data>
+  <data name="errorPhone" xml:space="preserve">
+    <value>El telèfon no pot estar buit</value>
+  </data>
+  <data name="errorPhoneNum" xml:space="preserve">
+    <value>El telèfon ha de ser numèric</value>
+  </data>
+  <data name="errorName" xml:space="preserve">
+    <value>El nom no pot estar buit</value>
+  </data>
+  <data name="errorLastName" xml:space="preserve">
+    <value>Els cognoms no poden estar buits</value>
+  </data>
+  <data name="errorEmail" xml:space="preserve">
+    <value>El correu no pot estar buit</value>
+  </data>
+  <data name="errorPassword" xml:space="preserve">
+    <value>La contrasenya no pot estar buida</value>
+  </data>
+  <data name="errorPassword2" xml:space="preserve">
+    <value>La contrasenya no coincideix</value>
+  </data>
+  <data name="partnerCreated" xml:space="preserve">
+    <value>El soci ha estat creat</value>
+  </data>
+  <data name="created" xml:space="preserve">
+    <value>CREAT</value>
+  </data>
+  <data name="modifyPartner" xml:space="preserve">
+    <value>Modificar soci</value>
+  </data>
 </root>

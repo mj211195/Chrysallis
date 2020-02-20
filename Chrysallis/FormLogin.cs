@@ -6,10 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chrysallis
@@ -38,8 +35,8 @@ namespace Chrysallis
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(idioma);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
-            labelUsuario.Text = Idiomas.Strings.user;
-            labelContrasenya.Text = Idiomas.Strings.password;
+            labelUser.Text = Idiomas.Strings.user;
+            labelPassword.Text = Idiomas.Strings.password;
             buttonEntrar.Text = Idiomas.Strings.login;
             itemCatalan.Value = Idiomas.Strings.catalan;
             itemSpanish.Value = Idiomas.Strings.spanish;
@@ -90,21 +87,24 @@ namespace Chrysallis
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
-            String dni = textBoxUsuario.Text.ToString();
-            String password = textBoxContrasenya.Text.ToString();
+            String dni = textBoxUser.Text.ToString();
+            String password = textBoxPassword.Text.ToString();
             if (dni.Trim().Equals("") || password.Trim().Equals(""))
             {
                 MessageBox.Show("Usuari i/o contraseña vacios!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                socios socio = SocioORM.LoginSocio(dni, password);
+                OC.Core.Crypto.Hash hash = new OC.Core.Crypto.Hash();
+                String clave = hash.Sha512(password);
+                Boolean correcto = true;
+                socios socio = SocioORM.LoginSocio(dni, clave, ref correcto);
                 if (socio != null)
                 {
                     cerradoPropio = true;
                     this.Close();
                 }
-                else
+                else if(correcto)
                 {
                     MessageBox.Show("Credenciales incorrectas!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -116,6 +116,17 @@ namespace Chrysallis
             if (!cerradoPropio)
             {
                 Application.Exit();
+            }
+        }
+
+        private void pictureBoxShow_Click(object sender, EventArgs e)
+        {
+            if(textBoxPassword.PasswordChar == '*')
+            {
+                textBoxPassword.PasswordChar = '\0';
+            }else if (textBoxPassword.PasswordChar == '\0')
+            {
+                textBoxPassword.PasswordChar = '*';
             }
         }
     }

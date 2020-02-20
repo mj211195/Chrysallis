@@ -10,50 +10,32 @@ using System.Windows.Forms;
 
 namespace Chrysallis.BD
 {
-    public static class SocioORM
+    public static class EventoORM
     {
-        public static socios LoginSocio(String dni,String password, ref Boolean correcto)
+        
+        public static List<eventos> SelectAllEventos()
         {
-            socios socio = null;
+            List<eventos> eventos = null;
             try
             {
-                socio = (
-                from s in ORM.bd.socios
-                where s.dni.Equals(dni) && s.password.Equals(password) && s.administrador == true && s.activo == true
-                select s).FirstOrDefault();
-            }
-            catch (EntityException ex)
-            {
-                correcto = false;
-                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
-            }
-            return socio;
-        }
-
-        public static List<socios> SelectAllSocios()
-        {
-            List<socios> socios = null;
-            try
-            {
-                socios = (
-                from s in ORM.bd.socios
-                select s).ToList();
+                eventos = (
+                from e in ORM.bd.eventos
+                select e).ToList();
             }
             catch (EntityException ex)
             {
                 SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
                 MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            return socios;
+            return eventos;
         }
 
-        public static Boolean InsertSocio(socios socio)
+        public static Boolean InsertEvento(eventos evento)
         {
             Boolean correcto = false;
             try
             {
-                ORM.bd.socios.Add(socio);
+                ORM.bd.eventos.Add(evento);
                 ORM.bd.SaveChanges();
                 correcto = true;
             }
@@ -66,7 +48,7 @@ namespace Chrysallis.BD
             return correcto;
         }
 
-        public static Boolean UpdateSocio(socios socio)
+        /*public static Boolean UpdateSocio(socios socio)
         {
             socios _socio = ORM.bd.socios.Find(socio.id);
             _socio.dni = socio.dni;
@@ -91,6 +73,6 @@ namespace Chrysallis.BD
                 MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return correcto;
-        }
+        }*/
     }
 }

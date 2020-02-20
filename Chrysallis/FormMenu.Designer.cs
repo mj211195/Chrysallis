@@ -93,12 +93,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(401, 401);
             this.Controls.Add(this.buttonAdministrarEventos);
             this.Controls.Add(this.buttonAdministrarSocios);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMenu";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Menú";
+            this.Activated += new System.EventHandler(this.FormMenu_Activated);
             this.Load += new System.EventHandler(this.FormMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
