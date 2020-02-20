@@ -312,4 +312,10 @@
   <data name="to" xml:space="preserve">
     <value>Hasta</value>
   </data>
+  <data name="confirmDeleteEvent" xml:space="preserve">
+    <value>¿Estás seguro de eliminar el evento?</value>
+  </data>
+  <data name="confirmation" xml:space="preserve">
+    <value>Confirmación</value>
+  </data>
 </root>

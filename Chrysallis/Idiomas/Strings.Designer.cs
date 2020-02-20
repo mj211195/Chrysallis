@@ -241,6 +241,24 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Confirmació.
+        /// </summary>
+        internal static string confirmation {
+            get {
+                return ResourceManager.GetString("confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estàs segur d&apos;eliminar l&apos;esdeveniment?.
+        /// </summary>
+        internal static string confirmDeleteEvent {
+            get {
+                return ResourceManager.GetString("confirmDeleteEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a CREAT.
         /// </summary>
         internal static string created {

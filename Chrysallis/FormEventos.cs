@@ -16,7 +16,7 @@ namespace Chrysallis
         private void FormEventos_Load(object sender, EventArgs e)
         {
 
-            buttonAgregarEvento.Text = Idiomas.Strings.addEvent;
+            buttonAgregarEvento.Text = Strings.addEvent;
             cambiarIdioma();
             RefrescarDatos();
             
@@ -118,7 +118,7 @@ namespace Chrysallis
 
         private void dataGridViewEventos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de eliminar el evento?", "PREGUNTA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show(Strings.confirmDeleteEvent, Strings.confirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
