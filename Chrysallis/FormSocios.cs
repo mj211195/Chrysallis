@@ -62,12 +62,17 @@ namespace Chrysallis
         private void dataGridViewSocios_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             socios s = (socios)dataGridViewSocios.SelectedRows[0].DataBoundItem;
+            Boolean correcto;
             if (s.id != FormLogin.socioLogin.id)
             {
-                DialogResult resultado = MessageBox.Show("¿Quiere eliminar el hotel seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultado = MessageBox.Show("¿Quiere eliminar el socio seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
-                    SocioORM.DeleteSocio((socios)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+                    correcto = SocioORM.DeleteSocio((socios)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+                    if (!correcto)
+                    {
+                        e.Cancel = true;
+                    }
                 }
                 else
                 {

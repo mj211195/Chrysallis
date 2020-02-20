@@ -113,10 +113,22 @@ namespace Chrysallis.BD
             return correcto;
         }
 
-        public static void DeleteSocio(socios socio)
+        public static Boolean DeleteSocio(socios socio)
         {
-            ORM.bd.socios.Remove(socio);
-            ORM.bd.SaveChanges();
+            Boolean correcto = false;
+            try
+            {
+                ORM.bd.socios.Remove(socio);
+                ORM.bd.SaveChanges();
+                correcto = true;
+            }
+            catch (DbUpdateException e)
+            {
+                ORM.RejectChanges();
+                SqlException sqlEx = (SqlException)e.InnerException.InnerException;
+                MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return correcto;
         }
     }
 }

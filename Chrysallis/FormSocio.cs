@@ -85,6 +85,7 @@ namespace Chrysallis
                 socioNuevo.activo = checkBoxActive.Checked;
                 socioNuevo.administrador = checkBoxAdministrator.Checked;
                 socioNuevo.estatal = checkBoxState.Checked;
+                //Apaño feo
                 foreach (comunidades c in comunidades)
                 {
                     String aux = GestorIdiomas.getComunidad(c.nombre);
@@ -107,6 +108,7 @@ namespace Chrysallis
                 {
                     socioNuevo.id_comunidad = null;
                 }
+
                 if (socio == null)
                 {
                     if (SocioORM.InsertSocio(socioNuevo))
@@ -134,7 +136,20 @@ namespace Chrysallis
             //bindingSourceComunidades.DataSource = comunidades;
             cambiarIdioma();
             //buttonSave.Location = new System.Drawing.Point(97, 224);
-
+            if (!(bool)FormLogin.socioLogin.estatal)
+            {
+                checkBoxState.Enabled = false;
+                checkBoxState.Visible = false;
+                foreach (comunidades c in comunidades)
+                {
+                    if (c.id == FormLogin.socioLogin.id_comunidad)
+                    {
+                        comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
+                    }
+                }
+                comboBoxComunity.Enabled = false;
+                checkBoxState.Visible = false;
+            }
             if (socio != null)
             {
                 textBoxDni.Text = socio.dni;
@@ -154,19 +169,7 @@ namespace Chrysallis
                     {
                         comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
                     }
-                }
-                if (!(bool)FormLogin.socioLogin.estatal)
-                {
-                    checkBoxState.Enabled = false;
-                    foreach (comunidades c in comunidades)
-                    {
-                        if (c.id == FormLogin.socioLogin.id_comunidad)
-                        {
-                            comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
-                        }
-                    }
-                    comboBoxComunity.Enabled = false;
-                }
+                } 
             }
         }
 
@@ -208,7 +211,10 @@ namespace Chrysallis
 
             if (checkBoxAdministrator.Checked)
             {
-                checkBoxState.Visible = true;
+                if ((bool)FormLogin.socioLogin.estatal)
+                {
+                    checkBoxState.Visible = true;
+                }
                 //labelComunidad.Visible = true;
                 //comboBoxComunity.Visible = true;
                 //buttonSave.Location = new System.Drawing.Point(97, 251);
@@ -216,7 +222,10 @@ namespace Chrysallis
             else
             {
 
-                checkBoxState.Visible = false;
+                if ((bool)FormLogin.socioLogin.estatal)
+                {
+                    checkBoxState.Visible = false;
+                }
                 //labelComunidad.Visible = false;
                 //comboBoxComunity.Visible = false;
                 //buttonSave.Location = new System.Drawing.Point(97, 224);
