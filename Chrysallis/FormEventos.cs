@@ -1,4 +1,5 @@
-﻿using Chrysallis.BD;
+﻿using Be.Timvw.Framework.ComponentModel;
+using Chrysallis.BD;
 using Chrysallis.Idiomas;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace Chrysallis
         private void RefrescarDatos()
         {
             List<eventos> eventos;
+
             if ((bool)FormLogin.socioLogin.estatal)
             {
                 eventos = EventoORM.SelectAllEventos();
@@ -49,7 +51,8 @@ namespace Chrysallis
             }
             else
             {
-                bindingSourceEventos.DataSource = eventos;
+                SortableBindingList<eventos> events = new SortableBindingList<eventos>(eventos);
+                bindingSourceEventos.DataSource = events;
             }
 
         }
