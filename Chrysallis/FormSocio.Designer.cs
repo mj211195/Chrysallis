@@ -193,7 +193,6 @@
             this.comboBoxComunity.Name = "comboBoxComunity";
             this.comboBoxComunity.Size = new System.Drawing.Size(298, 21);
             this.comboBoxComunity.TabIndex = 11;
-            this.comboBoxComunity.Visible = false;
             // 
             // labelComunidad
             // 
@@ -203,7 +202,6 @@
             this.labelComunidad.Size = new System.Drawing.Size(60, 13);
             this.labelComunidad.TabIndex = 19;
             this.labelComunidad.Text = "Comunidad";
-            this.labelComunidad.Visible = false;
             // 
             // labelPassword2
             // 

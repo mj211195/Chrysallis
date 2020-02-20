@@ -24,6 +24,7 @@ namespace Chrysallis
         {
             FormSocio formSocio = new FormSocio();
             formSocio.ShowDialog();
+            RefrescarDatos();
         }
 
         private void RefrescarDatos()
@@ -37,13 +38,26 @@ namespace Chrysallis
                     Application.Exit();
                 }
             }
-            else if (FormLogin.socioLogin.estatal == true)
+            else if ((bool)FormLogin.socioLogin.estatal)
             {
                 bindingSourceSocios.DataSource = socios;
             }
             else
             {
-                bindingSourceSocios.DataSource = SocioORM.SelectAllSociosByComunidad((int)FormLogin.socioLogin.id_comunidad);
+                //Apaño muy feo
+                List<socios> sociosComunidad = SocioORM.SelectAllSociosByComunidad((int)FormLogin.socioLogin.id_comunidad);
+                List<socios> aux = SocioORM.SelectAllSocios();
+                foreach (socios s in aux)
+                {
+                    foreach (comunidades c in s.comunidades1)
+                    {
+                        if(c.id == FormLogin.socioLogin.id_comunidad && !sociosComunidad.Contains(s))
+                        {
+                            sociosComunidad.Add(s);
+                        }
+                    }
+                }
+                bindingSourceSocios.DataSource = sociosComunidad;
             }
 
         }
@@ -55,6 +69,28 @@ namespace Chrysallis
             FormSocio formSocio = new FormSocio(socio);
             formSocio.ShowDialog();
             RefrescarDatos();
+        }
+
+        private void dataGridViewSocios_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            socios s = (socios)dataGridViewSocios.SelectedRows[0].DataBoundItem;
+            if (s.id != FormLogin.socioLogin.id)
+            {
+                DialogResult resultado = MessageBox.Show("¿Quiere eliminar el hotel seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    SocioORM.DeleteSocio((socios)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No puede eliminar su propio usuario!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
 
         private void dataGridViewSocios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
