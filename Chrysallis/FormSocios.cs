@@ -46,23 +46,6 @@ namespace Chrysallis
                 bindingSourceSocios.DataSource = SocioORM.SelectAllSociosByComunidad((int)FormLogin.socioLogin.id_comunidad);
             }
 
-
-            //Apaño feo feo pero feo
-            /*List<comunidades> comunidades = ComunidadORM.SelectAllComunidades();
-            foreach (DataGridViewRow item in dataGridViewSocios.Rows)
-            {
-                foreach (comunidades c in comunidades)
-                {
-                    String aux = GestorIdiomas.getComunidad(c.nombre);
-                    if (item.Cells[11].Value != null)
-                    {
-                        if ((int)item.Cells[11].Value == c.id)
-                        {
-                            item.Cells[12].Value = aux;
-                        }
-                    }
-                }
-            }*/
         }
 
         private void dataGridViewSocios_DoubleClick(object sender, EventArgs e)
