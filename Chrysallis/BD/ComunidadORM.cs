@@ -28,5 +28,24 @@ namespace Chrysallis.BD
             }
             return _comunidades;
         }
+
+        public static comunidades SelectComunidad(int id)
+        {
+            comunidades comunidad = null;
+            try
+            {
+                comunidad = (
+                from c in ORM.bd.comunidades
+                where c.id == id
+                select c).FirstOrDefault();
+
+            }
+            catch (EntityException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return comunidad;
+        }
+
     }
 }

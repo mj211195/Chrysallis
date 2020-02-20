@@ -2,6 +2,7 @@
 using Chrysallis.Idiomas;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Chrysallis
@@ -10,6 +11,7 @@ namespace Chrysallis
 
     {
         List<comunidades> comunidades;
+        private List<comunidades> comunidadesOriginal;
         private socios socio = null;
         private Boolean modificar;
 
@@ -64,8 +66,9 @@ namespace Chrysallis
             }
             else
             {
+
+                //bindingSourceComunidades.DataSource = comunidades;
                 socios socioNuevo = new socios();
-                comunidades com = new comunidades();
                 socioNuevo.dni = textBoxDni.Text.Trim();
                 socioNuevo.telefono = textBoxPhone.Text.Trim();
                 socioNuevo.nombre = textBoxName.Text.Trim();
@@ -90,22 +93,14 @@ namespace Chrysallis
                     String clave = hash.Sha512(textBoxPassword.Text.Trim());
                     socioNuevo.password = clave;
                 }
-                //Apaño feo
-                foreach (comunidades c in comunidades)
-                {
-                    String aux = GestorIdiomas.getComunidad(c.nombre);
-                    if (aux.Equals(comboBoxComunity.Text))
-                    {
-                        com = c;
-                        socioNuevo.comunidades1.Add(c);
-                    }
-                }
+                
+                socioNuevo.comunidades1.Add(ComunidadORM.SelectComunidad((int)comboBoxComunity.SelectedValue));
+
                 if (checkBoxAdministrator.Checked)
                 {
                     if (comboBoxComunity.SelectedItem != null)
                     {
-                        //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
-                        socioNuevo.id_comunidad = com.id;
+                        socioNuevo.id_comunidad = (int)comboBoxComunity.SelectedValue;
                     }
                     
                 }
@@ -133,25 +128,24 @@ namespace Chrysallis
                 }
             }
         }
-
+        
         private void FormSocio_Load(object sender, EventArgs e)
         {
             comunidades = ComunidadORM.SelectAllComunidades();
-            //no uso el bindingsource pq me daba problemas al cambiar de idioma
-            //bindingSourceComunidades.DataSource = comunidades;
+            //Creo una copia que no tenga ninguna relacion con la base de datos, con los nombres en el idioma ya
+            //cambiado para usar este porque si usaba el que tiene relacion con la bd, magicamente se cambiaba
+            //en la base de datos
+            comunidadesOriginal = (from c in comunidades
+                               let a = new comunidades() { id = c.id, nombre = GestorIdiomas.getComunidad(c.nombre)}
+                               select a).ToList();
             cambiarIdioma();
+            bindingSourceComunidades.DataSource = comunidadesOriginal;
+            
             //buttonSave.Location = new System.Drawing.Point(97, 224);
             if (!(bool)FormLogin.socioLogin.estatal)
             {
                 checkBoxState.Enabled = false;
                 checkBoxState.Visible = false;
-                foreach (comunidades c in comunidades)
-                {
-                    if (c.id == FormLogin.socioLogin.id_comunidad)
-                    {
-                        comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
-                    }
-                }
                 comboBoxComunity.Enabled = false;
                 checkBoxState.Visible = false;
             }
@@ -167,14 +161,7 @@ namespace Chrysallis
                 checkBoxActive.Checked = socio.activo;
                 checkBoxAdministrator.Checked = socio.administrador;
                 checkBoxState.Checked = (bool)socio.estatal;
-
-                foreach (comunidades c in comunidades)
-                {
-                    if (c.id == socio.id_comunidad)
-                    {
-                        comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
-                    }
-                } 
+                comboBoxComunity.SelectedValue = socio.id_comunidad;
             }
         }
 
@@ -193,7 +180,7 @@ namespace Chrysallis
             checkBoxState.Text = Strings.state;
             checkBoxAdministrator.Text = Strings.admin;
 
-            if (socio == null)
+            if (!modificar)
             {
                 this.Text = Strings.partner;
             }
@@ -201,14 +188,7 @@ namespace Chrysallis
             {
                 this.Text = Strings.modifyPartner;
             }
-
-            //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
-            List<String> comunidadesString = new List<String>();
-            foreach (comunidades c in comunidades)
-            {
-                comunidadesString.Add(GestorIdiomas.getComunidad(c.nombre));
-            }
-            comboBoxComunity.DataSource = comunidadesString;
+            
         }
 
         private void checkBoxAdministrator_CheckedChanged(object sender, EventArgs e)

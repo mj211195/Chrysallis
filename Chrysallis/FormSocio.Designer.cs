@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelDni = new System.Windows.Forms.Label();
             this.textBoxDni = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -44,10 +45,12 @@
             this.checkBoxAdministrator = new System.Windows.Forms.CheckBox();
             this.checkBoxState = new System.Windows.Forms.CheckBox();
             this.comboBoxComunity = new System.Windows.Forms.ComboBox();
+            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
             this.labelComunidad = new System.Windows.Forms.Label();
             this.labelPassword2 = new System.Windows.Forms.Label();
             this.textBoxPassword2 = new System.Windows.Forms.TextBox();
             this.buttonSave = new AppDesktop.Button_WOC();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDni
@@ -187,12 +190,19 @@
             // 
             // comboBoxComunity
             // 
+            this.comboBoxComunity.DataSource = this.bindingSourceComunidades;
+            this.comboBoxComunity.DisplayMember = "nombre";
             this.comboBoxComunity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunity.FormattingEnabled = true;
             this.comboBoxComunity.Location = new System.Drawing.Point(80, 224);
             this.comboBoxComunity.Name = "comboBoxComunity";
             this.comboBoxComunity.Size = new System.Drawing.Size(298, 21);
             this.comboBoxComunity.TabIndex = 11;
+            this.comboBoxComunity.ValueMember = "id";
+            // 
+            // bindingSourceComunidades
+            // 
+            this.bindingSourceComunidades.DataSource = typeof(Chrysallis.comunidades);
             // 
             // labelComunidad
             // 
@@ -274,6 +284,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "FormSocio";
             this.Load += new System.EventHandler(this.FormSocio_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +312,6 @@
         private AppDesktop.Button_WOC buttonSave;
         private System.Windows.Forms.Label labelPassword2;
         private System.Windows.Forms.TextBox textBoxPassword2;
+        private System.Windows.Forms.BindingSource bindingSourceComunidades;
     }
 }
