@@ -51,7 +51,7 @@ namespace Chrysallis
                 {
                     foreach (comunidades c in s.comunidades1)
                     {
-                        if(c.id == FormLogin.socioLogin.id_comunidad)
+                        if(c.id == FormLogin.socioLogin.id_comunidad && !sociosComunidad.Contains(s))
                         {
                             sociosComunidad.Add(s);
                         }
@@ -86,6 +86,28 @@ namespace Chrysallis
             FormSocio formSocio = new FormSocio(socio);
             formSocio.ShowDialog();
             RefrescarDatos();
+        }
+
+        private void dataGridViewSocios_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            socios s = (socios)dataGridViewSocios.SelectedRows[0].DataBoundItem;
+            if (s.id != FormLogin.socioLogin.id)
+            {
+                DialogResult resultado = MessageBox.Show("¿Quiere eliminar el hotel seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    SocioORM.DeleteSocio((socios)dataGridViewSocios.SelectedRows[0].DataBoundItem);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No puede eliminar su propio usuario!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }

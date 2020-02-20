@@ -110,5 +110,11 @@ namespace Chrysallis.BD
             }
             return correcto;
         }
+
+        public static void DeleteSocio(socios socio)
+        {
+            ORM.bd.socios.Remove(socio);
+            ORM.bd.SaveChanges();
+        }
     }
 }
