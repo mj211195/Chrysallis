@@ -73,7 +73,7 @@ namespace Chrysallis.BD
             {
                 eventos = (
                 from e in ORM.bd.eventos
-                where (e.fecha > desde && e.fecha < hasta)
+                where (e.fecha >= desde && e.fecha <= hasta)
                 select e).ToList();
             }
             catch (EntityException ex)

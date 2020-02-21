@@ -60,12 +60,12 @@ namespace Chrysallis
 
         private void dateTimePickerFiltroFecha_ValueChanged(object sender, EventArgs e)
         {
-            buscarPorFecha();
+            
         }
 
         private void dateTimePickerHasta_ValueChanged(object sender, EventArgs e)
         {
-            buscarPorFecha();
+            
         }
 
         public void buscarPorFecha()
@@ -132,6 +132,11 @@ namespace Chrysallis
             {
                 e.Cancel = true;
             }
+        }
+
+        private void pictureBoxLupa_Click(object sender, EventArgs e)
+        {
+            buscarPorFecha();
         }
     }
 }

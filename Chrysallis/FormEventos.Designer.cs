@@ -253,6 +253,7 @@
             this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLupa.TabIndex = 16;
             this.pictureBoxLupa.TabStop = false;
+            this.pictureBoxLupa.Click += new System.EventHandler(this.pictureBoxLupa_Click);
             // 
             // FormEventos
             // 
