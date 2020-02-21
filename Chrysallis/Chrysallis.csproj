@@ -239,6 +239,8 @@
       <DependentUpon>ModelChrysallis.edmx</DependentUpon>
       <LastGenOutput>ModelChrysallis.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\lupa.png" />
+    <None Include="Resources\lupa1.png" />
     <None Include="Resources\ojo.png" />
   </ItemGroup>
   <ItemGroup>
