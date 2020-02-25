@@ -47,8 +47,12 @@
             this.labelSearch = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonAgregarSocio = new AppDesktop.Button_WOC();
+            this.pictureBoxLupa = new System.Windows.Forms.PictureBox();
+            this.labelFilterComunidad = new System.Windows.Forms.Label();
+            this.comboBoxFilterComunidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSocios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewSocios
@@ -193,9 +197,8 @@
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(59, 18);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(352, 20);
+            this.textBoxSearch.Size = new System.Drawing.Size(275, 20);
             this.textBoxSearch.TabIndex = 11;
-            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // buttonAgregarSocio
             // 
@@ -221,11 +224,43 @@
             this.buttonAgregarSocio.UseVisualStyleBackColor = false;
             this.buttonAgregarSocio.Click += new System.EventHandler(this.buttonAgregarSocio_Click);
             // 
+            // pictureBoxLupa
+            // 
+            this.pictureBoxLupa.Image = global::Chrysallis.Properties.Resources.lupa;
+            this.pictureBoxLupa.Location = new System.Drawing.Point(351, 16);
+            this.pictureBoxLupa.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLupa.Name = "pictureBoxLupa";
+            this.pictureBoxLupa.Size = new System.Drawing.Size(36, 25);
+            this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLupa.TabIndex = 17;
+            this.pictureBoxLupa.TabStop = false;
+            this.pictureBoxLupa.Click += new System.EventHandler(this.pictureBoxLupa_Click);
+            // 
+            // labelFilterComunidad
+            // 
+            this.labelFilterComunidad.AutoSize = true;
+            this.labelFilterComunidad.Location = new System.Drawing.Point(455, 23);
+            this.labelFilterComunidad.Name = "labelFilterComunidad";
+            this.labelFilterComunidad.Size = new System.Drawing.Size(63, 13);
+            this.labelFilterComunidad.TabIndex = 18;
+            this.labelFilterComunidad.Text = "Comunidad:";
+            // 
+            // comboBoxFilterComunidad
+            // 
+            this.comboBoxFilterComunidad.FormattingEnabled = true;
+            this.comboBoxFilterComunidad.Location = new System.Drawing.Point(525, 19);
+            this.comboBoxFilterComunidad.Name = "comboBoxFilterComunidad";
+            this.comboBoxFilterComunidad.Size = new System.Drawing.Size(275, 21);
+            this.comboBoxFilterComunidad.TabIndex = 19;
+            // 
             // FormSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 496);
+            this.Controls.Add(this.comboBoxFilterComunidad);
+            this.Controls.Add(this.labelFilterComunidad);
+            this.Controls.Add(this.pictureBoxLupa);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.buttonAgregarSocio);
@@ -235,6 +270,7 @@
             this.Load += new System.EventHandler(this.FormSocios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSocios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +295,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn estatalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcomunidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn comunidad;
+        private System.Windows.Forms.PictureBox pictureBoxLupa;
+        private System.Windows.Forms.Label labelFilterComunidad;
+        private System.Windows.Forms.ComboBox comboBoxFilterComunidad;
     }
 }

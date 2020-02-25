@@ -101,7 +101,7 @@ namespace Chrysallis
             }
         }
 
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        private void pictureBoxLupa_Click(object sender, EventArgs e)
         {
             if (textBoxSearch.Text.Equals(""))
             {
@@ -112,7 +112,6 @@ namespace Chrysallis
                 String busqueda = textBoxSearch.Text;
                 bindingSourceSocios.DataSource = SocioORM.SelectSocioBySearch(busqueda);
             }
-
         }
     }
 }
