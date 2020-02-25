@@ -51,15 +51,15 @@
             this.Documento2 = new System.Windows.Forms.OpenFileDialog();
             this.Documento3 = new System.Windows.Forms.OpenFileDialog();
             this.comboBoxComunity = new System.Windows.Forms.ComboBox();
+            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
             this.notificacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceNotificaciones = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
             this.listBoxNotificaciones = new System.Windows.Forms.ListBox();
             this.dateTimePickerHora = new System.Windows.Forms.DateTimePicker();
             this.buttonSave = new AppDesktop.Button_WOC();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNotificaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             this.SuspendLayout();
             // 
             // labelFecha
@@ -73,7 +73,7 @@
             // 
             // dateTimePickerFecha
             // 
-            this.dateTimePickerFecha.Location = new System.Drawing.Point(147, 14);
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(152, 14);
             this.dateTimePickerFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(349, 22);
@@ -91,7 +91,7 @@
             // 
             // textBoxUbicacion
             // 
-            this.textBoxUbicacion.Location = new System.Drawing.Point(147, 42);
+            this.textBoxUbicacion.Location = new System.Drawing.Point(152, 42);
             this.textBoxUbicacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUbicacion.Multiline = true;
             this.textBoxUbicacion.Name = "textBoxUbicacion";
@@ -118,7 +118,7 @@
             // 
             // dateTimePickerFechaLimite
             // 
-            this.dateTimePickerFechaLimite.Location = new System.Drawing.Point(147, 178);
+            this.dateTimePickerFechaLimite.Location = new System.Drawing.Point(152, 178);
             this.dateTimePickerFechaLimite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFechaLimite.Name = "dateTimePickerFechaLimite";
             this.dateTimePickerFechaLimite.Size = new System.Drawing.Size(349, 22);
@@ -135,7 +135,7 @@
             // 
             // textBoxNumeroAsistentes
             // 
-            this.textBoxNumeroAsistentes.Location = new System.Drawing.Point(147, 206);
+            this.textBoxNumeroAsistentes.Location = new System.Drawing.Point(152, 206);
             this.textBoxNumeroAsistentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNumeroAsistentes.Name = "textBoxNumeroAsistentes";
             this.textBoxNumeroAsistentes.Size = new System.Drawing.Size(131, 22);
@@ -161,7 +161,7 @@
             // 
             // buttonDocumento
             // 
-            this.buttonDocumento.Location = new System.Drawing.Point(397, 265);
+            this.buttonDocumento.Location = new System.Drawing.Point(402, 265);
             this.buttonDocumento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDocumento.Name = "buttonDocumento";
             this.buttonDocumento.Size = new System.Drawing.Size(99, 23);
@@ -172,7 +172,7 @@
             // 
             // textBoxDocumentos
             // 
-            this.textBoxDocumentos.Location = new System.Drawing.Point(147, 265);
+            this.textBoxDocumentos.Location = new System.Drawing.Point(152, 265);
             this.textBoxDocumentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDocumentos.Name = "textBoxDocumentos";
             this.textBoxDocumentos.ReadOnly = true;
@@ -181,7 +181,7 @@
             // 
             // textBoxDocumentos2
             // 
-            this.textBoxDocumentos2.Location = new System.Drawing.Point(147, 293);
+            this.textBoxDocumentos2.Location = new System.Drawing.Point(152, 293);
             this.textBoxDocumentos2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDocumentos2.Name = "textBoxDocumentos2";
             this.textBoxDocumentos2.ReadOnly = true;
@@ -190,7 +190,7 @@
             // 
             // buttonDocumentos2
             // 
-            this.buttonDocumentos2.Location = new System.Drawing.Point(397, 293);
+            this.buttonDocumentos2.Location = new System.Drawing.Point(402, 293);
             this.buttonDocumentos2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDocumentos2.Name = "buttonDocumentos2";
             this.buttonDocumentos2.Size = new System.Drawing.Size(99, 23);
@@ -201,7 +201,7 @@
             // 
             // textBoxDocumentos3
             // 
-            this.textBoxDocumentos3.Location = new System.Drawing.Point(147, 321);
+            this.textBoxDocumentos3.Location = new System.Drawing.Point(152, 321);
             this.textBoxDocumentos3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDocumentos3.Name = "textBoxDocumentos3";
             this.textBoxDocumentos3.ReadOnly = true;
@@ -210,7 +210,7 @@
             // 
             // buttonDocumentos3
             // 
-            this.buttonDocumentos3.Location = new System.Drawing.Point(397, 321);
+            this.buttonDocumentos3.Location = new System.Drawing.Point(402, 321);
             this.buttonDocumentos3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDocumentos3.Name = "buttonDocumentos3";
             this.buttonDocumentos3.Size = new System.Drawing.Size(99, 23);
@@ -242,17 +242,20 @@
             // 
             // comboBoxComunity
             // 
-            this.comboBoxComunity.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.notificacionesBindingSource, "id", true));
-            this.comboBoxComunity.DataSource = this.bindingSourceNotificaciones;
-            this.comboBoxComunity.DisplayMember = "antelacion";
+            this.comboBoxComunity.DataSource = this.bindingSourceComunidades;
+            this.comboBoxComunity.DisplayMember = "nombre";
             this.comboBoxComunity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunity.FormattingEnabled = true;
-            this.comboBoxComunity.Location = new System.Drawing.Point(147, 234);
-            this.comboBoxComunity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxComunity.Location = new System.Drawing.Point(152, 234);
+            this.comboBoxComunity.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxComunity.Name = "comboBoxComunity";
             this.comboBoxComunity.Size = new System.Drawing.Size(349, 24);
             this.comboBoxComunity.TabIndex = 11;
-            this.comboBoxComunity.ValueMember = "antelacion";
+            this.comboBoxComunity.ValueMember = "id";
+            // 
+            // bindingSourceComunidades
+            // 
+            this.bindingSourceComunidades.DataSource = typeof(Chrysallis.comunidades);
             // 
             // notificacionesBindingSource
             // 
@@ -262,17 +265,13 @@
             // 
             this.bindingSourceNotificaciones.DataSource = typeof(Chrysallis.notificaciones);
             // 
-            // bindingSourceComunidades
-            // 
-            this.bindingSourceComunidades.DataSource = typeof(Chrysallis.comunidades);
-            // 
             // listBoxNotificaciones
             // 
             this.listBoxNotificaciones.DataSource = this.bindingSourceNotificaciones;
             this.listBoxNotificaciones.DisplayMember = "antelacion";
             this.listBoxNotificaciones.FormattingEnabled = true;
             this.listBoxNotificaciones.ItemHeight = 16;
-            this.listBoxNotificaciones.Location = new System.Drawing.Point(147, 350);
+            this.listBoxNotificaciones.Location = new System.Drawing.Point(152, 350);
             this.listBoxNotificaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxNotificaciones.Name = "listBoxNotificaciones";
             this.listBoxNotificaciones.Size = new System.Drawing.Size(349, 84);
@@ -282,8 +281,8 @@
             // dateTimePickerHora
             // 
             this.dateTimePickerHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerHora.Location = new System.Drawing.Point(147, 146);
-            this.dateTimePickerHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerHora.Location = new System.Drawing.Point(152, 146);
+            this.dateTimePickerHora.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerHora.Name = "dateTimePickerHora";
             this.dateTimePickerHora.ShowUpDown = true;
             this.dateTimePickerHora.Size = new System.Drawing.Size(115, 22);
@@ -300,7 +299,7 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Consolas", 12F);
             this.buttonSave.Location = new System.Drawing.Point(125, 443);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.OnHoverBorderColor = System.Drawing.Color.Gray;
             this.buttonSave.OnHoverButtonColor = System.Drawing.Color.Azure;
@@ -343,9 +342,9 @@
             this.Name = "FormEvento";
             this.Text = "Evento";
             this.Load += new System.EventHandler(this.FormEvento_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificacionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNotificaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
