@@ -2,12 +2,14 @@
 using Chrysallis.Idiomas;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Chrysallis
 {
     public partial class FormSocios : Form
     {
+        List<socios> socios;
         public FormSocios()
         {
             InitializeComponent();
@@ -29,7 +31,13 @@ namespace Chrysallis
 
         private void RefrescarDatos()
         {
-            List<socios> socios = SocioORM.SelectAllSocios();
+            List<comunidades> comunidades = ComunidadORM.SelectAllComunidades();
+            List<comunidades> comunidadesOriginal;
+                comunidadesOriginal = (from c in comunidades
+                                       let a = new comunidades() { id = c.id, nombre = GestorIdiomas.getComunidad(c.nombre) }
+                                       select a).ToList();
+            socios = SocioORM.SelectAllSocios();
+            bindingSourceComunidades.DataSource = comunidadesOriginal;
             if (socios == null)
             {
                 DialogResult result = MessageBox.Show("Error al acceder a la BD.\nSe procede a cerrar el programa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -112,6 +120,20 @@ namespace Chrysallis
                 String busqueda = textBoxSearch.Text;
                 bindingSourceSocios.DataSource = SocioORM.SelectSocioBySearch(busqueda);
             }
+        }
+
+        private void comboBoxFilterComunidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxFilterComunidad.SelectedItem != null)
+            {
+                List<socios> sociosFilter = SocioORM.SelectAllSociosByComunidad(int.Parse(comboBoxFilterComunidad.SelectedValue.ToString()));
+                 bindingSourceSocios.DataSource = sociosFilter;
+            }
+        }
+
+        private void buttonClean_Click(object sender, EventArgs e)
+        {
+            bindingSourceSocios.DataSource = socios;
         }
     }
 }

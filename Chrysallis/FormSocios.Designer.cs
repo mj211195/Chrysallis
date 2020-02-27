@@ -46,13 +46,16 @@
             this.bindingSourceSocios = new System.Windows.Forms.BindingSource(this.components);
             this.labelSearch = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.buttonAgregarSocio = new AppDesktop.Button_WOC();
             this.pictureBoxLupa = new System.Windows.Forms.PictureBox();
             this.labelFilterComunidad = new System.Windows.Forms.Label();
             this.comboBoxFilterComunidad = new System.Windows.Forms.ComboBox();
+            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonAgregarSocio = new AppDesktop.Button_WOC();
+            this.buttonClean = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewSocios
@@ -200,6 +203,44 @@
             this.textBoxSearch.Size = new System.Drawing.Size(275, 20);
             this.textBoxSearch.TabIndex = 11;
             // 
+            // pictureBoxLupa
+            // 
+            this.pictureBoxLupa.Image = global::Chrysallis.Properties.Resources.lupa;
+            this.pictureBoxLupa.Location = new System.Drawing.Point(351, 16);
+            this.pictureBoxLupa.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLupa.Name = "pictureBoxLupa";
+            this.pictureBoxLupa.Size = new System.Drawing.Size(36, 25);
+            this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLupa.TabIndex = 17;
+            this.pictureBoxLupa.TabStop = false;
+            this.pictureBoxLupa.Click += new System.EventHandler(this.pictureBoxLupa_Click);
+            // 
+            // labelFilterComunidad
+            // 
+            this.labelFilterComunidad.AutoSize = true;
+            this.labelFilterComunidad.Location = new System.Drawing.Point(416, 23);
+            this.labelFilterComunidad.Name = "labelFilterComunidad";
+            this.labelFilterComunidad.Size = new System.Drawing.Size(63, 13);
+            this.labelFilterComunidad.TabIndex = 18;
+            this.labelFilterComunidad.Text = "Comunidad:";
+            // 
+            // comboBoxFilterComunidad
+            // 
+            this.comboBoxFilterComunidad.DataSource = this.bindingSourceComunidades;
+            this.comboBoxFilterComunidad.DisplayMember = "nombre";
+            this.comboBoxFilterComunidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilterComunidad.FormattingEnabled = true;
+            this.comboBoxFilterComunidad.Location = new System.Drawing.Point(486, 19);
+            this.comboBoxFilterComunidad.Name = "comboBoxFilterComunidad";
+            this.comboBoxFilterComunidad.Size = new System.Drawing.Size(226, 21);
+            this.comboBoxFilterComunidad.TabIndex = 19;
+            this.comboBoxFilterComunidad.ValueMember = "id";
+            this.comboBoxFilterComunidad.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterComunidad_SelectedIndexChanged);
+            // 
+            // bindingSourceComunidades
+            // 
+            this.bindingSourceComunidades.DataSource = typeof(Chrysallis.comunidades);
+            // 
             // buttonAgregarSocio
             // 
             this.buttonAgregarSocio.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -224,40 +265,22 @@
             this.buttonAgregarSocio.UseVisualStyleBackColor = false;
             this.buttonAgregarSocio.Click += new System.EventHandler(this.buttonAgregarSocio_Click);
             // 
-            // pictureBoxLupa
+            // buttonClean
             // 
-            this.pictureBoxLupa.Image = global::Chrysallis.Properties.Resources.lupa;
-            this.pictureBoxLupa.Location = new System.Drawing.Point(351, 16);
-            this.pictureBoxLupa.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxLupa.Name = "pictureBoxLupa";
-            this.pictureBoxLupa.Size = new System.Drawing.Size(36, 25);
-            this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLupa.TabIndex = 17;
-            this.pictureBoxLupa.TabStop = false;
-            this.pictureBoxLupa.Click += new System.EventHandler(this.pictureBoxLupa_Click);
-            // 
-            // labelFilterComunidad
-            // 
-            this.labelFilterComunidad.AutoSize = true;
-            this.labelFilterComunidad.Location = new System.Drawing.Point(455, 23);
-            this.labelFilterComunidad.Name = "labelFilterComunidad";
-            this.labelFilterComunidad.Size = new System.Drawing.Size(63, 13);
-            this.labelFilterComunidad.TabIndex = 18;
-            this.labelFilterComunidad.Text = "Comunidad:";
-            // 
-            // comboBoxFilterComunidad
-            // 
-            this.comboBoxFilterComunidad.FormattingEnabled = true;
-            this.comboBoxFilterComunidad.Location = new System.Drawing.Point(525, 19);
-            this.comboBoxFilterComunidad.Name = "comboBoxFilterComunidad";
-            this.comboBoxFilterComunidad.Size = new System.Drawing.Size(275, 21);
-            this.comboBoxFilterComunidad.TabIndex = 19;
+            this.buttonClean.Location = new System.Drawing.Point(726, 17);
+            this.buttonClean.Name = "buttonClean";
+            this.buttonClean.Size = new System.Drawing.Size(75, 23);
+            this.buttonClean.TabIndex = 20;
+            this.buttonClean.Text = "Limpiar";
+            this.buttonClean.UseVisualStyleBackColor = true;
+            this.buttonClean.Click += new System.EventHandler(this.buttonClean_Click);
             // 
             // FormSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 496);
+            this.Controls.Add(this.buttonClean);
             this.Controls.Add(this.comboBoxFilterComunidad);
             this.Controls.Add(this.labelFilterComunidad);
             this.Controls.Add(this.pictureBoxLupa);
@@ -271,6 +294,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSocios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +322,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLupa;
         private System.Windows.Forms.Label labelFilterComunidad;
         private System.Windows.Forms.ComboBox comboBoxFilterComunidad;
+        private System.Windows.Forms.BindingSource bindingSourceComunidades;
+        private System.Windows.Forms.Button buttonClean;
     }
 }
