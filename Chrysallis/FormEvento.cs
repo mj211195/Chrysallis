@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,7 @@ namespace Chrysallis
             dateTimePickerFecha.Value = evento.fecha;
             textBoxUbicacion.Text = evento.ubicacion;
             dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite;
-            //dateTimePickerHora.Value = evento.hora;
+           dateTimePickerHora.Value = evento.fecha + evento.hora;
             comboBoxComunity.SelectedValue = evento.id_comunidad;
             textBoxNumeroAsistentes.Text = evento.numAsistentes.ToString();
             
@@ -96,12 +97,16 @@ namespace Chrysallis
             else
             {
                 eventos eventoNew = new eventos();
+                documentos documento = new documentos();
                 eventoNew.fecha = dateTimePickerFecha.Value;
                 eventoNew.ubicacion = textBoxUbicacion.Text.Trim();
                 eventoNew.hora = dateTimePickerHora.Value.TimeOfDay;
                 eventoNew.fechaLimite = dateTimePickerFechaLimite.Value;
                 eventoNew.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
                 
+                guardarDocumento();
+
+
                 if (comboBoxComunity.SelectedItem != null)
                 {
                     //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
@@ -139,6 +144,23 @@ namespace Chrysallis
             
 
             this.Close();
+        }
+
+        private void guardarDocumento()
+        {
+            byte[] archivo = null;
+            Stream myStream = Documento1.OpenFile();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                myStream.CopyTo(ms);
+                archivo = ms.ToArray();
+            }
+
+            documentos documento = new documentos();
+            
+            documento.documento = archivo;
+            documento.id_evento = evento.id;
+            BD.DocumentoORM.insertDocumentos(documento);
         }
 
         private void buttonDocumento_Click(object sender, EventArgs e)

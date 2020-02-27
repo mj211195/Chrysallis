@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +30,24 @@ namespace Chrysallis.BD
             }
 
             return _documentos;
+        }
+
+        public static Boolean insertDocumentos(documentos documento)
+        {
+            Boolean correcto = false;
+            try
+            {
+                ORM.bd.documentos.Add(documento);
+                ORM.bd.SaveChanges();
+                correcto = true;
+            }
+            catch (DbUpdateException e)
+            {
+                ORM.RejectChanges();
+                SqlException sqlEx = (SqlException)e.InnerException.InnerException;
+                MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return correcto;
         }
     }
 }
