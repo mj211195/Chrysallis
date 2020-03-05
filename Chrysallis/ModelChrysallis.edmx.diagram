@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="fa26016c4d234468b37c07e66a1fb315" Name="Diagram1">
         <EntityTypeShape EntityType="chrysallisModel.asistir" Width="1.5" PointX="5.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="chrysallisModel.comunidades" Width="1.5" PointX="3.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="chrysallisModel.comunidades" Width="1.5" PointX="3.25" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="chrysallisModel.documentos" Width="1.5" PointX="0.625" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="chrysallisModel.eventos" Width="1.5" PointX="3.125" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="chrysallisModel.notificaciones" Width="1.5" PointX="1" PointY="0.625" IsExpanded="true" />
