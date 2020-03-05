@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,43 @@ using System.Windows.Forms;
 
 namespace Chrysallis
 {
+   
+    
     public partial class FormEvento : Form
     {
         List<comunidades> comunidades;
-        eventos eventos = new eventos();
+        eventos evento = new eventos();
+        private Boolean modificar;
         public FormEvento()
         {
             InitializeComponent();
+            modificar = false;
+        }
+
+        public FormEvento(eventos evento, Boolean modificar)
+        {
+            InitializeComponent();
+            this.evento = evento;
+            this.modificar = modificar;
+            cargarDatos(evento);
+            cambiarForma();
+        }
+
+        private void cargarDatos(eventos evento)
+        {
+            dateTimePickerFecha.Value = evento.fecha;
+            textBoxUbicacion.Text = evento.ubicacion;
+            dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite;
+           dateTimePickerHora.Value = evento.fecha + evento.hora;
+            comboBoxComunity.SelectedValue = evento.id_comunidad;
+            textBoxNumeroAsistentes.Text = evento.numAsistentes.ToString();
+            
+        }
+
+        private void cambiarForma()
+        {
+            comboBoxComunity.Enabled = false;
+            
         }
 
         private void FormEvento_Load(object sender, EventArgs e)
@@ -30,11 +61,10 @@ namespace Chrysallis
             dateTimePickerHora.CustomFormat = "HH:mm";
             dateTimePickerFecha.Value = DateTime.Today;
             dateTimePickerFechaLimite.Value = DateTime.Today;
-            cargarHora();
             cambiarIdioma();
             foreach (comunidades c in comunidades)
             {
-                if (c.id == eventos.id_comunidad)
+                if (c.id == evento.id_comunidad)
                 {
                     comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
                 }
@@ -66,12 +96,17 @@ namespace Chrysallis
             //}
             else
             {
-                eventos evento = new eventos();
-                evento.fecha = dateTimePickerFecha.Value;
-                evento.ubicacion = textBoxUbicacion.Text.Trim();
-                evento.hora = dateTimePickerHora.Value.TimeOfDay;
-                evento.fechaLimite = dateTimePickerFechaLimite.Value;
-                evento.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
+                eventos eventoNew = new eventos();
+                documentos documento = new documentos();
+                eventoNew.fecha = dateTimePickerFecha.Value;
+                eventoNew.ubicacion = textBoxUbicacion.Text.Trim();
+                eventoNew.hora = dateTimePickerHora.Value.TimeOfDay;
+                eventoNew.fechaLimite = dateTimePickerFechaLimite.Value;
+                eventoNew.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
+                
+                guardarDocumento();
+
+
                 if (comboBoxComunity.SelectedItem != null)
                 {
                     //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
@@ -80,18 +115,52 @@ namespace Chrysallis
                         String aux = GestorIdiomas.getComunidad(c.nombre);
                         if (aux.Equals(comboBoxComunity.Text))
                         {
-                            evento.comunidades = c;
+                            eventoNew.comunidades = c;
                         }
                     }
                 }
                 //List<string> documento = new List<string>();
                 //evento.documentos = documento;
-                //evento.notificaciones = listBoxNotificaciones.SelectedItems();
-                EventoORM.InsertEvento(evento);
+                //evento.notificaciones = listBoxNotificaciones.SelectedItem();
+                
+                if (!modificar)
+                {
+                    if (EventoORM.InsertEvento(eventoNew))
+                    {
+                        MessageBox.Show("El evento ha sido creado", "CREADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    eventoNew.id = evento.id;
+                    if (EventoORM.UpdateEvento(eventoNew))
+                    {
+                        MessageBox.Show("El evento ha sido modificado", "MODIFICADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
             }
             
 
             this.Close();
+        }
+
+        private void guardarDocumento()
+        {
+            byte[] archivo = null;
+            Stream myStream = Documento1.OpenFile();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                myStream.CopyTo(ms);
+                archivo = ms.ToArray();
+            }
+
+            documentos documento = new documentos();
+            
+            documento.documento = archivo;
+            documento.id_evento = evento.id;
+            BD.DocumentoORM.insertDocumentos(documento);
         }
 
         private void buttonDocumento_Click(object sender, EventArgs e)
@@ -146,19 +215,6 @@ namespace Chrysallis
         private void errorDocumento()
         {
             MessageBox.Show("El arxiu seleccionat no es un document");
-        }
-
-        //Metodo para cargar las horas en el comoBoxHora
-        private void cargarHora()
-        {
-            //comboBoxHora.Items.Clear();
-
-            //for (int minutos = 0; minutos < 1440; minutos += 15)
-            //{
-            //    string hour = new DateTime().AddMinutes(minutos).ToString("HH:mm");
-            //    comboBoxHora.Items.Add(hour);
-            //}
-            //comboBoxHora.Text = "07:00";
         }
 
         //Metodo para cambiar el idioma

@@ -108,6 +108,30 @@ namespace Chrysallis.BD
             ORM.bd.SaveChanges();
         }
 
+        public static Boolean UpdateEvento(eventos evento)
+        {
+            eventos _evento = ORM.bd.eventos.Find(evento.id);
+            _evento.fecha = evento.fecha;
+            _evento.ubicacion = evento.ubicacion;
+            _evento.hora = evento.hora;
+            _evento.fechaLimite = evento.fechaLimite;
+            _evento.numAsistentes = evento.numAsistentes;
+            //_evento.id_comunidad = evento.id_comunidad;
+            
+            Boolean correcto = false;
+            try
+            {
+                ORM.bd.SaveChanges();
+                correcto = true;
+            }
+            catch (Exception e)
+            {
+                SqlException sqlEx = (SqlException)e.InnerException.InnerException;
+                MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return correcto;
+        }
+
 
     }
 }

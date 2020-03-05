@@ -138,5 +138,12 @@ namespace Chrysallis
         {
             buscarPorFecha();
         }
+
+        private void dataGridViewEventos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;
+            FormEvento eventoModificado = new FormEvento(evento, true);
+            eventoModificado.ShowDialog();
+        }
     }
 }

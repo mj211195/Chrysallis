@@ -68,6 +68,7 @@
       <DependentUpon>ModelChrysallis.tt</DependentUpon>
     </Compile>
     <Compile Include="BD\ComunidadORM.cs" />
+    <Compile Include="BD\DocumentoORM.cs" />
     <Compile Include="BD\EventoORM.cs" />
     <Compile Include="BD\NotificacionORM.cs" />
     <Compile Include="BD\ORM.cs" />
