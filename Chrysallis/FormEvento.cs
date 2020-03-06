@@ -39,11 +39,13 @@ namespace Chrysallis
 
         private void cargarDatos(eventos evento)
         {
+            textBoxNombre.Text = evento.nombre;
             dateTimePickerFecha.Value = evento.fecha;
             textBoxUbicacion.Text = evento.ubicacion;
             dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite;
            dateTimePickerHora.Value = evento.fecha + evento.hora;
             comboBoxComunity.SelectedValue = evento.id_comunidad;
+            //listBoxDocumentos.Items = evento.documentos;
             textBoxNumeroAsistentes.Text = evento.numAsistentes.ToString();
             
         }
@@ -100,6 +102,7 @@ namespace Chrysallis
             {
                 eventos eventoNew = new eventos();
                 documentos documento = new documentos();
+                eventoNew.nombre = textBoxNombre.Text.Trim();
                 eventoNew.fecha = dateTimePickerFecha.Value;
                 eventoNew.ubicacion = textBoxUbicacion.Text.Trim();
                 eventoNew.hora = dateTimePickerHora.Value.TimeOfDay;
@@ -107,7 +110,7 @@ namespace Chrysallis
                 eventoNew.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
                 eventoNew.documentos = documentos;
                 
-                //guardarDocumento();
+                
 
 
                 if (comboBoxComunity.SelectedItem != null)
@@ -122,8 +125,8 @@ namespace Chrysallis
                         }
                     }
                 }
-                //List<string> documento = new List<string>();
-                //evento.documentos = documento;
+                
+                evento.documentos = documentos;
                 //evento.notificaciones = listBoxNotificaciones.SelectedItem();
                 
                 if (!modificar)
@@ -210,12 +213,11 @@ namespace Chrysallis
             {
                 if (openFileDialogDocumentos.ShowDialog() == DialogResult.OK)
                 {
-                    //documentos documento = new documentos();
-                    //documento.nombre = openFileDialogDocumentos.SafeFileName;
-                    //documento.documento = File.ReadAllBytes(openFileDialogDocumentos.FileName);
-                    //listBoxDocumentos.Items.Add(openFileDialogDocumentos.FileName);
-                    
-                    
+                    documentos documento = new documentos();
+                    documento.nombre = openFileDialogDocumentos.SafeFileName;
+                    documento.documento = File.ReadAllBytes(openFileDialogDocumentos.FileName);
+                    documentos.Add(documento);
+                    bindingSourceDocumentos.DataSource = documentos;
                 }
             }
             catch (Exception)
@@ -229,6 +231,9 @@ namespace Chrysallis
             //Process.Start(listBoxDocumentos.SelectedItem.ToString());
         }
 
-        
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

@@ -57,7 +57,6 @@
             this.textBoxDescripcion = new System.Windows.Forms.TextBox();
             this.labelDocumentos = new System.Windows.Forms.Label();
             this.listBoxDocumentos = new System.Windows.Forms.ListBox();
-            this.documentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceDocumentos = new System.Windows.Forms.BindingSource(this.components);
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
@@ -66,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNotificaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDocumentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,7 +195,6 @@
             // openFileDialogImagen
             // 
             this.openFileDialogImagen.FileName = "openFileDialogImagen";
-            
             // 
             // comboBoxComunity
             // 
@@ -317,16 +314,15 @@
             // 
             // listBoxDocumentos
             // 
+            this.listBoxDocumentos.DataSource = this.bindingSourceDocumentos;
+            this.listBoxDocumentos.DisplayMember = "nombre";
             this.listBoxDocumentos.FormattingEnabled = true;
             this.listBoxDocumentos.ItemHeight = 16;
             this.listBoxDocumentos.Location = new System.Drawing.Point(150, 496);
             this.listBoxDocumentos.Name = "listBoxDocumentos";
             this.listBoxDocumentos.Size = new System.Drawing.Size(409, 100);
             this.listBoxDocumentos.TabIndex = 27;
-            // 
-            // documentosBindingSource
-            // 
-            this.documentosBindingSource.DataSource = typeof(Chrysallis.documentos);
+            this.listBoxDocumentos.ValueMember = "id";
             // 
             // bindingSourceDocumentos
             // 
@@ -350,6 +346,7 @@
             this.buttonEliminar.TabIndex = 29;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // buttonVer
             // 
@@ -404,7 +401,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificacionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNotificaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDocumentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -446,6 +442,5 @@
         private System.Windows.Forms.Button buttonVer;
         private System.Windows.Forms.OpenFileDialog openFileDialogDocumentos;
         private System.Windows.Forms.BindingSource bindingSourceDocumentos;
-        private System.Windows.Forms.BindingSource documentosBindingSource;
     }
 }

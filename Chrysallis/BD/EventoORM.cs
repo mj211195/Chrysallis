@@ -111,12 +111,13 @@ namespace Chrysallis.BD
         public static Boolean UpdateEvento(eventos evento)
         {
             eventos _evento = ORM.bd.eventos.Find(evento.id);
+            _evento.nombre = evento.nombre;
             _evento.fecha = evento.fecha;
             _evento.ubicacion = evento.ubicacion;
             _evento.hora = evento.hora;
             _evento.fechaLimite = evento.fechaLimite;
             _evento.numAsistentes = evento.numAsistentes;
-            //_evento.id_comunidad = evento.id_comunidad;
+            _evento.id_comunidad = evento.id_comunidad;
             
             Boolean correcto = false;
             try
