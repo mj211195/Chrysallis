@@ -112,12 +112,12 @@ namespace Chrysallis
             this.Text = Strings._event;
             labelDesde.Text = Strings.from;
             labelHasta.Text = Strings.to;
-            dataGridViewEventos.Columns[1].HeaderText = Strings.date;
-            dataGridViewEventos.Columns[2].HeaderText = Strings.location;
-            dataGridViewEventos.Columns[3].HeaderText = Strings.time;
-            dataGridViewEventos.Columns[4].HeaderText = Strings.deadline;
-            dataGridViewEventos.Columns[5].HeaderText = Strings.numberOfAttendees;
-            dataGridViewEventos.Columns[11].HeaderText = Strings.community;
+            dataGridViewEventos.Columns[2].HeaderText = Strings.date;
+            dataGridViewEventos.Columns[3].HeaderText = Strings.location;
+            dataGridViewEventos.Columns[4].HeaderText = Strings.time;
+            dataGridViewEventos.Columns[5].HeaderText = Strings.deadline;
+            dataGridViewEventos.Columns[6].HeaderText = Strings.numberOfAttendees;
+            dataGridViewEventos.Columns[7].HeaderText = Strings.community;
         }
 
         private void dataGridViewEventos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
