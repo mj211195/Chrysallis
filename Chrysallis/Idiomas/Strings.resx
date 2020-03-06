@@ -318,4 +318,22 @@
   <data name="confirmation" xml:space="preserve">
     <value>Confirmació</value>
   </data>
+  <data name="choose" xml:space="preserve">
+    <value>Selecciona</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>Descripció</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>Imatge</value>
+  </data>
+  <data name="newdoc" xml:space="preserve">
+    <value>Nou</value>
+  </data>
+  <data name="remove" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="see" xml:space="preserve">
+    <value>Veure</value>
+  </data>
 </root>

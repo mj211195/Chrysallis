@@ -201,6 +201,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\asistir.datasource" />
     <None Include="Properties\DataSources\comunidades.datasource" />
+    <None Include="Properties\DataSources\documentos.datasource" />
     <None Include="Properties\DataSources\eventos.datasource" />
     <None Include="Properties\DataSources\notificaciones.datasource" />
     <None Include="Properties\DataSources\socios.datasource" />

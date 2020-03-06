@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace Chrysallis
         List<comunidades> comunidades;
         eventos evento = new eventos();
         private Boolean modificar;
+        List<documentos> documentos = new List<documentos>();
         public FormEvento()
         {
             InitializeComponent();
@@ -103,8 +105,9 @@ namespace Chrysallis
                 eventoNew.hora = dateTimePickerHora.Value.TimeOfDay;
                 eventoNew.fechaLimite = dateTimePickerFechaLimite.Value;
                 eventoNew.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
+                eventoNew.documentos = documentos;
                 
-                guardarDocumento();
+                //guardarDocumento();
 
 
                 if (comboBoxComunity.SelectedItem != null)
@@ -146,71 +149,6 @@ namespace Chrysallis
             this.Close();
         }
 
-        private void guardarDocumento()
-        {
-            byte[] archivo = null;
-            Stream myStream = Documento1.OpenFile();
-            using (MemoryStream ms = new MemoryStream())
-            {
-                myStream.CopyTo(ms);
-                archivo = ms.ToArray();
-            }
-
-            documentos documento = new documentos();
-            
-            documento.documento = archivo;
-            documento.id_evento = evento.id;
-            BD.DocumentoORM.insertDocumentos(documento);
-        }
-
-        private void buttonDocumento_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Documento1.ShowDialog() == DialogResult.OK)
-                {
-                    string documento = Documento1.FileName;
-                    textBoxDocumentos.Text = documento;
-                }
-            }
-            catch (Exception)
-            {
-                errorDocumento();
-            }
-        }
-
-        private void buttonDocumentos2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Documento1.ShowDialog() == DialogResult.OK)
-                {
-                    string documento = Documento1.FileName;
-                    textBoxDocumentos2.Text = documento;
-                }
-            }
-            catch (Exception)
-            {
-                errorDocumento();
-            }
-        }
-
-        private void buttonDocumentos3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Documento1.ShowDialog() == DialogResult.OK)
-                {
-                    string documento = Documento1.FileName;
-                    textBoxDocumentos3.Text = documento;
-                }
-            }
-            catch (Exception)
-            {
-                errorDocumento();
-            }
-        }
-
         //Muestra error en caso de que no sea correcto el archivo seleccionado
         private void errorDocumento()
         {
@@ -231,8 +169,14 @@ namespace Chrysallis
             labelNotificaciones.Text = Idiomas.Strings.notifications;
             buttonSave.Text = Idiomas.Strings.save;
             buttonDocumento.Text = Idiomas.Strings.chosse;
-            buttonDocumentos2.Text = Idiomas.Strings.chosse;
-            buttonDocumentos3.Text = Idiomas.Strings.chosse;
+            labelNombre.Text = Idiomas.Strings.name;
+            labelImagen.Text = Idiomas.Strings.image;
+            buttonDocumento.Text = Idiomas.Strings.choose;
+            labelDescripcion.Text = Idiomas.Strings.description;
+            buttonNuevo.Text = Idiomas.Strings.newdoc;
+            buttonEliminar.Text = Idiomas.Strings.remove;
+            buttonVer.Text = Idiomas.Strings.see;
+            
 
             //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
             List<String> comunidadesString = new List<String>();
@@ -243,5 +187,48 @@ namespace Chrysallis
             comboBoxComunity.DataSource = comunidadesString;
         }
 
+        private void buttonDocumento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialogImagen.ShowDialog() == DialogResult.OK)
+                {
+                    string documento = openFileDialogImagen.FileName;
+                    textBoxImagen.Text = documento;
+                    
+                }
+            }
+            catch (Exception)
+            {
+                errorDocumento();
+            }
+        }
+
+        private void buttonNuevo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialogDocumentos.ShowDialog() == DialogResult.OK)
+                {
+                    //documentos documento = new documentos();
+                    //documento.nombre = openFileDialogDocumentos.SafeFileName;
+                    //documento.documento = File.ReadAllBytes(openFileDialogDocumentos.FileName);
+                    //listBoxDocumentos.Items.Add(openFileDialogDocumentos.FileName);
+                    
+                    
+                }
+            }
+            catch (Exception)
+            {
+                errorDocumento();
+            }
+        }
+
+        private void buttonVer_Click(object sender, EventArgs e)
+        {
+            //Process.Start(listBoxDocumentos.SelectedItem.ToString());
+        }
+
+        
     }
 }
