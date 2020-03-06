@@ -100,7 +100,7 @@ namespace Chrysallis
         {
             eventos _evento;
 
-            if (e.ColumnIndex == 11)
+            if (e.ColumnIndex == 7)
             {
                 _evento = (eventos)dataGridViewEventos.Rows[e.RowIndex].DataBoundItem;
                 e.Value = GestorIdiomas.getComunidad(_evento.comunidades.nombre);
