@@ -36,6 +36,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
           <Property Name="documento" Type="varbinary(max)" Nullable="false" />
           <Property Name="id_evento" Type="int" Nullable="false" />
         </EntityType>
@@ -283,6 +284,7 @@
           <Property Name="documento" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="id_evento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="eventos" Relationship="Self.FK_documentos_eventos" FromRole="documentos" ToRole="eventos" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="eventos">
           <Key>
@@ -465,6 +467,7 @@
           <EntitySetMapping Name="documentos">
             <EntityTypeMapping TypeName="chrysallisModel.documentos">
               <MappingFragment StoreEntitySet="documentos">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="documento" ColumnName="documento" />
                 <ScalarProperty Name="id_evento" ColumnName="id_evento" />
