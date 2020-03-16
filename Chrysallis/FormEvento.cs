@@ -42,7 +42,7 @@ namespace Chrysallis
         {
             textBoxNombre.Text = evento.nombre;
             textBoxDescripcion.Text = evento.descripcion;
-            textBoxImagen.Text = evento.nombre;
+            textBoxImagen.Text = evento.nombreImagen;
             dateTimePickerFecha.Value = evento.fecha;
             textBoxUbicacion.Text = evento.ubicacion;
             dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite;
@@ -68,8 +68,7 @@ namespace Chrysallis
         private void FormEvento_Load(object sender, EventArgs e)
         {
             bindingSourceNotificaciones.DataSource = null;
-            bindingSourceNotificaciones.DataSource = NotificacionORM.SelectAllAntelacion();
-            
+            bindingSourceNotificaciones.DataSource = NotificacionORM.SelectAllNotificaciones();
             comunidades = ComunidadORM.SelectAllComunidades();
             dateTimePickerHora.CustomFormat = "HH:mm";
             dateTimePickerFecha.Value = DateTime.Today;
@@ -123,7 +122,7 @@ namespace Chrysallis
                 documentos documento = new documentos();
                 eventoNew.nombre = textBoxNombre.Text.Trim();
                 eventoNew.descripcion = textBoxDescripcion.Text.Trim();
-                eventoNew.nombre = openFileDialogImagen.SafeFileName;
+                eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
                 if (textBoxImagen.Text != "")
                 {
                     eventoNew.imagen = File.ReadAllBytes(openFileDialogImagen.FileName);
@@ -276,8 +275,8 @@ namespace Chrysallis
         {
             notificaciones notificacionNueva = new notificaciones();
             
-                notificacionNueva.antelacion = ((notificaciones)listBoxNotificacionesBase.SelectedItem).antelacion;
-                notificacion.Add(notificacionNueva);
+                //notificacionNueva.antelacion = ((notificaciones)listBoxNotificacionesBase.SelectedItem).antelacion;
+                notificacion.Add((notificaciones)listBoxNotificacionesBase.SelectedItem);
                 bindingSourceNotificacionesGuardar.DataSource = null;
                 bindingSourceNotificacionesGuardar.DataSource = notificacion;
                 bindingSourceNotificaciones.RemoveAt(listBoxNotificacionesBase.SelectedIndex);
