@@ -29,5 +29,23 @@ namespace Chrysallis.BD
             }
             return _notificaciones;
         }
+
+        public static List<notificaciones> SelectAllAntelacion()
+        {
+            List<notificaciones> lista = null;
+            try
+            {
+                lista =
+                    (from n in ORM.bd.notificaciones
+                     orderby n.antelacion
+                     select n
+                    ).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return lista;
+        }
     }
 }

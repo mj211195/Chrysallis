@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Core;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -112,12 +113,17 @@ namespace Chrysallis.BD
         {
             eventos _evento = ORM.bd.eventos.Find(evento.id);
             _evento.nombre = evento.nombre;
+            _evento.descripcion = evento.descripcion;
+            _evento.nombreImagen = evento.nombreImagen;
+            _evento.imagen = evento.imagen;
             _evento.fecha = evento.fecha;
             _evento.ubicacion = evento.ubicacion;
             _evento.hora = evento.hora;
             _evento.fechaLimite = evento.fechaLimite;
             _evento.numAsistentes = evento.numAsistentes;
             _evento.id_comunidad = evento.id_comunidad;
+            _evento.documentos = evento.documentos;
+            _evento.notificaciones = evento.notificaciones;
             
             Boolean correcto = false;
             try

@@ -48,7 +48,7 @@
             this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
             this.notificacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceNotificaciones = new System.Windows.Forms.BindingSource(this.components);
-            this.listBoxNotificaciones = new System.Windows.Forms.ListBox();
+            this.listBoxNotificacionesBase = new System.Windows.Forms.ListBox();
             this.dateTimePickerHora = new System.Windows.Forms.DateTimePicker();
             this.buttonSave = new AppDesktop.Button_WOC();
             this.labelNombre = new System.Windows.Forms.Label();
@@ -62,10 +62,15 @@
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonVer = new System.Windows.Forms.Button();
             this.openFileDialogDocumentos = new System.Windows.Forms.OpenFileDialog();
+            this.listBoxNotificacionesSelec = new System.Windows.Forms.ListBox();
+            this.bindingSourceNotificacionesGuardar = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonAñadirNot = new System.Windows.Forms.Button();
+            this.buttonEliminarNot = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notificacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNotificaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDocumentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNotificacionesGuardar)).BeginInit();
             this.SuspendLayout();
             // 
             // labelFecha
@@ -135,9 +140,9 @@
             this.labelNumeroAsistentes.AutoSize = true;
             this.labelNumeroAsistentes.Location = new System.Drawing.Point(11, 439);
             this.labelNumeroAsistentes.Name = "labelNumeroAsistentes";
-            this.labelNumeroAsistentes.Size = new System.Drawing.Size(127, 17);
+            this.labelNumeroAsistentes.Size = new System.Drawing.Size(102, 17);
             this.labelNumeroAsistentes.TabIndex = 8;
-            this.labelNumeroAsistentes.Text = "Numero Asistentes";
+            this.labelNumeroAsistentes.Text = "Max Asistentes";
             // 
             // textBoxNumeroAsistentes
             // 
@@ -159,7 +164,7 @@
             // labelImagen
             // 
             this.labelImagen.AutoSize = true;
-            this.labelImagen.Location = new System.Drawing.Point(11, 219);
+            this.labelImagen.Location = new System.Drawing.Point(11, 222);
             this.labelImagen.Name = "labelImagen";
             this.labelImagen.Size = new System.Drawing.Size(54, 17);
             this.labelImagen.TabIndex = 12;
@@ -167,7 +172,7 @@
             // 
             // buttonDocumento
             // 
-            this.buttonDocumento.Location = new System.Drawing.Point(459, 218);
+            this.buttonDocumento.Location = new System.Drawing.Point(459, 220);
             this.buttonDocumento.Name = "buttonDocumento";
             this.buttonDocumento.Size = new System.Drawing.Size(100, 23);
             this.buttonDocumento.TabIndex = 31;
@@ -176,7 +181,7 @@
             // 
             // textBoxImagen
             // 
-            this.textBoxImagen.Location = new System.Drawing.Point(150, 219);
+            this.textBoxImagen.Location = new System.Drawing.Point(150, 221);
             this.textBoxImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxImagen.Name = "textBoxImagen";
             this.textBoxImagen.ReadOnly = true;
@@ -186,11 +191,11 @@
             // labelNotificaciones
             // 
             this.labelNotificaciones.AutoSize = true;
-            this.labelNotificaciones.Location = new System.Drawing.Point(14, 643);
+            this.labelNotificaciones.Location = new System.Drawing.Point(11, 640);
             this.labelNotificaciones.Name = "labelNotificaciones";
-            this.labelNotificaciones.Size = new System.Drawing.Size(96, 17);
+            this.labelNotificaciones.Size = new System.Drawing.Size(136, 17);
             this.labelNotificaciones.TabIndex = 19;
-            this.labelNotificaciones.Text = "Notificaciones";
+            this.labelNotificaciones.Text = "Notificaciones (dias)";
             // 
             // openFileDialogImagen
             // 
@@ -202,7 +207,7 @@
             this.comboBoxComunity.DisplayMember = "nombre";
             this.comboBoxComunity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunity.FormattingEnabled = true;
-            this.comboBoxComunity.Location = new System.Drawing.Point(150, 463);
+            this.comboBoxComunity.Location = new System.Drawing.Point(150, 464);
             this.comboBoxComunity.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxComunity.Name = "comboBoxComunity";
             this.comboBoxComunity.Size = new System.Drawing.Size(409, 24);
@@ -221,18 +226,19 @@
             // 
             this.bindingSourceNotificaciones.DataSource = typeof(Chrysallis.notificaciones);
             // 
-            // listBoxNotificaciones
+            // listBoxNotificacionesBase
             // 
-            this.listBoxNotificaciones.DataSource = this.bindingSourceNotificaciones;
-            this.listBoxNotificaciones.DisplayMember = "antelacion";
-            this.listBoxNotificaciones.FormattingEnabled = true;
-            this.listBoxNotificaciones.ItemHeight = 16;
-            this.listBoxNotificaciones.Location = new System.Drawing.Point(150, 640);
-            this.listBoxNotificaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBoxNotificaciones.Name = "listBoxNotificaciones";
-            this.listBoxNotificaciones.Size = new System.Drawing.Size(409, 84);
-            this.listBoxNotificaciones.TabIndex = 20;
-            this.listBoxNotificaciones.ValueMember = "id";
+            this.listBoxNotificacionesBase.DataSource = this.bindingSourceNotificaciones;
+            this.listBoxNotificacionesBase.DisplayMember = "antelacion";
+            this.listBoxNotificacionesBase.FormattingEnabled = true;
+            this.listBoxNotificacionesBase.ItemHeight = 16;
+            this.listBoxNotificacionesBase.Location = new System.Drawing.Point(150, 640);
+            this.listBoxNotificacionesBase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBoxNotificacionesBase.Name = "listBoxNotificacionesBase";
+            this.listBoxNotificacionesBase.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxNotificacionesBase.Size = new System.Drawing.Size(140, 116);
+            this.listBoxNotificacionesBase.TabIndex = 20;
+            this.listBoxNotificacionesBase.ValueMember = "id";
             // 
             // dateTimePickerHora
             // 
@@ -254,7 +260,7 @@
             this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Consolas", 12F);
-            this.buttonSave.Location = new System.Drawing.Point(123, 733);
+            this.buttonSave.Location = new System.Drawing.Point(136, 771);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.OnHoverBorderColor = System.Drawing.Color.Gray;
@@ -320,6 +326,7 @@
             this.listBoxDocumentos.ItemHeight = 16;
             this.listBoxDocumentos.Location = new System.Drawing.Point(150, 496);
             this.listBoxDocumentos.Name = "listBoxDocumentos";
+            this.listBoxDocumentos.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxDocumentos.Size = new System.Drawing.Size(409, 100);
             this.listBoxDocumentos.TabIndex = 27;
             this.listBoxDocumentos.ValueMember = "id";
@@ -362,11 +369,52 @@
             // 
             this.openFileDialogDocumentos.FileName = "openFileDialogDocumentos";
             // 
+            // listBoxNotificacionesSelec
+            // 
+            this.listBoxNotificacionesSelec.DataSource = this.bindingSourceNotificacionesGuardar;
+            this.listBoxNotificacionesSelec.DisplayMember = "antelacion";
+            this.listBoxNotificacionesSelec.FormattingEnabled = true;
+            this.listBoxNotificacionesSelec.ItemHeight = 16;
+            this.listBoxNotificacionesSelec.Location = new System.Drawing.Point(419, 640);
+            this.listBoxNotificacionesSelec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBoxNotificacionesSelec.Name = "listBoxNotificacionesSelec";
+            this.listBoxNotificacionesSelec.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxNotificacionesSelec.Size = new System.Drawing.Size(140, 116);
+            this.listBoxNotificacionesSelec.TabIndex = 32;
+            this.listBoxNotificacionesSelec.ValueMember = "id";
+            // 
+            // bindingSourceNotificacionesGuardar
+            // 
+            this.bindingSourceNotificacionesGuardar.DataSource = typeof(Chrysallis.notificaciones);
+            // 
+            // buttonAñadirNot
+            // 
+            this.buttonAñadirNot.Location = new System.Drawing.Point(307, 657);
+            this.buttonAñadirNot.Name = "buttonAñadirNot";
+            this.buttonAñadirNot.Size = new System.Drawing.Size(97, 23);
+            this.buttonAñadirNot.TabIndex = 33;
+            this.buttonAñadirNot.Text = "Añadir >>";
+            this.buttonAñadirNot.UseVisualStyleBackColor = true;
+            this.buttonAñadirNot.Click += new System.EventHandler(this.buttonAñadirNot_Click);
+            // 
+            // buttonEliminarNot
+            // 
+            this.buttonEliminarNot.Location = new System.Drawing.Point(307, 704);
+            this.buttonEliminarNot.Name = "buttonEliminarNot";
+            this.buttonEliminarNot.Size = new System.Drawing.Size(97, 23);
+            this.buttonEliminarNot.TabIndex = 34;
+            this.buttonEliminarNot.Text = "<< Eliminar";
+            this.buttonEliminarNot.UseVisualStyleBackColor = true;
+            this.buttonEliminarNot.Click += new System.EventHandler(this.buttonEliminarNot_Click);
+            // 
             // FormEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 792);
+            this.ClientSize = new System.Drawing.Size(571, 826);
+            this.Controls.Add(this.buttonEliminarNot);
+            this.Controls.Add(this.buttonAñadirNot);
+            this.Controls.Add(this.listBoxNotificacionesSelec);
             this.Controls.Add(this.buttonVer);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonNuevo);
@@ -377,7 +425,7 @@
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.dateTimePickerHora);
-            this.Controls.Add(this.listBoxNotificaciones);
+            this.Controls.Add(this.listBoxNotificacionesBase);
             this.Controls.Add(this.comboBoxComunity);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelNotificaciones);
@@ -394,6 +442,7 @@
             this.Controls.Add(this.labelUbicacion);
             this.Controls.Add(this.dateTimePickerFecha);
             this.Controls.Add(this.labelFecha);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormEvento";
             this.Text = "Evento";
@@ -402,6 +451,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.notificacionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNotificaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDocumentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNotificacionesGuardar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,7 +477,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialogImagen;
         private System.Windows.Forms.BindingSource bindingSourceComunidades;
         private System.Windows.Forms.ComboBox comboBoxComunity;
-        private System.Windows.Forms.ListBox listBoxNotificaciones;
+        private System.Windows.Forms.ListBox listBoxNotificacionesBase;
         private System.Windows.Forms.DateTimePicker dateTimePickerHora;
         private System.Windows.Forms.BindingSource notificacionesBindingSource;
         private System.Windows.Forms.BindingSource bindingSourceNotificaciones;
@@ -442,5 +492,9 @@
         private System.Windows.Forms.Button buttonVer;
         private System.Windows.Forms.OpenFileDialog openFileDialogDocumentos;
         private System.Windows.Forms.BindingSource bindingSourceDocumentos;
+        private System.Windows.Forms.ListBox listBoxNotificacionesSelec;
+        private System.Windows.Forms.Button buttonAñadirNot;
+        private System.Windows.Forms.Button buttonEliminarNot;
+        private System.Windows.Forms.BindingSource bindingSourceNotificacionesGuardar;
     }
 }

@@ -205,10 +205,10 @@
     <value>Ubicación</value>
   </data>
   <data name="notifications" xml:space="preserve">
-    <value>Notificaciones</value>
+    <value>Notificaciones (dias)</value>
   </data>
   <data name="numberOfAttendees" xml:space="preserve">
-    <value>Número Asistentes</value>
+    <value>Max Asistentes</value>
   </data>
   <data name="time" xml:space="preserve">
     <value>Hora</value>

@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'E:\DAM\DAM2A\Proyecto\ABP 2\Chrysallis\Chrysallis\ModelChrysallis.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\Ivan\Source\Repos\mj211195\Chrysallis\Chrysallis\ModelChrysallis.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

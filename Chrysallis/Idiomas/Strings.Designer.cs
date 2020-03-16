@@ -547,7 +547,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Notificacions.
+        ///   Busca una cadena traducida similar a Notificacions (dies).
         /// </summary>
         internal static string notifications {
             get {
@@ -556,7 +556,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nombre assistents.
+        ///   Busca una cadena traducida similar a Max assistents.
         /// </summary>
         internal static string numberOfAttendees {
             get {
