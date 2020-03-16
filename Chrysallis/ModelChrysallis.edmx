@@ -53,7 +53,7 @@
           <Property Name="fechaLimite" Type="date" />
           <Property Name="numAsistentes" Type="int" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="150" />
-          <Property Name="nombreImagen" Type="varchar" MaxLength="16" />
+          <Property Name="nombreImagen" Type="varchar" MaxLength="100" />
           <Property Name="id_comunidad" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="notificaciones">
@@ -296,7 +296,7 @@
           <Property Name="nombre" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" Type="String" />
           <Property Name="imagen" MaxLength="Max" FixedLength="false" Type="Binary" />
           <Property Name="descripcion" MaxLength="150" FixedLength="false" Unicode="false" Type="String" />
-          <Property Name="nombreImagen" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="nombreImagen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="documentos" Relationship="chrysallisModel.FK_documentos_eventos" FromRole="eventos" ToRole="documentos" />
           <NavigationProperty Name="notificaciones" Relationship="chrysallisModel.notificaciones_eventos" FromRole="eventos" ToRole="notificaciones" />
         </EntityType>
