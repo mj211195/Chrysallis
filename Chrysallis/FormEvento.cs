@@ -283,7 +283,10 @@ namespace Chrysallis
 
         private void buttonEliminarNot_Click(object sender, EventArgs e)
         {
-            //bindingSourceNotificacionesGuardar.RemoveAt
+            notificaciones notificacionEliminar = new notificaciones();
+            notificacionEliminar.antelacion = ((notificaciones)listBoxNotificacionesSelec.SelectedItem).antelacion;
+            bindingSourceNotificaciones.Add(notificacionEliminar);
+            bindingSourceNotificacionesGuardar.RemoveAt(listBoxNotificacionesSelec.SelectedIndex);
         }
     }
 }
