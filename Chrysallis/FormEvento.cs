@@ -42,7 +42,7 @@ namespace Chrysallis
         {
             textBoxNombre.Text = evento.nombre;
             textBoxDescripcion.Text = evento.descripcion;
-            textBoxImagen.Text = evento.nombreImagen;
+            textBoxImagen.Text = evento.nombre;
             dateTimePickerFecha.Value = evento.fecha;
             textBoxUbicacion.Text = evento.ubicacion;
             dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite;
@@ -123,7 +123,7 @@ namespace Chrysallis
                 documentos documento = new documentos();
                 eventoNew.nombre = textBoxNombre.Text.Trim();
                 eventoNew.descripcion = textBoxDescripcion.Text.Trim();
-                eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
+                eventoNew.nombre = openFileDialogImagen.SafeFileName;
                 if (textBoxImagen.Text != "")
                 {
                     eventoNew.imagen = File.ReadAllBytes(openFileDialogImagen.FileName);
@@ -265,14 +265,9 @@ namespace Chrysallis
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty((string)listBoxDocumentos.SelectedItem))
-            {
-                MessageBox.Show("Tienes que seleccionar un objeto de la lista", "Cuidado", MessageBoxButtons.OK);
-            }
-            else
-            {
-                bindingSourceDocumentos.RemoveAt(listBoxDocumentos.SelectedIndex);
-            }
+            
+             bindingSourceDocumentos.RemoveAt(listBoxDocumentos.SelectedIndex);
+            
             
             
         }
@@ -280,34 +275,24 @@ namespace Chrysallis
         private void buttonAñadirNot_Click(object sender, EventArgs e)
         {
             notificaciones notificacionNueva = new notificaciones();
-            if (string.IsNullOrEmpty((string)listBoxNotificacionesBase.SelectedItem))
-            {
-                MessageBox.Show("Tienes que seleccionar un objeto de la lista", "Cuidado", MessageBoxButtons.OK);
-            }
-            else
-            {
+            
                 notificacionNueva.antelacion = ((notificaciones)listBoxNotificacionesBase.SelectedItem).antelacion;
                 notificacion.Add(notificacionNueva);
                 bindingSourceNotificacionesGuardar.DataSource = null;
                 bindingSourceNotificacionesGuardar.DataSource = notificacion;
                 bindingSourceNotificaciones.RemoveAt(listBoxNotificacionesBase.SelectedIndex);
-            }
+            
             
         }
 
         private void buttonEliminarNot_Click(object sender, EventArgs e)
         {
             notificaciones notificacionEliminar = new notificaciones();
-            if (string.IsNullOrEmpty((string)listBoxNotificacionesSelec.SelectedItem))
-            {
-                MessageBox.Show("Tienes que seleccionar un objeto de la lista", "Cuidado", MessageBoxButtons.OK);
-            }
-            else
-            {
+            
                 notificacionEliminar.antelacion = ((notificaciones)listBoxNotificacionesSelec.SelectedItem).antelacion;
                 bindingSourceNotificaciones.Add(notificacionEliminar);
                 bindingSourceNotificacionesGuardar.RemoveAt(listBoxNotificacionesSelec.SelectedIndex);
-            }
+           
             
         }
     }
