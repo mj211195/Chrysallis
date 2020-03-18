@@ -108,15 +108,7 @@ namespace Chrysallis
             }
             else
             {
-                //Guardar datos notificaciones
-                //notificaciones notificar = new notificaciones();
-                //notificar.antelacion = listBoxNotificaciones.SelectedItems.ToString();
-                //foreach (String o in listBoxNotificacionesSelec.Items)
-                //{
-                //    notificaciones notif = new notificaciones();
-                //    notif.antelacion = int.Parse(o); 
-                //    notificacion.Add(notif);
-                //}
+                
 
                 eventos eventoNew = new eventos();
                 documentos documento = new documentos();
@@ -263,34 +255,45 @@ namespace Chrysallis
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
-        {
-            
+        {  
              bindingSourceDocumentos.RemoveAt(listBoxDocumentos.SelectedIndex);
-            
-            
-            
         }
 
         private void buttonAñadirNot_Click(object sender, EventArgs e)
         {
             notificaciones notificacionNueva = new notificaciones();
-            
-                //notificacionNueva.antelacion = ((notificaciones)listBoxNotificacionesBase.SelectedItem).antelacion;
+
+            if (listBoxNotificacionesBase.SelectedItem != null)
+            {
                 notificacion.Add((notificaciones)listBoxNotificacionesBase.SelectedItem);
                 bindingSourceNotificacionesGuardar.DataSource = null;
                 bindingSourceNotificacionesGuardar.DataSource = notificacion;
                 bindingSourceNotificaciones.RemoveAt(listBoxNotificacionesBase.SelectedIndex);
-            
-            
+            }
+            else
+            {
+                MessageBox.Show("Tienes que seleccionar al menos un elemento de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                
         }
 
         private void buttonEliminarNot_Click(object sender, EventArgs e)
         {
             notificaciones notificacionEliminar = new notificaciones();
-            
+
+            if (listBoxNotificacionesSelec.SelectedItem!= null)
+            {
                 notificacionEliminar.antelacion = ((notificaciones)listBoxNotificacionesSelec.SelectedItem).antelacion;
                 bindingSourceNotificaciones.Add(notificacionEliminar);
                 bindingSourceNotificacionesGuardar.RemoveAt(listBoxNotificacionesSelec.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Tienes que seleccionar al menos un elemento de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                
+           
+            
         }
     }
 }
