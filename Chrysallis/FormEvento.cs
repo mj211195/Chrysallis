@@ -291,8 +291,6 @@ namespace Chrysallis
                 notificacionEliminar.antelacion = ((notificaciones)listBoxNotificacionesSelec.SelectedItem).antelacion;
                 bindingSourceNotificaciones.Add(notificacionEliminar);
                 bindingSourceNotificacionesGuardar.RemoveAt(listBoxNotificacionesSelec.SelectedIndex);
-           
-            
         }
     }
 }
