@@ -84,6 +84,8 @@
             // 
             // dateTimePickerFecha
             // 
+            this.dateTimePickerFecha.AllowDrop = true;
+            this.dateTimePickerFecha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePickerFecha.Location = new System.Drawing.Point(149, 250);
             this.dateTimePickerFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
@@ -209,7 +211,7 @@
             this.comboBoxComunity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunity.FormattingEnabled = true;
             this.comboBoxComunity.Location = new System.Drawing.Point(149, 464);
-            this.comboBoxComunity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxComunity.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxComunity.Name = "comboBoxComunity";
             this.comboBoxComunity.Size = new System.Drawing.Size(409, 24);
             this.comboBoxComunity.TabIndex = 11;
@@ -245,7 +247,7 @@
             // 
             this.dateTimePickerHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerHora.Location = new System.Drawing.Point(149, 375);
-            this.dateTimePickerHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerHora.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerHora.Name = "dateTimePickerHora";
             this.dateTimePickerHora.ShowUpDown = true;
             this.dateTimePickerHora.Size = new System.Drawing.Size(175, 22);
@@ -262,7 +264,7 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Consolas", 12F);
             this.buttonSave.Location = new System.Drawing.Point(136, 770);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.OnHoverBorderColor = System.Drawing.Color.Gray;
             this.buttonSave.OnHoverButtonColor = System.Drawing.Color.Azure;
