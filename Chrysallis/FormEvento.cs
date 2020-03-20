@@ -122,24 +122,17 @@ namespace Chrysallis
                 documentos documento = new documentos();
                 eventoNew.nombre = textBoxNombre.Text.Trim();
                 eventoNew.descripcion = textBoxDescripcion.Text.Trim();
-                eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
+                //eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
 
                 if (textBoxImagen.Text != "")
                 {
                     eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
-                }
-                else
-                {
-                    evento.nombreImagen = null;
-                }
-
-                if (textBoxImagen.Text != "")
-                {
                     eventoNew.imagen = File.ReadAllBytes(openFileDialogImagen.FileName);
                 }
                 else
                 {
                     evento.imagen = null;
+                    evento.nombreImagen = "";
                 }
                 
                 eventoNew.fecha = dateTimePickerFecha.Value.Date;
