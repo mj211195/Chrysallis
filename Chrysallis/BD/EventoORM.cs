@@ -133,8 +133,8 @@ namespace Chrysallis.BD
             }
             catch (Exception e)
             {
-                //SqlException sqlEx = (SqlException)e.InnerException.InnerException;
-                MessageBox.Show(e.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                SqlException sqlEx = (SqlException)e.InnerException.InnerException;
+                MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return correcto;
         }
