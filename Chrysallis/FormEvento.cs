@@ -45,7 +45,7 @@ namespace Chrysallis
             textBoxImagen.Text = evento.nombreImagen;
             dateTimePickerFecha.Value = evento.fecha;
             textBoxUbicacion.Text = evento.ubicacion;
-            dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite;
+            dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite.Value;
             dateTimePickerHora.Value = evento.fecha + evento.hora;
             comboBoxComunity.SelectedValue = evento.id_comunidad;
             bindingSourceNotificacionesGuardar.DataSource = evento.notificaciones;
@@ -86,7 +86,15 @@ namespace Chrysallis
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (dateTimePickerFecha.Value < DateTime.Today)
+            if (textBoxNombre.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Se tiene que introducir nombre al evento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (textBoxDescripcion.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Se tiene que introducir una descripción", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (dateTimePickerFecha.Value < DateTime.Today)
             {
                 MessageBox.Show("No se pueden poner fechas anteriores a la actual", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -115,22 +123,49 @@ namespace Chrysallis
                 eventoNew.nombre = textBoxNombre.Text.Trim();
                 eventoNew.descripcion = textBoxDescripcion.Text.Trim();
                 eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
+
+                if (textBoxImagen.Text != "")
+                {
+                    eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
+                }
+                else
+                {
+                    evento.nombreImagen = null;
+                }
+
                 if (textBoxImagen.Text != "")
                 {
                     eventoNew.imagen = File.ReadAllBytes(openFileDialogImagen.FileName);
                 }
+                else
+                {
+                    evento.imagen = null;
+                }
                 
-                
-                eventoNew.fecha = dateTimePickerFecha.Value;
+                eventoNew.fecha = dateTimePickerFecha.Value.Date;
                 eventoNew.ubicacion = textBoxUbicacion.Text.Trim();
                 eventoNew.hora = dateTimePickerHora.Value.TimeOfDay;
-                eventoNew.fechaLimite = dateTimePickerFechaLimite.Value;
+                eventoNew.fechaLimite = dateTimePickerFechaLimite.Value.Date;
                 eventoNew.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
-                eventoNew.documentos = documentosLista;
-                eventoNew.notificaciones = notificacion;
+
+                if (documentosLista.Count != 0)
+                {
+                    eventoNew.documentos = documentosLista;
+                }
+                else
+                {
+                    eventoNew.documentos = null;
+                }
                 
-
-
+                if (notificacion.Count != 0)
+                {
+                    eventoNew.notificaciones = notificacion;
+                }
+                else
+                {
+                    eventoNew.notificaciones = null;
+                }
+                
 
                 if (comboBoxComunity.SelectedItem != null)
                 {
@@ -286,6 +321,9 @@ namespace Chrysallis
                 notificacionEliminar.antelacion = ((notificaciones)listBoxNotificacionesSelec.SelectedItem).antelacion;
                 bindingSourceNotificaciones.Add(notificacionEliminar);
                 bindingSourceNotificacionesGuardar.RemoveAt(listBoxNotificacionesSelec.SelectedIndex);
+                bindingSourceNotificaciones.Sort = "antelacion";
+                //bindingSourceNotificaciones.DataSource = bindingSourceNotificaciones.Sort = "id";
+                //bindingSourceNotificaciones.RemoveSort;
             }
             else
             {

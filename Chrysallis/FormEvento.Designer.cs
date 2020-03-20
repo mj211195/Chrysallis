@@ -85,6 +85,8 @@
             // 
             // dateTimePickerFecha
             // 
+            this.dateTimePickerFecha.AllowDrop = true;
+            this.dateTimePickerFecha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePickerFecha.Location = new System.Drawing.Point(112, 203);
             this.dateTimePickerFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
@@ -423,7 +425,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 688);
+            this.ClientSize = new System.Drawing.Size(452, 675);
             this.Controls.Add(this.buttonEliminarNot);
             this.Controls.Add(this.buttonAñadirNot);
             this.Controls.Add(this.listBoxNotificacionesSelec);
