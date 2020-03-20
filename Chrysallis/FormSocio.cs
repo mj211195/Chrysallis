@@ -94,19 +94,11 @@ namespace Chrysallis
                     socioNuevo.password = clave;
                 }
                 
-                socioNuevo.comunidades1.Add(ComunidadORM.SelectComunidad((int)comboBoxComunity.SelectedValue));
+                socioNuevo.comunidades = ComunidadORM.SelectComunidad((int)comboBoxComunity.SelectedValue);
 
-                if (checkBoxAdministrator.Checked)
+                if (comboBoxComunity.SelectedItem != null)
                 {
-                    if (comboBoxComunity.SelectedItem != null)
-                    {
-                        socioNuevo.id_comunidad = (int)comboBoxComunity.SelectedValue;
-                    }
-                    
-                }
-                else
-                {
-                    socioNuevo.id_comunidad = null;
+                    socioNuevo.id_comunidad = (int)comboBoxComunity.SelectedValue;
                 }
 
                 if (!modificar)

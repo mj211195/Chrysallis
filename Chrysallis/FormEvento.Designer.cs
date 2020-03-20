@@ -88,7 +88,7 @@
             this.dateTimePickerFecha.AllowDrop = true;
             this.dateTimePickerFecha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePickerFecha.Location = new System.Drawing.Point(112, 203);
-            this.dateTimePickerFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFecha.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(308, 20);
             this.dateTimePickerFecha.TabIndex = 1;
@@ -107,7 +107,7 @@
             // textBoxUbicacion
             // 
             this.textBoxUbicacion.Location = new System.Drawing.Point(112, 229);
-            this.textBoxUbicacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxUbicacion.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUbicacion.Multiline = true;
             this.textBoxUbicacion.Name = "textBoxUbicacion";
             this.textBoxUbicacion.Size = new System.Drawing.Size(308, 69);
@@ -136,7 +136,7 @@
             // dateTimePickerFechaLimite
             // 
             this.dateTimePickerFechaLimite.Location = new System.Drawing.Point(112, 331);
-            this.dateTimePickerFechaLimite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFechaLimite.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFechaLimite.Name = "dateTimePickerFechaLimite";
             this.dateTimePickerFechaLimite.Size = new System.Drawing.Size(308, 20);
             this.dateTimePickerFechaLimite.TabIndex = 7;
@@ -154,7 +154,7 @@
             // textBoxNumeroAsistentes
             // 
             this.textBoxNumeroAsistentes.Location = new System.Drawing.Point(112, 353);
-            this.textBoxNumeroAsistentes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNumeroAsistentes.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNumeroAsistentes.Name = "textBoxNumeroAsistentes";
             this.textBoxNumeroAsistentes.Size = new System.Drawing.Size(144, 20);
             this.textBoxNumeroAsistentes.TabIndex = 9;
@@ -182,7 +182,7 @@
             // buttonDocumento
             // 
             this.buttonDocumento.Location = new System.Drawing.Point(344, 179);
-            this.buttonDocumento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDocumento.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDocumento.Name = "buttonDocumento";
             this.buttonDocumento.Size = new System.Drawing.Size(75, 19);
             this.buttonDocumento.TabIndex = 31;
@@ -192,7 +192,7 @@
             // textBoxImagen
             // 
             this.textBoxImagen.Location = new System.Drawing.Point(112, 180);
-            this.textBoxImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxImagen.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxImagen.Name = "textBoxImagen";
             this.textBoxImagen.ReadOnly = true;
             this.textBoxImagen.Size = new System.Drawing.Size(228, 20);
@@ -242,9 +242,8 @@
             this.listBoxNotificacionesBase.DisplayMember = "antelacion";
             this.listBoxNotificacionesBase.FormattingEnabled = true;
             this.listBoxNotificacionesBase.Location = new System.Drawing.Point(112, 520);
-            this.listBoxNotificacionesBase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxNotificacionesBase.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxNotificacionesBase.Name = "listBoxNotificacionesBase";
-            this.listBoxNotificacionesBase.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxNotificacionesBase.Size = new System.Drawing.Size(106, 95);
             this.listBoxNotificacionesBase.TabIndex = 20;
             this.listBoxNotificacionesBase.ValueMember = "id";
@@ -303,7 +302,7 @@
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(112, 15);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(308, 20);
             this.textBoxNombre.TabIndex = 24;
@@ -311,7 +310,7 @@
             // textBoxDescripcion
             // 
             this.textBoxDescripcion.Location = new System.Drawing.Point(112, 41);
-            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDescripcion.MaxLength = 500;
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
@@ -334,7 +333,7 @@
             this.listBoxDocumentos.DisplayMember = "nombre";
             this.listBoxDocumentos.FormattingEnabled = true;
             this.listBoxDocumentos.Location = new System.Drawing.Point(112, 403);
-            this.listBoxDocumentos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxDocumentos.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxDocumentos.Name = "listBoxDocumentos";
             this.listBoxDocumentos.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxDocumentos.Size = new System.Drawing.Size(308, 82);
@@ -348,7 +347,7 @@
             // buttonNuevo
             // 
             this.buttonNuevo.Location = new System.Drawing.Point(112, 490);
-            this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(93, 26);
             this.buttonNuevo.TabIndex = 28;
@@ -359,7 +358,7 @@
             // buttonEliminar
             // 
             this.buttonEliminar.Location = new System.Drawing.Point(220, 489);
-            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(89, 27);
             this.buttonEliminar.TabIndex = 29;
@@ -370,7 +369,7 @@
             // buttonVer
             // 
             this.buttonVer.Location = new System.Drawing.Point(326, 489);
-            this.buttonVer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonVer.Margin = new System.Windows.Forms.Padding(2);
             this.buttonVer.Name = "buttonVer";
             this.buttonVer.Size = new System.Drawing.Size(94, 27);
             this.buttonVer.TabIndex = 30;
@@ -388,9 +387,8 @@
             this.listBoxNotificacionesSelec.DisplayMember = "antelacion";
             this.listBoxNotificacionesSelec.FormattingEnabled = true;
             this.listBoxNotificacionesSelec.Location = new System.Drawing.Point(314, 520);
-            this.listBoxNotificacionesSelec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxNotificacionesSelec.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxNotificacionesSelec.Name = "listBoxNotificacionesSelec";
-            this.listBoxNotificacionesSelec.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxNotificacionesSelec.Size = new System.Drawing.Size(106, 95);
             this.listBoxNotificacionesSelec.TabIndex = 32;
             this.listBoxNotificacionesSelec.ValueMember = "id";
@@ -402,7 +400,7 @@
             // buttonAñadirNot
             // 
             this.buttonAñadirNot.Location = new System.Drawing.Point(230, 534);
-            this.buttonAñadirNot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAñadirNot.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAñadirNot.Name = "buttonAñadirNot";
             this.buttonAñadirNot.Size = new System.Drawing.Size(73, 19);
             this.buttonAñadirNot.TabIndex = 33;
@@ -413,7 +411,7 @@
             // buttonEliminarNot
             // 
             this.buttonEliminarNot.Location = new System.Drawing.Point(230, 572);
-            this.buttonEliminarNot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEliminarNot.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminarNot.Name = "buttonEliminarNot";
             this.buttonEliminarNot.Size = new System.Drawing.Size(73, 19);
             this.buttonEliminarNot.TabIndex = 34;
@@ -457,7 +455,7 @@
             this.Controls.Add(this.dateTimePickerFecha);
             this.Controls.Add(this.labelFecha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormEvento";
             this.Text = "Evento";
             this.Load += new System.EventHandler(this.FormEvento_Load);

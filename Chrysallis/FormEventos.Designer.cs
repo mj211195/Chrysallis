@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
-            this.bindingSourceEventos = new System.Windows.Forms.BindingSource(this.components);
-            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerHasta = new System.Windows.Forms.DateTimePicker();
-            this.labelHasta = new System.Windows.Forms.Label();
-            this.labelDesde = new System.Windows.Forms.Label();
-            this.buttonAgregarEvento = new AppDesktop.Button_WOC();
-            this.pictureBoxLupa = new System.Windows.Forms.PictureBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +45,13 @@
             this.comunidadesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notificacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceEventos = new System.Windows.Forms.BindingSource(this.components);
+            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerHasta = new System.Windows.Forms.DateTimePicker();
+            this.labelHasta = new System.Windows.Forms.Label();
+            this.labelDesde = new System.Windows.Forms.Label();
+            this.buttonAgregarEvento = new AppDesktop.Button_WOC();
+            this.pictureBoxLupa = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEventos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).BeginInit();
@@ -83,6 +83,7 @@
             this.notificacionesDataGridViewTextBoxColumn});
             this.dataGridViewEventos.DataSource = this.bindingSourceEventos;
             this.dataGridViewEventos.Location = new System.Drawing.Point(1, 68);
+            this.dataGridViewEventos.MultiSelect = false;
             this.dataGridViewEventos.Name = "dataGridViewEventos";
             this.dataGridViewEventos.ReadOnly = true;
             this.dataGridViewEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -91,82 +92,6 @@
             this.dataGridViewEventos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEventos_CellDoubleClick);
             this.dataGridViewEventos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewEventos_CellFormatting);
             this.dataGridViewEventos.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridViewEventos_UserDeletingRow);
-            // 
-            // bindingSourceEventos
-            // 
-            this.bindingSourceEventos.DataSource = typeof(Chrysallis.eventos);
-            // 
-            // dateTimePickerDesde
-            // 
-            this.dateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDesde.Location = new System.Drawing.Point(65, 6);
-            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
-            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerDesde.TabIndex = 11;
-            this.dateTimePickerDesde.ValueChanged += new System.EventHandler(this.dateTimePickerFiltroFecha_ValueChanged);
-            // 
-            // dateTimePickerHasta
-            // 
-            this.dateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerHasta.Location = new System.Drawing.Point(65, 31);
-            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
-            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerHasta.TabIndex = 12;
-            this.dateTimePickerHasta.ValueChanged += new System.EventHandler(this.dateTimePickerHasta_ValueChanged);
-            // 
-            // labelHasta
-            // 
-            this.labelHasta.AutoSize = true;
-            this.labelHasta.Location = new System.Drawing.Point(12, 37);
-            this.labelHasta.Name = "labelHasta";
-            this.labelHasta.Size = new System.Drawing.Size(35, 13);
-            this.labelHasta.TabIndex = 13;
-            this.labelHasta.Text = "Hasta";
-            // 
-            // labelDesde
-            // 
-            this.labelDesde.AutoSize = true;
-            this.labelDesde.Location = new System.Drawing.Point(12, 12);
-            this.labelDesde.Name = "labelDesde";
-            this.labelDesde.Size = new System.Drawing.Size(38, 13);
-            this.labelDesde.TabIndex = 14;
-            this.labelDesde.Text = "Desde";
-            // 
-            // buttonAgregarEvento
-            // 
-            this.buttonAgregarEvento.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonAgregarEvento.AutoSize = true;
-            this.buttonAgregarEvento.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarEvento.BorderColor = System.Drawing.Color.Black;
-            this.buttonAgregarEvento.ButtonColor = System.Drawing.SystemColors.Info;
-            this.buttonAgregarEvento.FlatAppearance.BorderSize = 0;
-            this.buttonAgregarEvento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarEvento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregarEvento.Font = new System.Drawing.Font("Consolas", 12F);
-            this.buttonAgregarEvento.Location = new System.Drawing.Point(250, 349);
-            this.buttonAgregarEvento.Name = "buttonAgregarEvento";
-            this.buttonAgregarEvento.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.buttonAgregarEvento.OnHoverButtonColor = System.Drawing.Color.Azure;
-            this.buttonAgregarEvento.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.buttonAgregarEvento.Size = new System.Drawing.Size(200, 40);
-            this.buttonAgregarEvento.TabIndex = 10;
-            this.buttonAgregarEvento.Text = "Agregar evento";
-            this.buttonAgregarEvento.TextColor = System.Drawing.Color.Black;
-            this.buttonAgregarEvento.UseVisualStyleBackColor = false;
-            this.buttonAgregarEvento.Click += new System.EventHandler(this.buttonAgregarEvento_Click);
-            // 
-            // pictureBoxLupa
-            // 
-            this.pictureBoxLupa.Image = global::Chrysallis.Properties.Resources.lupa;
-            this.pictureBoxLupa.Location = new System.Drawing.Point(284, 8);
-            this.pictureBoxLupa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBoxLupa.Name = "pictureBoxLupa";
-            this.pictureBoxLupa.Size = new System.Drawing.Size(51, 41);
-            this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLupa.TabIndex = 16;
-            this.pictureBoxLupa.TabStop = false;
-            this.pictureBoxLupa.Click += new System.EventHandler(this.pictureBoxLupa_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -280,6 +205,82 @@
             this.notificacionesDataGridViewTextBoxColumn.Name = "notificacionesDataGridViewTextBoxColumn";
             this.notificacionesDataGridViewTextBoxColumn.ReadOnly = true;
             this.notificacionesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // bindingSourceEventos
+            // 
+            this.bindingSourceEventos.DataSource = typeof(Chrysallis.eventos);
+            // 
+            // dateTimePickerDesde
+            // 
+            this.dateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDesde.Location = new System.Drawing.Point(65, 6);
+            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
+            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerDesde.TabIndex = 11;
+            this.dateTimePickerDesde.ValueChanged += new System.EventHandler(this.dateTimePickerFiltroFecha_ValueChanged);
+            // 
+            // dateTimePickerHasta
+            // 
+            this.dateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerHasta.Location = new System.Drawing.Point(65, 31);
+            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
+            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerHasta.TabIndex = 12;
+            this.dateTimePickerHasta.ValueChanged += new System.EventHandler(this.dateTimePickerHasta_ValueChanged);
+            // 
+            // labelHasta
+            // 
+            this.labelHasta.AutoSize = true;
+            this.labelHasta.Location = new System.Drawing.Point(12, 37);
+            this.labelHasta.Name = "labelHasta";
+            this.labelHasta.Size = new System.Drawing.Size(35, 13);
+            this.labelHasta.TabIndex = 13;
+            this.labelHasta.Text = "Hasta";
+            // 
+            // labelDesde
+            // 
+            this.labelDesde.AutoSize = true;
+            this.labelDesde.Location = new System.Drawing.Point(12, 12);
+            this.labelDesde.Name = "labelDesde";
+            this.labelDesde.Size = new System.Drawing.Size(38, 13);
+            this.labelDesde.TabIndex = 14;
+            this.labelDesde.Text = "Desde";
+            // 
+            // buttonAgregarEvento
+            // 
+            this.buttonAgregarEvento.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonAgregarEvento.AutoSize = true;
+            this.buttonAgregarEvento.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarEvento.BorderColor = System.Drawing.Color.Black;
+            this.buttonAgregarEvento.ButtonColor = System.Drawing.SystemColors.Info;
+            this.buttonAgregarEvento.FlatAppearance.BorderSize = 0;
+            this.buttonAgregarEvento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarEvento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregarEvento.Font = new System.Drawing.Font("Consolas", 12F);
+            this.buttonAgregarEvento.Location = new System.Drawing.Point(250, 349);
+            this.buttonAgregarEvento.Name = "buttonAgregarEvento";
+            this.buttonAgregarEvento.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.buttonAgregarEvento.OnHoverButtonColor = System.Drawing.Color.Azure;
+            this.buttonAgregarEvento.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.buttonAgregarEvento.Size = new System.Drawing.Size(200, 40);
+            this.buttonAgregarEvento.TabIndex = 10;
+            this.buttonAgregarEvento.Text = "Agregar evento";
+            this.buttonAgregarEvento.TextColor = System.Drawing.Color.Black;
+            this.buttonAgregarEvento.UseVisualStyleBackColor = false;
+            this.buttonAgregarEvento.Click += new System.EventHandler(this.buttonAgregarEvento_Click);
+            // 
+            // pictureBoxLupa
+            // 
+            this.pictureBoxLupa.Image = global::Chrysallis.Properties.Resources.lupa;
+            this.pictureBoxLupa.Location = new System.Drawing.Point(284, 8);
+            this.pictureBoxLupa.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLupa.Name = "pictureBoxLupa";
+            this.pictureBoxLupa.Size = new System.Drawing.Size(51, 41);
+            this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLupa.TabIndex = 16;
+            this.pictureBoxLupa.TabStop = false;
+            this.pictureBoxLupa.Click += new System.EventHandler(this.pictureBoxLupa_Click);
             // 
             // FormEventos
             // 

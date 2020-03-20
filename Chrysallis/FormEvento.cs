@@ -20,6 +20,7 @@ namespace Chrysallis
     {
         List<comunidades> comunidades;
         eventos evento = new eventos();
+        eventos eventoNew = new eventos();
         private Boolean modificar;
         List<documentos> documentosLista = new List<documentos>();
         List<notificaciones> notificacion = new List<notificaciones>();
@@ -33,6 +34,7 @@ namespace Chrysallis
         {
             InitializeComponent();
             this.evento = evento;
+            this.eventoNew = evento;
             this.modificar = modificar;
             cargarDatos(evento);
             cambiarForma();
@@ -48,15 +50,21 @@ namespace Chrysallis
             dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite.Value;
             dateTimePickerHora.Value = evento.fecha + evento.hora;
             comboBoxComunity.SelectedValue = evento.id_comunidad;
-            bindingSourceNotificacionesGuardar.DataSource = evento.notificaciones;
-            
-            
-            textBoxNumeroAsistentes.Text = evento.numAsistentes.ToString();
-            foreach (documentos d in documentosLista)
+            if(evento.notificaciones != null)
             {
-                documentosLista.Add(d);
+                notificacion = evento.notificaciones.ToList();
+                bindingSourceNotificacionesGuardar.DataSource = evento.notificaciones;
             }
-            bindingSourceDocumentos.DataSource = evento.documentos;
+            textBoxNumeroAsistentes.Text = evento.numAsistentes.ToString();
+            if(evento.documentos != null)
+            {
+                foreach (documentos d in documentosLista)
+                {
+                    documentosLista.Add(d);
+                }
+                bindingSourceDocumentos.DataSource = evento.documentos;
+                documentosLista = evento.documentos.ToList();
+            }
             
         }
 
@@ -71,8 +79,6 @@ namespace Chrysallis
             bindingSourceNotificaciones.DataSource = NotificacionORM.SelectAllNotificaciones();
             comunidades = ComunidadORM.SelectAllComunidades();
             dateTimePickerHora.CustomFormat = "HH:mm";
-            dateTimePickerFecha.Value = DateTime.Today;
-            dateTimePickerFechaLimite.Value = DateTime.Today;
             cambiarIdioma();
             foreach (comunidades c in comunidades)
             {
@@ -81,7 +87,11 @@ namespace Chrysallis
                     comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
                 }
             }
-            
+            if (!modificar)
+            {
+                dateTimePickerFecha.Value = DateTime.Today;
+                dateTimePickerFechaLimite.Value = DateTime.Today;
+            }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -106,10 +116,6 @@ namespace Chrysallis
             {
                 MessageBox.Show("No se pueden poner fechas anteriores a la actual", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (textBoxNumeroAsistentes.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Se tiene que introducir el numero de asistentes", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             else if (listBoxNotificacionesBase.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Se tiene que seleccionar minimo una notificacion", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -117,14 +123,12 @@ namespace Chrysallis
             else
             {
                 
-
-                eventos eventoNew = new eventos();
                 documentos documento = new documentos();
                 eventoNew.nombre = textBoxNombre.Text.Trim();
                 eventoNew.descripcion = textBoxDescripcion.Text.Trim();
                 //eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
 
-                if (textBoxImagen.Text != "")
+                if (textBoxImagen.Text != "" && !modificar)
                 {
                     eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
                     eventoNew.imagen = File.ReadAllBytes(openFileDialogImagen.FileName);
@@ -139,24 +143,27 @@ namespace Chrysallis
                 eventoNew.ubicacion = textBoxUbicacion.Text.Trim();
                 eventoNew.hora = dateTimePickerHora.Value.TimeOfDay;
                 eventoNew.fechaLimite = dateTimePickerFechaLimite.Value.Date;
-                eventoNew.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
-
                 if (documentosLista.Count != 0)
                 {
                     eventoNew.documentos = documentosLista;
+
                 }
                 else
                 {
                     eventoNew.documentos = null;
                 }
-                
-                if (notificacion.Count != 0)
+
+                if(notificacion.Count != 0)
                 {
                     eventoNew.notificaciones = notificacion;
                 }
                 else
                 {
                     eventoNew.notificaciones = null;
+                }
+                if (!textBoxNumeroAsistentes.Text.Trim().Equals(""))
+                {
+                    eventoNew.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
                 }
                 
 
@@ -169,6 +176,7 @@ namespace Chrysallis
                         if (aux.Equals(comboBoxComunity.Text))
                         {
                             eventoNew.comunidades = c;
+                            eventoNew.id_comunidad = c.id;
                         }
                     }
                 }
@@ -185,7 +193,6 @@ namespace Chrysallis
                 }
                 else
                 {
-                    eventoNew.id = evento.id;
                     if (EventoORM.UpdateEvento(eventoNew))
                     {
                         MessageBox.Show("El evento ha sido modificado", "MODIFICADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -283,8 +290,9 @@ namespace Chrysallis
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
-        {  
-             bindingSourceDocumentos.RemoveAt(listBoxDocumentos.SelectedIndex);
+        {
+            documentosLista.Remove((documentos)listBoxDocumentos.SelectedItem);
+            bindingSourceDocumentos.RemoveAt(listBoxDocumentos.SelectedIndex);
         }
 
         private void buttonAñadirNot_Click(object sender, EventArgs e)
@@ -311,6 +319,7 @@ namespace Chrysallis
 
             if (listBoxNotificacionesSelec.SelectedItem!= null)
             {
+                notificacion.Remove((notificaciones)listBoxNotificacionesSelec.SelectedItem);
                 notificacionEliminar.antelacion = ((notificaciones)listBoxNotificacionesSelec.SelectedItem).antelacion;
                 bindingSourceNotificaciones.Add(notificacionEliminar);
                 bindingSourceNotificacionesGuardar.RemoveAt(listBoxNotificacionesSelec.SelectedIndex);

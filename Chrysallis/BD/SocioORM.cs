@@ -56,8 +56,7 @@ namespace Chrysallis.BD
             {
                 socios = (
                 from s in ORM.bd.socios
-                from c in s.comunidades1
-                where s.id_comunidad == id_comunidad || c.id == id_comunidad
+                where s.id_comunidad == id_comunidad
                 select s).ToList();
             }
             catch (EntityException ex)
@@ -139,8 +138,7 @@ namespace Chrysallis.BD
             {
                 _socios = (
                 from s in ORM.bd.socios
-                from c in s.comunidades1
-                where s.dni.Contains(busqueda) || s.apellidos.Contains(busqueda) || s.nombre.Contains(busqueda) ||c.nombre.Contains(busqueda)
+                where s.dni.Contains(busqueda) || s.apellidos.Contains(busqueda) || s.nombre.Contains(busqueda) ||s.comunidades.nombre.Contains(busqueda)
                 select s).ToList();
             }
             catch (EntityException ex)

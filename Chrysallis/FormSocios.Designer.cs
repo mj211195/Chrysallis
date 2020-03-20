@@ -80,6 +80,7 @@
             this.comunidad});
             this.dataGridViewSocios.DataSource = this.bindingSourceSocios;
             this.dataGridViewSocios.Location = new System.Drawing.Point(0, 76);
+            this.dataGridViewSocios.MultiSelect = false;
             this.dataGridViewSocios.Name = "dataGridViewSocios";
             this.dataGridViewSocios.ReadOnly = true;
             this.dataGridViewSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
