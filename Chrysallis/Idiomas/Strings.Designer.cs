@@ -133,11 +133,29 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cercar.
+        /// </summary>
+        internal static string buscar {
+            get {
+                return ResourceManager.GetString("buscar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Canàries.
         /// </summary>
         internal static string Canarias {
             get {
                 return ResourceManager.GetString("Canarias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No pot eliminar el seu propi usuari!.
+        /// </summary>
+        internal static string cannotDeleteYourself {
+            get {
+                return ResourceManager.GetString("cannotDeleteYourself", resourceCulture);
             }
         }
         
@@ -214,6 +232,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Netejar.
+        /// </summary>
+        internal static string clean {
+            get {
+                return ResourceManager.GetString("clean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Comunitat.
         /// </summary>
         internal static string community {
@@ -264,6 +291,15 @@ namespace Chrysallis.Idiomas {
         internal static string confirmDeleteEvent {
             get {
                 return ResourceManager.GetString("confirmDeleteEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Vol eliminar el soci seleccionat?.
+        /// </summary>
+        internal static string confirmDeleteUser {
+            get {
+                return ResourceManager.GetString("confirmDeleteUser", resourceCulture);
             }
         }
         
@@ -331,11 +367,65 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El nombre d&apos;assistents ha de ser numèric.
+        /// </summary>
+        internal static string errorAsistentes {
+            get {
+                return ResourceManager.GetString("errorAsistentes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error a l&apos;accedir a la BD. \nEs procedeix a tancar el programa..
+        /// </summary>
+        internal static string errorBD {
+            get {
+                return ResourceManager.GetString("errorBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No es poden posar dates anteriors a l&apos;actual.
+        /// </summary>
+        internal static string errorDate {
+            get {
+                return ResourceManager.GetString("errorDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La data límit no pot ser més gran que la data de l&apos;esdeveniment.
+        /// </summary>
+        internal static string errorDateLimit {
+            get {
+                return ResourceManager.GetString("errorDateLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La descripció no pot estar buida.
+        /// </summary>
+        internal static string errorDescription {
+            get {
+                return ResourceManager.GetString("errorDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El DNI no pot estar buit.
         /// </summary>
         internal static string errorDni {
             get {
                 return ResourceManager.GetString("errorDni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a L&apos;arxiu seleccionat no és un document.
+        /// </summary>
+        internal static string errorDocument {
+            get {
+                return ResourceManager.GetString("errorDocument", resourceCulture);
             }
         }
         
@@ -358,11 +448,29 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La ubicació no pot estar buida.
+        /// </summary>
+        internal static string errorLocation {
+            get {
+                return ResourceManager.GetString("errorLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El nom no pot estar buit.
         /// </summary>
         internal static string errorName {
             get {
                 return ResourceManager.GetString("errorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a S&apos;ha de seleccionar a mínim una notificació.
+        /// </summary>
+        internal static string errorNotification {
+            get {
+                return ResourceManager.GetString("errorNotification", resourceCulture);
             }
         }
         
@@ -399,6 +507,24 @@ namespace Chrysallis.Idiomas {
         internal static string errorPhoneNum {
             get {
                 return ResourceManager.GetString("errorPhoneNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a L&apos;esdeveniment ha estat creat.
+        /// </summary>
+        internal static string eventCreated {
+            get {
+                return ResourceManager.GetString("eventCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a L&apos;esdeveniment ha estat modificat.
+        /// </summary>
+        internal static string eventModified {
+            get {
+                return ResourceManager.GetString("eventModified", resourceCulture);
             }
         }
         
@@ -516,6 +642,24 @@ namespace Chrysallis.Idiomas {
         internal static string menu {
             get {
                 return ResourceManager.GetString("menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a MODIFICAT.
+        /// </summary>
+        internal static string modified {
+            get {
+                return ResourceManager.GetString("modified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El soci ha estat modificat.
+        /// </summary>
+        internal static string modifiedPartnert {
+            get {
+                return ResourceManager.GetString("modifiedPartnert", resourceCulture);
             }
         }
         
@@ -669,6 +813,24 @@ namespace Chrysallis.Idiomas {
         internal static string see {
             get {
                 return ResourceManager.GetString("see", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Veure assistents.
+        /// </summary>
+        internal static string seeAttendees {
+            get {
+                return ResourceManager.GetString("seeAttendees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Veure valoracions.
+        /// </summary>
+        internal static string seeRatings {
+            get {
+                return ResourceManager.GetString("seeRatings", resourceCulture);
             }
         }
         

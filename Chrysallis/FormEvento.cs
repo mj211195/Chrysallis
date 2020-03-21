@@ -2,14 +2,9 @@
 using Chrysallis.Idiomas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chrysallis
@@ -53,7 +48,7 @@ namespace Chrysallis
             if(evento.notificaciones.Count != 0)
             {
                 notificacion = evento.notificaciones.ToList();
-                bindingSourceNotificacionesGuardar.DataSource = evento.notificaciones;
+                bindingSourceNotificacionesGuardar.DataSource = notificacion;
             }
             textBoxNumeroAsistentes.Text = evento.numAsistentes.ToString();
             if(evento.documentos.Count != 0)
@@ -92,33 +87,49 @@ namespace Chrysallis
                 dateTimePickerFecha.Value = DateTime.Today;
                 dateTimePickerFechaLimite.Value = DateTime.Today;
             }
+            else
+            {
+                foreach (notificaciones n in evento.notificaciones)
+                {
+                    bindingSourceNotificaciones.Remove(n);
+                }
+            }
+
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
             if (textBoxNombre.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Se tiene que introducir nombre al evento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorName, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (textBoxDescripcion.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Se tiene que introducir una descripción", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorDescription, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (dateTimePickerFecha.Value < DateTime.Today)
             {
-                MessageBox.Show("No se pueden poner fechas anteriores a la actual", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorDate, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (textBoxUbicacion.Text.Trim().Equals(""))
             {
-                MessageBox.Show("La ubicacion no puede estar vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorLocation, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (dateTimePickerFechaLimite.Value < DateTime.Today)
             {
-                MessageBox.Show("No se pueden poner fechas anteriores a la actual", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorDate, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (listBoxNotificacionesBase.SelectedItems.Count == 0)
+            else if (listBoxNotificacionesSelec.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Se tiene que seleccionar minimo una notificacion", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorNotification, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (dateTimePickerFechaLimite.Value > dateTimePickerFecha.Value)
+            {
+                MessageBox.Show(Strings.errorDateLimit, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!int.TryParse(textBoxNumeroAsistentes.Text, out int num))
+            {
+                MessageBox.Show(Strings.errorAsistentes, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -171,7 +182,7 @@ namespace Chrysallis
                 {
                     if (EventoORM.InsertEvento(eventoNew))
                     {
-                        MessageBox.Show("El evento ha sido creado", "CREADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Strings.eventCreated, Strings.created, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
@@ -179,7 +190,7 @@ namespace Chrysallis
                 {
                     if (EventoORM.UpdateEvento(eventoNew))
                     {
-                        MessageBox.Show("El evento ha sido modificado", "MODIFICADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Strings.eventModified, Strings.modified, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
@@ -189,30 +200,30 @@ namespace Chrysallis
         //Muestra error en caso de que no sea correcto el archivo seleccionado
         private void errorDocumento()
         {
-            MessageBox.Show("El arxiu seleccionat no es un document");
+            MessageBox.Show(Strings.errorDocument);
         }
 
         //Metodo para cambiar el idioma
         public void cambiarIdioma()
         {
-            this.Text = Idiomas.Strings.partner;
-            labelFecha.Text = Idiomas.Strings.date;
-            labelUbicacion.Text = Idiomas.Strings.location;
-            labelHora.Text = Idiomas.Strings.time;
-            labelFechaLimite.Text = Idiomas.Strings.deadline;
-            labelNumeroAsistentes.Text = Idiomas.Strings.numberOfAttendees;
-            labelComunidad.Text = Idiomas.Strings.community;
-            labelDocumentos.Text = Idiomas.Strings.documents;
-            labelNotificaciones.Text = Idiomas.Strings.notifications;
-            buttonSave.Text = Idiomas.Strings.save;
-            buttonDocumento.Text = Idiomas.Strings.chosse;
-            labelNombre.Text = Idiomas.Strings.name;
-            labelImagen.Text = Idiomas.Strings.image;
-            buttonDocumento.Text = Idiomas.Strings.choose;
-            labelDescripcion.Text = Idiomas.Strings.description;
-            buttonNuevo.Text = Idiomas.Strings.newdoc;
-            buttonEliminar.Text = Idiomas.Strings.remove;
-            buttonVer.Text = Idiomas.Strings.see;
+            this.Text = Strings._event;
+            labelFecha.Text = Strings.date;
+            labelUbicacion.Text = Strings.location;
+            labelHora.Text = Strings.time;
+            labelFechaLimite.Text = Strings.deadline;
+            labelNumeroAsistentes.Text = Strings.numberOfAttendees;
+            labelComunidad.Text = Strings.community;
+            labelDocumentos.Text = Strings.documents;
+            labelNotificaciones.Text = Strings.notifications;
+            buttonSave.Text = Strings.save;
+            buttonDocumento.Text = Strings.chosse;
+            labelNombre.Text = Strings.name;
+            labelImagen.Text = Strings.image;
+            buttonDocumento.Text = Strings.choose;
+            labelDescripcion.Text = Strings.description;
+            buttonNuevo.Text = Strings.newdoc;
+            buttonEliminar.Text = Strings.remove;
+            buttonVer.Text = Strings.see;
             
 
             //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
@@ -292,7 +303,7 @@ namespace Chrysallis
             }
             else
             {
-                MessageBox.Show("Tienes que seleccionar al menos un elemento de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorNotification, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
                 
         }
@@ -303,17 +314,18 @@ namespace Chrysallis
 
             if (listBoxNotificacionesSelec.SelectedItem!= null)
             {
-                notificacion.Remove((notificaciones)listBoxNotificacionesSelec.SelectedItem);
                 notificacionEliminar.antelacion = ((notificaciones)listBoxNotificacionesSelec.SelectedItem).antelacion;
                 bindingSourceNotificaciones.Add(notificacionEliminar);
                 bindingSourceNotificacionesGuardar.RemoveAt(listBoxNotificacionesSelec.SelectedIndex);
                 bindingSourceNotificaciones.Sort = "antelacion";
+                //notificacion.Remove((notificaciones)listBoxNotificacionesSelec.SelectedItem);
+
                 //bindingSourceNotificaciones.DataSource = bindingSourceNotificaciones.Sort = "id";
                 //bindingSourceNotificaciones.RemoveSort;
             }
             else
             {
-                MessageBox.Show("Tienes que seleccionar al menos un elemento de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.errorNotification, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
                 
            

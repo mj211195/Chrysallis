@@ -108,6 +108,7 @@
             // 
             this.textBoxUbicacion.Location = new System.Drawing.Point(112, 229);
             this.textBoxUbicacion.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxUbicacion.MaxLength = 150;
             this.textBoxUbicacion.Multiline = true;
             this.textBoxUbicacion.Name = "textBoxUbicacion";
             this.textBoxUbicacion.Size = new System.Drawing.Size(308, 69);
@@ -155,6 +156,7 @@
             // 
             this.textBoxNumeroAsistentes.Location = new System.Drawing.Point(112, 353);
             this.textBoxNumeroAsistentes.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNumeroAsistentes.MaxLength = 8;
             this.textBoxNumeroAsistentes.Name = "textBoxNumeroAsistentes";
             this.textBoxNumeroAsistentes.Size = new System.Drawing.Size(144, 20);
             this.textBoxNumeroAsistentes.TabIndex = 9;
@@ -303,6 +305,7 @@
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(112, 15);
             this.textBoxNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNombre.MaxLength = 50;
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(308, 20);
             this.textBoxNombre.TabIndex = 24;
@@ -311,7 +314,7 @@
             // 
             this.textBoxDescripcion.Location = new System.Drawing.Point(112, 41);
             this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxDescripcion.MaxLength = 500;
+            this.textBoxDescripcion.MaxLength = 300;
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(308, 135);

@@ -61,6 +61,8 @@
             // dataGridViewSocios
             // 
             this.dataGridViewSocios.AllowUserToAddRows = false;
+            this.dataGridViewSocios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewSocios.AutoGenerateColumns = false;
             this.dataGridViewSocios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -289,6 +291,7 @@
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.buttonAgregarSocio);
             this.Controls.Add(this.dataGridViewSocios);
+            this.MinimumSize = new System.Drawing.Size(836, 535);
             this.Name = "FormSocios";
             this.Text = "Socios";
             this.Load += new System.EventHandler(this.FormSocios_Load);

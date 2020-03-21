@@ -336,4 +336,58 @@
   <data name="see" xml:space="preserve">
     <value>Veure</value>
   </data>
+  <data name="buscar" xml:space="preserve">
+    <value>Cercar</value>
+  </data>
+  <data name="clean" xml:space="preserve">
+    <value>Netejar</value>
+  </data>
+  <data name="errorBD" xml:space="preserve">
+    <value>Error a l'accedir a la BD. \nEs procedeix a tancar el programa.</value>
+  </data>
+  <data name="confirmDeleteUser" xml:space="preserve">
+    <value>Vol eliminar el soci seleccionat?</value>
+  </data>
+  <data name="cannotDeleteYourself" xml:space="preserve">
+    <value>No pot eliminar el seu propi usuari!</value>
+  </data>
+  <data name="modifiedPartnert" xml:space="preserve">
+    <value>El soci ha estat modificat</value>
+  </data>
+  <data name="modified" xml:space="preserve">
+    <value>MODIFICAT</value>
+  </data>
+  <data name="seeAttendees" xml:space="preserve">
+    <value>Veure assistents</value>
+  </data>
+  <data name="seeRatings" xml:space="preserve">
+    <value>Veure valoracions</value>
+  </data>
+  <data name="errorDescription" xml:space="preserve">
+    <value>La descripció no pot estar buida</value>
+  </data>
+  <data name="errorDate" xml:space="preserve">
+    <value>No es poden posar dates anteriors a l'actual</value>
+  </data>
+  <data name="errorLocation" xml:space="preserve">
+    <value>La ubicació no pot estar buida</value>
+  </data>
+  <data name="errorDateLimit" xml:space="preserve">
+    <value>La data límit no pot ser més gran que la data de l'esdeveniment</value>
+  </data>
+  <data name="errorNotification" xml:space="preserve">
+    <value>S'ha de seleccionar a mínim una notificació</value>
+  </data>
+  <data name="eventCreated" xml:space="preserve">
+    <value>L'esdeveniment ha estat creat</value>
+  </data>
+  <data name="eventModified" xml:space="preserve">
+    <value>L'esdeveniment ha estat modificat</value>
+  </data>
+  <data name="errorDocument" xml:space="preserve">
+    <value>L'arxiu seleccionat no és un document</value>
+  </data>
+  <data name="errorAsistentes" xml:space="preserve">
+    <value>El nombre d'assistents ha de ser numèric</value>
+  </data>
 </root>

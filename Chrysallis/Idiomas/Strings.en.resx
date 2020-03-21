@@ -336,4 +336,58 @@
   <data name="see" xml:space="preserve">
     <value>See</value>
   </data>
+  <data name="buscar" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="clean" xml:space="preserve">
+    <value>Clean</value>
+  </data>
+  <data name="errorBD" xml:space="preserve">
+    <value>Error accessing the DB. \nProceed to close the program.</value>
+  </data>
+  <data name="confirmDeleteUser" xml:space="preserve">
+    <value>Do you want to delete the selected partner?</value>
+  </data>
+  <data name="cannotDeleteYourself" xml:space="preserve">
+    <value>You cannot delete your own user!</value>
+  </data>
+  <data name="modifiedPartnert" xml:space="preserve">
+    <value>The partner has been modified</value>
+  </data>
+  <data name="modified" xml:space="preserve">
+    <value>MODIFIED</value>
+  </data>
+  <data name="seeAttendees" xml:space="preserve">
+    <value>See attendees</value>
+  </data>
+  <data name="seeRatings" xml:space="preserve">
+    <value>See ratings</value>
+  </data>
+  <data name="errorDescription" xml:space="preserve">
+    <value>The description cannot be empty</value>
+  </data>
+  <data name="errorDate" xml:space="preserve">
+    <value>You cannot set dates older than the current one</value>
+  </data>
+  <data name="errorLocation" xml:space="preserve">
+    <value>The location cannot be empty</value>
+  </data>
+  <data name="errorDateLimit" xml:space="preserve">
+    <value>The deadline cannot be greater than the event date</value>
+  </data>
+  <data name="errorNotification" xml:space="preserve">
+    <value>At least one notification must be selected</value>
+  </data>
+  <data name="eventCreated" xml:space="preserve">
+    <value>The event has been created</value>
+  </data>
+  <data name="eventModified" xml:space="preserve">
+    <value>The event has been modified</value>
+  </data>
+  <data name="errorDocument" xml:space="preserve">
+    <value>The selected file is not a document</value>
+  </data>
+  <data name="errorAsistentes" xml:space="preserve">
+    <value>The number of attendees must be numerical</value>
+  </data>
 </root>

@@ -81,7 +81,7 @@
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(80, 68);
-            this.textBoxName.MaxLength = 20;
+            this.textBoxName.MaxLength = 25;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(298, 20);
             this.textBoxName.TabIndex = 3;
@@ -89,7 +89,7 @@
             // textBoxLastName
             // 
             this.textBoxLastName.Location = new System.Drawing.Point(80, 94);
-            this.textBoxLastName.MaxLength = 30;
+            this.textBoxLastName.MaxLength = 50;
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(298, 20);
             this.textBoxLastName.TabIndex = 4;
@@ -124,7 +124,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(79, 120);
-            this.textBoxEmail.MaxLength = 30;
+            this.textBoxEmail.MaxLength = 50;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(298, 20);
             this.textBoxEmail.TabIndex = 5;

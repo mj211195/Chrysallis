@@ -19,8 +19,28 @@ namespace Chrysallis
         {
             RefrescarDatos();
             buttonAgregarSocio.Text = Strings.addPartner;
-            this.Text = Strings.partners;
+            cambiarIdioma();
         }
+
+        public void cambiarIdioma()
+        {
+            this.Text = Strings.partners;
+            labelSearch.Text = Strings.buscar;
+            labelFilterComunidad.Text = Strings.community;
+            buttonClean.Text = Strings.clean;
+
+            dataGridViewSocios.Columns[2].HeaderText = Strings.phone;
+            dataGridViewSocios.Columns[3].HeaderText = Strings.name;
+            dataGridViewSocios.Columns[4].HeaderText = Strings.lastName;
+            dataGridViewSocios.Columns[5].HeaderText = Strings.active;
+            dataGridViewSocios.Columns[6].HeaderText = Strings.email;
+            dataGridViewSocios.Columns[7].HeaderText = Strings.password;
+            dataGridViewSocios.Columns[8].HeaderText = Strings.admin;
+            dataGridViewSocios.Columns[10].HeaderText = Strings.state;
+            dataGridViewSocios.Columns[12].HeaderText = Strings.community;
+
+        }
+
 
         private void buttonAgregarSocio_Click(object sender, EventArgs e)
         {
@@ -40,7 +60,7 @@ namespace Chrysallis
             bindingSourceComunidades.DataSource = comunidadesOriginal;
             if (socios == null)
             {
-                DialogResult result = MessageBox.Show("Error al acceder a la BD.\nSe procede a cerrar el programa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show(Strings.errorBD, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (result == DialogResult.OK || result == DialogResult.Abort)
                 {
                     Application.Exit();
@@ -73,7 +93,7 @@ namespace Chrysallis
             Boolean correcto;
             if (s.id != FormLogin.socioLogin.id)
             {
-                DialogResult resultado = MessageBox.Show("¿Quiere eliminar el socio seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultado = MessageBox.Show(Strings.confirmDeleteUser, Strings.confirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
                     correcto = SocioORM.DeleteSocio((socios)dataGridViewSocios.SelectedRows[0].DataBoundItem);
@@ -89,7 +109,7 @@ namespace Chrysallis
             }
             else
             {
-                MessageBox.Show("No puede eliminar su propio usuario!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.cannotDeleteYourself, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Cancel = true;
             }
         }

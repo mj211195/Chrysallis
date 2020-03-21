@@ -44,7 +44,7 @@ namespace Chrysallis
             }
             if (eventos == null)
             {
-                DialogResult result = MessageBox.Show("Error al acceder a la BD.\nSe procede a cerrar el programa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show(Strings.errorBD, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (result == DialogResult.OK || result == DialogResult.Abort)
                 {
                     Application.Exit();
@@ -84,7 +84,7 @@ namespace Chrysallis
             }
             if (eventos == null)
             {
-                DialogResult result = MessageBox.Show("Error al acceder a la BD.\nSe procede a cerrar el programa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show(Strings.errorBD, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (result == DialogResult.OK || result == DialogResult.Abort)
                 {
                     Application.Exit();
@@ -112,12 +112,15 @@ namespace Chrysallis
             this.Text = Strings._event;
             labelDesde.Text = Strings.from;
             labelHasta.Text = Strings.to;
+            dataGridViewEventos.Columns[1].HeaderText = Strings.name;
             dataGridViewEventos.Columns[2].HeaderText = Strings.date;
             dataGridViewEventos.Columns[3].HeaderText = Strings.location;
             dataGridViewEventos.Columns[4].HeaderText = Strings.time;
             dataGridViewEventos.Columns[5].HeaderText = Strings.deadline;
             dataGridViewEventos.Columns[6].HeaderText = Strings.numberOfAttendees;
             dataGridViewEventos.Columns[7].HeaderText = Strings.community;
+            buttonVerAsistentes.Text = Strings.seeAttendees;
+            buttonVerValoraciones.Text = Strings.seeRatings;
         }
 
         private void dataGridViewEventos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)

@@ -336,4 +336,58 @@
   <data name="see" xml:space="preserve">
     <value>Ver</value>
   </data>
+  <data name="buscar" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="clean" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="errorBD" xml:space="preserve">
+    <value>Error al acceder a la BD.\nSe procede a cerrar el programa.</value>
+  </data>
+  <data name="confirmDeleteUser" xml:space="preserve">
+    <value>¿Quiere eliminar el socio seleccionado?</value>
+  </data>
+  <data name="cannotDeleteYourself" xml:space="preserve">
+    <value>¡No puede eliminar su propio usuario!</value>
+  </data>
+  <data name="modifiedPartnert" xml:space="preserve">
+    <value>El socio ha sido modificado</value>
+  </data>
+  <data name="modified" xml:space="preserve">
+    <value>MODIFICADO</value>
+  </data>
+  <data name="seeAttendees" xml:space="preserve">
+    <value>Ver asistentes</value>
+  </data>
+  <data name="seeRatings" xml:space="preserve">
+    <value>Ver valoraciones</value>
+  </data>
+  <data name="errorDescription" xml:space="preserve">
+    <value>La descripción no puede estar vacía</value>
+  </data>
+  <data name="errorDate" xml:space="preserve">
+    <value>No se pueden poner fechas anteriores a la actual</value>
+  </data>
+  <data name="errorLocation" xml:space="preserve">
+    <value>La ubicación no puede estar vacía</value>
+  </data>
+  <data name="errorDateLimit" xml:space="preserve">
+    <value>La fecha límite no puede ser mayor que la fecha del evento</value>
+  </data>
+  <data name="errorNotification" xml:space="preserve">
+    <value>Se tiene que seleccionar mínimo una notificación</value>
+  </data>
+  <data name="eventCreated" xml:space="preserve">
+    <value>El evento ha sido creado</value>
+  </data>
+  <data name="eventModified" xml:space="preserve">
+    <value>El evento ha sido modificado</value>
+  </data>
+  <data name="errorDocument" xml:space="preserve">
+    <value>El archivo seleccionado no es un documento</value>
+  </data>
+  <data name="errorAsistentes" xml:space="preserve">
+    <value>El número de asistentes debe ser numérico</value>
+  </data>
 </root>

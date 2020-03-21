@@ -114,7 +114,7 @@ namespace Chrysallis
                     socioNuevo.id = socio.id;
                     if (SocioORM.UpdateSocio(socioNuevo))
                     {
-                        MessageBox.Show("El socio ha sido modificado", "MODIFICADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Strings.modifiedPartnert, Strings.modified, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
