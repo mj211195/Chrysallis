@@ -1,4 +1,5 @@
 ﻿using Chrysallis.BD;
+using Chrysallis.Idiomas;
 using ComboxExtended;
 using System;
 using System.Collections.Generic;
@@ -13,9 +14,9 @@ namespace Chrysallis
 {
     public partial class FormLogin : Form
     {
-        ComboBoxItem itemCatalan = new ComboBoxItem(Idiomas.Strings.catalan, new Bitmap(Chrysallis.Properties.Resources.catalan));
-        ComboBoxItem itemSpanish = new ComboBoxItem(Idiomas.Strings.spanish, new Bitmap(Chrysallis.Properties.Resources.espanol));
-        ComboBoxItem itemEnglish = new ComboBoxItem(Idiomas.Strings.english, new Bitmap(Chrysallis.Properties.Resources.UK));
+        ComboBoxItem itemCatalan = new ComboBoxItem(Strings.catalan, new Bitmap(Properties.Resources.catalan));
+        ComboBoxItem itemSpanish = new ComboBoxItem(Strings.spanish, new Bitmap(Properties.Resources.espanol));
+        ComboBoxItem itemEnglish = new ComboBoxItem(Strings.english, new Bitmap(Properties.Resources.UK));
         Boolean cerradoPropio = false;
         public static socios socioLogin = null;
         public FormLogin()
@@ -31,13 +32,13 @@ namespace Chrysallis
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(idioma);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
-            labelUser.Text = Idiomas.Strings.user;
-            labelPassword.Text = Idiomas.Strings.password;
-            buttonEntrar.Text = Idiomas.Strings.login;
-            itemCatalan.Value = Idiomas.Strings.catalan;
-            itemSpanish.Value = Idiomas.Strings.spanish;
-            itemEnglish.Value = Idiomas.Strings.english;
-            this.Text = Idiomas.Strings.login;
+            labelUser.Text = Strings.partner;
+            labelPassword.Text = Strings.password;
+            buttonEntrar.Text = Strings.login;
+            itemCatalan.Value = Strings.catalan;
+            itemSpanish.Value = Strings.spanish;
+            itemEnglish.Value = Strings.english;
+            this.Text = Strings.login;
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace Chrysallis
             String password = textBoxPassword.Text.ToString();
             if (dni.Trim().Equals("") || password.Trim().Equals(""))
             {
-                MessageBox.Show("Usuari i/o contraseña vacios!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.partnerPasswordEmpty, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -94,7 +95,7 @@ namespace Chrysallis
                 }
                 else if(correcto)
                 {
-                    MessageBox.Show("Credenciales incorrectas!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Strings.wrongCredentials, Strings.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

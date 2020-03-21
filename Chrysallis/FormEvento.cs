@@ -206,7 +206,11 @@ namespace Chrysallis
         //Metodo para cambiar el idioma
         public void cambiarIdioma()
         {
-            this.Text = Strings._event;
+            this.Text = Strings.addEvent;
+            if (modificar)
+            {
+                this.Text = Strings.modifyEvent;
+            }
             labelFecha.Text = Strings.date;
             labelUbicacion.Text = Strings.location;
             labelHora.Text = Strings.time;
@@ -216,7 +220,7 @@ namespace Chrysallis
             labelDocumentos.Text = Strings.documents;
             labelNotificaciones.Text = Strings.notifications;
             buttonSave.Text = Strings.save;
-            buttonDocumento.Text = Strings.chosse;
+            buttonDocumento.Text = Strings.choose;
             labelNombre.Text = Strings.name;
             labelImagen.Text = Strings.image;
             buttonDocumento.Text = Strings.choose;

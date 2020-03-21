@@ -136,19 +136,19 @@
     <value>Anglès</value>
   </data>
   <data name="managePartners" xml:space="preserve">
-    <value>Gestionar socis</value>
+    <value>Gestionar persones</value>
   </data>
   <data name="manageEvents" xml:space="preserve">
     <value>Gestionar esdeveniments</value>
   </data>
   <data name="addPartner" xml:space="preserve">
-    <value>Afegir soci</value>
+    <value>Afegir persona</value>
   </data>
   <data name="addEvent" xml:space="preserve">
-    <value>Afegir esdeveniments</value>
+    <value>Afegir esdeveniment</value>
   </data>
   <data name="partners" xml:space="preserve">
-    <value>Socis</value>
+    <value>Persones</value>
   </data>
   <data name="menu" xml:space="preserve">
     <value>Menú</value>
@@ -157,7 +157,7 @@
     <value>Esdeveniments</value>
   </data>
   <data name="partner" xml:space="preserve">
-    <value>Soci</value>
+    <value>Persona</value>
   </data>
   <data name="phone" xml:space="preserve">
     <value>Telèfon</value>
@@ -186,9 +186,6 @@
   <data name="save" xml:space="preserve">
     <value>Desar</value>
   </data>
-  <data name="chosse" xml:space="preserve">
-    <value>Selecciona</value>
-  </data>
   <data name="community" xml:space="preserve">
     <value>Comunitat</value>
   </data>
@@ -208,7 +205,7 @@
     <value>Notificacions (dies)</value>
   </data>
   <data name="numberOfAttendees" xml:space="preserve">
-    <value>Max assistents</value>
+    <value>Max persones</value>
   </data>
   <data name="time" xml:space="preserve">
     <value>Hora</value>
@@ -298,13 +295,13 @@
     <value>La contrasenya no coincideix</value>
   </data>
   <data name="partnerCreated" xml:space="preserve">
-    <value>El soci ha estat creat</value>
+    <value>La persona ha estat creada</value>
   </data>
   <data name="created" xml:space="preserve">
     <value>CREAT</value>
   </data>
   <data name="modifyPartner" xml:space="preserve">
-    <value>Modificar soci</value>
+    <value>Modificar persona</value>
   </data>
   <data name="from" xml:space="preserve">
     <value>Des de</value>
@@ -346,13 +343,13 @@
     <value>Error a l'accedir a la BD. \nEs procedeix a tancar el programa.</value>
   </data>
   <data name="confirmDeleteUser" xml:space="preserve">
-    <value>Vol eliminar el soci seleccionat?</value>
+    <value>Vol eliminar la persona seleccionada?</value>
   </data>
   <data name="cannotDeleteYourself" xml:space="preserve">
-    <value>No pot eliminar el seu propi usuari!</value>
+    <value>No es pot eliminar el seu propi compte!</value>
   </data>
   <data name="modifiedPartnert" xml:space="preserve">
-    <value>El soci ha estat modificat</value>
+    <value>La persona ha estat modificada</value>
   </data>
   <data name="modified" xml:space="preserve">
     <value>MODIFICAT</value>
@@ -388,6 +385,18 @@
     <value>L'arxiu seleccionat no és un document</value>
   </data>
   <data name="errorAsistentes" xml:space="preserve">
-    <value>El nombre d'assistents ha de ser numèric</value>
+    <value>El nombre de persones ha de ser numèric</value>
+  </data>
+  <data name="modifyEvent" xml:space="preserve">
+    <value>Modificar esdeveniment</value>
+  </data>
+  <data name="partnerPasswordEmpty" xml:space="preserve">
+    <value>Persona i / o contrasenya buides!</value>
+  </data>
+  <data name="wrongCredentials" xml:space="preserve">
+    <value>Credencials incorrectes!</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Avís!</value>
   </data>
 </root>

@@ -136,19 +136,19 @@
     <value>English</value>
   </data>
   <data name="managePartners" xml:space="preserve">
-    <value>Manage partners</value>
+    <value>Manage people</value>
   </data>
   <data name="manageEvents" xml:space="preserve">
     <value>Manage events</value>
   </data>
   <data name="addPartner" xml:space="preserve">
-    <value>Add partner</value>
+    <value>Add person</value>
   </data>
   <data name="addEvent" xml:space="preserve">
     <value>Add event</value>
   </data>
   <data name="partners" xml:space="preserve">
-    <value>Partners</value>
+    <value>People</value>
   </data>
   <data name="menu" xml:space="preserve">
     <value>Menu</value>
@@ -157,7 +157,7 @@
     <value>Events</value>
   </data>
   <data name="partner" xml:space="preserve">
-    <value>Partner</value>
+    <value>Person</value>
   </data>
   <data name="phone" xml:space="preserve">
     <value>Phone</value>
@@ -186,9 +186,6 @@
   <data name="save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="chosse" xml:space="preserve">
-    <value>Chosse</value>
-  </data>
   <data name="community" xml:space="preserve">
     <value>Community</value>
   </data>
@@ -208,7 +205,7 @@
     <value>Notifications (days)</value>
   </data>
   <data name="numberOfAttendees" xml:space="preserve">
-    <value>Max attendees</value>
+    <value>Max people</value>
   </data>
   <data name="time" xml:space="preserve">
     <value>Time</value>
@@ -298,13 +295,13 @@
     <value>The password does not match</value>
   </data>
   <data name="partnerCreated" xml:space="preserve">
-    <value>The partner has been created</value>
+    <value>The person has been created</value>
   </data>
   <data name="created" xml:space="preserve">
     <value>CREATED</value>
   </data>
   <data name="modifyPartner" xml:space="preserve">
-    <value>Modify partner</value>
+    <value>Modify person</value>
   </data>
   <data name="from" xml:space="preserve">
     <value>From</value>
@@ -346,13 +343,13 @@
     <value>Error accessing the DB. \nProceed to close the program.</value>
   </data>
   <data name="confirmDeleteUser" xml:space="preserve">
-    <value>Do you want to delete the selected partner?</value>
+    <value>Do you want to delete the selected person?</value>
   </data>
   <data name="cannotDeleteYourself" xml:space="preserve">
-    <value>You cannot delete your own user!</value>
+    <value>You cannot delete your own account!</value>
   </data>
   <data name="modifiedPartnert" xml:space="preserve">
-    <value>The partner has been modified</value>
+    <value>The person has been modified</value>
   </data>
   <data name="modified" xml:space="preserve">
     <value>MODIFIED</value>
@@ -388,6 +385,18 @@
     <value>The selected file is not a document</value>
   </data>
   <data name="errorAsistentes" xml:space="preserve">
-    <value>The number of attendees must be numerical</value>
+    <value>The number of people must be numerical</value>
+  </data>
+  <data name="modifyEvent" xml:space="preserve">
+    <value>Modify event</value>
+  </data>
+  <data name="partnerPasswordEmpty" xml:space="preserve">
+    <value>Empty person and / or password!</value>
+  </data>
+  <data name="wrongCredentials" xml:space="preserve">
+    <value>Wrong credentials!</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Warning!</value>
   </data>
 </root>

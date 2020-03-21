@@ -79,7 +79,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Afegir esdeveniments.
+        ///   Busca una cadena traducida similar a Afegir esdeveniment.
         /// </summary>
         internal static string addEvent {
             get {
@@ -88,7 +88,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Afegir soci.
+        ///   Busca una cadena traducida similar a Afegir persona.
         /// </summary>
         internal static string addPartner {
             get {
@@ -151,7 +151,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No pot eliminar el seu propi usuari!.
+        ///   Busca una cadena traducida similar a No es pot eliminar el seu propi compte!.
         /// </summary>
         internal static string cannotDeleteYourself {
             get {
@@ -223,15 +223,6 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Selecciona.
-        /// </summary>
-        internal static string chosse {
-            get {
-                return ResourceManager.GetString("chosse", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Netejar.
         /// </summary>
         internal static string clean {
@@ -295,7 +286,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Vol eliminar el soci seleccionat?.
+        ///   Busca una cadena traducida similar a Vol eliminar la persona seleccionada?.
         /// </summary>
         internal static string confirmDeleteUser {
             get {
@@ -367,7 +358,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El nombre d&apos;assistents ha de ser numèric.
+        ///   Busca una cadena traducida similar a El nombre de persones ha de ser numèric.
         /// </summary>
         internal static string errorAsistentes {
             get {
@@ -619,7 +610,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Gestionar socis.
+        ///   Busca una cadena traducida similar a Gestionar persones.
         /// </summary>
         internal static string managePartners {
             get {
@@ -655,7 +646,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El soci ha estat modificat.
+        ///   Busca una cadena traducida similar a La persona ha estat modificada.
         /// </summary>
         internal static string modifiedPartnert {
             get {
@@ -664,7 +655,16 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Modificar soci.
+        ///   Busca una cadena traducida similar a Modificar esdeveniment.
+        /// </summary>
+        internal static string modifyEvent {
+            get {
+                return ResourceManager.GetString("modifyEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modificar persona.
         /// </summary>
         internal static string modifyPartner {
             get {
@@ -700,7 +700,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Max assistents.
+        ///   Busca una cadena traducida similar a Max persones.
         /// </summary>
         internal static string numberOfAttendees {
             get {
@@ -718,7 +718,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Soci.
+        ///   Busca una cadena traducida similar a Persona.
         /// </summary>
         internal static string partner {
             get {
@@ -727,7 +727,7 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El soci ha estat creat.
+        ///   Busca una cadena traducida similar a La persona ha estat creada.
         /// </summary>
         internal static string partnerCreated {
             get {
@@ -736,7 +736,16 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Socis.
+        ///   Busca una cadena traducida similar a Persona i / o contrasenya buides!.
+        /// </summary>
+        internal static string partnerPasswordEmpty {
+            get {
+                return ResourceManager.GetString("partnerPasswordEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Persones.
         /// </summary>
         internal static string partners {
             get {
@@ -876,6 +885,24 @@ namespace Chrysallis.Idiomas {
         internal static string user {
             get {
                 return ResourceManager.GetString("user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Avís!.
+        /// </summary>
+        internal static string warning {
+            get {
+                return ResourceManager.GetString("warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Credencials incorrectes!.
+        /// </summary>
+        internal static string wrongCredentials {
+            get {
+                return ResourceManager.GetString("wrongCredentials", resourceCulture);
             }
         }
     }

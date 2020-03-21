@@ -136,19 +136,19 @@
     <value>Inglés</value>
   </data>
   <data name="managePartners" xml:space="preserve">
-    <value>Gestionar socios</value>
+    <value>Gestionar personas</value>
   </data>
   <data name="manageEvents" xml:space="preserve">
     <value>Gestionar eventos</value>
   </data>
   <data name="addPartner" xml:space="preserve">
-    <value>Agregar socio</value>
+    <value>Agregar persona</value>
   </data>
   <data name="addEvent" xml:space="preserve">
     <value>Agregar evento</value>
   </data>
   <data name="partners" xml:space="preserve">
-    <value>Socios</value>
+    <value>Personas</value>
   </data>
   <data name="menu" xml:space="preserve">
     <value>Menú</value>
@@ -157,7 +157,7 @@
     <value>Eventos</value>
   </data>
   <data name="partner" xml:space="preserve">
-    <value>Socio</value>
+    <value>Persona</value>
   </data>
   <data name="phone" xml:space="preserve">
     <value>Teléfono</value>
@@ -186,9 +186,6 @@
   <data name="save" xml:space="preserve">
     <value>Guardar</value>
   </data>
-  <data name="chosse" xml:space="preserve">
-    <value>Selecciona</value>
-  </data>
   <data name="community" xml:space="preserve">
     <value>Comunidad</value>
   </data>
@@ -208,7 +205,7 @@
     <value>Notificaciones (dias)</value>
   </data>
   <data name="numberOfAttendees" xml:space="preserve">
-    <value>Max Asistentes</value>
+    <value>Max personas</value>
   </data>
   <data name="time" xml:space="preserve">
     <value>Hora</value>
@@ -298,13 +295,13 @@
     <value>La contraseña no coincide</value>
   </data>
   <data name="partnerCreated" xml:space="preserve">
-    <value>El socio ha sido creado</value>
+    <value>La persona ha sido creada</value>
   </data>
   <data name="created" xml:space="preserve">
     <value>CREADO</value>
   </data>
   <data name="modifyPartner" xml:space="preserve">
-    <value>Modificar socio</value>
+    <value>Modificar persona</value>
   </data>
   <data name="from" xml:space="preserve">
     <value>Desde</value>
@@ -346,13 +343,13 @@
     <value>Error al acceder a la BD.\nSe procede a cerrar el programa.</value>
   </data>
   <data name="confirmDeleteUser" xml:space="preserve">
-    <value>¿Quiere eliminar el socio seleccionado?</value>
+    <value>¿Quiere eliminar a la persona seleccionada?</value>
   </data>
   <data name="cannotDeleteYourself" xml:space="preserve">
-    <value>¡No puede eliminar su propio usuario!</value>
+    <value>¡No se puede eliminar su propia cuenta!</value>
   </data>
   <data name="modifiedPartnert" xml:space="preserve">
-    <value>El socio ha sido modificado</value>
+    <value>La persona ha sido modificada</value>
   </data>
   <data name="modified" xml:space="preserve">
     <value>MODIFICADO</value>
@@ -388,6 +385,18 @@
     <value>El archivo seleccionado no es un documento</value>
   </data>
   <data name="errorAsistentes" xml:space="preserve">
-    <value>El número de asistentes debe ser numérico</value>
+    <value>El número de personas debe ser numérico</value>
+  </data>
+  <data name="modifyEvent" xml:space="preserve">
+    <value>Modificar evento</value>
+  </data>
+  <data name="partnerPasswordEmpty" xml:space="preserve">
+    <value>¡Persona y/o contraseña vacías!</value>
+  </data>
+  <data name="wrongCredentials" xml:space="preserve">
+    <value>¡Credenciales incorrectas!</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>¡Advertencia!</value>
   </data>
 </root>
