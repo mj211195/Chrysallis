@@ -85,6 +85,12 @@
     <Compile Include="eventos.cs">
       <DependentUpon>ModelChrysallis.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormAsistentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAsistentes.Designer.cs">
+      <DependentUpon>FormAsistentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEvento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="FormSocios.Designer.cs">
       <DependentUpon>FormSocios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormValoraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormValoraciones.Designer.cs">
+      <DependentUpon>FormValoraciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Idiomas\GestorIdiomas.cs" />
     <Compile Include="Idiomas\Strings.Designer.cs">
@@ -157,6 +169,9 @@
       <DependentUpon>ModelChrysallis.tt</DependentUpon>
     </Compile>
     <Compile Include="SortableBindingList.cs" />
+    <EmbeddedResource Include="FormAsistentes.resx">
+      <DependentUpon>FormAsistentes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEvento.resx">
       <DependentUpon>FormEvento.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSocios.resx">
       <DependentUpon>FormSocios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormValoraciones.resx">
+      <DependentUpon>FormValoraciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Idiomas\Strings.en.resx" />
     <EmbeddedResource Include="Idiomas\Strings.es.resx" />
