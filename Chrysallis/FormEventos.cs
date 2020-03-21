@@ -145,5 +145,19 @@ namespace Chrysallis
             FormEvento eventoModificado = new FormEvento(evento, true);
             eventoModificado.ShowDialog();
         }
+
+        private void buttonVerAsistentes_Click(object sender, EventArgs e)
+        {
+            eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;
+            FormAsistentes formAsistentes = new FormAsistentes(evento);
+            formAsistentes.ShowDialog();
+        }
+
+        private void buttonVerValoraciones_Click(object sender, EventArgs e)
+        {
+            eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;
+            FormValoraciones formValoraciones = new FormValoraciones(evento);
+            formValoraciones.Show();
+        }
     }
 }
