@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAsistentes));
             this.dataGridViewAsistentes = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuantosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceAsistentes = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistentes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAsistentes)).BeginInit();
             this.SuspendLayout();
@@ -54,23 +55,9 @@
             this.dataGridViewAsistentes.Name = "dataGridViewAsistentes";
             this.dataGridViewAsistentes.ReadOnly = true;
             this.dataGridViewAsistentes.RowTemplate.Height = 24;
-            this.dataGridViewAsistentes.Size = new System.Drawing.Size(522, 703);
+            this.dataGridViewAsistentes.Size = new System.Drawing.Size(524, 703);
             this.dataGridViewAsistentes.TabIndex = 0;
             this.dataGridViewAsistentes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewAsistentes_CellFormatting);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "socios";
-            this.dataGridViewTextBoxColumn1.HeaderText = "socios";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "socios";
-            this.dataGridViewTextBoxColumn2.HeaderText = "socios";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 250;
             // 
             // socios
             // 
@@ -91,15 +78,30 @@
             // 
             this.bindingSourceAsistentes.DataSource = typeof(Chrysallis.asistir);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "socios";
+            this.dataGridViewTextBoxColumn1.HeaderText = "socios";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "socios";
+            this.dataGridViewTextBoxColumn2.HeaderText = "socios";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 250;
+            // 
             // FormAsistentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 703);
+            this.ClientSize = new System.Drawing.Size(524, 703);
             this.Controls.Add(this.dataGridViewAsistentes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(540, 750);
-            this.MinimumSize = new System.Drawing.Size(540, 750);
+            this.MinimumSize = new System.Drawing.Size(540, 726);
             this.Name = "FormAsistentes";
             this.Text = "Asistentes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistentes)).EndInit();

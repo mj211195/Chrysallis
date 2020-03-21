@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormValoraciones));
             this.dataGridViewValoraciones = new System.Windows.Forms.DataGridView();
-            this.bindingSourceValoraciones = new System.Windows.Forms.BindingSource(this.components);
             this.valoracionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceValoraciones = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewValoraciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceValoraciones)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +52,6 @@
             this.dataGridViewValoraciones.Size = new System.Drawing.Size(1082, 739);
             this.dataGridViewValoraciones.TabIndex = 0;
             // 
-            // bindingSourceValoraciones
-            // 
-            this.bindingSourceValoraciones.DataSource = typeof(Chrysallis.asistir);
-            // 
             // valoracionDataGridViewTextBoxColumn
             // 
             this.valoracionDataGridViewTextBoxColumn.DataPropertyName = "valoracion";
@@ -68,15 +65,19 @@
             this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
             this.comentarioDataGridViewTextBoxColumn.Width = 1000;
             // 
+            // bindingSourceValoraciones
+            // 
+            this.bindingSourceValoraciones.DataSource = typeof(Chrysallis.asistir);
+            // 
             // FormValoraciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 763);
+            this.ClientSize = new System.Drawing.Size(1106, 749);
             this.Controls.Add(this.dataGridViewValoraciones);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormValoraciones";
             this.Text = "Valoraciones";
-            
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewValoraciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceValoraciones)).EndInit();
             this.ResumeLayout(false);
