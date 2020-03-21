@@ -50,13 +50,13 @@ namespace Chrysallis
             dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite.Value;
             dateTimePickerHora.Value = evento.fecha + evento.hora;
             comboBoxComunity.SelectedValue = evento.id_comunidad;
-            if(evento.notificaciones != null)
+            if(evento.notificaciones.Count != 0)
             {
                 notificacion = evento.notificaciones.ToList();
                 bindingSourceNotificacionesGuardar.DataSource = evento.notificaciones;
             }
             textBoxNumeroAsistentes.Text = evento.numAsistentes.ToString();
-            if(evento.documentos != null)
+            if(evento.documentos.Count != 0)
             {
                 foreach (documentos d in documentosLista)
                 {
@@ -143,24 +143,8 @@ namespace Chrysallis
                 eventoNew.ubicacion = textBoxUbicacion.Text.Trim();
                 eventoNew.hora = dateTimePickerHora.Value.TimeOfDay;
                 eventoNew.fechaLimite = dateTimePickerFechaLimite.Value.Date;
-                if (documentosLista.Count != 0)
-                {
-                    eventoNew.documentos = documentosLista;
-
-                }
-                else
-                {
-                    eventoNew.documentos = null;
-                }
-
-                if(notificacion.Count != 0)
-                {
-                    eventoNew.notificaciones = notificacion;
-                }
-                else
-                {
-                    eventoNew.notificaciones = null;
-                }
+                eventoNew.documentos = documentosLista;
+                eventoNew.notificaciones = notificacion;
                 if (!textBoxNumeroAsistentes.Text.Trim().Equals(""))
                 {
                     eventoNew.numAsistentes = int.Parse(textBoxNumeroAsistentes.Text.Trim());
