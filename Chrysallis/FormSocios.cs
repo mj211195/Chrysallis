@@ -74,6 +74,9 @@ namespace Chrysallis
             {
                 List<socios> sociosComunidad = SocioORM.SelectAllSociosByComunidad((int)FormLogin.socioLogin.id_comunidad);
                 bindingSourceSocios.DataSource = sociosComunidad;
+                labelFilterComunidad.Visible = false;
+                comboBoxFilterComunidad.Visible = false;
+                buttonClean.Visible = false;
             }
 
         }
@@ -133,12 +136,27 @@ namespace Chrysallis
         {
             if (textBoxSearch.Text.Equals(""))
             {
-                bindingSourceSocios.DataSource = SocioORM.SelectAllSocios();
+                if (FormLogin.socioLogin.estatal)
+                {
+                    bindingSourceSocios.DataSource = SocioORM.SelectAllSocios();
+                }
+                else
+                {
+                    List<socios> sociosComunidad = SocioORM.SelectAllSociosByComunidad((int)FormLogin.socioLogin.id_comunidad);
+                    bindingSourceSocios.DataSource = sociosComunidad;
+                }
             }
             else
             {
                 String busqueda = textBoxSearch.Text;
-                bindingSourceSocios.DataSource = SocioORM.SelectSocioBySearch(busqueda);
+                if (FormLogin.socioLogin.estatal)
+                {
+                    bindingSourceSocios.DataSource = SocioORM.SelectSocioBySearch(busqueda);
+                }
+                else
+                {
+                    bindingSourceSocios.DataSource = SocioORM.SelectSocioBySearchAndComunity(busqueda, FormLogin.socioLogin.id_comunidad.Value);
+                }
             }
         }
 

@@ -148,5 +148,23 @@ namespace Chrysallis.BD
             }
             return _socios;
         }
+
+        public static List<socios> SelectSocioBySearchAndComunity(String busqueda, int id_comunidad)
+        {
+            List<socios> _socios = null;
+            try
+            {
+                _socios = (
+                from s in ORM.bd.socios
+                where (s.dni.Contains(busqueda) || s.apellidos.Contains(busqueda) || s.nombre.Contains(busqueda) || s.comunidades.nombre.Contains(busqueda)) && s.id_comunidad==id_comunidad
+                select s).ToList();
+            }
+            catch (EntityException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return _socios;
+        }
     }
 }
