@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAsistentes));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bindingSourceAsistentes = new System.Windows.Forms.BindingSource(this.components);
-            this.eventosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idsocioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuantosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceAsistentes = new System.Windows.Forms.BindingSource(this.components);
+            this.eventosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAsistentes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosBindingSource)).BeginInit();
@@ -53,19 +54,12 @@
             this.dataGridView1.DataSource = this.bindingSourceAsistentes;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 703);
+            this.dataGridView1.Size = new System.Drawing.Size(600, 571);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // bindingSourceAsistentes
-            // 
-            this.bindingSourceAsistentes.DataSource = typeof(Chrysallis.asistir);
-            // 
-            // eventosBindingSource
-            // 
-            this.eventosBindingSource.DataSource = typeof(Chrysallis.eventos);
             // 
             // idsocioDataGridViewTextBoxColumn
             // 
@@ -87,12 +81,22 @@
             this.cuantosDataGridViewTextBoxColumn.Name = "cuantosDataGridViewTextBoxColumn";
             this.cuantosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // bindingSourceAsistentes
+            // 
+            this.bindingSourceAsistentes.DataSource = typeof(Chrysallis.asistir);
+            // 
+            // eventosBindingSource
+            // 
+            this.eventosBindingSource.DataSource = typeof(Chrysallis.eventos);
+            // 
             // FormAsistentes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 703);
+            this.ClientSize = new System.Drawing.Size(600, 571);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormAsistentes";
             this.Text = "FormAsistentes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

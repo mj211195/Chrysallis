@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSocio));
             this.labelDni = new System.Windows.Forms.Label();
             this.textBoxDni = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -278,6 +279,7 @@
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxDni);
             this.Controls.Add(this.labelDni);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSocio";

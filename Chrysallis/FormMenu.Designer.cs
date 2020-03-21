@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonAdministrarEventos = new AppDesktop.Button_WOC();
             this.buttonAdministrarSocios = new AppDesktop.Button_WOC();
@@ -98,6 +99,7 @@
             this.Controls.Add(this.buttonAdministrarEventos);
             this.Controls.Add(this.buttonAdministrarSocios);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormMenu";
