@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chrysallis.Idiomas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +18,16 @@ namespace Chrysallis
             InitializeComponent();
             bindingSourceValoraciones.DataSource = null;
             bindingSourceValoraciones.DataSource = BD.EventoORM.SelectAllAsistir(evento);
+            cambiarIdioma();
         }
 
-       
+        private void cambiarIdioma()
+        {
+            this.Text = Strings.ratings;
+            dataGridViewValoraciones.Columns[0].HeaderText = Strings.assessment;
+            dataGridViewValoraciones.Columns[1].HeaderText = Strings.commentary;
+        }
+
+
     }
 }

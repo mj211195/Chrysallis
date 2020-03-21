@@ -79,6 +79,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Afegir &gt;&gt;.
+        /// </summary>
+        internal static string add {
+            get {
+                return ResourceManager.GetString("add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Afegir esdeveniment.
         /// </summary>
         internal static string addEvent {
@@ -129,6 +138,24 @@ namespace Chrysallis.Idiomas {
         internal static string Aragón {
             get {
                 return ResourceManager.GetString("Aragón", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Valoració.
+        /// </summary>
+        internal static string assessment {
+            get {
+                return ResourceManager.GetString("assessment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Assistents.
+        /// </summary>
+        internal static string assistants {
+            get {
+                return ResourceManager.GetString("assistants", resourceCulture);
             }
         }
         
@@ -232,6 +259,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Comentari.
+        /// </summary>
+        internal static string commentary {
+            get {
+                return ResourceManager.GetString("commentary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Comunitat.
         /// </summary>
         internal static string community {
@@ -318,6 +354,15 @@ namespace Chrysallis.Idiomas {
         internal static string deadline {
             get {
                 return ResourceManager.GetString("deadline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;&lt; Eliminar.
+        /// </summary>
+        internal static string delete {
+            get {
+                return ResourceManager.GetString("delete", resourceCulture);
             }
         }
         
@@ -543,6 +588,15 @@ namespace Chrysallis.Idiomas {
         internal static string Galicia {
             get {
                 return ResourceManager.GetString("Galicia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Quants.
+        /// </summary>
+        internal static string howMany {
+            get {
+                return ResourceManager.GetString("howMany", resourceCulture);
             }
         }
         
@@ -786,6 +840,15 @@ namespace Chrysallis.Idiomas {
         internal static string Principado_de_Asturias {
             get {
                 return ResourceManager.GetString("Principado de Asturias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Valoracions.
+        /// </summary>
+        internal static string ratings {
+            get {
+                return ResourceManager.GetString("ratings", resourceCulture);
             }
         }
         

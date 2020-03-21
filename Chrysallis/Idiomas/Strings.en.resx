@@ -399,4 +399,25 @@
   <data name="warning" xml:space="preserve">
     <value>Warning!</value>
   </data>
+  <data name="add" xml:space="preserve">
+    <value>Add &gt;&gt;</value>
+  </data>
+  <data name="assessment" xml:space="preserve">
+    <value>Assessment</value>
+  </data>
+  <data name="assistants" xml:space="preserve">
+    <value>Assistants</value>
+  </data>
+  <data name="commentary" xml:space="preserve">
+    <value>Commentary</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>&lt;&lt; Delete</value>
+  </data>
+  <data name="howMany" xml:space="preserve">
+    <value>How many</value>
+  </data>
+  <data name="ratings" xml:space="preserve">
+    <value>Ratings</value>
+  </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chrysallis.Idiomas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,14 +16,16 @@ namespace Chrysallis
         public FormAsistentes(eventos evento)
         {
             InitializeComponent();
-            mostrarDatos();
+            cambiarIdioma();
             bindingSourceAsistentes.DataSource = null;
             bindingSourceAsistentes.DataSource = BD.EventoORM.SelectAllAsistir(evento);
         }
 
-        private void mostrarDatos()
+        private void cambiarIdioma()
         {
-            
+            this.Text = Strings.assistants;
+            dataGridViewAsistentes.Columns[0].HeaderText = Strings.name;
+            dataGridViewAsistentes.Columns[1].HeaderText = Strings.howMany;
         }
 
         private void dataGridViewAsistentes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

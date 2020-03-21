@@ -228,6 +228,8 @@ namespace Chrysallis
             buttonNuevo.Text = Strings.newdoc;
             buttonEliminar.Text = Strings.remove;
             buttonVer.Text = Strings.see;
+            buttonAñadirNot.Text = Strings.add;
+            buttonEliminarNot.Text = Strings.delete;
             
 
             //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
@@ -290,8 +292,12 @@ namespace Chrysallis
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            documentosLista.Remove((documentos)listBoxDocumentos.SelectedItem);
-            bindingSourceDocumentos.RemoveAt(listBoxDocumentos.SelectedIndex);
+            if (listBoxDocumentos.SelectedItem != null)
+            {
+                documentosLista.Remove((documentos)listBoxDocumentos.SelectedItem);
+                bindingSourceDocumentos.RemoveAt(listBoxDocumentos.SelectedIndex);
+            }
+            
         }
 
         private void buttonAñadirNot_Click(object sender, EventArgs e)
@@ -321,7 +327,7 @@ namespace Chrysallis
                 notificacionEliminar.antelacion = ((notificaciones)listBoxNotificacionesSelec.SelectedItem).antelacion;
                 bindingSourceNotificaciones.Add(notificacionEliminar);
                 bindingSourceNotificacionesGuardar.RemoveAt(listBoxNotificacionesSelec.SelectedIndex);
-                bindingSourceNotificaciones.Sort = "antelacion";
+                bindingSourceNotificaciones.Sort = "antelacion ASC";
                 //notificacion.Remove((notificaciones)listBoxNotificacionesSelec.SelectedItem);
 
                 //bindingSourceNotificaciones.DataSource = bindingSourceNotificaciones.Sort = "id";
