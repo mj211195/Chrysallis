@@ -29,56 +29,56 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bindingSourceAsistentes = new System.Windows.Forms.BindingSource(this.components);
-            this.eventosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idsocioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewAsistentes = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuantosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bindingSourceAsistentes = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistentes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAsistentes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewAsistentes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idsocioDataGridViewTextBoxColumn,
-            this.nombre,
+            this.dataGridViewAsistentes.AllowUserToAddRows = false;
+            this.dataGridViewAsistentes.AllowUserToDeleteRows = false;
+            this.dataGridViewAsistentes.AutoGenerateColumns = false;
+            this.dataGridViewAsistentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAsistentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.socios,
             this.cuantosDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bindingSourceAsistentes;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 703);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewAsistentes.DataSource = this.bindingSourceAsistentes;
+            this.dataGridViewAsistentes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewAsistentes.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewAsistentes.Name = "dataGridViewAsistentes";
+            this.dataGridViewAsistentes.ReadOnly = true;
+            this.dataGridViewAsistentes.RowTemplate.Height = 24;
+            this.dataGridViewAsistentes.Size = new System.Drawing.Size(522, 703);
+            this.dataGridViewAsistentes.TabIndex = 0;
+            this.dataGridViewAsistentes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewAsistentes_CellFormatting);
             // 
-            // bindingSourceAsistentes
+            // dataGridViewTextBoxColumn1
             // 
-            this.bindingSourceAsistentes.DataSource = typeof(Chrysallis.asistir);
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "socios";
+            this.dataGridViewTextBoxColumn1.HeaderText = "socios";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // eventosBindingSource
+            // dataGridViewTextBoxColumn2
             // 
-            this.eventosBindingSource.DataSource = typeof(Chrysallis.eventos);
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "socios";
+            this.dataGridViewTextBoxColumn2.HeaderText = "socios";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 250;
             // 
-            // idsocioDataGridViewTextBoxColumn
+            // socios
             // 
-            this.idsocioDataGridViewTextBoxColumn.DataPropertyName = "id_socio";
-            this.idsocioDataGridViewTextBoxColumn.HeaderText = "id_socio";
-            this.idsocioDataGridViewTextBoxColumn.Name = "idsocioDataGridViewTextBoxColumn";
-            this.idsocioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
+            this.socios.DataPropertyName = "socios";
+            this.socios.HeaderText = "socios";
+            this.socios.Name = "socios";
+            this.socios.ReadOnly = true;
+            this.socios.Width = 250;
             // 
             // cuantosDataGridViewTextBoxColumn
             // 
@@ -87,28 +87,34 @@
             this.cuantosDataGridViewTextBoxColumn.Name = "cuantosDataGridViewTextBoxColumn";
             this.cuantosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // bindingSourceAsistentes
+            // 
+            this.bindingSourceAsistentes.DataSource = typeof(Chrysallis.asistir);
+            // 
             // FormAsistentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 703);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(522, 703);
+            this.Controls.Add(this.dataGridViewAsistentes);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(540, 750);
+            this.MinimumSize = new System.Drawing.Size(540, 750);
             this.Name = "FormAsistentes";
-            this.Text = "FormAsistentes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Asistentes";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistentes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAsistentes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewAsistentes;
         private System.Windows.Forms.BindingSource bindingSourceAsistentes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idsocioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socios;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuantosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource eventosBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

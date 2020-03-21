@@ -15,6 +15,10 @@ namespace Chrysallis
         public FormValoraciones(eventos evento)
         {
             InitializeComponent();
+            bindingSourceValoraciones.DataSource = null;
+            bindingSourceValoraciones.DataSource = BD.EventoORM.SelectAllAsistir(evento);
         }
+
+       
     }
 }

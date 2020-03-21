@@ -139,7 +139,25 @@ namespace Chrysallis.BD
             return correcto;
         }
 
-        
+        public static List<asistir> SelectAllAsistir(eventos evento)
+        {
+            List<asistir> asisti = null;
+            try
+            {
+                asisti = (
+                from e in ORM.bd.asistir
+                where e.id_evento == evento.id
+                select e).ToList();
+            }
+            catch (EntityException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return asisti;
+        }
+
+
 
 
     }
