@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEventos));
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -276,7 +277,7 @@
             // 
             this.pictureBoxLupa.Image = global::Chrysallis.Properties.Resources.lupa;
             this.pictureBoxLupa.Location = new System.Drawing.Point(284, 8);
-            this.pictureBoxLupa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxLupa.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxLupa.Name = "pictureBoxLupa";
             this.pictureBoxLupa.Size = new System.Drawing.Size(51, 41);
             this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -344,6 +345,7 @@
             this.Controls.Add(this.dateTimePickerDesde);
             this.Controls.Add(this.buttonAgregarEvento);
             this.Controls.Add(this.dataGridViewEventos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(729, 439);
             this.Name = "FormEventos";
             this.Text = "FormEventos";
