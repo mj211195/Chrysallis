@@ -139,7 +139,7 @@ namespace Chrysallis
                 eventoNew.descripcion = textBoxDescripcion.Text.Trim();
                 //eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
 
-                if (textBoxImagen.Text != "" && !modificar)
+                if (textBoxImagen.Text != "" /*&& !modificar*/)
                 {
                     eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
                     eventoNew.imagen = File.ReadAllBytes(openFileDialogImagen.FileName);
