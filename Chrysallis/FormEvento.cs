@@ -142,7 +142,17 @@ namespace Chrysallis
                 if (textBoxImagen.Text != "" && !modificar)
                 {
                     eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
-                    eventoNew.imagen = File.ReadAllBytes(openFileDialogImagen.FileName);
+                    string base64String = Convert.ToBase64String(File.ReadAllBytes(openFileDialogImagen.FileName));
+                    eventoNew.imagen = base64String;
+                }
+                else if (modificar)
+                {
+                    if (!textBoxImagen.Text.Equals(eventoNew.nombreImagen))
+                    {
+                        eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
+                        string base64String = Convert.ToBase64String(File.ReadAllBytes(openFileDialogImagen.FileName));
+                        eventoNew.imagen = base64String;
+                    }
                 }
                 else
                 {
