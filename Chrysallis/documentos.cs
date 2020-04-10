@@ -17,7 +17,7 @@ namespace Chrysallis
         public int id { get; set; }
         public string nombre { get; set; }
         public Nullable<int> id_evento { get; set; }
-        public byte[] documento { get; set; }
+        public string documento { get; set; }
     
         public virtual eventos eventos { get; set; }
     }

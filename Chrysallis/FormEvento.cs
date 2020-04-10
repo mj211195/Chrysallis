@@ -276,7 +276,7 @@ namespace Chrysallis
                 {
                     documentos documento = new documentos();
                     documento.nombre = openFileDialogDocumentos.SafeFileName;
-                    documento.documento = File.ReadAllBytes(openFileDialogDocumentos.FileName);
+                    documento.documento = Convert.ToBase64String(File.ReadAllBytes(openFileDialogDocumentos.FileName));
                     documentosLista.Add(documento);
                     bindingSourceDocumentos.DataSource = null;
                     bindingSourceDocumentos.DataSource = documentosLista;
@@ -294,7 +294,8 @@ namespace Chrysallis
             if (listBoxDocumentos.SelectedItem != null)
             {
                 documento = (documentos)listBoxDocumentos.SelectedItem;
-                File.WriteAllBytes(documento.nombre, documento.documento);
+                byte[] docBytes = Convert.FromBase64String(documento.documento);
+                File.WriteAllBytes(documento.nombre,docBytes);
                 Process.Start(documento.nombre);
             }
            
