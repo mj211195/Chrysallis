@@ -67,6 +67,7 @@
     <Compile Include="asistir.cs">
       <DependentUpon>ModelChrysallis.tt</DependentUpon>
     </Compile>
+    <Compile Include="BD\AsistirORM.cs" />
     <Compile Include="BD\ComunidadORM.cs" />
     <Compile Include="BD\DocumentoORM.cs" />
     <Compile Include="BD\EventoORM.cs" />

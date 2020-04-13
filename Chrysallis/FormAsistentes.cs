@@ -18,7 +18,7 @@ namespace Chrysallis
             InitializeComponent();
             cambiarIdioma();
             bindingSourceAsistentes.DataSource = null;
-            bindingSourceAsistentes.DataSource = BD.EventoORM.SelectAllAsistir(evento);
+            bindingSourceAsistentes.DataSource = BD.AsistirORM.SelectAllAsistir(evento);
         }
 
         private void cambiarIdioma()

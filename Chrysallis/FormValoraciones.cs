@@ -17,7 +17,7 @@ namespace Chrysallis
         {
             InitializeComponent();
             bindingSourceValoraciones.DataSource = null;
-            bindingSourceValoraciones.DataSource = BD.EventoORM.SelectAllValoracion(evento);
+            bindingSourceValoraciones.DataSource = BD.AsistirORM.SelectAllValoracion(evento);
             cambiarIdioma();
         }
 
