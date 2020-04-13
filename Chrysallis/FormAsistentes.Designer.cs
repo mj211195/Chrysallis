@@ -45,6 +45,7 @@
             this.dataGridViewAsistentes.AllowUserToAddRows = false;
             this.dataGridViewAsistentes.AllowUserToDeleteRows = false;
             this.dataGridViewAsistentes.AutoGenerateColumns = false;
+            this.dataGridViewAsistentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewAsistentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAsistentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.socios,
@@ -55,7 +56,7 @@
             this.dataGridViewAsistentes.Name = "dataGridViewAsistentes";
             this.dataGridViewAsistentes.ReadOnly = true;
             this.dataGridViewAsistentes.RowTemplate.Height = 24;
-            this.dataGridViewAsistentes.Size = new System.Drawing.Size(524, 703);
+            this.dataGridViewAsistentes.Size = new System.Drawing.Size(524, 687);
             this.dataGridViewAsistentes.TabIndex = 0;
             this.dataGridViewAsistentes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewAsistentes_CellFormatting);
             // 
@@ -65,7 +66,6 @@
             this.socios.HeaderText = "socios";
             this.socios.Name = "socios";
             this.socios.ReadOnly = true;
-            this.socios.Width = 250;
             // 
             // cuantosDataGridViewTextBoxColumn
             // 
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 703);
+            this.ClientSize = new System.Drawing.Size(524, 687);
             this.Controls.Add(this.dataGridViewAsistentes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
