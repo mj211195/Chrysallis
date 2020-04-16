@@ -13,6 +13,7 @@ namespace Chrysallis
 {
     public partial class FormAsistentes : Form
     {
+        //Cargamos los asistentes del evento seleccionado anteriormente
         public FormAsistentes(eventos evento)
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace Chrysallis
             bindingSourceAsistentes.DataSource = BD.AsistirORM.SelectAllAsistir(evento);
         }
 
+        //Cambiamos el idioma segun seleccionado
         private void cambiarIdioma()
         {
             this.Text = Strings.assistants;
@@ -28,6 +30,7 @@ namespace Chrysallis
             dataGridViewAsistentes.Columns[1].HeaderText = Strings.howMany;
         }
 
+        //Recogemos de la tabla asistir los socios que se a apuntaron al evento para mostrarlos
         private void dataGridViewAsistentes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             asistir _asistir;
@@ -35,6 +38,7 @@ namespace Chrysallis
             if (e.ColumnIndex == 0)
             {
                 _asistir = (asistir)dataGridViewAsistentes.Rows[e.RowIndex].DataBoundItem;
+
                 foreach (var item in listaSocio)
                 {
                     if (item.id == _asistir.id_socio)

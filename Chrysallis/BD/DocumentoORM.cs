@@ -11,6 +11,7 @@ namespace Chrysallis.BD
 {
     public static class DocumentoORM
     {
+        //Devolvemos la lista de documentos ordenadas por id
         public static List<documentos> SelectAllDocumentos()
         {
             List<documentos> _documentos = null;
@@ -32,6 +33,7 @@ namespace Chrysallis.BD
             return _documentos;
         }
 
+        //Insertamos la lista de documentos pasada por parametro para guardar en la base de datos
         public static Boolean insertDocumentos(documentos documento)
         {
             Boolean correcto = false;

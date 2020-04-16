@@ -19,12 +19,15 @@ namespace Chrysallis
         private Boolean modificar;
         List<documentos> documentosLista = new List<documentos>();
         List<notificaciones> notificacion = new List<notificaciones>();
+
+        //Cargamos formulario para agregar un nuevo evento
         public FormEvento()
         {
             InitializeComponent();
             modificar = false;
         }
 
+        //Cargamos formulario para modificar un evento
         public FormEvento(eventos evento, Boolean modificar)
         {
             InitializeComponent();
@@ -35,6 +38,7 @@ namespace Chrysallis
             cambiarForma();
         }
 
+        //Cargamos los datos del evento seleccionado para modificalo
         private void cargarDatos(eventos evento)
         {
             textBoxNombre.Text = evento.nombre;
@@ -63,11 +67,13 @@ namespace Chrysallis
             
         }
 
+        //Se bloquea el combobox de comunidades al modificar para que no se pueda modificar
         private void cambiarForma()
         {
             comboBoxComunity.Enabled = false;
         }
 
+        //Cuando cargamos el formulario cargamos los datos de notificaciones y de las comundades
         private void FormEvento_Load(object sender, EventArgs e)
         {
             bindingSourceNotificaciones.DataSource = null;
@@ -97,8 +103,10 @@ namespace Chrysallis
 
         }
 
+        //Hacemos click para guardar los datos del evento
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            //Comprobamos que todos los campos esten llenos y en formato correcto
             if (textBoxNombre.Text.Trim().Equals(""))
             {
                 MessageBox.Show(Strings.errorName, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -134,17 +142,19 @@ namespace Chrysallis
             else
             {
                 
+                //Pasamos los datos rellenados al nuevo evento
                 documentos documento = new documentos();
                 eventoNew.nombre = textBoxNombre.Text.Trim();
                 eventoNew.descripcion = textBoxDescripcion.Text.Trim();
-                //eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
 
+                //Si creamos el evento la pasamos como base64String
                 if (textBoxImagen.Text != "" && !modificar)
                 {
                     eventoNew.nombreImagen = openFileDialogImagen.SafeFileName;
                     string base64String = Convert.ToBase64String(File.ReadAllBytes(openFileDialogImagen.FileName));
                     eventoNew.imagen = base64String;
                 }
+                //Si modificamos el evento si es diferente al que hemos cargado le pasamos el nuevo string
                 else if (modificar)
                 {
                     if (!textBoxImagen.Text.Equals(eventoNew.nombreImagen))
@@ -154,6 +164,7 @@ namespace Chrysallis
                         eventoNew.imagen = base64String;
                     }
                 }
+                //En el caso de este vacio lo pasamos como null
                 else
                 {
                     evento.imagen = null;
@@ -187,7 +198,7 @@ namespace Chrysallis
                 }
                 
                 
-                
+                //Si creamos el evento mostramos su mensaje
                 if (!modificar)
                 {
                     if (EventoORM.InsertEvento(eventoNew))
@@ -196,6 +207,7 @@ namespace Chrysallis
                         this.Close();
                     }
                 }
+                //Si moficamos el evento mostramos su mensaje
                 else
                 {
                     if (EventoORM.UpdateEvento(eventoNew))
@@ -251,6 +263,7 @@ namespace Chrysallis
             comboBoxComunity.DataSource = comunidadesString;
         }
 
+        //Al apretar el boton abre un openFileDialog, recogemos el archivo y su nombre
         private void buttonDocumento_Click(object sender, EventArgs e)
         {
             try
@@ -268,6 +281,7 @@ namespace Chrysallis
             }
         }
 
+        //Al apretar el boton abre un openFileDialog para añadirlo a la lista de documentos
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
             try
@@ -288,6 +302,7 @@ namespace Chrysallis
             }
         }
 
+        //Al hacer click sobre el boton y tener un documento seleccionado nos lo abre con los programas propios del sistema
         private void buttonVer_Click(object sender, EventArgs e)
         {
             documentos documento;
@@ -301,6 +316,7 @@ namespace Chrysallis
            
         }
 
+        //Al seleccionar un documento y pulsar el boton eliminar nos lo elimina de la lista
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             if (listBoxDocumentos.SelectedItem != null)
@@ -311,6 +327,7 @@ namespace Chrysallis
             
         }
 
+        //AL seleccionar la notificacion y pulsar en añadir nos lo pasa a la lista de notificacines seleccionadas
         private void buttonAñadirNot_Click(object sender, EventArgs e)
         {
             notificaciones notificacionNueva = new notificaciones();
@@ -329,6 +346,7 @@ namespace Chrysallis
                 
         }
 
+        //AL seleccionar la notificacion y pulsar en eliminar nos lo pasa a la lista de notificacines base eliminandola de las seleccionadas
         private void buttonEliminarNot_Click(object sender, EventArgs e)
         {
             notificaciones notificacionEliminar = new notificaciones();
@@ -339,10 +357,7 @@ namespace Chrysallis
                 bindingSourceNotificaciones.Add(notificacionEliminar);
                 bindingSourceNotificacionesGuardar.RemoveAt(listBoxNotificacionesSelec.SelectedIndex);
                 bindingSourceNotificaciones.Sort = "antelacion ASC";
-                //notificacion.Remove((notificaciones)listBoxNotificacionesSelec.SelectedItem);
-
-                //bindingSourceNotificaciones.DataSource = bindingSourceNotificaciones.Sort = "id";
-                //bindingSourceNotificaciones.RemoveSort;
+                
             }
             else
             {

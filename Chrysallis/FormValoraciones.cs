@@ -13,6 +13,7 @@ namespace Chrysallis
 {
     public partial class FormValoraciones : Form
     {
+        //Recogemos todas las valoraciones del evento seleccionado anteriormente
         public FormValoraciones(eventos evento)
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace Chrysallis
             cambiarIdioma();
         }
 
+        //Cambiamos el idioma segun seleccionado
         private void cambiarIdioma()
         {
             this.Text = Strings.ratings;

@@ -9,11 +9,13 @@ namespace Chrysallis
 {
     public partial class FormEventos : Form
     {
+        //Inicializamos el formulario
         public FormEventos()
         {
             InitializeComponent();
         }
 
+        //Cuando cargamos el formulario cargamos los datos 
         private void FormEventos_Load(object sender, EventArgs e)
         {
 
@@ -23,6 +25,7 @@ namespace Chrysallis
             
         }
 
+        //Cargamos el FormEvento para agregar un nuevo evento y refrescamos la grid
         private void buttonAgregarEvento_Click(object sender, EventArgs e)
         {
             FormEvento formEvento = new FormEvento();
@@ -30,6 +33,7 @@ namespace Chrysallis
             RefrescarDatos();
         }
 
+        //Refrescamos los datos de la grid
         private void RefrescarDatos()
         {
             List<eventos> eventos;
@@ -58,16 +62,8 @@ namespace Chrysallis
 
         }
 
-        private void dateTimePickerFiltroFecha_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void dateTimePickerHasta_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
+        //Buscamos los evento por fechas (desde una fecha hasta otra)
         public void buscarPorFecha()
         {
             List<eventos> eventos;
@@ -96,6 +92,7 @@ namespace Chrysallis
             }
         }
 
+        //Modificamos el idioma para que salga el seleccionado
         private void dataGridViewEventos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             eventos _evento;
@@ -107,6 +104,7 @@ namespace Chrysallis
             }
         }
 
+        //Cambiamos el idioma segun seleccionado
         public void cambiarIdioma()
         {
             this.Text = Strings._event;
@@ -123,6 +121,7 @@ namespace Chrysallis
             buttonVerValoraciones.Text = Strings.seeRatings;
         }
 
+        //Eliminar un evento al seleccionarlo y pulsar suprimir
         private void dataGridViewEventos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             DialogResult resultado = MessageBox.Show(Strings.confirmDeleteEvent, Strings.confirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -137,11 +136,13 @@ namespace Chrysallis
             }
         }
 
+        //Clicamos al boton lupa para realizar las busquedas por fecha
         private void pictureBoxLupa_Click(object sender, EventArgs e)
         {
             buscarPorFecha();
         }
 
+        //AL hacer doble click sobre un evento accedemos a un evento para modificarlo pasandole el evento seleccionado
         private void dataGridViewEventos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;
@@ -149,6 +150,7 @@ namespace Chrysallis
             eventoModificado.ShowDialog();
         }
 
+        //Cuando tenemos seleccionado un evento hacemos click en el boton para ver los asistentes del evento
         private void buttonVerAsistentes_Click(object sender, EventArgs e)
         {
             eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;
@@ -156,6 +158,7 @@ namespace Chrysallis
             formAsistentes.ShowDialog();
         }
 
+        //Cuando tenemos seleccionado un evento hacemos click en el boton para ver las valoraciones del evento
         private void buttonVerValoraciones_Click(object sender, EventArgs e)
         {
             eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;

@@ -10,6 +10,7 @@ namespace Chrysallis.BD
 {
     public static class NotificacionORM
     {
+        //Devolvemos la lista de notificaciones ordenadas por id
         public static List<notificaciones> SelectAllNotificaciones()
         {
             List<notificaciones> _notificaciones = null;
@@ -30,6 +31,7 @@ namespace Chrysallis.BD
             return _notificaciones;
         }
 
+        //Devolvemos la lista de notificaciones ordenadas por antelacion
         public static List<notificaciones> SelectAllAntelacion()
         {
             List<notificaciones> lista = null;

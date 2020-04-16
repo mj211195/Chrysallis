@@ -13,7 +13,7 @@ namespace Chrysallis.BD
 {
     public static class EventoORM
     {
-        
+        //Devolvemos lista de todos los eventos
         public static List<eventos> SelectAllEventos()
         {
             List<eventos> eventos = null;
@@ -31,6 +31,7 @@ namespace Chrysallis.BD
             return eventos;
         }
 
+        //Devolvemos lista de eventos por comunidad
         public static List<eventos> SelectAllEventosByComunidad(int comunidad)
         {
             List<eventos> eventos = null;
@@ -49,6 +50,7 @@ namespace Chrysallis.BD
             return eventos;
         }
 
+        //Devolvemos lista de eventos desde una fecha hasta otra y comunidad seleccionada
         public static List<eventos> SelectAllEventosByComunidadFecha(int comunidad, DateTime desde, DateTime hasta)
         {
             List<eventos> eventos = null;
@@ -67,6 +69,7 @@ namespace Chrysallis.BD
             return eventos;
         }
 
+        //Devolvemos lista de eventos desde una fecha hasta otra
         public static List<eventos> SelectAllEventosByFecha(DateTime desde, DateTime hasta)
         {
             List<eventos> eventos = null;
@@ -85,6 +88,7 @@ namespace Chrysallis.BD
             return eventos;
         }
 
+        //Insertamos un evento nuevo y lo guardamos en la base de datos
         public static Boolean InsertEvento(eventos evento)
         {
             Boolean correcto = false;
@@ -103,12 +107,14 @@ namespace Chrysallis.BD
             return correcto;
         }
 
+        //Pasamos el evento a borrar y eliminarlo de la base de datos
         public static void DeleteEvento(eventos evento)
         {
             ORM.bd.eventos.Remove(evento);
             ORM.bd.SaveChanges();
         }
 
+        //Recogemos el evento modificado por parametro para modificarlo y guardarlo en la base de datos
         public static Boolean UpdateEvento(eventos evento)
         {
             eventos _evento = ORM.bd.eventos.Find(evento.id);

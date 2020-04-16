@@ -11,6 +11,7 @@ namespace Chrysallis.BD
 {
     public static class AsistirORM
     {
+        //Devolvemos lista de asistir de las personas que asistiran al evento
         public static List<asistir> SelectAllAsistir(eventos evento)
         {
             List<asistir> asistir = null;
@@ -29,6 +30,7 @@ namespace Chrysallis.BD
             return asistir;
         }
 
+        //Devolvemos lista de asistir de las valoraciones del evento
         public static List<asistir> SelectAllValoracion(eventos evento)
         {
             List<asistir> asistir = null;
