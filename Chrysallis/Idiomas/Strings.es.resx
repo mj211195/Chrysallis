@@ -420,4 +420,7 @@
   <data name="ratings" xml:space="preserve">
     <value>Valoraciones</value>
   </data>
+  <data name="somethingWentWring" xml:space="preserve">
+    <value>Algo salió mal... Igual alguna imagen o ducumento no es compatible.</value>
+  </data>
 </root>

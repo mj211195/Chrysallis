@@ -336,8 +336,8 @@ namespace Chrysallis
         {
             if (listBoxDocumentos.SelectedItem != null)
             {
-                documentosLista.Remove((documentos)listBoxDocumentos.SelectedItem);
                 bindingSourceDocumentos.RemoveAt(listBoxDocumentos.SelectedIndex);
+                documentosLista.Remove((documentos)listBoxDocumentos.SelectedItem);
             }
             
         }

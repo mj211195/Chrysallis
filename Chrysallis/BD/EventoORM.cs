@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Chrysallis.Idiomas;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core;
 using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chrysallis.BD
@@ -104,6 +102,11 @@ namespace Chrysallis.BD
                 SqlException sqlEx = (SqlException)e.InnerException.InnerException;
                 MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            catch (Exception e)
+            {
+                ORM.RejectChanges();
+                MessageBox.Show(Strings.somethingWentWring, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             return correcto;
         }
 
@@ -137,10 +140,15 @@ namespace Chrysallis.BD
                 ORM.bd.SaveChanges();
                 correcto = true;
             }
-            catch (Exception e)
+            catch (DbUpdateException e)
             {
                 SqlException sqlEx = (SqlException)e.InnerException.InnerException;
                 MessageBox.Show(sqlEx.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception e)
+            {
+                ORM.RejectChanges();
+                MessageBox.Show(Strings.somethingWentWring, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return correcto;
         }

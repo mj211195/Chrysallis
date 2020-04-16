@@ -145,6 +145,9 @@
     <Compile Include="ImageComboBox\ImagedComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="mensajes.cs">
+      <DependentUpon>ModelChrysallis.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelChrysallis.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

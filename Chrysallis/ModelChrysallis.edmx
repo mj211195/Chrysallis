@@ -48,6 +48,16 @@
           <Property Name="nombreImagen" Type="varchar" MaxLength="16" />
           <Property Name="id_comunidad" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="mensajes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_socio" Type="int" Nullable="false" />
+          <Property Name="id_evento" Type="int" Nullable="false" />
+          <Property Name="mensaje" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="notificaciones">
           <Key>
             <PropertyRef Name="id" />
@@ -131,6 +141,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_mensajes_eventos">
+          <End Role="eventos" Type="Self.eventos" Multiplicity="1" />
+          <End Role="mensajes" Type="Self.mensajes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eventos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mensajes">
+              <PropertyRef Name="id_evento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mensajes_socios">
+          <End Role="socios" Type="Self.socios" Multiplicity="1" />
+          <End Role="mensajes" Type="Self.mensajes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="socios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mensajes">
+              <PropertyRef Name="id_socio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_notificaciones_eventos_eventos">
           <End Role="eventos" Type="Self.eventos" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -176,6 +210,7 @@
           <EntitySet Name="comunidades" EntityType="Self.comunidades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="documentos" EntityType="Self.documentos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="eventos" EntityType="Self.eventos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mensajes" EntityType="Self.mensajes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="notificaciones" EntityType="Self.notificaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="notificaciones_eventos" EntityType="Self.notificaciones_eventos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="socios" EntityType="Self.socios" Schema="dbo" store:Type="Tables" />
@@ -194,6 +229,14 @@
           <AssociationSet Name="FK_eventos_comunidades" Association="Self.FK_eventos_comunidades">
             <End Role="comunidades" EntitySet="comunidades" />
             <End Role="eventos" EntitySet="eventos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mensajes_eventos" Association="Self.FK_mensajes_eventos">
+            <End Role="eventos" EntitySet="eventos" />
+            <End Role="mensajes" EntitySet="mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mensajes_socios" Association="Self.FK_mensajes_socios">
+            <End Role="socios" EntitySet="socios" />
+            <End Role="mensajes" EntitySet="mensajes" />
           </AssociationSet>
           <AssociationSet Name="FK_notificaciones_eventos_eventos" Association="Self.FK_notificaciones_eventos_eventos">
             <End Role="eventos" EntitySet="eventos" />
@@ -215,8 +258,10 @@
         <EntityContainer Name="chrysallisEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="asistir" EntityType="chrysallisModel.asistir" />
           <EntitySet Name="comunidades" EntityType="chrysallisModel.comunidades" />
-          <EntitySet Name="notificaciones" EntityType="chrysallisModel.notificaciones" />
+          <EntitySet Name="documentos" EntityType="chrysallisModel.documentos" />
           <EntitySet Name="eventos" EntityType="chrysallisModel.eventos" />
+          <EntitySet Name="mensajes" EntityType="chrysallisModel.mensajes" />
+          <EntitySet Name="notificaciones" EntityType="chrysallisModel.notificaciones" />
           <EntitySet Name="socios" EntityType="chrysallisModel.socios" />
           <AssociationSet Name="FK_asistir_eventos" Association="chrysallisModel.FK_asistir_eventos">
             <End Role="eventos" EntitySet="eventos" />
@@ -234,16 +279,23 @@
             <End Role="comunidades" EntitySet="comunidades" />
             <End Role="socios" EntitySet="socios" />
           </AssociationSet>
-          <AssociationSet Name="notificaciones_eventos" Association="chrysallisModel.notificaciones_eventos">
-            <End Role="eventos" EntitySet="eventos" />
-            <End Role="notificaciones" EntitySet="notificaciones" />
-          </AssociationSet>
-          <EntitySet Name="documentos" EntityType="chrysallisModel.documentos" />
           <AssociationSet Name="FK_documentos_eventos" Association="chrysallisModel.FK_documentos_eventos">
             <End Role="eventos" EntitySet="eventos" />
             <End Role="documentos" EntitySet="documentos" />
           </AssociationSet>
-          </EntityContainer>
+          <AssociationSet Name="FK_mensajes_eventos" Association="chrysallisModel.FK_mensajes_eventos">
+            <End Role="eventos" EntitySet="eventos" />
+            <End Role="mensajes" EntitySet="mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mensajes_socios" Association="chrysallisModel.FK_mensajes_socios">
+            <End Role="socios" EntitySet="socios" />
+            <End Role="mensajes" EntitySet="mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="notificaciones_eventos" Association="chrysallisModel.notificaciones_eventos">
+            <End Role="eventos" EntitySet="eventos" />
+            <End Role="notificaciones" EntitySet="notificaciones" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="asistir">
           <Key>
             <PropertyRef Name="id_socio" />
@@ -266,13 +318,15 @@
           <NavigationProperty Name="eventos" Relationship="chrysallisModel.FK_eventos_comunidades" FromRole="comunidades" ToRole="eventos" />
           <NavigationProperty Name="socios" Relationship="chrysallisModel.FK_socios_comunidades" FromRole="comunidades" ToRole="socios" />
         </EntityType>
-        <EntityType Name="notificaciones">
+        <EntityType Name="documentos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="antelacion" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="eventos" Relationship="chrysallisModel.notificaciones_eventos" FromRole="notificaciones" ToRole="eventos" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="id_evento" Type="Int32" />
+          <Property Name="documento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="eventos" Relationship="chrysallisModel.FK_documentos_eventos" FromRole="documentos" ToRole="eventos" />
         </EntityType>
         <EntityType Name="eventos">
           <Key>
@@ -291,8 +345,29 @@
           <Property Name="id_comunidad" Type="Int32" Nullable="false" />
           <NavigationProperty Name="asistir" Relationship="chrysallisModel.FK_asistir_eventos" FromRole="eventos" ToRole="asistir" />
           <NavigationProperty Name="comunidades" Relationship="chrysallisModel.FK_eventos_comunidades" FromRole="eventos" ToRole="comunidades" />
-          <NavigationProperty Name="notificaciones" Relationship="chrysallisModel.notificaciones_eventos" FromRole="eventos" ToRole="notificaciones" />
           <NavigationProperty Name="documentos" Relationship="chrysallisModel.FK_documentos_eventos" FromRole="eventos" ToRole="documentos" />
+          <NavigationProperty Name="mensajes" Relationship="chrysallisModel.FK_mensajes_eventos" FromRole="eventos" ToRole="mensajes" />
+          <NavigationProperty Name="notificaciones" Relationship="chrysallisModel.notificaciones_eventos" FromRole="eventos" ToRole="notificaciones" />
+        </EntityType>
+        <EntityType Name="mensajes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_socio" Type="Int32" Nullable="false" />
+          <Property Name="id_evento" Type="Int32" Nullable="false" />
+          <Property Name="mensaje" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="eventos" Relationship="chrysallisModel.FK_mensajes_eventos" FromRole="mensajes" ToRole="eventos" />
+          <NavigationProperty Name="socios" Relationship="chrysallisModel.FK_mensajes_socios" FromRole="mensajes" ToRole="socios" />
+        </EntityType>
+        <EntityType Name="notificaciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="antelacion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="eventos" Relationship="chrysallisModel.notificaciones_eventos" FromRole="notificaciones" ToRole="eventos" />
         </EntityType>
         <EntityType Name="socios">
           <Key>
@@ -313,6 +388,7 @@
           <Property Name="id_comunidad" Type="Int32" />
           <NavigationProperty Name="asistir" Relationship="chrysallisModel.FK_asistir_socios" FromRole="socios" ToRole="asistir" />
           <NavigationProperty Name="comunidades" Relationship="chrysallisModel.FK_socios_comunidades" FromRole="socios" ToRole="comunidades" />
+          <NavigationProperty Name="mensajes" Relationship="chrysallisModel.FK_mensajes_socios" FromRole="socios" ToRole="mensajes" />
         </EntityType>
         <Association Name="FK_asistir_eventos">
           <End Type="chrysallisModel.eventos" Role="eventos" Multiplicity="1" />
@@ -362,20 +438,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="notificaciones_eventos">
-          <End Type="chrysallisModel.eventos" Role="eventos" Multiplicity="*" />
-          <End Type="chrysallisModel.notificaciones" Role="notificaciones" Multiplicity="*" />
-        </Association>
-        <EntityType Name="documentos">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="id_evento" Type="Int32" />
-          <Property Name="documento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="eventos" Relationship="chrysallisModel.FK_documentos_eventos" FromRole="documentos" ToRole="eventos" />
-        </EntityType>
         <Association Name="FK_documentos_eventos">
           <End Type="chrysallisModel.eventos" Role="eventos" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -389,6 +451,34 @@
               <PropertyRef Name="id_evento" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mensajes_eventos">
+          <End Type="chrysallisModel.eventos" Role="eventos" Multiplicity="1" />
+          <End Type="chrysallisModel.mensajes" Role="mensajes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eventos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mensajes">
+              <PropertyRef Name="id_evento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mensajes_socios">
+          <End Type="chrysallisModel.socios" Role="socios" Multiplicity="1" />
+          <End Type="chrysallisModel.mensajes" Role="mensajes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="socios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mensajes">
+              <PropertyRef Name="id_socio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="notificaciones_eventos">
+          <End Type="chrysallisModel.eventos" Role="eventos" Multiplicity="*" />
+          <End Type="chrysallisModel.notificaciones" Role="notificaciones" Multiplicity="*" />
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -415,10 +505,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="notificaciones">
-            <EntityTypeMapping TypeName="chrysallisModel.notificaciones">
-              <MappingFragment StoreEntitySet="notificaciones">
-                <ScalarProperty Name="antelacion" ColumnName="antelacion" />
+          <EntitySetMapping Name="documentos">
+            <EntityTypeMapping TypeName="chrysallisModel.documentos">
+              <MappingFragment StoreEntitySet="documentos">
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="id_evento" ColumnName="id_evento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -436,6 +528,25 @@
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="imagen" ColumnName="imagen" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mensajes">
+            <EntityTypeMapping TypeName="chrysallisModel.mensajes">
+              <MappingFragment StoreEntitySet="mensajes">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+                <ScalarProperty Name="id_evento" ColumnName="id_evento" />
+                <ScalarProperty Name="id_socio" ColumnName="id_socio" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="notificaciones">
+            <EntityTypeMapping TypeName="chrysallisModel.notificaciones">
+              <MappingFragment StoreEntitySet="notificaciones">
+                <ScalarProperty Name="antelacion" ColumnName="antelacion" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -467,17 +578,7 @@
               <ScalarProperty Name="id" ColumnName="id_evento" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="documentos">
-            <EntityTypeMapping TypeName="chrysallisModel.documentos">
-              <MappingFragment StoreEntitySet="documentos">
-                <ScalarProperty Name="documento" ColumnName="documento" />
-                <ScalarProperty Name="id_evento" ColumnName="id_evento" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          </EntityContainerMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

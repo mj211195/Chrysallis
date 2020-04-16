@@ -907,6 +907,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Alguna cosa no ha sortit bé... Igual alguna foto o document no es compatible..
+        /// </summary>
+        internal static string somethingWentWring {
+            get {
+                return ResourceManager.GetString("somethingWentWring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Castellà.
         /// </summary>
         internal static string spanish {
