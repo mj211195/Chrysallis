@@ -140,6 +140,7 @@ namespace Chrysallis
                 checkBoxState.Visible = false;
                 comboBoxComunity.Enabled = false;
                 checkBoxState.Visible = false;
+                comboBoxComunity.SelectedValue = FormLogin.socioLogin.id_comunidad;
             }
             if (socio != null)
             {

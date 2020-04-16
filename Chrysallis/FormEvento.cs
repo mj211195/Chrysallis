@@ -14,7 +14,8 @@ namespace Chrysallis
     public partial class FormEvento : Form
     {
         List<comunidades> comunidades;
-        eventos evento = new eventos();
+        private List<comunidades> comunidadesOriginal;
+        eventos evento = null;
         eventos eventoNew = new eventos();
         private Boolean modificar;
         List<documentos> documentosLista = new List<documentos>();
@@ -34,7 +35,6 @@ namespace Chrysallis
             this.evento = evento;
             this.eventoNew = evento;
             this.modificar = modificar;
-            cargarDatos(evento);
             cambiarForma();
         }
 
@@ -49,13 +49,13 @@ namespace Chrysallis
             dateTimePickerFechaLimite.Value = (DateTime)evento.fechaLimite.Value;
             dateTimePickerHora.Value = evento.fecha + evento.hora;
             comboBoxComunity.SelectedValue = evento.id_comunidad;
-            if(evento.notificaciones.Count != 0)
+            if (evento.notificaciones.Count != 0)
             {
                 notificacion = evento.notificaciones.ToList();
                 bindingSourceNotificacionesGuardar.DataSource = notificacion;
             }
             textBoxNumeroAsistentes.Text = evento.numAsistentes.ToString();
-            if(evento.documentos.Count != 0)
+            if (evento.documentos.Count != 0)
             {
                 foreach (documentos d in documentosLista)
                 {
@@ -64,7 +64,7 @@ namespace Chrysallis
                 bindingSourceDocumentos.DataSource = evento.documentos;
                 documentosLista = evento.documentos.ToList();
             }
-            
+
         }
 
         //Se bloquea el combobox de comunidades al modificar para que no se pueda modificar
@@ -79,15 +79,13 @@ namespace Chrysallis
             bindingSourceNotificaciones.DataSource = null;
             bindingSourceNotificaciones.DataSource = NotificacionORM.SelectAllNotificaciones();
             comunidades = ComunidadORM.SelectAllComunidades();
-            dateTimePickerHora.CustomFormat = "HH:mm";
+            comunidadesOriginal = (from c in comunidades
+                                   let a = new comunidades() { id = c.id, nombre = GestorIdiomas.getComunidad(c.nombre) }
+                                   select a).ToList();
             cambiarIdioma();
-            foreach (comunidades c in comunidades)
-            {
-                if (c.id == evento.id_comunidad)
-                {
-                    comboBoxComunity.Text = GestorIdiomas.getComunidad(c.nombre);
-                }
-            }
+            bindingSourceComunidades.DataSource = comunidadesOriginal;
+            dateTimePickerHora.CustomFormat = "HH:mm";
+
             if (!modificar)
             {
                 dateTimePickerFecha.Value = DateTime.Today;
@@ -95,10 +93,22 @@ namespace Chrysallis
             }
             else
             {
+                //comboBoxComunity.SelectedValue = evento.id_comunidad;
                 foreach (notificaciones n in evento.notificaciones)
                 {
                     bindingSourceNotificaciones.Remove(n);
                 }
+            }
+
+            if (!(bool)FormLogin.socioLogin.estatal)
+            {
+                comboBoxComunity.Enabled = false;
+                comboBoxComunity.SelectedValue = FormLogin.socioLogin.id_comunidad;
+            }
+
+            if(evento != null)
+            {
+                cargarDatos(evento);
             }
 
         }
@@ -167,13 +177,18 @@ namespace Chrysallis
                 //En el caso de este vacio lo pasamos como null
                 else
                 {
-                    evento.imagen = null;
-                    evento.nombreImagen = "";
+                    if(evento != null)
+                    {
+                        evento.imagen = null;
+                        evento.nombreImagen = "";
+                    }
                 }
                 
                 eventoNew.fecha = dateTimePickerFecha.Value.Date;
                 eventoNew.ubicacion = textBoxUbicacion.Text.Trim();
-                eventoNew.hora = dateTimePickerHora.Value.TimeOfDay;
+                //eventoNew.hora = dateTimePickerHora.Value.TimeOfDay;
+                String t = dateTimePickerHora.Value.TimeOfDay.ToString().Substring(0, 8);
+                eventoNew.hora = TimeSpan.Parse(t);
                 eventoNew.fechaLimite = dateTimePickerFechaLimite.Value.Date;
                 eventoNew.documentos = documentosLista;
                 eventoNew.notificaciones = notificacion;
@@ -255,12 +270,12 @@ namespace Chrysallis
             
 
             //Apaño pq al cambiar idioma no funcionaba, intentaba guardarlo en otro idioma y petaba
-            List<String> comunidadesString = new List<String>();
-            foreach (comunidades c in comunidades)
-            {
-                comunidadesString.Add(GestorIdiomas.getComunidad(c.nombre));
-            }
-            comboBoxComunity.DataSource = comunidadesString;
+            //List<String> comunidadesString = new List<String>();
+            //foreach (comunidades c in comunidades)
+            //{
+            //    comunidadesString.Add(GestorIdiomas.getComunidad(c.nombre));
+            //}
+            //comboBoxComunity.DataSource = comunidadesString;
         }
 
         //Al apretar el boton abre un openFileDialog, recogemos el archivo y su nombre
