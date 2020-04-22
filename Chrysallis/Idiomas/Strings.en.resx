@@ -156,9 +156,6 @@
   <data name="event" xml:space="preserve">
     <value>Events</value>
   </data>
-  <data name="partner" xml:space="preserve">
-    <value>Person</value>
-  </data>
   <data name="phone" xml:space="preserve">
     <value>Phone</value>
   </data>
@@ -422,5 +419,11 @@
   </data>
   <data name="somethingWentWring" xml:space="preserve">
     <value>Something went wrong.... Maybe some photo or file it is not compatible.</value>
+  </data>
+  <data name="security" xml:space="preserve">
+    <value>The password must be lowercase, uppercase, special character(@$!%*?&amp;.) and have a minimum length of 8 characters.</value>
+  </data>
+  <data name="partner" xml:space="preserve">
+    <value>Person</value>
   </data>
 </root>

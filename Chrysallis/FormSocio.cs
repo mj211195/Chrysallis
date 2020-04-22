@@ -3,6 +3,7 @@ using Chrysallis.Idiomas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Chrysallis
@@ -14,6 +15,7 @@ namespace Chrysallis
         private List<comunidades> comunidadesOriginal;
         private socios socio = null;
         private Boolean modificar;
+        private Regex regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,}$");
 
         public FormSocio()
         {
@@ -63,6 +65,9 @@ namespace Chrysallis
             else if (!textBoxPassword2.Text.Trim().Equals(textBoxPassword.Text.Trim()))
             {
                 MessageBox.Show(Strings.errorPassword2, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if(!regex.IsMatch(textBoxPassword2.Text.Trim()) && !regex.IsMatch(textBoxPassword.Text.Trim()))
+            {
+                MessageBox.Show(Strings.security, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

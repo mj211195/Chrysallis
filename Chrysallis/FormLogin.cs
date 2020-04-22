@@ -32,7 +32,6 @@ namespace Chrysallis
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(idioma);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
-            labelUser.Text = Strings.partner;
             labelPassword.Text = Strings.password;
             buttonEntrar.Text = Strings.login;
             itemCatalan.Value = Strings.catalan;

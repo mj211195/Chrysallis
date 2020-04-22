@@ -880,6 +880,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La contrasenya ha de tenir una minúscula, un majúscula, un caràcter especial(@$!%*?&amp;.) i una longitud mínima de 8 caràcters..
+        /// </summary>
+        internal static string security {
+            get {
+                return ResourceManager.GetString("security", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Veure.
         /// </summary>
         internal static string see {

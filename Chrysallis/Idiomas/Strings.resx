@@ -156,9 +156,6 @@
   <data name="event" xml:space="preserve">
     <value>Esdeveniments</value>
   </data>
-  <data name="partner" xml:space="preserve">
-    <value>Persona</value>
-  </data>
   <data name="phone" xml:space="preserve">
     <value>Telèfon</value>
   </data>
@@ -422,5 +419,11 @@
   </data>
   <data name="somethingWentWring" xml:space="preserve">
     <value>Alguna cosa no ha sortit bé... Igual alguna foto o document no es compatible.</value>
+  </data>
+  <data name="security" xml:space="preserve">
+    <value>La contrasenya ha de tenir una minúscula, un majúscula, un caràcter especial(@$!%*?&amp;.) i una longitud mínima de 8 caràcters.</value>
+  </data>
+  <data name="partner" xml:space="preserve">
+    <value>Persona</value>
   </data>
 </root>

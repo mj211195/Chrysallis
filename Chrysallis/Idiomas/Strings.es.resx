@@ -156,9 +156,6 @@
   <data name="event" xml:space="preserve">
     <value>Eventos</value>
   </data>
-  <data name="partner" xml:space="preserve">
-    <value>Persona</value>
-  </data>
   <data name="phone" xml:space="preserve">
     <value>Teléfono</value>
   </data>
@@ -422,5 +419,11 @@
   </data>
   <data name="somethingWentWring" xml:space="preserve">
     <value>Algo salió mal... Igual alguna imagen o ducumento no es compatible.</value>
+  </data>
+  <data name="security" xml:space="preserve">
+    <value>La contraseña debe tener una minúscula, una mayúscula, un carácter especial(@$!%*?&amp;.) y una longitud mínima de 8 caracteres.</value>
+  </data>
+  <data name="partner" xml:space="preserve">
+    <value>Persona</value>
   </data>
 </root>
