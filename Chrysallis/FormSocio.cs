@@ -65,7 +65,11 @@ namespace Chrysallis
             else if (!textBoxPassword2.Text.Trim().Equals(textBoxPassword.Text.Trim()))
             {
                 MessageBox.Show(Strings.errorPassword2, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else if(!regex.IsMatch(textBoxPassword2.Text.Trim()) && !regex.IsMatch(textBoxPassword.Text.Trim()))
+            }
+            else if(!regex.IsMatch(textBoxPassword2.Text.Trim()) && !regex.IsMatch(textBoxPassword.Text.Trim()) && socio == null)
+            {
+                MessageBox.Show(Strings.security, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if (!regex.IsMatch(textBoxPassword2.Text.Trim()) && !regex.IsMatch(textBoxPassword.Text.Trim()) && !textBoxPassword.Text.Trim().Equals(socio.password))
             {
                 MessageBox.Show(Strings.security, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
