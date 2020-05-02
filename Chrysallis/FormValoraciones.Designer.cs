@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormValoraciones));
             this.dataGridViewValoraciones = new System.Windows.Forms.DataGridView();
+            this.labelPromedio = new System.Windows.Forms.Label();
             this.valoracionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceValoraciones = new System.Windows.Forms.BindingSource(this.components);
@@ -48,21 +49,34 @@
             this.dataGridViewValoraciones.DataSource = this.bindingSourceValoraciones;
             this.dataGridViewValoraciones.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewValoraciones.Name = "dataGridViewValoraciones";
+            this.dataGridViewValoraciones.ReadOnly = true;
             this.dataGridViewValoraciones.RowTemplate.Height = 24;
-            this.dataGridViewValoraciones.Size = new System.Drawing.Size(1082, 739);
+            this.dataGridViewValoraciones.Size = new System.Drawing.Size(791, 446);
             this.dataGridViewValoraciones.TabIndex = 0;
+            // 
+            // labelPromedio
+            // 
+            this.labelPromedio.AutoSize = true;
+            this.labelPromedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPromedio.Location = new System.Drawing.Point(12, 461);
+            this.labelPromedio.Name = "labelPromedio";
+            this.labelPromedio.Size = new System.Drawing.Size(96, 25);
+            this.labelPromedio.TabIndex = 2;
+            this.labelPromedio.Text = "Mitjana:";
             // 
             // valoracionDataGridViewTextBoxColumn
             // 
             this.valoracionDataGridViewTextBoxColumn.DataPropertyName = "valoracion";
             this.valoracionDataGridViewTextBoxColumn.HeaderText = "valoracion";
             this.valoracionDataGridViewTextBoxColumn.Name = "valoracionDataGridViewTextBoxColumn";
+            this.valoracionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // comentarioDataGridViewTextBoxColumn
             // 
             this.comentarioDataGridViewTextBoxColumn.DataPropertyName = "comentario";
             this.comentarioDataGridViewTextBoxColumn.HeaderText = "comentario";
             this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
+            this.comentarioDataGridViewTextBoxColumn.ReadOnly = true;
             this.comentarioDataGridViewTextBoxColumn.Width = 1000;
             // 
             // bindingSourceValoraciones
@@ -73,7 +87,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 749);
+            this.ClientSize = new System.Drawing.Size(815, 494);
+            this.Controls.Add(this.labelPromedio);
             this.Controls.Add(this.dataGridViewValoraciones);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormValoraciones";
@@ -81,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewValoraciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceValoraciones)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -90,5 +106,6 @@
         private System.Windows.Forms.BindingSource bindingSourceValoraciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn valoracionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn comentarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label labelPromedio;
     }
 }

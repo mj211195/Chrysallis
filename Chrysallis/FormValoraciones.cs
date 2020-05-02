@@ -17,9 +17,25 @@ namespace Chrysallis
         public FormValoraciones(eventos evento)
         {
             InitializeComponent();
+            double promedio = 0;
+            int contador = 0;
             bindingSourceValoraciones.DataSource = null;
-            bindingSourceValoraciones.DataSource = BD.AsistirORM.SelectAllValoracion(evento);
+            List<asistir> valoraciones = BD.AsistirORM.SelectAllValoracion(evento);
+            bindingSourceValoraciones.DataSource = valoraciones;
             cambiarIdioma();
+            foreach(asistir a in valoraciones)
+            {
+                if(a.valoracion > 0)
+                {
+                    promedio += (double)a.valoracion;
+                    contador++;
+                }
+            }
+            if(contador > 0)
+            {
+                promedio = promedio / contador;
+            }
+            labelPromedio.Text += promedio.ToString() + "/5";
         }
 
         //Cambiamos el idioma segun seleccionado
@@ -28,6 +44,7 @@ namespace Chrysallis
             this.Text = Strings.ratings;
             dataGridViewValoraciones.Columns[0].HeaderText = Strings.assessment;
             dataGridViewValoraciones.Columns[1].HeaderText = Strings.commentary;
+            labelPromedio.Text = Strings.promedio;
         }
 
 

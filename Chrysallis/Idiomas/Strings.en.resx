@@ -426,4 +426,7 @@
   <data name="partner" xml:space="preserve">
     <value>Person</value>
   </data>
+  <data name="promedio" xml:space="preserve">
+    <value>Average:</value>
+  </data>
 </root>

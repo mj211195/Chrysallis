@@ -426,4 +426,7 @@
   <data name="partner" xml:space="preserve">
     <value>Persona</value>
   </data>
+  <data name="promedio" xml:space="preserve">
+    <value>Mitjana: </value>
+  </data>
 </root>

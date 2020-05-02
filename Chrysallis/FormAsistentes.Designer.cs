@@ -36,6 +36,7 @@
             this.bindingSourceAsistentes = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistentes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAsistentes)).BeginInit();
             this.SuspendLayout();
@@ -51,12 +52,11 @@
             this.socios,
             this.cuantosDataGridViewTextBoxColumn});
             this.dataGridViewAsistentes.DataSource = this.bindingSourceAsistentes;
-            this.dataGridViewAsistentes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewAsistentes.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewAsistentes.Name = "dataGridViewAsistentes";
             this.dataGridViewAsistentes.ReadOnly = true;
             this.dataGridViewAsistentes.RowTemplate.Height = 24;
-            this.dataGridViewAsistentes.Size = new System.Drawing.Size(524, 687);
+            this.dataGridViewAsistentes.Size = new System.Drawing.Size(524, 650);
             this.dataGridViewAsistentes.TabIndex = 0;
             this.dataGridViewAsistentes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewAsistentes_CellFormatting);
             // 
@@ -92,11 +92,22 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 250;
             // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(12, 653);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(72, 25);
+            this.labelTotal.TabIndex = 1;
+            this.labelTotal.Text = "Total:";
+            // 
             // FormAsistentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 687);
+            this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.dataGridViewAsistentes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -107,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistentes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAsistentes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,5 +130,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn socios;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuantosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label labelTotal;
     }
 }

@@ -18,8 +18,15 @@ namespace Chrysallis
         {
             InitializeComponent();
             cambiarIdioma();
+            int suma = 0;
             bindingSourceAsistentes.DataSource = null;
-            bindingSourceAsistentes.DataSource = BD.AsistirORM.SelectAllAsistir(evento);
+            List<asistir> asistentes = BD.AsistirORM.SelectAllAsistir(evento);
+            bindingSourceAsistentes.DataSource = asistentes;
+            foreach(asistir a in asistentes)
+            {
+                suma += a.cuantos;
+            }
+            labelTotal.Text += suma;
         }
 
         //Cambiamos el idioma segun seleccionado

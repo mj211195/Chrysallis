@@ -844,6 +844,15 @@ namespace Chrysallis.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Mitjana: .
+        /// </summary>
+        internal static string promedio {
+            get {
+                return ResourceManager.GetString("promedio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Valoracions.
         /// </summary>
         internal static string ratings {
