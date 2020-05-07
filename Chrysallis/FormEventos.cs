@@ -153,17 +153,24 @@ namespace Chrysallis
         //Cuando tenemos seleccionado un evento hacemos click en el boton para ver los asistentes del evento
         private void buttonVerAsistentes_Click(object sender, EventArgs e)
         {
-            eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;
-            FormAsistentes formAsistentes = new FormAsistentes(evento);
-            formAsistentes.ShowDialog();
+            if (dataGridViewEventos.SelectedRows != null && dataGridViewEventos.SelectedRows.Count > 0)
+            {
+                eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;
+                FormAsistentes formAsistentes = new FormAsistentes(evento);
+                formAsistentes.ShowDialog();
+
+            }
         }
 
         //Cuando tenemos seleccionado un evento hacemos click en el boton para ver las valoraciones del evento
         private void buttonVerValoraciones_Click(object sender, EventArgs e)
         {
-            eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;
-            FormValoraciones formValoraciones = new FormValoraciones(evento);
-            formValoraciones.Show();
+            if (dataGridViewEventos.SelectedRows != null && dataGridViewEventos.SelectedRows.Count > 0)
+            {
+                eventos evento = (eventos)dataGridViewEventos.SelectedRows[0].DataBoundItem;
+                FormValoraciones formValoraciones = new FormValoraciones(evento);
+                formValoraciones.Show();
+            }
         }
     }
 }
